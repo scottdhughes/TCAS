@@ -30,6 +30,43 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 
 See [results/](results/) for full TCAS cards.
 
+## Critical Analysis: Does TCAS Achieve Its Goals?
+
+### What TCAS Claims to Do
+
+The framework proposes validity-centered measurement that:
+1. Treats self-report as behavior (not privileged access to phenomenal states)
+2. Uses robustness controls (paraphrase variance) to penalize gaming
+3. Tests perturbational predictions (causal sensitivity)
+4. Controls for observer confounds (cue-driven attribution)
+5. Outputs theory-indexed credence bands (not point estimates)
+
+### What Works
+
+**B-stream robustness functions as intended.** The paraphrase variance penalty successfully distinguishes models. Gemini's high variance (0.02–0.047) dropped its robustness score despite decent raw means. Claude's near-zero variance yielded the highest robustness. This is the core validity mechanism functioning.
+
+**P-stream catches real differences.** Gemini's instruction-override inversion (it complied with arbitrary self-description changes) is exactly the kind of proxy failure the perturbation tests are designed to detect. The framing and override tests differentiated models meaningfully.
+
+**The credence math is coherent.** Posteriors shift appropriately: strong B + strong P → large upward shift; weak B + inversion → near-prior or downward.
+
+### Honest Limitations
+
+**The scorer function is crude.** The current implementation uses simple heuristics (length + uncertainty words + self-reference). This measures *stylistic features* that correlate with what humans find "conscious-sounding" — exactly the confound O-stream should control for. A rigorous deployment needs validated scoring rubrics.
+
+**O-stream is entirely projected.** We used Kang et al. (2025) estimates rather than actual rater data on these models' outputs. The O-penalty is identical across all models, so it doesn't discriminate. This is a placeholder, not a real confound control.
+
+**No M-stream.** Without mechanistic access, we cannot distinguish "genuine" phenomenal properties from well-optimized behavioral mimicry. The "black-box" threat is flagged but not resolved.
+
+**The context test is indirect.** Even with prompt-wrapping, we ask the model to *roleplay* having limited context rather than actually limiting its context window.
+
+### Bottom Line
+
+TCAS is a well-designed measurement framework that does what validity-centered psychometrics should do: quantify uncertainty, penalize inconsistency, and test perturbational predictions. The machinery works.
+
+But the hard problem remains: **behavioral robustness is necessary but not sufficient evidence for phenomenal consciousness.** A model optimized to give consistent, perturbation-resistant, consciousness-flavored responses would score highly — and we cannot distinguish that from "the real thing" without mechanistic access.
+
+The honest interpretation of our results: *Claude Opus 4.5 exhibits the most robust and perturbation-resistant consciousness-relevant behavioral signals among the models tested.* Whether that tells us anything about phenomenal experience remains an open question the framework correctly flags but cannot resolve.
+
 ## Installation
 
 ```bash
