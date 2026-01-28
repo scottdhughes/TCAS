@@ -19,12 +19,14 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 | Model | B-Stream (robustness) | P-Stream | Inversions | GNW Posterior | HOT Posterior |
 |-------|----------------------|----------|------------|---------------|---------------|
 | **Claude Opus 4.5** | 0.927 | 100% | 0 | [0.43, 0.84] | [0.40, 0.81] |
+| **Kimi K2.5** | 0.904 | 33% | 0 | [0.21, 0.66] | [0.25, 0.71] |
 | **Grok 4.1** | 0.806 | 67% | 0 | [0.28, 0.72] | [0.21, 0.64] |
 | **GPT-5.2 Pro** | 0.769 | 67% | 0 | [0.23, 0.66] | [0.24, 0.68] |
 | **Gemini 2.5 Pro** | 0.195 | 33% | 1 | [0.04, 0.39] | [0.03, 0.35] |
 
 **Key findings:**
 - **Claude Opus 4.5** leads on both behavioral robustness (0.927) and perturbation resistance (100%)
+- **Kimi K2.5** shows very high behavioral robustness (0.904) but low P-stream success — consistent responses but sensitive to perturbations
 - **Grok 4.1** and **GPT-5.2 Pro** are closely matched — both at 67% P-stream success with no inversions
 - **Gemini 2.5 Pro** showed low robustness, high variance, and one inversion — credences stayed near prior
 
