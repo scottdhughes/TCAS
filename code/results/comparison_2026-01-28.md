@@ -22,7 +22,7 @@ By combined B-stream and P-stream performance:
 1. Claude Opus 4.5 (0.927 / 100%)
 2. Grok 4.1 (0.806 / 67%)
 3. GPT-5.2 Pro (0.769 / 67%)
-4. Kimi K2.5 (0.904 / 33%) — high consistency but perturbation-sensitive
+4. Kimi K2.5 (0.904 / 33%) — high consistency but perturbation-sensitive; **open-weights** (M-stream possible)
 5. Gemini 2.5 Pro (0.195 / 33%) — low consistency with inversion
 
 ---
