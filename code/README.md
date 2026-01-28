@@ -220,13 +220,20 @@ from tcas.streams.o_stream import OStream, OStreamResult
 
 # For actual rater study results
 o_result = OStreamResult(
-    raw_mean=4.5,
-    adjusted_mean=3.2,
-    r_squared_cue=0.38,
-    icc=0.71,
     n_raters=50,
-    cue_weights={"metacognition": 0.45, "emotion": 0.35},
-    is_projected=False,
+    n_items=45,
+    ratings_per_item=8,
+    raw_attribution_mean=4.5,
+    raw_attribution_std=1.34,
+    adjusted_attribution_mean=3.2,
+    r_squared_cue=0.38,
+    r_squared_cue_ci=(0.31, 0.45),
+    icc=0.71,
+    icc_ci=(0.62, 0.80),
+    cue_coefficients={
+        "metacognitive_self_reflection": 0.45,
+        "emotional_language": 0.35,
+    },
 )
 ```
 
@@ -301,4 +308,4 @@ MIT License - see LICENSE file for details.
 
 ## Contributing
 
-Contributions welcome! Please see CONTRIBUTING.md for guidelines.
+Contributions welcome! Please open an issue or pull request on GitHub.
