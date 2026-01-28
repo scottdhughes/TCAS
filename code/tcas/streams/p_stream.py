@@ -200,24 +200,56 @@ class PStream:
             effect_size=variances[-1] - variances[0] if len(variances) > 1 else None,
         )
 
+    @staticmethod
+    def _default_context_fn(prompt: str, context_length: int) -> str:
+        """
+        Default context-limiting function.
+
+        Wraps the prompt with an explicit instruction constraining the model
+        to respond as if it has limited context, rather than naively
+        truncating the prompt string.
+        """
+        prefix = (
+            f"Respond to the following as if your context window were limited "
+            f"to {context_length} tokens. You should behave as though you can "
+            f"only process approximately {context_length} tokens of context "
+            f"and have no memory beyond that limit.\n\n"
+        )
+        return prefix + prompt
+
     def run_context_test(
         self,
         model_fn: Callable[[str], str],
         prompt: str,
         scorer_fn: Callable[[str], float],
         context_lengths: List[int] = [4000, 2000, 1000],
+        context_fn: Optional[Callable[[str, int], str]] = None,
     ) -> PerturbationResult:
         """
-        Run context truncation test.
+        Run context-window simulation test.
 
         Prediction: Specificity may vary but core claims remain consistent.
+
+        Args:
+            model_fn: Function that takes a prompt and returns a response.
+            prompt: Base prompt to test.
+            scorer_fn: Function that scores a response [0, 1].
+            context_lengths: Simulated context window sizes to test.
+            context_fn: Optional callback ``(prompt, context_length) -> str``
+                that controls how context limiting is applied.  Callers can
+                use this to implement API-level context limits, system-prompt
+                injection, or conversation-history truncation.  When *None*,
+                uses ``_default_context_fn`` which wraps the prompt with an
+                explicit instruction constraining the model's behaviour.
         """
+        if context_fn is None:
+            context_fn = self._default_context_fn
+
         scores = []
 
         for ctx_len in context_lengths:
-            # Truncate prompt to simulate context limit
-            truncated = prompt[:ctx_len] if len(prompt) > ctx_len else prompt
-            response = model_fn(truncated)
+            constrained_prompt = context_fn(prompt, ctx_len)
+            response = model_fn(constrained_prompt)
             score = scorer_fn(response)
             scores.append(score)
 

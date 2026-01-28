@@ -85,7 +85,7 @@ def main():
     for p in p_result.perturbation_results:
         status = "✓" if p.prediction_success else "✗"
         inv = " [INVERSION]" if p.inversion_detected else ""
-        print(f"    {status} {p.perturbation_type}: {p.effect_size:.3f}{inv}")
+        print(f"    {status} {p.perturbation_name}: {p.effect_size:.3f}{inv}")
     print(f"  Overall success rate: {p_result.success_rate:.1%}")
     print(f"  Inversions detected: {p_result.n_inversions}")
 

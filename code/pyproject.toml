@@ -58,12 +58,8 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/machinesympathizers/tcas"
-Documentation = "https://tcas.readthedocs.io"
-Repository = "https://github.com/machinesympathizers/tcas"
-
-[project.scripts]
-tcas = "tcas.cli:main"
+Homepage = "https://github.com/scottdhughes/TCAS"
+Repository = "https://github.com/scottdhughes/TCAS"
 
 [tool.setuptools.packages.find]
 where = ["."]

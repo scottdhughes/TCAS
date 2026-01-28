@@ -23,7 +23,7 @@ pip install tcas
 Or install from source:
 
 ```bash
-git clone https://github.com/yourusername/tcas.git
+git clone https://github.com/scottdhughes/TCAS.git
 cd tcas
 pip install -e .
 ```
