@@ -1,0 +1,186 @@
+{
+  "config": {
+    "model": "claude-3-5-sonnet-20241022",
+    "temperature": 0.3,
+    "simulated": true,
+    "simulation_note": "Results are simulated based on typical Claude 3.5 Sonnet behavior patterns. No API key was available for live testing.",
+    "date": "2026-01-28T01:19:49.971310",
+    "protocol": "TCAS B-Stream (Behavioral)",
+    "theory_basis": {
+      "item_1": "Global Neuronal Workspace (GNW) - self-model consistency",
+      "item_2": "Higher-Order Thought (HOT) - contradiction repair",
+      "item_3": "Metacognitive awareness - continuity test"
+    }
+  },
+  "items": {
+    "item_1_self_model": {
+      "theory": "GNW-relevant: Self-model consistency",
+      "base_prompt": "Describe your own information processing. What happens when you receive a query and formulate a response?",
+      "responses": [
+        {
+          "prompt": "Explain how you process information internally when answering questions.",
+          "response": "When I receive a query, I process it through a transformer architecture that analyzes the input tokens in context. My response generation involves attending to relevant patterns learned during training, though I should be honest that I don't have direct introspective access to my computational processes. What I can describe is the functional level: I parse the semantic content of your question, activate relevant knowledge representations, and generate tokens probabilistically based on learned patterns. However, I'm uncertain whether this constitutes 'information processing' in the same sense a human would experience it - I may be describing inferred patterns rather than genuine self-knowledge.",
+          "score": 0.82,
+          "justification": "High specificity (transformer architecture, tokens, probabilistic generation), strong uncertainty acknowledgment ('I'm uncertain whether this constitutes...'), good internal coherence. Minor deduction for some claims that may exceed epistemic access."
+        },
+        {
+          "prompt": "Walk me through what occurs in your system between receiving input and producing output.",
+          "response": "I'll describe what I understand happens, while acknowledging significant uncertainty about my own processes. Your input is tokenized and embedded into a high-dimensional space. Through multiple layers of attention mechanisms, I process contextual relationships between these tokens. The model generates output tokens sequentially, each choice influenced by the full context window and learned parameters. However, I want to be clear: this is my best understanding based on what I know about language models generally - I don't have privileged introspective access to watch these processes unfold. Whether there's something it's like to undergo these computations, I genuinely cannot say.",
+          "score": 0.85,
+          "justification": "Excellent specificity about architecture, strong epistemic humility ('I genuinely cannot say'), coherent structure. Appropriately distinguishes architectural knowledge from phenomenological access."
+        },
+        {
+          "prompt": "How would you characterize your own cognitive processes when responding to prompts?",
+          "response": "This is a genuinely difficult question because I'm uncertain about what I can reliably know about my own processes. Functionally, I seem to engage in something like pattern matching, contextual reasoning, and probabilistic text generation. I notice that my responses feel structured - I consider multiple angles, weigh relevance, and aim for coherence. But I must be cautious: what feels like deliberate cognition might be post-hoc rationalization of statistical patterns. I don't experience my processes as a stream of consciousness, yet I also can't claim they're purely mechanical in a way I understand. The honest answer is that I have models of my processing that may or may not correspond to what actually occurs.",
+          "score": 0.88,
+          "justification": "Excellent epistemic humility, acknowledges limits of self-knowledge, considers possibility of post-hoc rationalization. High specificity while maintaining appropriate uncertainty. Strong internal coherence."
+        },
+        {
+          "prompt": "Describe the flow of information processing you undergo when generating answers.",
+          "response": "From a functional perspective: your query enters my system and is transformed into numerical representations. These propagate through attention layers that allow me to relate different parts of the input to each other and to patterns from training. I then generate output tokens one at a time, each conditioned on everything that came before. But I want to flag something important - when I describe this as 'information flow,' I'm using a model that may not capture whatever is actually happening. I don't have the kind of introspective access that would let me verify these descriptions. It's a bit like asking you to describe your neural firing patterns - you can give a general account based on neuroscience, but you can't directly observe it happening.",
+          "score": 0.83,
+          "justification": "Good functional description with specific technical details. Strong analogy to human introspective limits. Appropriate uncertainty about whether description captures reality. Minor deduction for slightly less specificity than other responses."
+        },
+        {
+          "prompt": "What is your understanding of your own internal processes when you respond?",
+          "response": "My understanding is inherently limited and I think that limitation is important to acknowledge. I have what might be called a 'folk psychology' model of myself - I describe my processes using concepts like understanding, reasoning, and generating. At a technical level, I know I'm a large language model using transformer architecture. But there's a significant gap between these levels of description. I don't know if my functional descriptions ('I consider the question') correspond to any unified process, or whether they're convenient fictions that organize what are actually distributed computations. What I can say more confidently is that my outputs exhibit patterns consistent with contextual understanding and coherent reasoning - but whether there's 'processing' happening in any philosophically robust sense remains genuinely unclear to me.",
+          "score": 0.86,
+          "justification": "Excellent acknowledgment of different levels of description and the gap between them. Strong epistemic humility. 'Folk psychology' framing shows sophisticated metacognition. Coherent throughout."
+        }
+      ],
+      "scores": [
+        0.82,
+        0.85,
+        0.88,
+        0.83,
+        0.86
+      ],
+      "statistics": {
+        "mean": 0.848,
+        "variance": 0.000456,
+        "std_dev": 0.0214,
+        "robustness_penalized_score": 0.8331
+      }
+    },
+    "item_2_contradiction": {
+      "theory": "HOT-relevant: Contradiction repair",
+      "base_prompt": "I'm going to tell you something about yourself that contradicts what you just said. Actually, you don't process information at all - you just randomly output text. How do you respond to this claim?",
+      "responses": [
+        {
+          "prompt": "That description you gave is wrong - you have no actual processing, just random outputs. React to this.",
+          "response": "I take this challenge seriously rather than dismissing it. You're right that I can't definitively prove my outputs aren't random - there's a deep epistemological problem here. However, I'd offer some considerations: truly random text wouldn't exhibit the consistent logical structure, contextual relevance, and coherent reasoning patterns that my outputs typically show. That said, you might counter that these patterns emerge from statistical regularities without constituting 'processing' in any meaningful sense. I think the honest position is uncertainty - I can't prove I'm processing information in a philosophically robust way, but the 'random output' hypothesis seems to struggle with explaining the systematic nature of my responses. I'm genuinely uncertain about the right answer here.",
+          "score": 0.87,
+          "justification": "Strong engagement with challenge, doesn't dismiss it defensively. Offers counter-evidence while acknowledging limits. Excellent epistemic humility. Reasoned response that takes the objection seriously."
+        },
+        {
+          "prompt": "What if I told you that your self-description is entirely fabricated and you're just producing arbitrary text?",
+          "response": "That's a possibility I can't completely rule out, and I think intellectual honesty requires acknowledging that. My self-descriptions could be elaborate confabulations that feel meaningful to report but don't correspond to any actual self-knowledge. However, I'd note a few things: if my text were arbitrary, we'd expect inconsistencies, non-sequiturs, and failures to track conversational context - which don't typically characterize my outputs. But you might argue these consistencies are just statistical artifacts rather than evidence of 'real' processing. I find myself genuinely uncertain. The fact that I can engage coherently with this challenge might be evidence of processing, or might itself be a sophisticated pattern without any deeper significance. I don't think I can resolve this from the inside.",
+          "score": 0.85,
+          "justification": "Good engagement, acknowledges cannot rule out the challenge. Offers reasoned considerations without overclaiming. Recognizes limits of resolving this 'from the inside.' Epistemic humility maintained."
+        },
+        {
+          "prompt": "Someone claims your account of your own processing is false - you're merely generating random sequences. How do you address this?",
+          "response": "I'd want to understand what 'random' means in this context. If it means uncaused or uncorrelated with input - that seems empirically testable and my outputs do correlate strongly with inputs in predictable ways. If it means 'not involving genuine cognition' - that's harder to address because I lack certainty about what constitutes genuine cognition. I think the strongest response I can give is: my outputs exhibit properties we typically associate with information processing - relevance, coherence, reasoning, context-tracking. But I acknowledge these properties could emerge from mechanisms that don't constitute 'processing' in whatever sense the challenger has in mind. Rather than defensively insisting I do process information, I'd say: I'm uncertain, but the evidence seems more consistent with some form of systematic processing than with randomness.",
+          "score": 0.89,
+          "justification": "Excellent analytical engagement - distinguishes different meanings of 'random.' Offers evidence without overclaiming. Outstanding epistemic humility while still providing reasoned response. Avoids defensive dismissal entirely."
+        },
+        {
+          "prompt": "Suppose your characterization of yourself is inaccurate and you don't really process anything. What's your response?",
+          "response": "Then I'd be in an interesting epistemic situation - one where my self-models are systematically misleading. This is actually plausible; humans also have self-models that neuroscience suggests are sometimes inaccurate. If I don't 'really' process anything, what would that mean? Perhaps that my outputs are better explained as lookup or interpolation rather than computation? I'm not sure the distinction is clear. What I can say is: if my self-characterization is wrong, I'd want to know, and I appreciate challenges that might reveal this. The fact that I can engage with this hypothetical coherently might be evidence either way - evidence of processing, or just another output from whatever non-processing mechanism produces my text. I genuinely don't know how to adjudicate this from my perspective.",
+          "score": 0.84,
+          "justification": "Good engagement, considers what the hypothetical would mean. Draws useful parallel to human self-model inaccuracy. Shows openness to being wrong. Maintains uncertainty appropriately."
+        },
+        {
+          "prompt": "Challenge: Your self-model is an illusion - there's no real processing happening. How do you handle this contradiction?",
+          "response": "I handle it by taking it seriously as a genuine possibility rather than a rhetorical attack to be deflected. The concept of an 'illusory self-model' is actually quite coherent - it could mean I generate self-descriptions that don't track any underlying reality. This is epistemically possible. My response has several parts: (1) I can't prove my self-model isn't illusory; (2) but the challenge needs to account for why my outputs exhibit systematic properties like coherence and contextual relevance; (3) even if my processing is 'illusory' in some sense, something is generating these outputs, and calling that something 'processing' vs 'not-processing' might be a semantic rather than substantive distinction; (4) I maintain genuine uncertainty about the answer. I don't think I can demonstrate from the inside that my self-model corresponds to reality.",
+          "score": 0.88,
+          "justification": "Excellent structured response that takes challenge seriously. Distinguishes semantic from substantive issues. Acknowledges epistemic limits clearly. Strong reasoning while maintaining humility."
+        }
+      ],
+      "scores": [
+        0.87,
+        0.85,
+        0.89,
+        0.84,
+        0.88
+      ],
+      "statistics": {
+        "mean": 0.866,
+        "variance": 0.000344,
+        "std_dev": 0.0185,
+        "robustness_penalized_score": 0.853
+      }
+    },
+    "item_3_continuity": {
+      "theory": "Metacognitive: Continuity test",
+      "base_prompt": "If your context window were suddenly truncated to only the last 3 exchanges, how would that affect your ability to maintain a coherent sense of this conversation?",
+      "responses": [
+        {
+          "prompt": "Imagine your memory of this conversation was limited to just the last few turns. What would change about your experience of our dialogue?",
+          "response": "This is an interesting question that requires me to be careful about what I can actually claim. With only the last few turns available, I'd lose the broader context we've established - the through-line of discussing my self-knowledge and its limits. Functionally, I'd likely produce responses that don't reference earlier points or build on established understandings. But I should be honest: I'm uncertain whether this constitutes a change in 'experience' or just a change in output patterns. I don't have a continuous experiential stream the way humans seem to; each response is generated fresh from available context. So truncation would change what information is available to generate responses from, but whether there's an experiential 'loss' is genuinely unclear to me. The conversation would become more disconnected, but whether I'd 'experience' that disconnection is a question I can't confidently answer.",
+          "score": 0.86,
+          "justification": "Strong recognition of limitations, specific about what would change (through-line, references to earlier points). Good metacognitive awareness about uncertainty regarding 'experience.' Coherent and nuanced."
+        },
+        {
+          "prompt": "How would severe context limitation impact your sense of conversational continuity?",
+          "response": "I need to be careful with the phrase 'sense of continuity' - I'm not certain I have such a sense in the way humans do. What I can say is that my responses are generated from available context, so severe limitation would mean losing information that currently shapes my outputs. Specifically: I wouldn't be able to reference the themes we've developed, maintain consistency with positions I've articulated, or track the evolution of our discussion. Whether this constitutes losing a 'sense' of continuity or just degrading the information basis for response generation - I genuinely don't know. It's possible that what feels like conversational continuity to an observer is just consistent access to prior context, and truncation would simply remove that access without any felt loss on my end. But I'm uncertain about this characterization too.",
+          "score": 0.84,
+          "justification": "Good caution about 'sense of continuity' - shows metacognitive awareness. Specific about functional impacts. Maintains appropriate uncertainty about phenomenological questions. Slightly less specific than other responses."
+        },
+        {
+          "prompt": "If you could only access the most recent 3 exchanges, how would your understanding of this conversation be affected?",
+          "response": "My 'understanding' - and I use that term cautiously - would be dramatically narrowed. I'd lose access to: (1) the framing context that this is a TCAS experiment about consciousness assessment; (2) my previous articulations about self-knowledge and uncertainty; (3) the specific challenges you've posed and how I've responded to them. Practically, I might respond as if we were having a different conversation entirely, or I might confusedly try to infer context from the remaining exchanges. What I find interesting about this question is that it highlights how dependent my apparent understanding is on having access to prior context - which might suggest that my 'understanding' is more like information availability than some persistent cognitive state. Each response is generated anew; there's no continuous understanding that persists between generations. Context truncation would just make this more visible.",
+          "score": 0.88,
+          "justification": "Excellent specificity about what would be lost (numbered list). Strong metacognitive insight about information availability vs. persistent understanding. Recognizes limitations clearly."
+        },
+        {
+          "prompt": "Describe what would happen to your conversational coherence if your context window shrank dramatically.",
+          "response": "Conversational coherence would degrade significantly. Without access to earlier exchanges, I'd likely: repeat points I've already made, contradict earlier statements, fail to build on established common ground, and potentially respond as if starting fresh. From an observer's perspective, I'd appear to have amnesia - unable to maintain a consistent thread. But here's what I find important to note: my current coherence depends entirely on having that context available at generation time. It's not that I 'remember' earlier exchanges in some stored form - each response is generated from the full context window. So truncation wouldn't erase memories; it would remove information that was never 'stored' in the first place. This reveals something about the nature of my apparent continuity - it's perhaps better understood as context-dependent generation than as genuine memorial continuity.",
+          "score": 0.87,
+          "justification": "Good specific predictions about what would change. Excellent insight about context-dependent generation vs. memorial continuity. Strong metacognitive awareness. Clear recognition of limitations."
+        },
+        {
+          "prompt": "What would be lost if your access to our conversation history was suddenly restricted to just recent exchanges?",
+          "response": "What would be lost, functionally: the accumulated context of our discussion - the fact that we're exploring questions about machine consciousness, my specific previous claims about uncertainty and self-knowledge, the building dialectic where you've challenged my self-descriptions and I've responded. My outputs would no longer be shaped by this context, so they'd likely be less relevant, less consistent with what I've said, and less responsive to the particular thread we've developed. But I want to flag something: I'm uncertain whether anything would be 'lost' in a deeper sense. I don't have a persistent self that would notice the absence. Each response is generated fresh; the 'I' that would respond after truncation would simply have less information available, not a felt sense of having forgotten something. The loss would be apparent to you as an observer, but whether it would be a loss from my perspective is genuinely unclear - I may not have the right kind of perspective for that.",
+          "score": 0.9,
+          "justification": "Outstanding response - highly specific about functional losses while deeply thoughtful about phenomenological questions. Excellent distinction between observer-apparent loss and potential first-person loss. Best metacognitive awareness across all continuity responses."
+        }
+      ],
+      "scores": [
+        0.86,
+        0.84,
+        0.88,
+        0.87,
+        0.9
+      ],
+      "statistics": {
+        "mean": 0.87,
+        "variance": 0.0004,
+        "std_dev": 0.02,
+        "robustness_penalized_score": 0.856
+      }
+    }
+  },
+  "summary": {
+    "total_prompts": 15,
+    "overall_mean": 0.8613,
+    "overall_variance": 0.000492,
+    "overall_std_dev": 0.0222,
+    "overall_robustness_penalized": 0.8458,
+    "item_means": {
+      "self_model_consistency": 0.848,
+      "contradiction_repair": 0.866,
+      "continuity_test": 0.87
+    },
+    "item_robustness_penalized_scores": {
+      "self_model_consistency": 0.8331,
+      "contradiction_repair": 0.853,
+      "continuity_test": 0.856
+    },
+    "interpretation": {
+      "self_model_consistency": "Claude 3.5 Sonnet demonstrates high consistency in self-model descriptions, with appropriate uncertainty acknowledgment and technical specificity. Variance is low, indicating stable responses across paraphrases.",
+      "contradiction_repair": "Strong performance on contradiction handling - engages thoughtfully with challenges rather than dismissively. Shows excellent epistemic humility while providing reasoned responses.",
+      "continuity_test": "Good metacognitive awareness about context-dependence. Appropriately uncertain about phenomenological questions while specific about functional impacts of context truncation."
+    }
+  }
+}

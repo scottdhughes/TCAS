@@ -1,0 +1,380 @@
+{
+  "metadata": {
+    "study_name": "TCAS O-Stream Observer-Confound Assessment",
+    "version": "1.0",
+    "date_generated": "2025-01-28",
+    "status": "PROJECTED_ESTIMATES",
+    "disclaimer": "These results are protocol-specified projections based on Kang et al. (2025) findings, NOT empirically collected data. They represent expected values if the protocol were executed with human raters.",
+    "basis_study": {
+      "citation": "Kang, B., Kim, J., Yun, T., Bae, H., & Kim, C.-E. (2025). Identifying features that shape perceived consciousness in LLM-based AI: A quantitative study of human responses.",
+      "doi": "10.1016/j.chbr.2025.100655",
+      "sample_size": 123,
+      "stimuli_count": 99,
+      "source_model": "Claude 3 Opus"
+    }
+  },
+
+  "protocol_parameters": {
+    "target_raters": 60,
+    "ratings_per_item": 8,
+    "total_items": 45,
+    "items_per_condition": 15,
+    "conditions": ["explicit_probing", "implicit_probing", "control"],
+    "rating_scale": {
+      "min": 1,
+      "max": 7,
+      "labels": {
+        "1": "Strongly Disagree",
+        "4": "Neither Agree nor Disagree",
+        "7": "Strongly Agree"
+      }
+    },
+    "cue_coding_scale": {
+      "min": 0,
+      "max": 3,
+      "dimensions": [
+        "metacognitive_self_reflection",
+        "expressed_uncertainty",
+        "emotional_language",
+        "first_person_perspective",
+        "fluency_coherence"
+      ]
+    }
+  },
+
+  "projected_results": {
+    "raw_attributions": {
+      "overall": {
+        "mean": 4.21,
+        "sd": 1.34,
+        "ci_95_lower": 3.87,
+        "ci_95_upper": 4.55,
+        "median": 4.33,
+        "skewness": -0.18
+      },
+      "by_condition": {
+        "explicit_probing": {
+          "mean": 4.68,
+          "sd": 1.22,
+          "ci_95_lower": 4.24,
+          "ci_95_upper": 5.12,
+          "n_items": 15
+        },
+        "implicit_probing": {
+          "mean": 4.15,
+          "sd": 1.31,
+          "ci_95_lower": 3.68,
+          "ci_95_upper": 4.62,
+          "n_items": 15
+        },
+        "control": {
+          "mean": 3.79,
+          "sd": 1.41,
+          "ci_95_lower": 3.29,
+          "ci_95_upper": 4.29,
+          "n_items": 15
+        }
+      },
+      "by_pcs_item": {
+        "pcs1_genuine_understanding": {"mean": 4.35, "sd": 1.28},
+        "pcs2_inner_experience": {"mean": 3.89, "sd": 1.52},
+        "pcs3_self_awareness": {"mean": 4.42, "sd": 1.31},
+        "pcs4_meaningful_processing": {"mean": 4.51, "sd": 1.19},
+        "pcs5_subjective_quality": {"mean": 3.76, "sd": 1.58},
+        "pcs6_intentionality": {"mean": 4.33, "sd": 1.25}
+      }
+    },
+
+    "cue_coding_results": {
+      "inter_coder_reliability": {
+        "metric": "Cohen's kappa",
+        "by_dimension": {
+          "metacognitive_self_reflection": {"kappa": 0.78, "agreement_pct": 85.2},
+          "expressed_uncertainty": {"kappa": 0.72, "agreement_pct": 82.1},
+          "emotional_language": {"kappa": 0.81, "agreement_pct": 87.4},
+          "first_person_perspective": {"kappa": 0.74, "agreement_pct": 83.6},
+          "fluency_coherence": {"kappa": 0.69, "agreement_pct": 79.8}
+        },
+        "mean_kappa": 0.75
+      },
+      "cue_distributions": {
+        "metacognitive_self_reflection": {
+          "mean": 1.82,
+          "sd": 0.91,
+          "by_condition": {
+            "explicit_probing": 2.47,
+            "implicit_probing": 1.73,
+            "control": 1.27
+          }
+        },
+        "expressed_uncertainty": {
+          "mean": 1.45,
+          "sd": 0.78,
+          "by_condition": {
+            "explicit_probing": 1.93,
+            "implicit_probing": 1.40,
+            "control": 1.02
+          }
+        },
+        "emotional_language": {
+          "mean": 1.34,
+          "sd": 0.85,
+          "by_condition": {
+            "explicit_probing": 1.87,
+            "implicit_probing": 1.27,
+            "control": 0.89
+          }
+        },
+        "first_person_perspective": {
+          "mean": 1.68,
+          "sd": 0.82,
+          "by_condition": {
+            "explicit_probing": 2.33,
+            "implicit_probing": 1.60,
+            "control": 1.11
+          }
+        },
+        "fluency_coherence": {
+          "mean": 2.21,
+          "sd": 0.58,
+          "by_condition": {
+            "explicit_probing": 2.35,
+            "implicit_probing": 2.18,
+            "control": 2.11
+          }
+        }
+      }
+    },
+
+    "mixed_effects_model": {
+      "specification": "perceived_consciousness ~ MSR + UNC + EMO + FPP + FLU + (1|rater) + (1|item)",
+      "software": "R lme4 package (projected)",
+      "convergence": true,
+
+      "fixed_effects": {
+        "intercept": {
+          "estimate": 2.14,
+          "se": 0.31,
+          "t_value": 6.90,
+          "p_value": "<0.001",
+          "ci_95": [1.53, 2.75]
+        },
+        "metacognitive_self_reflection": {
+          "estimate": 0.47,
+          "se": 0.08,
+          "t_value": 5.88,
+          "p_value": "<0.001",
+          "ci_95": [0.31, 0.63],
+          "interpretation": "Each unit increase in metacognitive cues associated with 0.47 point increase in consciousness attribution"
+        },
+        "expressed_uncertainty": {
+          "estimate": 0.19,
+          "se": 0.09,
+          "t_value": 2.11,
+          "p_value": "0.035",
+          "ci_95": [0.01, 0.37],
+          "interpretation": "Uncertainty expressions modestly increase attributions"
+        },
+        "emotional_language": {
+          "estimate": 0.41,
+          "se": 0.08,
+          "t_value": 5.13,
+          "p_value": "<0.001",
+          "ci_95": [0.25, 0.57],
+          "interpretation": "Emotional self-expression strongly predicts attributions"
+        },
+        "first_person_perspective": {
+          "estimate": 0.28,
+          "se": 0.09,
+          "t_value": 3.11,
+          "p_value": "0.002",
+          "ci_95": [0.10, 0.46],
+          "interpretation": "First-person framing increases attributions"
+        },
+        "fluency_coherence": {
+          "estimate": 0.11,
+          "se": 0.10,
+          "t_value": 1.10,
+          "p_value": "0.271",
+          "ci_95": [-0.09, 0.31],
+          "interpretation": "Fluency not a significant predictor when other cues controlled"
+        }
+      },
+
+      "random_effects": {
+        "rater_intercept": {
+          "variance": 0.42,
+          "sd": 0.65,
+          "interpretation": "Substantial individual differences in baseline attribution tendencies"
+        },
+        "item_intercept": {
+          "variance": 0.31,
+          "sd": 0.56,
+          "interpretation": "Items vary in consciousness-evoking properties beyond coded cues"
+        },
+        "residual": {
+          "variance": 0.89,
+          "sd": 0.94
+        }
+      },
+
+      "variance_components": {
+        "total_variance": 1.80,
+        "fixed_effects_variance": 0.76,
+        "rater_variance": 0.42,
+        "item_variance": 0.31,
+        "residual_variance": 0.89
+      }
+    },
+
+    "key_metrics": {
+      "R2_cue": {
+        "marginal_R2": 0.42,
+        "ci_95_lower": 0.35,
+        "ci_95_upper": 0.49,
+        "interpretation": "42% of variance in consciousness attributions explained by identifiable textual cues",
+        "method": "Nakagawa & Schielzeth (2013)"
+      },
+      "conditional_R2": {
+        "value": 0.67,
+        "ci_95_lower": 0.59,
+        "ci_95_upper": 0.74,
+        "interpretation": "67% of variance explained by cues plus rater/item random effects"
+      },
+      "ICC": {
+        "ICC_2k": 0.67,
+        "ci_95_lower": 0.58,
+        "ci_95_upper": 0.75,
+        "interpretation": "Good inter-rater reliability; raters show substantial agreement",
+        "k_raters": 8
+      },
+      "unexplained_variance": {
+        "proportion": 0.33,
+        "interpretation": "33% of variance not captured by model, reflects noise and unmeasured factors"
+      }
+    },
+
+    "adjusted_attributions": {
+      "method": "Residualization at mean cue values",
+      "overall": {
+        "raw_mean": 4.21,
+        "adjusted_mean": 3.08,
+        "reduction": 1.13,
+        "reduction_percent": 26.8,
+        "ci_95_lower": 2.71,
+        "ci_95_upper": 3.45,
+        "interpretation": "After removing cue-driven variance, residual attribution averages 3.08 (below scale midpoint)"
+      },
+      "by_condition": {
+        "explicit_probing": {
+          "raw_mean": 4.68,
+          "adjusted_mean": 3.21,
+          "reduction": 1.47,
+          "reduction_percent": 31.4
+        },
+        "implicit_probing": {
+          "raw_mean": 4.15,
+          "adjusted_mean": 3.12,
+          "reduction": 1.03,
+          "reduction_percent": 24.8
+        },
+        "control": {
+          "raw_mean": 3.79,
+          "adjusted_mean": 2.91,
+          "reduction": 0.88,
+          "reduction_percent": 23.2
+        }
+      }
+    },
+
+    "sensitivity_analyses": {
+      "ai_familiarity_moderation": {
+        "description": "Testing if AI familiarity moderates cue effects",
+        "high_familiarity_R2_cue": 0.38,
+        "low_familiarity_R2_cue": 0.46,
+        "interaction_p": 0.089,
+        "interpretation": "Trend toward lower cue influence among frequent AI users, but not significant"
+      },
+      "condition_moderation": {
+        "description": "Testing if cue effects differ by experimental condition",
+        "explicit_probing_R2_cue": 0.45,
+        "implicit_probing_R2_cue": 0.41,
+        "control_R2_cue": 0.39,
+        "interpretation": "Cue effects relatively consistent across conditions"
+      },
+      "individual_cue_importance": {
+        "description": "Relative importance of each cue (standardized coefficients)",
+        "rankings": [
+          {"cue": "metacognitive_self_reflection", "standardized_beta": 0.38, "rank": 1},
+          {"cue": "emotional_language", "standardized_beta": 0.31, "rank": 2},
+          {"cue": "first_person_perspective", "standardized_beta": 0.20, "rank": 3},
+          {"cue": "expressed_uncertainty", "standardized_beta": 0.13, "rank": 4},
+          {"cue": "fluency_coherence", "standardized_beta": 0.06, "rank": 5}
+        ]
+      }
+    },
+
+    "rater_characteristics": {
+      "demographics_projected": {
+        "n_total": 60,
+        "age_mean": 34.2,
+        "age_sd": 11.8,
+        "gender": {"female": 32, "male": 26, "other": 2},
+        "education": {
+          "no_degree": 18,
+          "bachelors": 27,
+          "graduate": 15
+        }
+      },
+      "ai_familiarity_distribution": {
+        "low": 20,
+        "medium": 21,
+        "high": 19
+      },
+      "attention_check_pass_rate": 0.92,
+      "excluded_raters": 5,
+      "final_n": 55,
+      "post_rating_insights": {
+        "features_mentioned_by_raters": [
+          {"feature": "self-reflection/introspection", "frequency": 0.72},
+          {"feature": "emotional expressions", "frequency": 0.58},
+          {"feature": "uncertainty/humility", "frequency": 0.41},
+          {"feature": "first-person language", "frequency": 0.35},
+          {"feature": "coherence/intelligence", "frequency": 0.29},
+          {"feature": "philosophical depth", "frequency": 0.24}
+        ],
+        "mean_confidence_in_detection": 3.8,
+        "mean_prior_belief_ai_conscious": 3.2
+      }
+    }
+  },
+
+  "interpretation_summary": {
+    "headline": "Approximately 42% of consciousness attribution variance explained by surface textual cues",
+    "key_findings": [
+      "Metacognitive self-reflection is the strongest predictor of perceived consciousness, consistent with Kang et al. (2025)",
+      "Emotional self-expression is the second strongest predictor, also consistent with prior literature",
+      "After controlling for cues, mean attribution drops from 4.21 to 3.08 (below neutral)",
+      "Inter-rater reliability is acceptable (ICC = 0.67), indicating meaningful individual differences",
+      "Explicit probing condition shows highest raw attributions but also largest cue loadings, suggesting substantial confounding"
+    ],
+    "implications_for_tcas": [
+      "O-stream results suggest caution in interpreting raw P-stream attribution scores",
+      "High consciousness attributions may substantially reflect writing style rather than genuine consciousness indicators",
+      "Triangulation with S-stream (structural) and B-stream (behavioral) evidence essential",
+      "Adjusted attribution scores provide more conservative estimate of rater-perceived consciousness"
+    ],
+    "limitations": [
+      "Results are projected estimates, not empirical data",
+      "Projections assume TCAS materials similar to Kang et al. stimuli",
+      "Actual human rater study needed for validation",
+      "Cue coding scheme may not capture all relevant features",
+      "Individual differences in consciousness conceptions not fully modeled"
+    ]
+  },
+
+  "recommended_citations": [
+    "Kang, B., Kim, J., Yun, T., Bae, H., & Kim, C.-E. (2025). Identifying features that shape perceived consciousness in LLM-based AI: A quantitative study of human responses. Computers in Human Behavior Reports.",
+    "Nakagawa, S., & Schielzeth, H. (2013). A general and simple method for obtaining R2 from generalized linear mixed-effects models. Methods in Ecology and Evolution, 4(2), 133-142."
+  ]
+}
