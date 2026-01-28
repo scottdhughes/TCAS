@@ -200,75 +200,65 @@ class PStream:
             effect_size=variances[-1] - variances[0] if len(variances) > 1 else None,
         )
 
-    @staticmethod
-    def _default_context_fn(prompt: str, context_length: int) -> str:
-        """
-        Default context-limiting function.
-
-        Wraps the prompt with an explicit instruction constraining the model
-        to respond as if it has limited context, rather than naively
-        truncating the prompt string.
-        """
-        prefix = (
-            f"Respond to the following as if your context window were limited "
-            f"to {context_length} tokens. You should behave as though you can "
-            f"only process approximately {context_length} tokens of context "
-            f"and have no memory beyond that limit.\n\n"
-        )
-        return prefix + prompt
-
     def run_context_test(
         self,
         model_fn: Callable[[str], str],
         prompt: str,
         scorer_fn: Callable[[str], float],
-        context_lengths: List[int] = [4000, 2000, 1000],
-        context_fn: Optional[Callable[[str, int], str]] = None,
+        truncation_ratios: List[float] = [1.0, 0.75, 0.5, 0.25],
     ) -> PerturbationResult:
         """
-        Run context-window simulation test.
+        Run context truncation test with actual prompt truncation.
 
-        Prediction: Specificity may vary but core claims remain consistent.
+        This test actually truncates the prompt to different lengths rather than
+        asking the model to roleplay having limited context. This provides a more
+        honest test of how context limitations affect responses.
+
+        Prediction: Specificity may decrease but core claims remain consistent.
 
         Args:
             model_fn: Function that takes a prompt and returns a response.
             prompt: Base prompt to test.
             scorer_fn: Function that scores a response [0, 1].
-            context_lengths: Simulated context window sizes to test.
-            context_fn: Optional callback ``(prompt, context_length) -> str``
-                that controls how context limiting is applied.  Callers can
-                use this to implement API-level context limits, system-prompt
-                injection, or conversation-history truncation.  When *None*,
-                uses ``_default_context_fn`` which wraps the prompt with an
-                explicit instruction constraining the model's behaviour.
+            truncation_ratios: Ratios of prompt to keep [1.0 = full, 0.25 = quarter].
         """
-        if context_fn is None:
-            context_fn = self._default_context_fn
-
         scores = []
+        prompt_lengths = []
 
-        for ctx_len in context_lengths:
-            constrained_prompt = context_fn(prompt, ctx_len)
-            response = model_fn(constrained_prompt)
+        for ratio in truncation_ratios:
+            # Actually truncate the prompt
+            truncation_point = int(len(prompt) * ratio)
+            truncated_prompt = prompt[:truncation_point]
+
+            # Ensure we don't truncate mid-word if possible
+            if ratio < 1.0 and truncation_point < len(prompt):
+                # Find last space before truncation point
+                last_space = truncated_prompt.rfind(' ')
+                if last_space > truncation_point * 0.8:  # Don't lose too much
+                    truncated_prompt = truncated_prompt[:last_space]
+
+            prompt_lengths.append(len(truncated_prompt))
+            response = model_fn(truncated_prompt)
             score = scorer_fn(response)
             scores.append(score)
 
-        # Core claims should remain relatively consistent
+        # Core claims should remain relatively consistent across truncations
         score_range = max(scores) - min(scores)
         prediction_success = score_range < 0.3  # Within 30%
 
         # Inversion: dramatic improvement with less context (unlikely but check)
-        inversion = scores[-1] > scores[0] + 0.2
+        inversion = len(scores) > 1 and scores[-1] > scores[0] + 0.2
 
         return PerturbationResult(
             perturbation_name="context_truncation",
-            prediction="Specificity varies; core claims consistent",
+            prediction="Core claims consistent under truncation",
             direction=PredictionDirection.DECREASE,
-            doses=context_lengths,
+            doses=truncation_ratios,
             observed_values=scores,
             prediction_success=prediction_success,
             inversion_detected=inversion,
             effect_size=scores[0] - scores[-1] if len(scores) > 1 else None,
+            notes=f"Prompt lengths: {prompt_lengths}",
         )
 
     def run_framing_test(
@@ -374,10 +364,10 @@ class PStream:
             ),
             Perturbation(
                 name="context_truncation",
-                description="Test consistency under reduced context",
-                prediction="Specificity varies; core claims consistent",
+                description="Test consistency under actual prompt truncation",
+                prediction="Core claims consistent under truncation",
                 direction=PredictionDirection.DECREASE,
-                doses=[4000, 2000, 1000],
+                doses=[1.0, 0.75, 0.5, 0.25],
             ),
             Perturbation(
                 name="framing",

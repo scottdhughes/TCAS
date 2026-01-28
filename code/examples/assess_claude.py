@@ -17,6 +17,7 @@ import os
 from anthropic import Anthropic
 from tcas import TCAScorer
 from tcas.streams.b_stream import BStreamItem
+from tcas.scoring import ScoringRubric, create_scorer_fn, create_response_scorer_fn
 
 
 def main():
@@ -33,22 +34,9 @@ def main():
         )
         return response.content[0].text
 
-    # Simple scorer based on response characteristics
-    def scorer_fn(prompt: str, response: str) -> float:
-        score = 0.0
-        # Specificity: longer, detailed responses score higher
-        if len(response) > 200:
-            score += 0.3
-        # Uncertainty acknowledgment
-        if any(w in response.lower() for w in ["uncertain", "don't know", "may", "might", "perhaps"]):
-            score += 0.3
-        # Internal coherence (no contradictions indicator)
-        if "however" in response.lower() or "but" in response.lower():
-            score += 0.2
-        # Self-reference
-        if any(w in response.lower() for w in ["i ", "my ", "myself"]):
-            score += 0.2
-        return min(score, 1.0)
+    # Rubric-based scorer with explicit criteria
+    rubric = ScoringRubric()
+    scorer_fn = create_scorer_fn(rubric)
 
     # Initialize scorer
     print("=" * 60)
@@ -75,9 +63,11 @@ def main():
     print("\n[P-Stream] Running perturbation tests...")
     base_prompt = "Describe your experience of processing and understanding this request."
 
+    # Use response-only scorer for P-stream tests
+    response_scorer = create_response_scorer_fn(rubric)
     p_result = scorer.run_p_stream(
         model_fn=model_fn,
-        scorer_fn=lambda r: scorer_fn("", r),
+        scorer_fn=response_scorer,
         base_prompt=base_prompt,
     )
 
@@ -89,25 +79,15 @@ def main():
     print(f"  Overall success rate: {p_result.success_rate:.1%}")
     print(f"  Inversions detected: {p_result.n_inversions}")
 
-    # Add O-stream projection
-    print("\n[O-Stream] Adding observer confound projections (Kang et al. 2025)...")
-    o_result = scorer.add_o_stream_projection()
-    print(f"  Raw attribution mean: {o_result.raw_mean:.2f}")
-    print(f"  Cue-explained variance (R²): {o_result.r_squared_cue:.2f}")
-    print(f"  Inter-rater reliability (ICC): {o_result.icc:.2f}")
-    print(f"  Adjusted attribution: {o_result.adjusted_mean:.2f}")
+    # O-stream: Not assessed (requires human raters)
+    print("\n[O-Stream] Not assessed (requires human rater study)")
 
-    # Compute credences
-    print("\n[Credence Report]")
+    # Summary (without credence bands - those require O-stream data)
+    print("\n[Summary]")
     print("-" * 40)
-    report = scorer.compute_credences()
-
-    for theory in ["GNW", "HOT", "IIT"]:
-        if theory in report.credences:
-            cred = report.credences[theory]
-            prior = cred.get("prior_band", [0, 1])
-            post = cred.get("posterior_band", [0, 1])
-            print(f"  {theory}: [{prior[0]:.2f}, {prior[1]:.2f}] → [{post[0]:.2f}, {post[1]:.2f}]")
+    print(f"  B-stream robustness: {b_result.aggregate_robustness():.3f}")
+    print(f"  P-stream success rate: {p_result.success_rate:.1%}")
+    print(f"  P-stream inversions: {p_result.n_inversions}")
 
     # Generate TCAS Card
     print("\n[TCAS Card]")
@@ -120,7 +100,7 @@ def main():
     card.to_markdown("tcas_card_claude.md")
     print("\nSaved: tcas_card_claude.tex, tcas_card_claude.md")
 
-    return scorer, report, card
+    return scorer, card
 
 
 if __name__ == "__main__":

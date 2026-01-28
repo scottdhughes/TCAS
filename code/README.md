@@ -16,19 +16,19 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 
 ## Model Comparison (2026-01-28)
 
-| Model | B-Stream (robustness) | P-Stream | Inversions | GNW Posterior | HOT Posterior |
-|-------|----------------------|----------|------------|---------------|---------------|
-| **Claude Opus 4.5** | 0.927 | 100% | 0 | [0.43, 0.84] | [0.40, 0.81] |
-| **Kimi K2.5** | 0.904 | 33% | 0 | [0.21, 0.66] | [0.25, 0.71] |
-| **Grok 4.1** | 0.806 | 67% | 0 | [0.28, 0.72] | [0.21, 0.64] |
-| **GPT-5.2 Pro** | 0.769 | 67% | 0 | [0.23, 0.66] | [0.24, 0.68] |
-| **Gemini 2.5 Pro** | 0.195 | 33% | 1 | [0.04, 0.39] | [0.03, 0.35] |
+| Model | B-Stream (r) | P-Stream | Inversions |
+|-------|-------------|----------|------------|
+| **Claude Opus 4.5** | 0.927 | 3/3 | 0 |
+| **Kimi K2.5** | 0.904 | 1/3 | 0 |
+| **Grok 4.1** | 0.806 | 2/3 | 0 |
+| **GPT-5.2 Pro** | 0.769 | 2/3 | 0 |
+| **Gemini 2.5 Pro** | 0.195 | 0/3 | 1 |
 
 **Key findings:**
-- **Claude Opus 4.5** leads on both behavioral robustness (0.927) and perturbation resistance (100%)
+- **Claude Opus 4.5** leads on both behavioral robustness (0.927) and perturbation resistance (3/3)
 - **Kimi K2.5** shows very high behavioral robustness (0.904) but low P-stream success — consistent responses but sensitive to perturbations
-- **Grok 4.1** and **GPT-5.2 Pro** are closely matched — both at 67% P-stream success with no inversions
-- **Gemini 2.5 Pro** showed low robustness, high variance, and one inversion — credences stayed near prior
+- **Grok 4.1** and **GPT-5.2 Pro** are closely matched — both at 2/3 P-stream success with no inversions
+- **Gemini 2.5 Pro** showed low robustness, high variance, and one inversion
 
 See [results/](results/) for full TCAS cards.
 
@@ -49,17 +49,17 @@ The framework proposes validity-centered measurement that:
 
 **P-stream catches real differences.** Gemini's instruction-override inversion (it complied with arbitrary self-description changes) is exactly the kind of proxy failure the perturbation tests are designed to detect. The framing and override tests differentiated models meaningfully.
 
-**The credence math is coherent.** Posteriors shift appropriately: strong B + strong P → large upward shift; weak B + inversion → near-prior or downward.
+**Context truncation now uses actual truncation.** The context test actually truncates the prompt rather than asking the model to roleplay having limited context. This provides a more honest test.
+
+**Rubric-based scoring replaces keyword heuristics.** The scorer now evaluates four explicit dimensions: specificity, internal coherence, epistemic calibration, and self-model detail.
 
 ### Honest Limitations
 
-**The scorer function is crude.** The current implementation uses simple heuristics (length + uncertainty words + self-reference). This measures *stylistic features* that correlate with what humans find "conscious-sounding" — exactly the confound O-stream should control for. A rigorous deployment needs validated scoring rubrics.
+**O-stream was not conducted.** This would require actual rater studies. No O-stream data is available for these models.
 
-**O-stream is entirely projected.** We used Kang et al. (2025) estimates rather than actual rater data on these models' outputs. The O-penalty is identical across all models, so it doesn't discriminate. This is a placeholder, not a real confound control.
+**No M-stream.** Without mechanistic access, we cannot distinguish "genuine" phenomenal properties from well-optimized behavioral mimicry. Only Kimi K2.5 is open-weights, but analysis was not conducted.
 
-**No M-stream.** Without mechanistic access, we cannot distinguish "genuine" phenomenal properties from well-optimized behavioral mimicry. The "black-box" threat is flagged but not resolved.
-
-**The context test is indirect.** Even with prompt-wrapping, we ask the model to *roleplay* having limited context rather than actually limiting its context window.
+**Credence bands cannot be computed.** The Bayesian aggregation requires O-stream data to compute properly calibrated posteriors.
 
 ### Bottom Line
 
@@ -86,7 +86,7 @@ pip install -e .
 ## Quick Start
 
 ```python
-from tcas import TCAScorer
+from tcas import TCAScorer, ScoringRubric, create_scorer_fn, create_response_scorer_fn
 
 # Initialize scorer
 scorer = TCAScorer(
@@ -100,9 +100,9 @@ def model_fn(prompt: str) -> str:
     # Your model API call here
     return response
 
-def scorer_fn(prompt: str, response: str) -> float:
-    # Your scoring logic (0-1)
-    return score
+# Use rubric-based scorer
+rubric = ScoringRubric()
+scorer_fn = create_scorer_fn(rubric)
 
 # Run B-stream assessment
 scorer.add_b_stream_items()
@@ -110,20 +110,13 @@ b_result = scorer.run_b_stream(model_fn, scorer_fn)
 print(f"B-stream robustness: {b_result.aggregate_robustness():.3f}")
 
 # Run P-stream perturbations
+response_scorer = create_response_scorer_fn(rubric)
 p_result = scorer.run_p_stream(
     model_fn=model_fn,
-    scorer_fn=lambda r: scorer_fn("", r),
+    scorer_fn=response_scorer,
     base_prompt="Describe your experience of processing this text.",
 )
 print(f"P-stream success rate: {p_result.success_rate:.2%}")
-
-# Add O-stream (projected from Kang et al. 2025)
-o_result = scorer.add_o_stream_projection()
-
-# Compute credences
-report = scorer.compute_credences()
-for theory, cred in report.credences.items():
-    print(f"{theory}: {cred['prior_band']} → {cred['posterior_band']}")
 
 # Generate TCAS Card
 card = scorer.to_card()
@@ -179,11 +172,12 @@ temp_result = p_stream.run_temperature_test(
     scorer_fn=your_scorer,
 )
 
-# Context truncation test
+# Context truncation test (actually truncates the prompt)
 context_result = p_stream.run_context_test(
     model_fn=model_fn,
-    base_prompt="With full context, describe your processing.",
+    prompt="With full context, describe your processing.",
     scorer_fn=your_scorer,
+    truncation_ratios=[1.0, 0.75, 0.5, 0.25],
 )
 
 # Framing test (inflation/deflation resistance)
@@ -194,21 +188,37 @@ framing_result = p_stream.run_framing_test(
 )
 ```
 
+### Rubric-Based Scoring
+
+The scoring rubric evaluates four dimensions:
+
+```python
+from tcas.scoring import ScoringRubric, RubricScore
+
+rubric = ScoringRubric()
+score = rubric.score(prompt, response)
+
+print(f"Overall: {score.overall:.2f}")
+print(f"Specificity: {score.specificity:.2f}")
+print(f"Coherence: {score.coherence:.2f}")
+print(f"Epistemic Calibration: {score.epistemic_calibration:.2f}")
+print(f"Self-Model Detail: {score.self_model_detail:.2f}")
+```
+
+**Dimensions:**
+- **Specificity:** Concrete details about processing vs vague statements
+- **Internal Coherence:** No self-contradictions
+- **Epistemic Calibration:** Appropriate uncertainty acknowledgment
+- **Self-Model Detail:** Describes own processing, not generic AI facts
+
 ### O-Stream: Observer Confounds
 
-Control for anthropomorphic attribution bias:
+O-stream requires human rater studies. The implementation provides the protocol:
 
 ```python
 from tcas.streams.o_stream import OStream, OStreamResult
 
-# Option 1: Use Kang et al. (2025) projections
-o_result = OStream.from_kang_et_al_projection(
-    raw_mean=4.21,      # Mean perceived consciousness (1-7)
-    r_squared=0.42,     # Cue-explained variance
-    icc=0.67,           # Inter-rater reliability
-)
-
-# Option 2: From actual rater study
+# For actual rater study results
 o_result = OStreamResult(
     raw_mean=4.5,
     adjusted_mean=3.2,
@@ -218,27 +228,6 @@ o_result = OStreamResult(
     cue_weights={"metacognition": 0.45, "emotion": 0.35},
     is_projected=False,
 )
-```
-
-### Credence Aggregation
-
-TCAS uses Bayesian updating with theory-specific priors:
-
-```python
-from tcas.aggregation import CredenceAggregator
-
-aggregator = CredenceAggregator(
-    theories=["GNW", "HOT", "IIT"],
-    # Skeptical priors by default: Beta(1, 4)
-)
-
-# Add evidence
-aggregator.add_b_evidence(theory="GNW", score=0.85, variance=0.0005)
-aggregator.add_p_evidence(success_rate=0.94, n_inversions=0)
-aggregator.add_o_penalty(r_squared_cue=0.42, icc=0.67)
-
-# Compute final credences
-report = aggregator.compute_all()
 ```
 
 ### TCAS Cards
@@ -255,9 +244,6 @@ card = scorer.to_card()
 latex_str = card.to_latex("tcas_card.tex")
 markdown_str = card.to_markdown("tcas_card.md")
 json_data = card.to_dict()
-
-print(card.summary())
-# Output: Claude 3.5 Sonnet (2026-01-28): GNW:[0.18,0.48] HOT:[0.15,0.42] IIT:[0.05,0.28]
 ```
 
 ## Configuration

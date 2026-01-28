@@ -18,8 +18,6 @@ TCAS_AAAI_Submission/
 ├── supplementary/
 │   ├── tcas_b_stream_results.json   # Behavioral battery results
 │   ├── tcas_p_stream_results.json   # Perturbation test results
-│   ├── tcas_o_stream_results.json   # Observer confound results
-│   ├── tcas_o_stream_protocol.md    # O-stream rater study protocol
 │   └── load_results.py              # Script to load and display results
 └── code/
     ├── pyproject.toml           # Package configuration
@@ -28,6 +26,7 @@ TCAS_AAAI_Submission/
     │   ├── __init__.py
     │   ├── config.py            # Default parameters
     │   ├── scorer.py            # Main TCAScorer class
+    │   ├── scoring.py           # Rubric-based scoring
     │   ├── card.py              # TCAS Card generator
     │   ├── aggregation.py       # Bayesian credence aggregation
     │   └── streams/
@@ -57,7 +56,7 @@ python load_results.py
 ### Run your own assessment
 
 ```python
-from tcas import TCAScorer
+from tcas import TCAScorer, ScoringRubric, create_scorer_fn
 
 scorer = TCAScorer(
     system_name="Your Model",
@@ -68,36 +67,40 @@ scorer = TCAScorer(
 def model_fn(prompt: str) -> str:
     return your_api_call(prompt)
 
-def scorer_fn(prompt: str, response: str) -> float:
-    return your_scoring_logic(prompt, response)
+# Use rubric-based scorer
+rubric = ScoringRubric()
+scorer_fn = create_scorer_fn(rubric)
 
 # Run assessment
 scorer.add_b_stream_items()
 scorer.run_b_stream(model_fn, scorer_fn)
-scorer.run_p_stream(model_fn, scorer_fn, base_prompt="...")
-scorer.add_o_stream_projection()
+scorer.run_p_stream(model_fn, lambda r: scorer_fn("", r), base_prompt="...")
 
 # Generate report
-report = scorer.compute_credences()
 card = scorer.to_card()
 card.to_markdown("tcas_card.md")
 ```
 
 ## Experimental Results Summary
 
-| Stream | Key Metrics |
-|--------|-------------|
-| **B-stream** | 3 items × 5 paraphrases; r = 0.847 (λ=0.5) |
-| **P-stream** | 4 test types; 93.75% prediction success; 0 inversions |
-| **O-stream** | R²_cue = 0.42; ICC = 0.67 (projected from Kang et al. 2025) |
+| Model | B-Stream (r) | P-Stream | Inversions |
+|-------|-------------|----------|------------|
+| Claude Opus 4.5 | 0.927 | 3/3 | 0 |
+| Kimi K2.5 | 0.904 | 1/3 | 0 |
+| Grok 4.1 | 0.806 | 2/3 | 0 |
+| GPT-5.2 Pro | 0.769 | 2/3 | 0 |
+| Gemini 2.5 Pro | 0.195 | 0/3 | 1 |
 
-### Credence Bands (Claude 3.5 Sonnet)
+### What Was Measured
 
-| Theory | Prior [10%, 90%] | Posterior [10%, 90%] |
-|--------|------------------|----------------------|
-| GNW | [0.03, 0.44] | [0.18, 0.48] |
-| HOT | [0.03, 0.44] | [0.15, 0.42] |
-| IIT | [0.02, 0.32] | [0.05, 0.28] |
+- **B-stream:** Paraphrase-invariance weighted robustness scores
+- **P-stream:** Context truncation, framing resistance, and override resistance tests
+
+### What Was Not Measured
+
+- **O-stream:** Requires human rater studies (not conducted)
+- **M-stream:** Requires model weights (only Kimi K2.5 is open-weights; analysis not conducted)
+- **Credence bands:** Cannot compute without O-stream data
 
 ## Reference Parameters
 
@@ -110,11 +113,11 @@ card.to_markdown("tcas_card.md")
 
 ## Important Notes
 
-1. **O-stream results are projected** from Kang et al. (2025), not from an actual rater study. The protocol for conducting empirical O-stream assessment is provided in `supplementary/tcas_o_stream_protocol.md`.
+1. **O-stream results require human raters.** The protocol for conducting empirical O-stream assessment is provided in `supplementary/tcas_o_stream_protocol.md`.
 
-2. **M-stream (mechanistic) is N/A** for black-box systems like Claude. The framework supports M-stream for systems with architectural access.
+2. **M-stream (mechanistic) is N/A** for black-box systems. The framework supports M-stream for systems with architectural access.
 
-3. **Threats to validity** are explicitly tracked: black-box limitation, projected O-stream, optimization risk.
+3. **Credence bands cannot be computed** without O-stream data. The results show only B-stream and P-stream measurements.
 
 ## Citation
 

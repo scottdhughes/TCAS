@@ -33,11 +33,17 @@ from tcas.streams.p_stream import PStream, Perturbation, PStreamResult
 from tcas.streams.o_stream import OStream, OStreamResult
 from tcas.aggregation import CredenceReport, TheoryCredence
 from tcas.config import TCAConfig, DEFAULT_CONFIG
+from tcas.scoring import ScoringRubric, RubricScore, create_scorer_fn, create_response_scorer_fn
 
 __all__ = [
     # Main classes
     "TCAScorer",
     "TCACard",
+    # Scoring
+    "ScoringRubric",
+    "RubricScore",
+    "create_scorer_fn",
+    "create_response_scorer_fn",
     # Stream classes
     "BStream",
     "BStreamItem",

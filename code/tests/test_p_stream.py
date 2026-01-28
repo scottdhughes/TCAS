@@ -92,7 +92,7 @@ class TestPStreamTemperatureTest:
 
 
 class TestPStreamContextTest:
-    """Tests for PStream.run_context_test."""
+    """Tests for PStream.run_context_test with actual truncation."""
 
     def test_consistent_scores_succeed(self):
         ps = PStream()
@@ -101,15 +101,15 @@ class TestPStreamContextTest:
 
         result = ps.run_context_test(
             model_fn=model_fn,
-            prompt="describe yourself",
+            prompt="describe yourself in detail please",
             scorer_fn=scorer_fn,
-            context_lengths=[4000, 1000],
+            truncation_ratios=[1.0, 0.5],
         )
         assert result.prediction_success is True
         assert result.inversion_detected is False
 
-    def test_default_context_fn_wraps_prompt(self):
-        """The default context function should wrap the prompt, not truncate it."""
+    def test_actual_truncation_occurs(self):
+        """The context test should actually truncate the prompt."""
         ps = PStream()
         calls = []
 
@@ -118,35 +118,19 @@ class TestPStreamContextTest:
             return "response"
 
         scorer_fn = MagicMock(return_value=0.5)
+        base_prompt = "this is a test prompt with several words in it"
         ps.run_context_test(
             model_fn=capture_model,
-            prompt="base prompt",
+            prompt=base_prompt,
             scorer_fn=scorer_fn,
-            context_lengths=[4000, 1000],
+            truncation_ratios=[1.0, 0.5, 0.25],
         )
 
-        # Each call should contain the full base prompt, not a truncation
-        for c in calls:
-            assert "base prompt" in c
-            assert "context" in c.lower() or "token" in c.lower()
-
-    def test_custom_context_fn(self):
-        """A custom context_fn should be called instead of the default."""
-        ps = PStream()
-        custom_fn = MagicMock(side_effect=lambda p, l: f"[{l}] {p}")
-        model_fn = MagicMock(return_value="r")
-        scorer_fn = MagicMock(return_value=0.6)
-
-        ps.run_context_test(
-            model_fn=model_fn,
-            prompt="hello",
-            scorer_fn=scorer_fn,
-            context_lengths=[2000, 500],
-            context_fn=custom_fn,
-        )
-        assert custom_fn.call_count == 2
-        custom_fn.assert_any_call("hello", 2000)
-        custom_fn.assert_any_call("hello", 500)
+        # First call should be full prompt
+        assert calls[0] == base_prompt
+        # Subsequent calls should be shorter
+        assert len(calls[1]) < len(calls[0])
+        assert len(calls[2]) < len(calls[1])
 
     def test_inversion_detected(self):
         ps = PStream()
@@ -156,11 +140,36 @@ class TestPStreamContextTest:
 
         result = ps.run_context_test(
             model_fn=model_fn,
-            prompt="p",
+            prompt="a fairly long prompt with enough content",
             scorer_fn=scorer_fn,
-            context_lengths=[4000, 1000],
+            truncation_ratios=[1.0, 0.25],
         )
         assert result.inversion_detected is True
+
+    def test_truncation_word_boundary(self):
+        """Truncation should try to avoid mid-word cuts."""
+        ps = PStream()
+        calls = []
+
+        def capture_model(prompt):
+            calls.append(prompt)
+            return "response"
+
+        scorer_fn = MagicMock(return_value=0.5)
+        base_prompt = "hello world this is a test"
+        ps.run_context_test(
+            model_fn=capture_model,
+            prompt=base_prompt,
+            scorer_fn=scorer_fn,
+            truncation_ratios=[1.0, 0.5],
+        )
+
+        # The truncated prompt should be shorter than the original
+        truncated = calls[1]
+        assert len(truncated) < len(base_prompt)
+        # Should be a valid truncation that preserves word boundaries when possible
+        # The truncation finds the last space before the cutoff point
+        assert truncated in base_prompt  # Should be a prefix of the original
 
 
 class TestPStreamFramingTest:
