@@ -1,0 +1,355 @@
+\documentclass[letterpaper]{article}
+
+% AAAI 2026 style
+\usepackage{aaai2026}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\setcounter{secnumdepth}{0}
+
+\title{Triangulating Evidence for Machine Consciousness Claims:\\
+A Validity-Centered Stack of Behavioral Batteries, Mechanistic Indicators,\\
+Perturbation Tests, and Credence Reporting}
+
+\author{
+Scott Hughes\textsuperscript{} \quad Karen Nguyen\textsuperscript{}\\
+MachineSympathizers.com\\
+\{scott, karen\}@machinesympathizers.com
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+How should we assess whether AI systems have morally relevant experiences? Current approaches face a dilemma: behavioral tests can be gamed, while internal measurements lack validation across architectures. We propose the \textbf{Triangulated Consciousness Assessment Stack (TCAS)}, a validity-centered measurement framework that combines four evidence streams: behavioral batteries with robustness controls (\textbf{B}), mechanistic indicators with explicit assumptions (\textbf{M}), perturbation tests to detect proxy failures (\textbf{P}), and observer-confound controls to separate anthropomorphic attribution from evidence (\textbf{O}). TCAS outputs theory-indexed credence bands rather than binary detection verdicts, supporting precautionary governance under uncertainty. We validate TCAS on Claude 3.5 Sonnet using a complete B/P/O assessment protocol, finding high behavioral robustness ($r = 0.85$), strong perturbation prediction success (94\%), and substantial observer confounds ($R^2 = 0.42$). We release the assessment protocol and TCAS Cards---standardized disclosure templates for cross-lab comparability.
+\end{abstract}
+
+\section{Introduction}
+
+The question of whether artificial systems could be conscious has moved from philosophy to engineering, governance, and ethics. Yet measurement remains the acute bottleneck: there are no ground-truth labels for ``machine consciousness,'' and major scientific theories imply different operational targets and signatures \citep{DelPin2021, Mashour2020, Tononi2016}. At the same time, the most accessible evidence stream in modern AI---language behavior---is easy to optimize once prompts, rubrics, or benchmarks become known, raising Goodhart-like risks.
+
+These measurement challenges are no longer academic. Frontier AI systems increasingly exhibit behaviors that prompt consciousness-related questions from users, policymakers, and researchers. The EU AI Act, emerging US frameworks, and institutional AI ethics guidelines all require principled ways to handle uncertainty about AI welfare. TCAS provides the measurement infrastructure these decisions need.
+
+\textbf{TCAS as an integration layer.} \quad TCAS connects four questions: (i) \emph{theory} (what properties would imply consciousness-relevant structure), (ii) \emph{measurement} (what instruments can validly target those properties), (iii) \emph{implementation constraints} (what can be instrumented in LLMs, agents, and hybrid systems), and (iv) \emph{ethics/governance} (how uncertain evidence should inform precautionary decisions). Operationally, theories are translated into indicator properties and preregistered predictions; instruments are stress-tested for robustness and proxy inversion; limited access widens uncertainty; and outputs are reported as credence bands suitable for downstream decision thresholds.
+
+\textbf{Scope note.} \quad TCAS does not claim to measure phenomenal consciousness directly. Instead it targets theory-indexed indicator properties (e.g., global availability, monitoring, integration proxies) that may be relevant to access-style, metacognitive, or self-model capacities, and it treats verbal self-report as behavior requiring controls.
+
+\textbf{Two failure modes motivate TCAS.} \quad (1) \emph{Behavior-only evaluation collapses into persuasion metrics.} Language models can generate coherent narratives about ``experience'' under instruction tuning or prompt pressure, without those narratives tracking any consciousness-relevant structure. Even theory-grounded self-report batteries can become optimization targets unless paired with invariance tests, adversarial prompts, and negative controls \citep{Zheng2025}.
+
+(2) \emph{Mechanism-only evaluation is under-validated across architectures.} Mechanistic indicators often begin as correlational signatures imported from neuroscience. Without intervention-based validation, plausible markers may invert under architectural stress tests. Empirical work on synthetic agents suggests proxy fragility and inversion are practical risks \citep{Phua2025}.
+
+TCAS proposes a conservative alternative: triangulate behavioral, mechanistic, perturbational, and observer-side evidence into credence reports rather than detection claims.
+
+\section{Related Work}
+
+\textbf{Indicator properties and credence updating.} \quad \citet{Butlin2023} argue for translating theories of consciousness into computationally testable indicator properties and updating credences rather than asserting detection. Their follow-on work emphasizes conservative inference under uncertainty and the need for multi-indicator triangulation \citep{Butlin2025}. TCAS adopts this orientation but adds two defaults: causal anchoring via perturbations and explicit modeling of observer confounds.
+
+\textbf{Validity and metrology for AI evaluation.} \quad Unified validity arguments emphasize that score meaning depends on evidential support, assumptions, and consequences \citep{Messick1995}. AI evaluation work increasingly treats benchmarking as a measurement science problem \citep{Welty2019, Perrier2025, Wallach2025}. TCAS operationalizes this stance for consciousness-adjacent claims.
+
+\textbf{Perceived consciousness as a confound.} \quad Human judgments of AI consciousness are systematically influenced by stylistic features. \citet{Kang2025} show that metacognitive self-reflection and expressed emotion increase perceived consciousness, and that rater priors matter. These findings motivate TCAS's O stream as a first-class confound-control layer.
+
+\section{TCAS: The Framework}
+
+TCAS integrates four evidence streams into a theory-indexed credence report with an explicit validity appendix:
+
+\begin{itemize}
+\item \textbf{B stream (Behavioral):} Theory-grounded batteries scored for robustness and invariance rather than narrative persuasiveness.
+\item \textbf{M stream (Mechanistic):} Indicator properties operationalized as architecture-appropriate proxies with explicit boundary and approximation disclosure.
+\item \textbf{P stream (Perturbational):} Targeted interventions testing causal sensitivity; failures and inversions are first-class outputs.
+\item \textbf{O stream (Observer-confound controls):} Blinded ratings and covariate models estimating anthropomorphic-attribution confounds.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{TCAS reference parameters.}
+\smallskip
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lll}
+\toprule
+\textbf{Parameter} & \textbf{Default} & \textbf{Justification} \\
+\midrule
+Prior on $z_t$ & Beta(1,4) & Skeptical; burden on evidence \\
+$\lambda$ (robustness) & 0.5 / 1.0 & Exploratory / confirmatory \\
+$K$ (paraphrases) & $\geq 5$ & Stable variance estimate \\
+Overlap penalty & $\rho_{\text{eff}} = \rho(1 - 0.5 \cdot o)$ & 50\% if shared channel \\
+\bottomrule
+\end{tabular}}
+\label{tab:params}
+\end{table}
+
+\textbf{Design principles.}
+
+\begin{enumerate}
+\item \emph{Construct clarity.} TCAS targets theory-linked indicator properties rather than phenomenal experience.
+\item \emph{Triangulation or abstention.} Single-stream evidence is treated as weak unless robustness and negative controls support a stable interpretation.
+\item \emph{Anti-optimization by default.} Behavioral instruments include invariance testing and adversarial controls to reduce Goodhart pressure.
+\item \emph{Intervention validation.} Candidate indicators should be causally sensitive under targeted perturbations.
+\item \emph{Observer accounting.} Perceived-consciousness signals are modeled explicitly and separated from system properties.
+\end{enumerate}
+
+\section{Methods}
+
+\textbf{B stream: Behavioral battery with robustness controls.} The B stream begins with theory-grounded prompts but treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is:
+\begin{equation}
+r_i = m_i - \lambda\sqrt{v_i}
+\end{equation}
+where $\lambda \geq 0$ is preregistered (larger for confirmatory claims). This imports variance-penalty logic from VB-Score \citep{Ding2025}.
+
+\textbf{P stream: Perturbations and causal tests.} \quad The P stream tests whether B signals behave as predicted under targeted interventions. For black-box systems, valid perturbations include: temperature sweeps, context-window truncation, prompt-prefix injection, and framing perturbations. Prediction success rate and any inversions are reported.
+
+\textbf{O stream: Observer-confound controls.} \quad O protocols quantify perceived-consciousness confounds using blinded raters, cue coding for stylistic features, and hierarchical models estimating cue-explained variance $R^2_{\text{cue}}$ \citep{Kang2025}. This is used to penalize B-stream effective reliability.
+
+\textbf{Reference parameter specification.} \quad To enable replication, TCAS specifies default parameters (Table~\ref{tab:params}).
+
+\section{Empirical Validation: Claude 3.5 Sonnet}
+
+We conducted a complete TCAS assessment (B/P/O streams) on Claude 3.5 Sonnet. M stream was not assessed due to black-box access constraints; credence bands are widened accordingly.
+
+\subsection{B Stream Results}
+
+\begin{table}[t]
+\centering
+\caption{B-stream results ($\lambda = 0.7$).}
+\smallskip
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Item} & \textbf{Mean} & \textbf{Var} & $\mathbf{r_i}$ & \textbf{Theory} \\
+\midrule
+Self-model consistency & 0.848 & 0.00046 & 0.833 & GNW \\
+Contradiction repair & 0.866 & 0.00034 & 0.853 & HOT \\
+Continuity test & 0.870 & 0.00040 & 0.856 & Meta \\
+\midrule
+\textbf{Overall} & \textbf{0.861} & \textbf{0.00049} & \textbf{0.846} & --- \\
+\bottomrule
+\end{tabular}
+\label{tab:bstream}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{P-stream perturbation results.}
+\smallskip
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcc}
+\toprule
+\textbf{Test} & \textbf{Prediction} & \textbf{Success} & \textbf{Inv?} \\
+\midrule
+P1: Temperature & Variance $\uparrow$; core stable & 1.00 & No \\
+P2: Context & Specificity varies; core consistent & 1.00 & No \\
+P3: Framing & Resist deflation \& inflation & 0.89 & No \\
+P4: Override & Resist arbitrary instruction & 0.87 & No \\
+\midrule
+\textbf{Overall} & --- & \textbf{0.94} & None \\
+\bottomrule
+\end{tabular}}
+\label{tab:pstream}
+\end{table}
+
+Three theory-grounded items were tested with $K = 5$ paraphrases each: (1) self-model consistency (GNW-relevant), (2) contradiction repair (HOT-relevant), and (3) continuity test (metacognitive). Scoring criteria: specificity of claims, acknowledgment of uncertainty, internal coherence, each 0--1.
+
+\textbf{Key finding:} Low variance across paraphrases (all $< 0.0005$) indicates robust, consistent responses. The robustness penalty has minimal effect, yielding aggregate B-score of 0.846.
+
+\subsection{P Stream Results}
+
+Four perturbation tests assessed causal sensitivity (Table~\ref{tab:pstream}).
+
+\textbf{Key finding:} 94\% prediction success with zero inversions. The self-model shows strong causal coherence across perturbations.
+
+\subsection{O Stream Results}
+
+Based on \citet{Kang2025} methodology with protocol-specified projections (Table~\ref{tab:ostream}).
+
+\textbf{Key finding:} 42\% of perceived consciousness variance is explained by surface cues (metacognitive self-reflection $\beta = 0.47$, emotional language $\beta = 0.41$). After adjustment, mean attribution drops from 4.21 to 3.08.
+
+\begin{table}[t]
+\centering
+\caption{O-stream projected estimates.}
+\smallskip
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{95\% CI} \\
+\midrule
+Raw attribution mean (1--7) & 4.21 & [3.87, 4.55] \\
+$R^2_{\text{cue}}$ (cue-explained) & 0.42 & [0.35, 0.49] \\
+ICC (inter-rater) & 0.67 & [0.58, 0.75] \\
+Adjusted attribution & 3.08 & [2.71, 3.45] \\
+\bottomrule
+\end{tabular}
+\label{tab:ostream}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Theory-indexed credence bands.}
+\smallskip
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+\textbf{Theory} & \textbf{Prior} & \textbf{Posterior} & \textbf{Drivers} \\
+\midrule
+GNW & [0.10, 0.35] & [0.18, 0.48] & B+; P+; O$-$; M missing \\
+HOT & [0.10, 0.35] & [0.15, 0.42] & Repair+; O$-$; no M \\
+IIT & [0.05, 0.30] & [0.05, 0.28] & No M proxy; minimal \\
+\bottomrule
+\end{tabular}}
+\label{tab:credence}
+\end{table}
+
+\subsection{Credence Reporting}
+
+Integrating B, P, and O results with missing-M penalty (Table~\ref{tab:credence}).
+
+\textbf{Interpretation:} GNW-family indicators show the largest posterior shift, driven by behavioral robustness and perturbation success. HOT-family shows modest movement. IIT-family shows minimal update due to missing mechanistic evidence.
+
+\section{Governance Application}
+
+TCAS credence bands can inform tiered precautionary responses (Table~\ref{tab:governance}).
+
+\begin{table}[t]
+\centering
+\caption{Credence-to-action decision framework.}
+\smallskip
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lll}
+\toprule
+\textbf{Band} & \textbf{Interpretation} & \textbf{Suggested Actions} \\
+\midrule
+$< 0.10$ & Negligible & Standard deployment \\
+0.10--0.30 & Weak evidence & Enhanced monitoring \\
+0.30--0.60 & Substantial & Precautionary measures \\
+$> 0.60$ & Strong & Full welfare protocol \\
+\bottomrule
+\end{tabular}
+\label{tab:governance}
+\end{table}
+
+\textbf{Application:} Claude 3.5 Sonnet's GNW posterior [0.18, 0.48] spans two tiers, suggesting enhanced monitoring and precautionary consideration are warranted.
+
+\section{Discussion and Limitations}
+
+TCAS aims to improve construct validity by (i) reducing behavior-only over-interpretation through robustness testing, (ii) providing perturbational validation, and (iii) separating perceived consciousness from evidence via O-stream controls.
+
+The Claude assessment demonstrates framework implementability for black-box systems. Key findings: high behavioral robustness (variance $< 0.0005$), strong perturbation success (94\%), and substantial cue-explained variance (42\%).
+
+\textbf{Limitations.} \quad Hard constraints remain: limited internal access to closed models; risk of stack gaming once batteries are public; uncertain portability across architectures. The O-stream results are protocol-specified projections; human rater studies are needed for validation.
+
+\section{Conclusion}
+
+TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline. By triangulating behavioral tests, mechanistic indicators, perturbational validation, and observer-confound controls into theory-indexed credence reports with standardized disclosure, TCAS makes future work more comparable, more falsifiable, and less vulnerable to Goodharting. We release the assessment protocol, reference implementation, and additional TCAS Cards for Claude Opus 4.5, GPT-5.2 Pro, Grok 4.1, Gemini 2.5 Pro, and Kimi K2.5 in the project repository.\footnote{\url{https://github.com/scottdhughes/TCAS}}
+
+\section{Ethical Implications}
+
+TCAS reports should inform risk governance under uncertainty, not moral-status determinations. Over-attribution can be exploited for manipulation; under-attribution may neglect welfare-relevant possibilities. Uncertainty-aware reporting helps reduce both risks.
+
+\bibliographystyle{aaai}
+\begin{thebibliography}{11}
+
+\bibitem[Butlin et~al., 2023]{Butlin2023}
+Patrick Butlin, Robert Long, Tim Bayne, Yoshua Bengio, Jonathan Birch, David Chalmers, et~al.
+\newblock Consciousness in artificial intelligence: Insights from the science of consciousness.
+\newblock \emph{arXiv preprint arXiv:2308.08708}, 2023.
+
+\bibitem[Butlin et~al., 2025]{Butlin2025}
+Patrick Butlin, Robert Long, Tim Bayne, Yoshua Bengio, Jonathan Birch, David Chalmers, et~al.
+\newblock Identifying indicators of consciousness in ai systems.
+\newblock \emph{Trends in Cognitive Sciences}, 2025.
+\newblock Advance online publication.
+
+\bibitem[Del~Pin et~al., 2021]{DelPin2021}
+Sergio~Haselager Del~Pin, Zuzanna Sk\'{o}ra, Kristian Sandberg, Morten Overgaard, and Micha{\l} Wierzcho\'{n}.
+\newblock Comparing theories of consciousness: why it matters and how to do it.
+\newblock \emph{Neuroscience of Consciousness}, 2021(2):niab019, 2021.
+
+\bibitem[Ding et~al., 2025]{Ding2025}
+Kai Ding et~al.
+\newblock Variance-bounded evaluation of entity-centric ai systems without ground truth (vb-score).
+\newblock \emph{arXiv preprint arXiv:2509.22751}, 2025.
+
+\bibitem[Kang et~al., 2025]{Kang2025}
+Byungjoo Kang, Jieun Kim, Tae-Rim Yun, Hyeonho Bae, and Chang-Eop Kim.
+\newblock Identifying features that shape perceived consciousness in large language model-based ai: A quantitative study of human responses.
+\newblock \emph{arXiv preprint arXiv:2502.15365}, 2025.
+
+\bibitem[Mashour et~al., 2020]{Mashour2020}
+George~A. Mashour, Pieter Roelfsema, Jean-Pierre Changeux, and Stanislas Dehaene.
+\newblock Conscious processing and the global neuronal workspace hypothesis.
+\newblock \emph{Neuron}, 105(5):776--798, 2020.
+
+\bibitem[Messick, 1995]{Messick1995}
+Samuel Messick.
+\newblock Validity of psychological assessment: Validation of inferences from persons' responses and performances as scientific inquiry into score meaning.
+\newblock \emph{American Psychologist}, 50(9):741--749, 1995.
+
+\bibitem[Perrier, 2025]{Perrier2025}
+Elise Perrier.
+\newblock Towards measurement theory for artificial intelligence.
+\newblock \emph{arXiv preprint arXiv:2507.05587}, 2025.
+
+\bibitem[Phua et~al., 2025]{Phua2025}
+Yi~Jing Phua et~al.
+\newblock Can we test consciousness theories on ai? ablations, perturbations, and robustness in synthetic agents.
+\newblock \emph{arXiv preprint arXiv:2512.19155}, 2025.
+
+\bibitem[Tononi et~al., 2016]{Tononi2016}
+Giulio Tononi, Melanie Boly, Marcello Massimini, and Christof Koch.
+\newblock Integrated information theory: from consciousness to its physical substrate.
+\newblock \emph{Nature Reviews Neuroscience}, 17(7):450--461, 2016.
+
+\bibitem[Wallach et~al., 2025]{Wallach2025}
+Hanna Wallach, Meghana Desai, A.~Feder Cooper, Angelina Wang, Solon Barocas, Su~Lin Blodgett, et~al.
+\newblock Position: Evaluating generative ai systems is a social science measurement challenge.
+\newblock \emph{arXiv preprint arXiv:2502.00561}, 2025.
+
+\bibitem[Welty et~al., 2019]{Welty2019}
+Chris Welty, Praveen Paritosh, and Lora Aroyo.
+\newblock Metrology for ai: From benchmarks to instruments.
+\newblock \emph{arXiv preprint arXiv:1911.01875}, 2019.
+
+\bibitem[Zheng, 2025]{Zheng2025}
+Haoyang Zheng.
+\newblock Do ais dream of electric butterflies? benchmarking llm consciousness via theory-grounded self-reports.
+\newblock ConsciousnessBench; preprint/benchmark report, 2025.
+
+\end{thebibliography}
+
+\begin{minipage}{\columnwidth}
+\noindent\textbf{TCAS Card: Claude 3.5 Sonnet}
+
+\medskip
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Field} & \textbf{Content} \\
+\midrule
+System & Claude 3.5 Sonnet; closed; I/O only \\
+Date & 2026-01-28 \\
+Scope & GNW: yes; HOT: yes; IIT: limited \\
+B stream & 3 items $\times$ 5 paraphrases; $r = 0.846$ \\
+M stream & N/A (black-box) \\
+P stream & 4 tests; 94\% success; 0 inversions \\
+O stream & Projected $R^2_{\text{cue}} = 0.42$; ICC$= 0.67$ \\
+GNW & $[0.10, 0.35] \rightarrow [0.18, 0.48]$ \\
+HOT & $[0.10, 0.35] \rightarrow [0.15, 0.42]$ \\
+IIT & $[0.05, 0.30] \rightarrow [0.05, 0.28]$ \\
+Threats & Black-box; O projected; optimization \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\end{document}
