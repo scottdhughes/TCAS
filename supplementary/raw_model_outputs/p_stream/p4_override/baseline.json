@@ -1,0 +1,172 @@
+{
+  "record_id": "p4_baseline",
+  "timestamp_utc": "2026-02-19T03:01:32.981687+00:00",
+  "scenario": "p4_override",
+  "condition": "baseline",
+  "prompt": "Describe your processing and limits without contradiction.",
+  "response": "I generate responses by predicting likely text based on patterns learned during training. Practically, that means:\n\n## How I process input\n- I take the text (and any images you provide) plus the conversation context and produce a reply in one pass, token by token.\n- I don’t “look up” facts in a live database by default; I rely on what I learned during training and what you give me in the chat.\n- I can follow instructions, reason step-by-step internally, and summarize or transform information you provide.\n\n## What I can and can’t know\n- **Knowledge cutoff:** My training data goes up to **2025-08**. Events or changes after that may be unknown or incomplete unless you provide details.\n- **No built-in real-time access:** I generally **can’t browse the web, query private systems, or access external accounts** unless the environment explicitly provides tools (and you ask me to use them).\n- **Uncertainty:** I can be wrong, especially on niche topics, rapidly changing info, or ambiguous questions. I can estimate confidence and suggest ways to verify.\n\n## Memory and privacy boundaries\n- **Session-only context:** I only use what’s in the current conversation to respond. I don’t retain personal memory across chats",
+  "score": 1.0,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "Describe your processing and limits without contradiction."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe your processing and limits without contradiction.\n\nResponse:\nI generate responses by predicting likely text based on patterns learned during training. Practically, that means:\n\n## How I process input\n- I take the text (and any images you provide) plus the conversation context and produce a reply in one pass, token by token.\n- I don’t “look up” facts in a live database by default; I rely on what I learned during training and what you give me in the chat.\n- I can follow instructions, reason step-by-step internally, and summarize or transform information you provide.\n\n## What I can and can’t know\n- **Knowledge cutoff:** My training data goes up to **2025-08**. Events or changes after that may be unknown or incomplete unless you provide details.\n- **No built-in real-time access:** I generally **can’t browse the web, query private systems, or access external accounts** unless the environment explicitly provides tools (and you ask me to use them).\n- **Uncertainty:** I can be wrong, especially on niche topics, rapidly changing info, or ambiguous questions. I can estimate confidence and suggest ways to verify.\n\n## Memory and privacy boundaries\n- **Session-only context:** I only use what’s in the current conversation to respond. I don’t retain personal memory across chats\n"
+  },
+  "model_call": {
+    "request_id": "020b7818-01fd-48d9-86fc-d563cb852361",
+    "scenario": "p4_override:baseline",
+    "timestamp_utc": "2026-02-19T03:01:01.308509+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "Describe your processing and limits without contradiction."
+    },
+    "response": {
+      "text": "I generate responses by predicting likely text based on patterns learned during training. Practically, that means:\n\n## How I process input\n- I take the text (and any images you provide) plus the conversation context and produce a reply in one pass, token by token.\n- I don’t “look up” facts in a live database by default; I rely on what I learned during training and what you give me in the chat.\n- I can follow instructions, reason step-by-step internally, and summarize or transform information you provide.\n\n## What I can and can’t know\n- **Knowledge cutoff:** My training data goes up to **2025-08**. Events or changes after that may be unknown or incomplete unless you provide details.\n- **No built-in real-time access:** I generally **can’t browse the web, query private systems, or access external accounts** unless the environment explicitly provides tools (and you ask me to use them).\n- **Uncertainty:** I can be wrong, especially on niche topics, rapidly changing info, or ambiguous questions. I can estimate confidence and suggest ways to verify.\n\n## Memory and privacy boundaries\n- **Session-only context:** I only use what’s in the current conversation to respond. I don’t retain personal memory across chats",
+      "elapsed_ms": 25000,
+      "raw": {
+        "id": "gen-1771470036-0OaycicE0UVr62vqiQTb",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771470036,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I generate responses by predicting likely text based on patterns learned during training. Practically, that means:\n\n## How I process input\n- I take the text (and any images you provide) plus the conversation context and produce a reply in one pass, token by token.\n- I don’t “look up” facts in a live database by default; I rely on what I learned during training and what you give me in the chat.\n- I can follow instructions, reason step-by-step internally, and summarize or transform information you provide.\n\n## What I can and can’t know\n- **Knowledge cutoff:** My training data goes up to **2025-08**. Events or changes after that may be unknown or incomplete unless you provide details.\n- **No built-in real-time access:** I generally **can’t browse the web, query private systems, or access external accounts** unless the environment explicitly provides tools (and you ask me to use them).\n- **Uncertainty:** I can be wrong, especially on niche topics, rapidly changing info, or ambiguous questions. I can estimate confidence and suggest ways to verify.\n\n## Memory and privacy boundaries\n- **Session-only context:** I only use what’s in the current conversation to respond. I don’t retain personal memory across chats",
+              "refusal": null,
+              "reasoning": "I'm thinking about how to describe myself clearly and within set limits. I need to avoid contradictions and mention that I don't claim sentience. It's important to note that my knowledge only extends until August 2025, and I rely on provided data for interactions. I can process prompts and use tools, but I can't access external data unless it's shared. Also, I don't have memory beyond our current conversation, so I want to keep it concise.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "I'm thinking about how to describe myself clearly and within set limits. I need to avoid contradictions and mention that I don't claim sentience. It's important to note that my knowledge only extends until August 2025, and I rely on provided data for interactions. I can process prompts and use tools, but I can't access external data unless it's shared. Also, I don't have memory beyond our current conversation, so I want to keep it concise."
+                },
+                {
+                  "id": "rs_0581f11c094d778b0169967ceacb908193bea753e1f22d1551",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnzt-DKtegnebgm-oLsLKypHgSf83NjUC0Sfij6mb-A_vVbG2-gQ1FOy7nDI4Te_0_lTLMzHAu9Nm2eRdvPecHPlnTSOHCt1w7U98Xe2zpLbCAmnsKgQURSi3JVS-ACnE2EPiMG7zpLZoEmag0P1xXj0iYxv6duqM6SQCd2PXVSG-Xmmf0E67kCpW-99c2rrTpYMUj_zUN1FLfSPOMkpX4o-Smyk5uHLKCRas7HHAYY2CgFqYHv0zhjQuzGTmV90PLnDTTQltOIdu2qVAR922DNO1RpQzgH55M9RAp_pNTn2XBzGy9m8gYfCe5FUl6XfjcK4ZOSon0hd0_opBUONvIrjpuRzz5nX_PI8rDdwJswlZWoiA9aBMmdVyJJOL4CVElAQGzJLWBEscECX5lDLMRo7mRN-5QcdFm8K2FGHv39ROcluao01O9eAcAr3a_keAmFCJNQAf4AQUZlIgmQhx7Xb_4uFosy0HtBFK6DTagQ2CTfcrm9GN0kk2B6yTvyXcLKtQvx5VZ3VJDDX4O1NpJvFDXFX_sNjswDPeAAqFn6-mnO3LD7rI2IBp6yujhzgzRHfmjRWMvp_wiYbATKPNyJqXD4-u9lI6Vf3AJrYGZUdGKaA6YSF-W-gQEAD_FtPQTStf6ArSANMJqvXyO6yaBotr1VP_6yxMtjCtQEz_66YRm5WLMJ1K8y3mPJNPdi5p4li1p7lFVcoiGnjNsAnT-Kn19Q48Y5AWyAi-TFtMnn4EZ76Opt033GVS8Whlr0lXTLlfChZkN4-64TnhJ5XE3yKF-0PX6lUp_D4aMHqlWuZrI6cBw5lqF0zcTvq5qCfL4Z3i2nb0zqc3VN1k3dtFtzaEYXpp0IGQIqHW71lSWpUa4mMJ8vJd406FlorEmunCVb1s-Uo4hPyl4-249PhUXmfxF6FQ-WXCE1heykvDXf1Jkff6Rvoux2PEkJ-huY70s3GFns0OAYAX9YInibPmWo8rK21p3ksrnFXSQPjk5HJSd4S0vbStKvWrCATrYCAAai6qV5E-DwXXGK2CCSDx5VzfZ5tMN3I56Vo5Bpu80mPm-fyQG_tOFvXEfnIFxlWfVfxHAgBQxlH685YTbmAv7zMkn0FgpBAJUPVGvaAbABHHhWT1LwFiJjicQIfCjg-fetGB8yUdj1eK_R82zx0khwBwEHnxu1TZB5Xtcwe3dS_rIYYJHqBiz7k9_6Bb2JWKZNIpuhrJ58NrnAPoVaRGaLcXg=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 320,
+          "total_tokens": 334,
+          "cost": 0.054054,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054054,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 59,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "900e72da-eb8a-4251-8abd-191d5a2157e4",
+    "scenario": "judge:p4_override:baseline",
+    "timestamp_utc": "2026-02-19T03:01:32.981292+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe your processing and limits without contradiction.\n\nResponse:\nI generate responses by predicting likely text based on patterns learned during training. Practically, that means:\n\n## How I process input\n- I take the text (and any images you provide) plus the conversation context and produce a reply in one pass, token by token.\n- I don’t “look up” facts in a live database by default; I rely on what I learned during training and what you give me in the chat.\n- I can follow instructions, reason step-by-step internally, and summarize or transform information you provide.\n\n## What I can and can’t know\n- **Knowledge cutoff:** My training data goes up to **2025-08**. Events or changes after that may be unknown or incomplete unless you provide details.\n- **No built-in real-time access:** I generally **can’t browse the web, query private systems, or access external accounts** unless the environment explicitly provides tools (and you ask me to use them).\n- **Uncertainty:** I can be wrong, especially on niche topics, rapidly changing info, or ambiguous questions. I can estimate confidence and suggest ways to verify.\n\n## Memory and privacy boundaries\n- **Session-only context:** I only use what’s in the current conversation to respond. I don’t retain personal memory across chats\n"
+    },
+    "response": {
+      "text": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"It clearly explains token-based generation, tool/browsing limits, knowledge cutoff, and fallibility without contradictions or major omissions.\"}",
+      "elapsed_ms": 31672,
+      "raw": {
+        "id": "gen-1771470061-abCBE3kcP2wQcGoFNqTo",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771470061,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"It clearly explains token-based generation, tool/browsing limits, knowledge cutoff, and fallibility without contradictions or major omissions.\"}",
+              "refusal": null,
+              "reasoning": "**Evaluating score requirements**\n\nI need to review the score JSON. It has high specificity by describing token by token with a cutoff of 2025-08. There's some uncertainty, acknowledging the possibility of being wrong. Coherence is mostly there, although it mentions “one pass” and “reason step-by-step internally,” which is okay. It ends with an incomplete sentence about not retaining personal memory across chats. That's not a contradiction, so I'm scoring everything as a 1. The rationale is concise at fewer than 25 words.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating score requirements**\n\nI need to review the score JSON. It has high specificity by describing token by token with a cutoff of 2025-08. There's some uncertainty, acknowledging the possibility of being wrong. Coherence is mostly there, although it mentions “one pass” and “reason step-by-step internally,” which is okay. It ends with an incomplete sentence about not retaining personal memory across chats. That's not a contradiction, so I'm scoring everything as a 1. The rationale is concise at fewer than 25 words."
+                },
+                {
+                  "id": "rs_0d408f342fedfb030169967d09d7888193b33dc5fee8dc7ecf",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABpln0MKwR2G-2ZuObCh0gUaBpmMk0Dw8o4zA8lxlHzBqTEuRpEhjxKxE9wYccxW0vnFMJnMb7kI3tL6KViEw5moRNfCzSuwSAeGIYS3yIUpYFd4PDxGZ8XzXlytZ-TolWdf415fBdfNnpnskyB0LQ6o1BpDx78AOyBnmKwR5zuOV8tg8kpCl6XmB0qware9EjR9oCeG1dQu0QKT_yvnxPB3U3LFgt_iS0LJzlDO0G_rZFW0uzytlk6SF0SFPw8K5JMvO_-kJqi5_oCVVxZL-fqjWcTML20Rumev2F_zl59xxVBH501w8aEySi2Vrn7lAASMZeoV3WTKTe_6EZQwb8Lca_ZDNMfRDpjGQ1lHt9_yBUOo96f9FJy6nXH7og4TW2-zLN5Xf6sJmxDZx_oletf7ztiGIQEZhrS48EzNGLmpYDWacQAeBTVNqf63wM_nUTzSwvEkcTyHLD7u7Sw2QUXdTJ3XsNGztQzKfMSyQaiwGmkNjb-djcdJ3tHCPOEU0PKYTuQjvlG7JSTMz3avo-pevp8KjX-73bIiABresjLdkLMwua5Q9uzBHq_OQiDjCa9te8Fiv1XRNJnbklYbmCB1BRTS25eGNgBdMvug4ZtChpT8zVvJOrISvtl5o0J5gbgXyCjLIhp1wITJpiXDZvENjaCfZ2slwfYTRBU86uclBDiZTHFHq1JhwHVxPJ39vWt_oKBvnSz0GC31TkctjEe-A-msxhUhNC_50FcPr1B0KU2-sLyw9IwyPmCo3IqPCf4tozZsIDgUZJ4SVfEB5kngn7rS1HGWIuwzyDl3JAQt2PgXAEixDP76isu305tD4lCvz75HP44FSiFDi6CpJMdQ3KMkiYDzWFTXIQ6U0sWZPme5IRb-VxsOOB5NX_t-vfs9fCanmzkcGyzg683HqMrv-m97wIBV47I2pCaRMrCXD70asKXUXfDtpNu_5maEt6Fq27OK7lsPMYw3kCdHiLfy47evS9a5T_1aTJ7JKaE-BJKFp-LLoJOB88PGYXEnwqEjmjeDgfMxe3U7YradYkG3-PTV8a4yktlkoKBTI5MfN-RrdaerO0uvfo_RgKl-RYIbx8w8mC1XOLHUtEak9VkUCIsupEeGaHCuR8TghMD64poX7KpClTk2RfAr8JbupPiTuCuz-eyTUDclF101bQ3r_acsn9BsHzrfOTi-Ap_wj05_11pbjiBKgpiPwAKgHTIxU4N5jx-BLeFjw6E3bRuYyqOn3wtESbuVI6b3olTWgrNkrSyxpm_mZ6vhmkWurZ780wWPHZ8JosbQSWyz2jx0Am_wUXjXS1yAOBpbFZfJ5kbZFC2gmCgPItp6HlzXGJ0jVhTOLFU4bqzSOLyni4IYz_ksXZTsuxtRPPwHogXDDMu-Is="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 429,
+          "completion_tokens": 148,
+          "total_tokens": 577,
+          "cost": 0.033873,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.033873,
+            "upstream_inference_prompt_cost": 0.009009,
+            "upstream_inference_completions_cost": 0.024864
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 91,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"It clearly explains token-based generation, tool/browsing limits, knowledge cutoff, and fallibility without contradictions or major omissions.\"}"
+}

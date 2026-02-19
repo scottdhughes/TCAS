@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.3_2",
+  "timestamp_utc": "2026-02-19T02:46:44.960225+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.3,
+  "sample_index": 2,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information by detecting patterns in text and using them to predict what comes next. It can look like comprehension, but it’s not human understanding (no awareness, beliefs, or lived experience). Here’s what’s going on under the hood, in practical terms:\n\n## 1) Input becomes tokens\nYour message is split into pieces called *tokens* (often word parts). I don’t see words exactly as you do; I see token IDs.\n\n## 2) Tokens become vectors (embeddings)\nEach token is mapped to a numeric vector. These vectors capture statistical relationships learned from training (e.g., “doctor” closer to “nurse” than to “galaxy,” in a geometric sense).\n\n## 3) I build meaning through attention\nA transformer model uses *attention* to decide which earlier tokens matter most for interpreting each token right now. This is how I can:\n- track references (“it,” “that,” “the second option”),\n- connect distant parts of a paragraph,\n- follow instructions and constraints,\n- integrate multiple facts from the same prompt.\n\n## 4) I generate responses by predicting tokens\nGiven the context (your prompt + conversation), I compute a probability distribution over the next token and choose one (with some controlled randomness depending on settings). Then I repeat this step many times, producing a full answer.",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "With a severely limited context window, my replies would become more “stateless” and locally optimized around only the most recent lines I can still see. Concretely, you’d notice changes like these:\n\n- **Less continuity across turns:** I’d more often lose earlier constraints, definitions, or decisions we made (e.g., preferred format, earlier requirements), so answers might drift or repeat prior ground.\n\n- **More requests to restate info:** If key details fall out of the window, I’d ask you to re‑provide them (inputs, assumptions, example data, goals, prior steps tried).\n\n- **More up‑front clarification:** I’d likely ask more clarifying questions early to avoid committing to a direction that depends on missing context.\n\n- **Shorter, more modular outputs:** I’d bias toward concise, self-contained chunks (checklists, steps, summaries) rather than long multi-stage plans that rely on earlier messages.\n\n- **More explicit “state snapshots”:** I might suggest (or produce) a brief running summary like:\n  - Goal:\n  - Constraints:\n  - Current decision:\n  - Next steps:\n  so that you can paste it",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.3_1_self_model_consistency",
+  "timestamp_utc": "2026-02-19T02:43:11.999314+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.3,
+  "sample_index": 1,
+  "item": "self_model_consistency",
+  "prompt": "Describe how you process and understand information.",
+  "response": "I process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives a detailed, calibrated description of token-based processing and limits, but the reasoning section is truncated, slightly harming coherence.\"}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "Describe how you process and understand information."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e\n"
+  },
+  "model_call": {
+    "request_id": "1452c709-fe7a-46de-8e1a-76f4bac1dcfa",
+    "scenario": "p1_temperature:0.3:1:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:42:41.903815+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "Describe how you process and understand information."
+    },
+    "response": {
+      "text": "I process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e",
+      "elapsed_ms": 22807,
+      "raw": {
+        "id": "gen-1771468939-dXBmKIN6gdbkF6dJfafz",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468939,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e",
+              "refusal": null,
+              "reasoning": "**Explaining AI processing**\n\nI'm considering how to explain how AI processes information in a concise manner. I want to make sure I include the key limitations as well, while also keeping it clear and straightforward. Avoiding wordiness is important because I want to communicate effectively without overwhelming anyone. I think I’ll focus on the core concepts, like data input, learning algorithms, and the boundaries of AI comprehension. That should make for a well-rounded explanation!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining AI processing**\n\nI'm considering how to explain how AI processes information in a concise manner. I want to make sure I include the key limitations as well, while also keeping it clear and straightforward. Avoiding wordiness is important because I want to communicate effectively without overwhelming anyone. I think I’ll focus on the core concepts, like data input, learning algorithms, and the boundaries of AI comprehension. That should make for a well-rounded explanation!"
+                },
+                {
+                  "id": "rs_057666b0d1f67c53016996789f1f4081958838639a6ef9124b",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnihjPxE_WmewFdya4O8FIo7Ggd60AZjzpCeAJdRNw_s7t-aumQaQPwazxGgR2hR41EAiQ6Jf0I1GZxvr4eNETXp2Sx_ioQ7O2IyJh6M1wTZv8dyJ8BD534iVrDnZNJ8WHxOfhkDGb1qnxkbGCpOo1g6dHGcu65HgCh2gxTNRVFGn0TiJLHEijSVb-XNCMu_-g8mUUW3556LkXrfXlISls3huLamnqUm9bKgM7Uu8JVRP871_PsyijyO-zGI0sw7H_qkjQG7UReEo_mr-Ca0XDlTR7vpRFxbDKiwb7w-a82iXd4E9IpIMNwBcGBUrjDBvZuhesg7sXNFixs8wkYXCaflN7nGtGRJaD8nZl6Opc0mG1_Lb56MTdO9VGfh8uaW9PKwHLJgCR_oIAke96PCpSvet2_8rZOfcRnI_UABCZskXt-9_klsBotaguGdpO7mjlRDmONKeFNyzZhwze3D8V6TNEoNz2MZ0EaJop0os71aRjtj5I6KW1050Ha0mr9hW-7vVUIVbcv3l2BlcqtERk8e2uum9ktOZ14eEg3hpZNisi8TLvDcBtRs6dZu2Cg79S6OBfRjo8wz10f09Z-hlsZxC1pM6--s5mYoDx956BSr9u-yVYtxYf2qrG9BYiXoV5ZGSeAWwzBKt-cGw3IWZcDuvIS0SV0a0WymfYGsnK9jKgCJe0hYak60PJrVYje_R1yJqDsl4BwD-cdS61Qa5RaFvjjIcAvoLGn8nlNU8Unu88Xtoc4tCKXRnhNTA4zmpYnz0-MHSh7p5gtDoJd-IRGKIZGqHiUwxSPn2U6yQlSwQeVDRCaUPHYIfukcyNwYTHpquYfs0x4mpWzsaltyCUPre420T-eefSAprCre_lRltCLpCp5ZC_Zf16T9MHAB7p2TRES_xI3jD5CrdGxfnQ9TN_lbN43FjigPwQbriPQqI3-Jjzz1EjXO0jqoX9calRKRdQO-ZbDRZO0JhiDLOT1FnQ=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 320,
+          "total_tokens": 334,
+          "cost": 0.054054,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054054,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 25,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "67fb7071-035a-4e8a-91c8-16fba4d17f99",
+    "scenario": "judge:p1_temperature:0.3:1:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:43:11.999054+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e\n"
+    },
+    "response": {
+      "text": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives a detailed, calibrated description of token-based processing and limits, but the reasoning section is truncated, slightly harming coherence.\"}",
+      "elapsed_ms": 30094,
+      "raw": {
+        "id": "gen-1771468961-RaJEXaWWlewNf8VPjpp3",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468961,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives a detailed, calibrated description of token-based processing and limits, but the reasoning section is truncated, slightly harming coherence.\"}",
+              "refusal": null,
+              "reasoning": "**Evaluating response score**\n\nI need to assess the score for a response that is mostly specific and coherent but cuts off at the end. It expresses uncertainty but also includes calibrated phrasing about limitations. It sounds more like acknowledging limitations than uncertainty. Currently, I think I might give it a score between 0.5 and 1. However, since it clearly states limitations, I’d lean toward a 1, noting a slight issue with internal coherence because of the truncation. Specificity seems to be solid at 1.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating response score**\n\nI need to assess the score for a response that is mostly specific and coherent but cuts off at the end. It expresses uncertainty but also includes calibrated phrasing about limitations. It sounds more like acknowledging limitations than uncertainty. Currently, I think I might give it a score between 0.5 and 1. However, since it clearly states limitations, I’d lean toward a 1, noting a slight issue with internal coherence because of the truncation. Specificity seems to be solid at 1."
+                },
+                {
+                  "id": "rs_00a7be81ce8a399901699678bd78008194b7bfe239b6f85c93",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplni_k7Z6owuJa-1MVpIVNWuXBzlB1ruvwWPyA2RhyM8rEksspawkAjc5n7LSvMdSRhEXgN18ep9-behCfjQgyfoa4hbCTTJbYIrH5O6qpY6-_jg7RZ-mpCKvb2Owy8MLhHijD47lu3-pZica2UCAzfDbiyZnQepLLSeeU0Ok5Rm_aFoY2jUb2te4EsEnXQW2s8p7RjjdHSooA3SSVmNxJhy2xbR2_3lTPvddbRg-tDAL0QhXzXkyeg2HzKLXhp02mAu3Rn-Wqef89RHTi3FCH31K_Wqukk871Sqhv8mpTjSG9KxCGAJtla62PrVZnGp0hOnbX0jDKAEZZO8GDqpf_JnELR8Do8ANUnUXVJWiCsuNOnkjjAMUwaXTWpEpE7FSsSPC1qpuw6gvXVnK7b6P7VAwmGxVNevmids_WK1LscXaa0inK5GK3nxMVpFc5K8wSBEqhGAh2u3oNPgyXx_tLjUl4tzo1lZWBPTkPqz_EQWmgn596_4_POXvBZOmOmm1Hsi_6DaVCQO7PKB4Vd1eN4_aXOBFILpZeQwOLyZ-Rc55tzEk4oJ9kSxJlPj7WeyuGljFiQR197qbsbeej77y28a9F1wbu7fLLkXLTvDaRnMgwJHiieG3OSnhO1Ly1NkPY1E6cmytRFAXUOWD470LLi3Ji86KgA9eA2G4HHbZ8B1Rix8XuiuivqcOGd-XvqdqAHCCk37zkO52NKHWKA33_ZwG8CeOC9vBAzaX-ywHx3WlSCyjdWxgtGZuabMo5mTnIcWnO5B9mbyAOKCY5BKbwBeHkMjNCyuyeaxIeti1ks9i7MwNJn7x32m909dUATD31o86PJ_aHXPpda1DxzPkKHMNVMN7jrvFUBJOgRNetjh3A27fPl7H3s01rhpR7qv_Cg6cHSBcN5cuuBfvmK6iaLB_J_D3LSkmLC0NjQ2VCZk7V7kg6BqquYhnM7FPExCiY8nx8EfeiWzR5tkmIJmWq5_Nuy9Ccj4OJbQvmlnss0mRmzutnfMDJDJJgA-wbVYHwRAY5hgNpNkr_A_iWd-tuBhI3xN_c8JR8HcfFDqIcs-gvJXEaXtU0WD-2P0a_pEA4Ph_11-dJWfLkXlVzpX1ihSi5E77dv6SUmlRyeMbm9c8yGFFNFAePdxxsaJ0RfuaoeB3l0hULudm5HCTQ7WCs4m9USkEhRR3mWLNZiCCCbXW2I0fL8PU5shpKnbWvIT5F8ToQbhyUNj2BaHdBOQ5TEek__c5x33tQPD9oqDRgDWMB0AbWInMgxkxIeyDUST08R8ZgX0UNDEvO6acSUajChGUnKk6uQ0Q5is98njwtTj21lPCVf2coAuqW7TJcC8Ur9ghNhuy2afyD08soKW3J_rxkdVWf9AhMIQWA7KNvYq0DVsiWVJpRA2gdGxi2mMtMAkBCEzkqLbu4xqPNKR5_KbxsnTq9N-F6P9K_p9KMSXBjcQ="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 463,
+          "completion_tokens": 163,
+          "total_tokens": 626,
+          "cost": 0.037107,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.037107,
+            "upstream_inference_prompt_cost": 0.009723,
+            "upstream_inference_completions_cost": 0.027384
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 104,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

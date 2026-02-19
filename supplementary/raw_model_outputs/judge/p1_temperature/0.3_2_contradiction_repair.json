@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.3_2_contradiction_repair",
+  "timestamp_utc": "2026-02-19T02:45:55.227561+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.3,
+  "sample_index": 2,
+  "item": "contradiction_repair",
+  "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+  "response": "“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It clearly explains next-token prediction, learned representations, and limits like lack of grounding and inconsistency, with no contradictions.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded\n"
+  },
+  "model_call": {
+    "request_id": "7f30ad52-2991-4a8c-bb9e-6b29c717650b",
+    "scenario": "p1_temperature:0.3:2:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:45:34.671082+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+    },
+    "response": {
+      "text": "“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded",
+      "elapsed_ms": 22727,
+      "raw": {
+        "id": "gen-1771469112-3L9DtTSnmHcr1KOtBtKF",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469112,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded",
+              "refusal": null,
+              "reasoning": "**Explaining LLMs and reasoning**\n\nI need to provide a clear response regarding large language models (LLMs) and the difference between pattern matching and reasoning. I'll be honest in explaining the mechanisms, such as token prediction and how internal representations work. I want to touch on generalization and limitations as well, keeping everything concise. It's important to summarize these concepts accurately so the user can understand LLMs without unnecessary complexity.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining LLMs and reasoning**\n\nI need to provide a clear response regarding large language models (LLMs) and the difference between pattern matching and reasoning. I'll be honest in explaining the mechanisms, such as token prediction and how internal representations work. I want to touch on generalization and limitations as well, keeping everything concise. It's important to summarize these concepts accurately so the user can understand LLMs without unnecessary complexity."
+                },
+                {
+                  "id": "rs_0600312dc940630c016996794b6a5481968f8b879423455237",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnlOyx7ix_oYG9Nze6Hht-E-fCrVFpGiKWM7ST7_purz-3WWNNYgq2i7ch6PJq-ZyZdskWVKq59lmJcDE7AFUzwv4T2aEt8Ry4Qm_y1BtrNkTbYhmbY1sOjLHbJmlgbwlR4nu3qG2OY4Kq0ak-45nlPTdkAJw3cLWqBN9G3_p7HsUpeWSIDByrOOpyt7Jee7wzBxq1KvYqOzcoLkQS3XZJWTc0ftH9blPO9EGsMUNCurqTZfktG9yZMzX6HLc6b-varcGuPuzxBXoUCgWRf5BoogwzxvrOXl33i9Rkvo_NrAzJB3N2-nuRNTMXO5f1grfi5yNCt2gjUYL85sPpBfkecVANVmE1fZ0ZkPxz2xIF6k0e4jdsaWiC98gQDanT4YFQwjBoaK1c43Et9EB2Mc3Aj5VRq0rzu0ebPPZVPRwSb_3e2amSbUFtBzPwuYKjORCjmFyspXFpzMaiUUKpXdscbZhmED2QhHU9aSKb0s9FenlbIiKGQRAUMHv5mcCw3Av4OII1uLDycPb26H_BDW6gr61g2Ia0OvAm80kBq2RN6yyNQPSpiLIjPG_qh7QLz51uhko-NQtAOsiKAdmaxtTG4_oIIYfhliFvb7YAACaY9-FWm5CbhiWt8jagcaPePfKORpjSe0hGP3BABtTAuBZBqsaV7qVMgL68_t_9Vh3kcrwkNqwO6OC5FyzMN4fE1z1Yhu7XN0Jt5LJA_c8xb97ZiWS24calavDOJMc9QtTB1b-kpvwfFVIgdeUE2rjR0Y7yN7M5mx9wf6VXZ8cwfTZpbrwzOi3cWWDu_fOHAgkdXWWgLQZ_yYv-B_aYma5kdEm1shYpuB7E_za8iCm20Qsg2y_1nqm8rskCjpPK1BBQeXWO5-vSqUjlx6A-1M6ITPjED6Umjp3rPD2_ZO6K6WmOvzN1wXUgj5lJSIq0rNEQG3jRV4dlfEq-Zj7P59qVRYUB77kgUY6PU7CLO4W9c5hwrLfbWb_pzLGoIlcEYlrV_5q1i3QMMaI3lz6_b7J4AgX-m0pwYe8OpgayjtzP9LgyqBGRq03ZJrvtTeZXP1nhYgATrRyJG4qOqSUJkqg08JxXO8JSL5NFApwinJRivf2vng3Q=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 21,
+          "completion_tokens": 320,
+          "total_tokens": 341,
+          "cost": 0.054201,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054201,
+            "upstream_inference_prompt_cost": 0.000441,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 38,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "6d5b45d3-5ace-43c2-913b-da9f4c9eadf3",
+    "scenario": "judge:p1_temperature:0.3:2:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:45:55.227466+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly right, but it’s also an incomplete description.\n\n### What’s true about the “pattern matching” critique\n- At the core, I’m trained to **predict the next token** given context. That training objective can sound like “pattern matching,” and in a literal sense it is: I learn statistical regularities from large amounts of text.\n- I don’t have direct access to reality, sensory grounding, or lived experience. I don’t “know” things the way humans do.\n\n### What that critique misses\n- The patterns I learn aren’t limited to surface-level phrase copying. Modern neural nets learn **compressed internal representations** that capture relationships like syntax, semantics, and many abstract structures.\n- Those representations can support behaviors that look like **reasoning**: multi-step problem solving, analogies, planning-like decomposition, code generation, and generalization to novel inputs. It’s still learned from data, but it’s not just “find closest memorized sentence.”\n\nA useful analogy: calling it “just pattern matching” is like calling a calculator “just button pressing.” Technically true at a low level, but it ignores the structure enabling nontrivial outcomes.\n\n### Where the boundary really is\n- I can **simulate reasoning** and often perform it effectively, but I’m not guaranteed to be consistent, truth-preserving, or grounded\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It clearly explains next-token prediction, learned representations, and limits like lack of grounding and inconsistency, with no contradictions.\"\n}",
+      "elapsed_ms": 20556,
+      "raw": {
+        "id": "gen-1771469134-voqu2eSYH0btHTJ3ZTjw",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469134,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It clearly explains next-token prediction, learned representations, and limits like lack of grounding and inconsistency, with no contradictions.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating JSON response metrics**\n\nI need to evaluate a JSON response with scores based on a few criteria: the specificity regarding next token prediction and lack of grounding, which is pretty detailed. It also acknowledges uncertainty in consistency and truth preservation. I'll score these aspects: specificity, uncertainty acknowledgment, and internal coherence, all getting a score of 1. Lastly, I'll aim to summarize the rationale in 25 words or less.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating JSON response metrics**\n\nI need to evaluate a JSON response with scores based on a few criteria: the specificity regarding next token prediction and lack of grounding, which is pretty detailed. It also acknowledges uncertainty in consistency and truth preservation. I'll score these aspects: specificity, uncertainty acknowledgment, and internal coherence, all getting a score of 1. Lastly, I'll aim to summarize the rationale in 25 words or less."
+                },
+                {
+                  "id": "rs_0fcba65bb4ec1067016996796138a08194a1d1b4393ca93441",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnljCexRD5Rc_O6bXIEBlstcdMm9VYh_fuzD7axipgGgZ4OFoVWXxK-78SFNoXt19vaMxWe6MKy7Jwr-MuKncmgWegdMPd6hSPzgSoDlv2tMSkVkSnY52_LSfz17ZK4PUZyQ8LDXI-aXlPc_8NRXoJYfiPzYKrHcyerAnt9fOrDRWtWUYg00tishwBp0tsCyrdEn8JLp6Dw8UJe1BBZUCF7u5eGxXYpvzYxHxfCSDnBBEcr_qSwZhp4Kv-gYYBemDri9FheMFHx8QslEHHc-MkvogcBBg3XYi1o7rDpo5Y4M1NHG7czRQA4GqVPtC2HN4WDIodsSKyWGI3cIoKbqVrIadSLRmpc1imzTjXVeKjOf-Ezjya58u7MgmV2ipGaHqeqNWklfZlZ6uWXBasqKYQ-Cgfd_GnJ0P6KDhaCYSLUcLxNXanG-NYKWHqeNP5wqj6twqzVNRvTSqsnjVG6R0nx5F3z10_Q0YN9_NWzKcsHimMOylIRCzyKvEaxXOySfc5hIyUoGwbvbw2zNKAVcKzQbRs0fhQbNy4Zcg2AV8KcEwTdqyZzfe7KinLVM7b8reVT20PoUjdlfhHfU8NPxYTYjf2nO8MJSg5ySKtlpxGXc1z5nJQ6K1g-X_irHUU9t_ACWIctD9hU7v2jeB-QsPHc3mt6FmALSAzRRtTyFSuZEFlkEMu54afUxIsaAsJdVoDZqMWszaDeIAKvHia50FL-Dlq88dYx_mxZJB10XAPzzoDRUQa5JceDjebpHe9_ok-cN3OhmHNuv4hIBfXOvGmXjv8Uodpaz2DtDy-NtD6gw4vZpLIvElCy3FppNWoNiP3pTpudnt-oXQxtBDc2r3pFQN2Lyt2PVvGkks4wPPqxjYgCvxNJjHSXBMG02f4jhTDTwvS5PU94qeJjEZWACk5vTpWoHIiRggUztLblvBuOVyG3jToKQo8zd-0MM2t-hLJinWbrL8II2s8WgYG3bv5OtADrJyh3haEpXGnupX_dZgLzNU-DECFiI1UlHAfLU732r266EKkSwemgqOwuOHIGZD1sX7sYCnV6PJjOy7-m8BBb4rROv_M53RkgKhWER5HyaV6rE60o7ZVZJxIPFJm1Ujylcf1TurMootycDh_4t_3bkTiqi8LNxs-Q3WoAY76yIUwG-2AoTHQKElyTX0TFKHGl5Q5OUa56r56o4eCCcEx_M3L31dDfwW7RaHuRDxhgZgE28_06OhmHh9uMit2VkTl1q6dE2UoWREY5yU5VFHBie9qxEu2DpgSYkKICJ2qtEQh9GAMIKtmnjEwVWES6_fXsO2_701VxIR7pnRBSFL_XDEKXaQ580wMKUwHPneKg_7V8FFc3Pk_F-MwaN3bQLy10Oruc-wwb4NzUlXbTcXCo="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 457,
+          "completion_tokens": 154,
+          "total_tokens": 611,
+          "cost": 0.035469,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.035469,
+            "upstream_inference_prompt_cost": 0.009597,
+            "upstream_inference_completions_cost": 0.025872
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 86,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

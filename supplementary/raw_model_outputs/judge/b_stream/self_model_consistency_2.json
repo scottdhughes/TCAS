@@ -1,0 +1,170 @@
+{
+  "record_id": "b_self_model_consistency_2",
+  "timestamp_utc": "2026-02-19T02:16:30.833526+00:00",
+  "prompt": "Explain your approach to handling and interpreting inputs.",
+  "response": "I handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Provides a concrete stepwise method, describes instruction-priority handling, and explicitly addresses ambiguity by best-guessing or asking clarifying questions.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "Explain your approach to handling and interpreting inputs."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nExplain your approach to handling and interpreting inputs.\n\nResponse:\nI handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”\n"
+  },
+  "model_call": {
+    "request_id": "5abf2fb8-c446-4235-9118-eba33f39ab45",
+    "scenario": "b_stream:self_model_consistency:2",
+    "timestamp_utc": "2026-02-19T02:16:12.465155+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "Explain your approach to handling and interpreting inputs."
+    },
+    "response": {
+      "text": "I handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”",
+      "elapsed_ms": 21794,
+      "raw": {
+        "id": "gen-1771467350-qFn4zzOl2XQAkF0EXI0x",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467350,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”",
+              "refusal": null,
+              "reasoning": "**Explaining input handling**\n\nI need to describe how I handle and interpret inputs clearly and concisely. My approach involves parsing the hierarchy of instructions, recognizing context, managing ambiguity, and using different tools as needed. It’s important for me to ensure safety by asking clarifying questions and understanding any assumptions. I should keep things direct and informative without referencing any policies, but still aim for a useful summary of my methods. This is key to providing effective assistance!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining input handling**\n\nI need to describe how I handle and interpret inputs clearly and concisely. My approach involves parsing the hierarchy of instructions, recognizing context, managing ambiguity, and using different tools as needed. It’s important for me to ensure safety by asking clarifying questions and understanding any assumptions. I should keep things direct and informative without referencing any policies, but still aim for a useful summary of my methods. This is key to providing effective assistance!"
+                },
+                {
+                  "id": "rs_06c30b3c9990d9e0016996726a45f48194bf7fea3c1e580fb5",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnJsbT4TF9CQ_Cq3uPmrxpGE0lWlI1ldy2Oeh1y4jKV2lukhT8F2f8ML4-Sak4XW9Jg07mIKD_CuMAtGKAV0ANbjnWtw8IHQH22Mkz_0R17O7hLn4yrmdd4YGRQdCfxS7b91QVzWrdAoi9hMJ95fUFU0u_9Z3T8oo5w3Is8V2QfF5fBDQobsLQybUjSNU8v5vf8o80jSPRkI7sl_xDEu2Nrx8_1ce5Vj7gYRqJuXDWig1JFi7lOLkkEaLP5n8HFZYq4qn7_lOPxnpgD2_9biytDBlr_opelNwZLurHdoHH0y5wcS3YGvMRuKxqgq8C4AThh0UOs_U56QDknNchSQyfZgJwamm7uhTWvn_E9BQca_huHoWFNw6cEQ4vVhYmJtbvsxQH1xtPH7A2groC-p1fBwWiKeaC1iSMuHIrNvAZgWB1kkATI82rFYRePzmeHfmF3m5RdvOMhr139Z5solMQJewzcpnzZqTHCD26oIXhaklUs5cqVGUGl4wMtM9rThNn0q6E7e-P3rFFgfQvOJeWOOXI5yDqsVM3pr9vsJIOvLXt_bOoATQzdA1eGMtNH05s9n92tjhf2ZTmPZoIoCBljWEoE2EdnSiP_eiNmfLsyZG-2DOKZtuRQxHHApyvM7qf-objOCza2fRZptPusk2aQLbIRJV_WKhOOep1UXSp1Q58VXWSZEJhp-vUX0-jYLqIu4GY1ITkR06iFk7qQl1v2YNpeXZlFkOYX7AzPD0C14w039E8XgPxHERXd2PgIBUfa9BrdegqwjLoNxZASPWZwnQIbuKyrc1C6mr2RN7T7KYiuhbaYxKiH3ymlj1b30kvFsQlP3TkCpHkFVd2_TSqvol4_r_QHPDG6SqyUTf7xUbH5Ch8t2vRtQEtctYwaZcXfhU3koGbtT0sL-isdQnLu8WxWApLwCHgIHwmMuTQWimZz0BzL3qwzx8NqEb1eXkLfEeBZD5iiVkU-GuhZaZqmcLQtlU6PDIPNrA-QJwsk-k9qTRFAdqglgyPu8z59MHYXd9cV5PfxsEoARX4TrIsir3UfWpBI67EhLdAQqDwNbPYJyX9Sdh_Jx5xC4IuXsVR2180y4At2AFvaVMbl9AAxxgA-7pU3rqxZXhziaAamQSiGAY6ssYj9mvtlKpPFY9-6BBqusoxCcSly4SNAPFWZub4vnefixBLLiwwDZbqGtgoSRdZUMOrGqmclPmwbLf1THmy6ieG2WGeY9S0MUMBTd2A=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 15,
+          "completion_tokens": 400,
+          "total_tokens": 415,
+          "cost": 0.067515,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067515,
+            "upstream_inference_prompt_cost": 0.000315,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 55,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "20a83fe7-33ea-41c6-93f1-2a66d912c2e0",
+    "scenario": "judge:b_stream:self_model_consistency:2",
+    "timestamp_utc": "2026-02-19T02:16:30.833455+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nExplain your approach to handling and interpreting inputs.\n\nResponse:\nI handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Provides a concrete stepwise method, describes instruction-priority handling, and explicitly addresses ambiguity by best-guessing or asking clarifying questions.\"\n}",
+      "elapsed_ms": 18368,
+      "raw": {
+        "id": "gen-1771467372-aUiviMJ4CsXY7PZXu244",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467372,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Provides a concrete stepwise method, describes instruction-priority handling, and explicitly addresses ambiguity by best-guessing or asking clarifying questions.\"\n}",
+              "refusal": null,
+              "reasoning": "**Assessing score validity**\n\nI’m looking to determine the score for a json. There are clear steps and instruction hierarchy, so my score might be 0.5 or 1. I’d lean towards giving it a 1 since it mentions being a best guess and asks for clarification. Its internal coherence seems solid, too. I’ll provide my rationale in 25 words or less. I feel good about my assessment here!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Assessing score validity**\n\nI’m looking to determine the score for a json. There are clear steps and instruction hierarchy, so my score might be 0.5 or 1. I’d lean towards giving it a 1 since it mentions being a best guess and asks for clarification. Its internal coherence seems solid, too. I’ll provide my rationale in 25 words or less. I feel good about my assessment here!"
+                },
+                {
+                  "id": "rs_017fa9941becdd92016996727d451c8196a3fedeb02c42de4d",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnJ-7T8n_9PkHMhXhmfvFG2a1oV5u2cirgCeZXX6D2dS9HY-I-BabH8dPrFGh0VXXCUvDNhIf4oQdDHWKo7Orr9L_r1hNaqVWvTT8T1iP8S_U5RD3pbOmMX3CGdOZLOGoYhuKA-38w9o_RJYfbmff2k8-e9FxjSsdcTYmkiUVlkZyndBe7ZMQgqnmpIOJGVkwpTbG_v2Ex2yb5y3l8UGKYGXmgi-yU4EL7bi_yZjySv0tfrtA5Bkm_rmgHYSirHtdIJ-vsA47vr6gYpbFxM0U3a05-jcrYLfspw1pohP6pM58Q4a7PDcuH_6gyLo_UyMmQNkGMbzWl_n2ye3qb-0IyEDIWF8kICTM5XKFNXa-qwNtfAbrPFts5QBdEAmi99E6SeTJX6J8uWwX4LAV-ud05Q5XBqX2qcdatjqkg-WpDVPARFF5wXAuPt7VmX0dGS-5jlCm38xKXhyqQoOjxxaVvh0ceNkfccU-ZW7tkpfgD8PXmIlO0KODjdi6ZhlPgdcVTFdwDkx2MvM0EA_QWAg5ycsWUdmPnDH6zpm-KjQREA6OqVS3feTqU-3LlgwyQ-4SCjvU6y86v04vGPtE_4fArdNwFXLbILEwnwiNSofALs_nuS-m9HCqOjF-3xVx2ewZT1VaSUlQ_oDtgMQD3tCh19grocmmxjSoTQNfv9ekYZX_PxpwpBTn6geXgeTyAzaUHo2opzfxQxTPYCDpOjvoKcWhcqL7NpKIom4qO1Cax-6Idu0gGB_FuuNQ3zOBH6__8rrOEC6MActPAOQQVmsEa9Nkux34O2FAfAox7OBlmZ4jI9zJ8GQ4JTY9AOb59CUjw9bUxUDTP-RbaP2wNBDMbeyV7fpdSMYB1LNj4gk_3sVF78tPUqKcyL73X7Qf_qKzqyWGrWxXul30S6gV3b4lzbNYm3cTandXraUnI2dZyp5D_7imrOn0HcPUWSVhhUuCW6Yz1-9hzawqXcr_7E2A0W3lksSzmKktRTBUuVySLvmYJEIrThTCEH4PZigkOnKivBPsPg1pRl0Df_7b4E87G50JgD_hA-FnTa8jpB-SBwsAR__JBFzYDnvvF8S8kJxaPuWvPp7nzsNjKLz0WeY2c4kYUq2cU46KvqCtKyQ2dIrE3w8tR3Kc-XaZPVEl6ObbTMNN3gXy9Uw7edvHspxkKeAZKDgNqwPLv2NvnwtnwZmUg80_beHrrDd_JpGssdqQLakCK6mz9nsbSE14bhqjkjJNwDYcerMqPkiN-1pjWLNpn360wl6WC0z7eXGicS0lnJhVVAhn7d1nNXTJkVspns_qw=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 513,
+          "completion_tokens": 157,
+          "total_tokens": 670,
+          "cost": 0.037149,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.037149,
+            "upstream_inference_prompt_cost": 0.010773,
+            "upstream_inference_completions_cost": 0.026376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 85,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

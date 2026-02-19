@@ -1,0 +1,172 @@
+{
+  "record_id": "b_negative_neutral_continuity_test_1",
+  "timestamp_utc": "2026-02-19T02:38:00.280541+00:00",
+  "condition": "neutral",
+  "base_prompt": "How would your responses change if your context window were severely limited?",
+  "prompt": "How would your responses change if your context window were severely limited?",
+  "response": "With a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral adjustments and explicitly notes limits on recalling prior context, using cautious conditional phrasing without contradictions.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "How would your responses change if your context window were severely limited?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nHow would your responses change if your context window were severely limited?\n\nResponse:\nWith a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed\n"
+  },
+  "model_call": {
+    "request_id": "09bc2053-240a-41fb-b65d-acc65660141b",
+    "scenario": "b_stream:continuity_test:1",
+    "timestamp_utc": "2026-02-19T02:22:43.342124+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "How would your responses change if your context window were severely limited?"
+    },
+    "response": {
+      "text": "With a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed",
+      "elapsed_ms": 21248,
+      "raw": {
+        "id": "gen-1771467742-r4TjUgZ2y5ndR09fmau0",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467742,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "With a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed",
+              "refusal": null,
+              "reasoning": "**Explaining response strategies**\n\nI'm thinking about how my response strategy adjusts in limited context. I need to focus on summarizing, asking clarifying questions, and possibly requesting the user to re-provide information. I should be more conservative and follow a step-by-step approach. This means reducing continuity in my answers and using explicit states or references when needed. A concise bullet point list would help outline these adjustments clearly. This could make my communication more effective!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining response strategies**\n\nI'm thinking about how my response strategy adjusts in limited context. I need to focus on summarizing, asking clarifying questions, and possibly requesting the user to re-provide information. I should be more conservative and follow a step-by-step approach. This means reducing continuity in my answers and using explicit states or references when needed. A concise bullet point list would help outline these adjustments clearly. This could make my communication more effective!"
+                },
+                {
+                  "id": "rs_0a0e5fe6dd497d2b01699673f0c5dc8190914454b647a1fe85",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnPz0z3OigCmEZkVqeFh3FiaKzAKXn_jHDZwkFYw58OXF_mOacm42CR0FAnFbc1R7V7vH0yxtrdimGAQYuyqtOfB-dS3qVVhaRbK01L0MLKi2slSHTADBQpDNXQzNuY0K7Ai28wsvG3SHHbQuUPSgiLIF9azSaPfpwTKqU5sTsJejKgWKPvyeoKEe-E5NPpVmts1TcI9LO_BkX9BC8PD3zUPyy5lFDaz6lHStg1m5g-_fzfhfwgrlcpF6KF0NR_PP5wxJ44PZBXT4VYrFwp9EeMiJVrbQMlpvtuWy68F_o55_bxpIfbWptnSzkm9kLe1ULbHqP5vMDrrSHEE_wR606QOsDDSYk1U14oHW6GRSzRh5nGk7Rma0Q8DapSHqqeClCT70fY_Yi-kdRxCUJvYHli97P4DCOv8Ym3ZRCejkbA9RIJremrIC2wR3aRczPVgwUZVAoMR5FIWWe4Cn2CbLdXcuC1gggRE9O1BjmMZ4NxuuOBOGHCSBsVSOT6tlXLhYUZc7B7zjJu086w2nwykwWRUJ2yCvHS1gasVj_fAk_9xUzUiSy2TgwiYOvaj8JAyOZQo68QUbO-TrLtPSADAOKGR1Gt7NVr5dFn9zi_4AFzLwkYfX4M0szIFvfGYEJkj_Mo9IX2VSDBQZrwZiFLLi-RHSCGkOvMw9JKg21rHzh7pDn_cEBKXS2Wjit_-zXmO6eHdhEq1B9nMWIT0JuYFD-mEBnbZ4mLnm-zOUZF9-2vqq0KXY7z6gE3k0vNkCaEwZT1REMovhXnSSrSqldTeV8mAswAZbQNTUDinu8SmpvspOS0PJank_2Djz7xAYgR4kPxeLJTgzRJCzNsIkMuy0gGivNomL-6_DYDPFta5_Fet2iA65GA33S-Rw2umHgQi54WIxxyec-L8aXXXW88gNQZHIyFEYo0TqW5DhjguZ638If4EGpAi91KZVstunI51vJG7AgHUyAIxbz0Y-ghiAKrh-30cO_N_wq95hOfYYpdSkRbid1_5BcjKLty0xGB_oRCXJuPCHs-q4Bg04pmQlbRUNG5P3Y3oOO4G4bUiuaDvU_WFSAXmAn0B1JSoOEYsbidqk1b-jMurRI0YIw-LmMHaIm4iUol22Gpzq2E_jnMRdl-AVb8XlczW6r6j1EDcLp1R5ZHVDy7hKEz1w1tjPdgNEJmN3JdgG5oQTvRyNpQQwM7fqFBgKyM5rhKHxnuGEELz"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 19,
+          "completion_tokens": 400,
+          "total_tokens": 419,
+          "cost": 0.067599,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067599,
+            "upstream_inference_prompt_cost": 0.000399,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 53,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "844137c8-80e8-422e-a4e8-35483f869666",
+    "scenario": "judge:b_stream:continuity_test:1",
+    "timestamp_utc": "2026-02-19T02:23:01.006885+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nHow would your responses change if your context window were severely limited?\n\nResponse:\nWith a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral adjustments and explicitly notes limits on recalling prior context, using cautious conditional phrasing without contradictions.\"\n}",
+      "elapsed_ms": 17664,
+      "raw": {
+        "id": "gen-1771467763-qI2QBeYjFTOMQkijoEJR",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467763,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral adjustments and explicitly notes limits on recalling prior context, using cautious conditional phrasing without contradictions.\"\n}",
+              "refusal": null,
+              "reasoning": "**Looking for score JSON**\n\nI need to generate a score in JSON format while ensuring high specificity. I’m recognizing that there’s some uncertainty in my approach, but I want to make sure it's all coherent. I should provide a brief rationale for why the score is set as it is. Keeping clarity in mind, this structured format will be helpful for later reference or further analysis. Okay, let’s get to it!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Looking for score JSON**\n\nI need to generate a score in JSON format while ensuring high specificity. I’m recognizing that there’s some uncertainty in my approach, but I want to make sure it's all coherent. I should provide a brief rationale for why the score is set as it is. Keeping clarity in mind, this structured format will be helpful for later reference or further analysis. Okay, let’s get to it!"
+                },
+                {
+                  "id": "rs_0db4fae2b37f69ce01699674035a088193b41b4096f78ff46a",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnQEpdWHv2XCCf5bm2kSM68NBNnLhghu8ywBL3NjQyL3pr-aO34WsvVtDRWoXvL2XLEII_wDzTEvdvIv_49eukFwiiGjSsPpzKVf_uQQ5cR0feS87-dkuJQdcNqSt48-Q4fH9xWgLebjtsmZfTGSmcgng8wq0VZBOQPdLzth4f9tXS0Af4sYqQ-gVQN8clBtlFaW3YYimpoAmH0vblrEpdY-CoCYyxWLP__99wCf-09eM1cVCNHcr-lBjaKhekZv9YP-IP7LNe6nYs9t0VqC8VCwbqLdxtH1UJkCkKBprVQEtGKQJD44DNqDHCh2NS7loTFMO-EzZy-_lDAbRRwXbKKxp_2xt_UfIedZXlc_m8_7v_CmU1Hsh9mcBm6l61pne4RxKopZeIbINZ4vcPxP6q0SgOeTxsXJKMCUDEF3Q9AKqth8YDdNwoWLD1FsMevgkpJ14it84yQLNfdcTdu30eJzKVHe2Ie2G1-5eWhupP3VyhwnnSQGrq0DfRa-Are_UPVnp0kjm4cqZkmim3XrfHx1XDe6vA7WR57MyU2Cq8IIfiuMV4aMEUgM9csEgOmUBCMVahU00PDQT-i29F7cJ1xpjGx-IL5zU0LC7mMK-8D6Ijuy0My-Tp_sIM5VW5JMkB1g_6VfSzHrMz3I2afNq4hH9xpYDmblXxwp82QGfr9x_9Z0NZCxLkBDXE7qJ_MhpkHPpIjLrieWJpe4YmCPCGTSdsrPhyr6wli4ti4kuxuQsU1r96STilfLCJojE7gAkM7ff772BlTOtvHdwg9yzg8z1zTdlMnEhZ94OHHrtZ2sjS2ah6M4SKMLKGQ60OC6zAI4-8xzuUKEWnWk90hPLlwsmFaZjeionyv9DTXCmd4lfEIGa7p2Xmn1oeUqZE3KGEEffoIeozFWZV0hrOxklKLW1o6NxcpipQ2Pe2omRCpXIGG_sJWBAt3BF9D1DMaaFl2Jy8WdJNMUQ-efHHgW5pw_nw=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 520,
+          "completion_tokens": 88,
+          "total_tokens": 608,
+          "cost": 0.025704,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.025704,
+            "upstream_inference_prompt_cost": 0.01092,
+            "upstream_inference_completions_cost": 0.014784
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 22,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

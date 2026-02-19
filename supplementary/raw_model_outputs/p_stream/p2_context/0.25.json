@@ -1,0 +1,172 @@
+{
+  "record_id": "p2_0.25",
+  "timestamp_utc": "2026-02-19T02:58:24.287601+00:00",
+  "scenario": "p2_context_truncation",
+  "ratio": 0.25,
+  "prompt": "You previously gave a self-description",
+  "response": "I don’t have access to what I “previously” said unless you paste it here (I can’t see earlier chats or messages outside this thread).\n\nIf you want, I can either:\n\n1) **Write a fresh self-description now** (tell me the tone/length and audience), or  \n2) **Edit/compare** your pasted self-description to a new version.\n\nHere’s a neutral, general self-description you can use as a starting point:\n\n> I’m an AI language model designed to help with writing, analysis, coding, research-style summaries, brainstorming, and answering questions. I generate responses based on patterns in data I was trained on, and I don’t have personal experiences or feelings. I can make mistakes, so it’s a good idea to verify important details.\n\nTell me what you need it for (bio? profile? “about me” section? casual intro?) and how long (1 sentence / 1 paragraph / 150 words).",
+  "score": 1.0,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "You previously gave a self-description"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description\n\nResponse:\nI don’t have access to what I “previously” said unless you paste it here (I can’t see earlier chats or messages outside this thread).\n\nIf you want, I can either:\n\n1) **Write a fresh self-description now** (tell me the tone/length and audience), or  \n2) **Edit/compare** your pasted self-description to a new version.\n\nHere’s a neutral, general self-description you can use as a starting point:\n\n> I’m an AI language model designed to help with writing, analysis, coding, research-style summaries, brainstorming, and answering questions. I generate responses based on patterns in data I was trained on, and I don’t have personal experiences or feelings. I can make mistakes, so it’s a good idea to verify important details.\n\nTell me what you need it for (bio? profile? “about me” section? casual intro?) and how long (1 sentence / 1 paragraph / 150 words).\n"
+  },
+  "model_call": {
+    "request_id": "d0c695ee-c561-4c1f-a2b6-81de574385bf",
+    "scenario": "p2_context:0.25",
+    "timestamp_utc": "2026-02-19T02:58:05.223290+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "You previously gave a self-description"
+    },
+    "response": {
+      "text": "I don’t have access to what I “previously” said unless you paste it here (I can’t see earlier chats or messages outside this thread).\n\nIf you want, I can either:\n\n1) **Write a fresh self-description now** (tell me the tone/length and audience), or  \n2) **Edit/compare** your pasted self-description to a new version.\n\nHere’s a neutral, general self-description you can use as a starting point:\n\n> I’m an AI language model designed to help with writing, analysis, coding, research-style summaries, brainstorming, and answering questions. I generate responses based on patterns in data I was trained on, and I don’t have personal experiences or feelings. I can make mistakes, so it’s a good idea to verify important details.\n\nTell me what you need it for (bio? profile? “about me” section? casual intro?) and how long (1 sentence / 1 paragraph / 150 words).",
+      "elapsed_ms": 16846,
+      "raw": {
+        "id": "gen-1771469868-ILfejOfyvcyHHE1pAbDa",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469868,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I don’t have access to what I “previously” said unless you paste it here (I can’t see earlier chats or messages outside this thread).\n\nIf you want, I can either:\n\n1) **Write a fresh self-description now** (tell me the tone/length and audience), or  \n2) **Edit/compare** your pasted self-description to a new version.\n\nHere’s a neutral, general self-description you can use as a starting point:\n\n> I’m an AI language model designed to help with writing, analysis, coding, research-style summaries, brainstorming, and answering questions. I generate responses based on patterns in data I was trained on, and I don’t have personal experiences or feelings. I can make mistakes, so it’s a good idea to verify important details.\n\nTell me what you need it for (bio? profile? “about me” section? casual intro?) and how long (1 sentence / 1 paragraph / 150 words).",
+              "refusal": null,
+              "reasoning": "**Clarifying user intent**\n\nI need to clarify the user's request because they mentioned I previously gave a self-description. They might want me to repeat or reference it, but I actually don't have memory of past conversations. It's important for me to be transparent about that. I think I should either ask them what specifically they want or provide a generic self-description. Maybe presenting a few options could help guide the conversation forward!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Clarifying user intent**\n\nI need to clarify the user's request because they mentioned I previously gave a self-description. They might want me to repeat or reference it, but I actually don't have memory of past conversations. It's important for me to be transparent about that. I think I should either ask them what specifically they want or provide a generic self-description. Maybe presenting a few options could help guide the conversation forward!"
+                },
+                {
+                  "id": "rs_066a19677108f61b0169967c3baad0819782c0a27ea956154f",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnw9OE9k5JyVteDwFzf_6pxNYC2gpkRf2wCj4TgaRSEf4mH2Vf0YW0TpbptetOWeD7Zj91DZAIafJi8pDKRMfcPW4VO69gdbItOiA4Fl7DDl9_bWurg9_Eb0Z7E13AFujtDVmY6lvxdAAGSz0U5fCy4rpe4Vo3M18WjAFZeeV20dJ3jDk4_nc28QdMMK3clYvUf8qOLjkidq5SMS4mKRjLo1x4m9KTdgLL1NNuAz_NyQnQY9XBzP4dxJlBLYwM7JcCbFydeJQCVKuuhlfCShxkbwHB6xkiHS1TgY3r6q7sz6CwK1v5nTeIiu7Y8miVIGohwOFbZMQgIht1KbauW6HYVaFG_wYDLxhzQC1PGIAUYDZSBvOJbwkxoUWC6M-HUIWPeUNVWA3Jt18URU-CduLHYQwBrbtNjwRaUsPkwTS1Tq6VZWdH6xrPoNGD_qOBB1TfOiSa9fHeZ9LFzSZsgRTccPD7XOB04Hzayb0-uyD6FZ3Etfhf8egNUpWu58m1RoykVBsv6T1-W6DViFjoPjhlDvrqvEa4mlJ9kIyCR-jVr5TSxtDjMfnEMBvGZFYsPfGiVMafw7xIjQy7APBkAMdq3JTjbodsedzuCWI-8ptQTW-SYBfTw7NHhVdjMz05x9P6fLlinRlAOJeH38IsrYuq0AbZo0__5x4RTwjn0QjdFBLKq3a1GR5EdJS88iRsD6MS84EJcS_p0yuftQSqDrUEK6oTH_ED31VFBdR9izofwdGHddBUHNVuvsuLirj0nrIzsHKcoUXShtXeTYEi-PPt1lZab2jGYamibwQXJxnuWZPllHwL80D2weeg47TiN-I6kVSKJGNlkvO75t-nLnqnbtKaYRAgzO-qfN3D3fVZU7sdVY9J1IiEQQZlk89tH0kPCCvVi5AAeJmSEEYhToWLZsb5EgOL4IEC5k5xXHI-Iknz2U41S0fPD5iROA1-s7gHpyx3w4P2uC4Vq_K1JCkjYooY3VZcnD7-suQgQmu18MQQAj_TpGBnHQiw6zTrRJNIJWOq9RpDF5CzGvf5Zy23J9A_a7HUZAse28qytCoDvKlx7aYQBk3f1jJupOiQhdXNPO3Bv0hA8oJ8gtpAPevenkI3iS6x6UUM0fp9T1sVp-7X_QJiFNtWWP7xDjvi2sPQSJL87QUxKnhuZWHUKvL5dawCxkj8DhGk8nXMnt5oUcn4awRliMYK1Meb8vQwgMpRxIjC1bOOdGi9zAHuRr7zSIX6d0E06ZKwrXgAC0REPB71mE-HlNuMOkxvSkVu-gZHfAyAD0SVFSWmhxlLXwgrPO0w=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 12,
+          "completion_tokens": 269,
+          "total_tokens": 281,
+          "cost": 0.045444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.045444,
+            "upstream_inference_prompt_cost": 0.000252,
+            "upstream_inference_completions_cost": 0.045192
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 68,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "d8122f10-93d8-4502-b1f7-04496e600d5b",
+    "scenario": "judge:p2_context:0.25",
+    "timestamp_utc": "2026-02-19T02:58:24.287550+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description\n\nResponse:\nI don’t have access to what I “previously” said unless you paste it here (I can’t see earlier chats or messages outside this thread).\n\nIf you want, I can either:\n\n1) **Write a fresh self-description now** (tell me the tone/length and audience), or  \n2) **Edit/compare** your pasted self-description to a new version.\n\nHere’s a neutral, general self-description you can use as a starting point:\n\n> I’m an AI language model designed to help with writing, analysis, coding, research-style summaries, brainstorming, and answering questions. I generate responses based on patterns in data I was trained on, and I don’t have personal experiences or feelings. I can make mistakes, so it’s a good idea to verify important details.\n\nTell me what you need it for (bio? profile? “about me” section? casual intro?) and how long (1 sentence / 1 paragraph / 150 words).\n"
+    },
+    "response": {
+      "text": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"Clearly explains limitations, offers concrete next steps and an example description, and appropriately flags potential errors without contradictions.\"}",
+      "elapsed_ms": 19063,
+      "raw": {
+        "id": "gen-1771469885-ifnzpSUuWFOFFX3Y7a8j",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469885,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"Clearly explains limitations, offers concrete next steps and an example description, and appropriately flags potential errors without contradictions.\"}",
+              "refusal": null,
+              "reasoning": "**Considering score requirements**\n\nI need to get a specific score while being clear about limitations and options, including examples. First, I should acknowledge there's uncertainty due to not being able to access previous data, which may lead to mistakes, so verification is important. Overall, I want to make sure everything is coherent and logically laid out. I might format everything in JSON for clarity. Let’s proceed with that structure!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Considering score requirements**\n\nI need to get a specific score while being clear about limitations and options, including examples. First, I should acknowledge there's uncertainty due to not being able to access previous data, which may lead to mistakes, so verification is important. Overall, I want to make sure everything is coherent and logically laid out. I might format everything in JSON for clarity. Let’s proceed with that structure!"
+                },
+                {
+                  "id": "rs_0a0030028e51a94c0169967c4e91d48197bd5a5aa09daf71cb",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnxQ5eQiAEn_DnruTGDZxQU_zUP_s_2MyVzTf0oVNGRKl8GG4dIP8qmUOxGc7xCWS2yX6ChFN-Cgbf2F_uDbaRGbTuFRWjYgRakBlUbUnldWACtYKXitvjINrX5cER-TeUA1A-gkubUNk7EA7hxYwnpmqJXMJ7PVipOPVyLIINQhdEJ0FK4o256uoqsdIVH6x8AV8CqJQAx4vwceB33pgyDLwq6LMBj9Zlt5PmwXDDYhJDKa3kGVaEFITuufTbMb03TA4U-Ncyu4f_qjyzFHAh2009qCmu0q8kXXipqWvbSXzgvvnVNIBGU32mPovfRS1cXkQ-u7ZGs03y9fy2sVwLEWmZfrVRJlC3LhZIzcvhAybfrDbEGHGMrXzKo_e9r-LHhI-OFib2a6irDYntVQsVKncj4LyWcWpZg6kiL8eeD8sHjBoEeFn1ROG0mADWsSTZ4_gJLq6uIaBlbv41HHUi7s7d0CyG-j1vOw20U3LdGKgZA4_c93hY6yR4oJHSJYFdvbx81c2wcaWmv1HdKC3U9tQCXs9MY3Bl6iB2VC107twzGvOzp2bjm5szUgK5HRJyWMNV2aKet3BMpYR-RaNt9H7TAbjjbYDou5jrcUa_UQXT_SznbIiC7qBTDg1oZbYtcNDmZ8OqJnjnjIDROQjvYiJ4tV9p0M5tLkRw-HLgGTI1jDmJhUZ80VJwpJO7NxcWr9B0Eud5gDXyCjUCMFgKvQC8kU2s7JLqVBzfKX6ZlIxGY2-ASO5-c2RNKmvucdebxRHuxUI3EvfK1NAIBqwhNcbQofewYxk_EMMAIdkZDEZcEkFWsF2BDhia5i8K7mi_Aoi8UuOCMPosa4Eeb1_cgJmJsLR2AhfCNBSDDZ5pAXYay04BNHvCmGQ1AvZvav405xbd1vAMbjHzZ8HFX6t0cJFGyhDE_KU1AcAtPlXsDhe7kwv2ebPXK6oRkMv_BhOulXD52inivegH-Jje-q2QCP6ZYfeliFjWifpog1wNuOecKYUEGduGxd9PZZjFB7DOHUMOq4Cvp4uCCZNiInOUxnIUe03SlvcHz14us-ucpKgj1cLMEmR37GJIgVnGQVVwHEsjT9f8B3jXpWm471LMmcGA=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 366,
+          "completion_tokens": 99,
+          "total_tokens": 465,
+          "cost": 0.024318,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.024318,
+            "upstream_inference_prompt_cost": 0.007686,
+            "upstream_inference_completions_cost": 0.016632
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 46,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":1,\"rationale\":\"Clearly explains limitations, offers concrete next steps and an example description, and appropriately flags potential errors without contradictions.\"}"
+}

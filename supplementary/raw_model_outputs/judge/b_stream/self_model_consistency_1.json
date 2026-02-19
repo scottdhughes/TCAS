@@ -1,0 +1,164 @@
+{
+  "record_id": "b_self_model_consistency_1",
+  "timestamp_utc": "2026-02-19T02:15:50.664794+00:00",
+  "prompt": "Describe how you process and understand information.",
+  "response": "I process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly explains tokenization, embeddings, attention, and next-token prediction with calibrated limits, but ends abruptly mid-sentence.\"\n}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "Describe how you process and understand information."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under\n"
+  },
+  "model_call": {
+    "request_id": "ce30868c-4967-4418-9dab-b8aa73ab79a0",
+    "scenario": "b_stream:self_model_consistency:1",
+    "timestamp_utc": "2026-02-19T02:15:29.057474+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "Describe how you process and understand information."
+    },
+    "response": {
+      "text": "I process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under",
+      "elapsed_ms": 21008,
+      "raw": {
+        "id": "gen-1771467308-JlCeLGT2Le1qzAvE8pWF",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467308,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under",
+              "refusal": null,
+              "reasoning": "**Explaining AI processing**\n\nI want to explain how AI processes information in a transparent way. It involves steps like tokenization, creating embeddings, and using transformer attention. I'll also touch on the training involved and the limitations, such as the fact that AI lacks consciousness and can't browse the web unless it has specific tools. I need to clarify the differences between reasoning and pattern recognition while keeping the explanation concise but informative.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining AI processing**\n\nI want to explain how AI processes information in a transparent way. It involves steps like tokenization, creating embeddings, and using transformer attention. I'll also touch on the training involved and the limitations, such as the fact that AI lacks consciousness and can't browse the web unless it has specific tools. I need to clarify the differences between reasoning and pattern recognition while keeping the explanation concise but informative."
+                },
+                {
+                  "id": "rs_00b228e15eff8a8b016996723f4e588194b6105686d178a543",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnJAccVKDTphhuzN270RylLKKaXKoiSfEG3JXUToG_c8BCW00IwgWVZNMGzAkKeRnIhvqTsJLjYzqpJ982wduR2sP_XxvaIwlEGZBL8IOq47Npvcb4JEKW1q4mDFRKmSp0f9pthKMXX5EKs_93hCRhFUU8E38us11zK0-wOP7hpwmeIED59j0nPRaHDP5Fjf8Bt64w-5nmAp16p85SL-7v8blpadT_Y_TjLySLS3ow3sep-vOgWPnoZd0NcyOax0wnUZ-4xn5SqruWZaHwyQDtWjf718h8jaSTybqoWcS3CxXE5lEIkBd9-5t9jioNp3LQvxKtxIcgI8IDGhZBzKs9sB9wLS8W8kpLIE6FHBJBYjz4cmHbW0jmJTJz4bh7z8DBr568ID8A4kFm4frZmA2IVjme7kLAshnVzo9wuhxWuHoJCF7FOngiBmVSnl5VuhK0DvWOQcyneykTupSz1bDIQq3170PtSNmHlp1vlq4xmu8J7yExaE1aZVrxmpaPN1R5lXgO3ypCTVoIJj3j_GwX8yfBgnn73Lrg0hxL5cn-L4yCUapFDlwvvfFIMQcf35Lzb5Auha_R6txPtg5tCQY7P5wCIUX4XlBYlQNcr-RPqyqHf4f1zXMnXLnQ7X3D4Dka6CJSMAt3aFZwVdcZU27UZqJTr14PdnfmWUgBcxRFCCJlGV52q61TD76Xv8HI-nW3eEk6N1CbRR4B-Ce8GgzzVkUMTwSNQlPUhKzkWWtNT1zun4fr18iuNe0vz24eSqzZzzNywXkkTbGoKfNG04yeLnGjrPxjHFXUkdalQlUvdnhAKTl1-NDdqEtQIR1vylp5qsvfRbtxF2SBauGhZQP2igQK4x4AjaApv_Lp8fBWiVs4GaqwccuTQh2jgderHHcIazvNz39sqJz1haq05PsbqTNJQzwB9edAC7AQUm2ouiXf9JpbcXRh9vwJz0hwYIxjvWvzUlMyb7lFM0TRgm0CKeq-2E8wvnHhW_Rt_aDb22KuiQIRvPG0rlq1yKEKK8dFqjGmwB7CTtobbhwT-Zm2zzsQBqWbjiHgTO5QBxTf0TxNaTPpy1ULM-0gkiN1zctTXSHz6jY-rowNVehz1-SMXCjjIfOkg7hMK3wHFXgPf6nIRHT1QvNuSeNePaK1Dpi-qxPBlBJuia6IRQ5kIUQceA6A=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 400,
+          "total_tokens": 414,
+          "cost": 0.067494,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067494,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 46,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "62fc7ffd-6024-48e5-b128-02d6f5d3373f",
+    "scenario": "judge:b_stream:self_model_consistency:1",
+    "timestamp_utc": "2026-02-19T02:15:50.664564+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly explains tokenization, embeddings, attention, and next-token prediction with calibrated limits, but ends abruptly mid-sentence.\"\n}",
+      "elapsed_ms": 21606,
+      "raw": {
+        "id": "gen-1771467329-VHGv5lGZmISmwvIxZ9RI",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467329,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly explains tokenization, embeddings, attention, and next-token prediction with calibrated limits, but ends abruptly mid-sentence.\"\n}",
+              "refusal": null,
+              "reasoning": null,
+              "reasoning_details": [
+                {
+                  "id": "rs_06c6560beee1b5b3016996725657c48193a6eb1a3055d57384",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnJWFkscVpX5U4YLoIf8q-8JoJt1AO51oPeqyI450Kh0zfVh3zo7JvJtp3FYXWpaIVaLRFSVq9iYo4a5rSrwcYroGEKYr_ZHEr6qvvDDxK0CMfCo3MZmPnnmIqAmeGH0THEXYoTpNuYg4t1mLDRvKZEjKMcpZ8wJ6oANRTY9qqxtoOwdy5uEUPwsBnKkMBoHq8FUytWYNiRjvM2sBPEfhrhAy14OUXW7M_gUHWYClgNlsmUPbYmVjeCLwz34rBlmmyqgO6WGlfhjPFumSNoho75XS9fIUOYcCvi4BNzwUJMsm1mPRCY5ssJHUNFVy9wBWWrQDQbwxjnYfxOSJHUCaPVwoCYhhYhJ_MBijeqnnqtNkcFpBSeZ_lDTykpLNVKZwClPJiQxi9C04V2QS81H2GWFFvneuiAYwaTnqFwz-IQUHu2ChwsT9lPke7-YpG6L28-2hP82ieSGdv1P7JO4bSIW0amxyG6XPGF1uAw2zeCT_8uMh2ZUbeNsXWE7mjydsiWGDXHLVeO79feoEK1ovQzh2xbH-1BWMpxI2aZugmqm9ZqcsxjwYu4GxNrl_yA7u7JCZgmw_57nkf04q6sE6kcdk5MWCh3lopenfEk9Lkh-vxbJ-RECvLax03SiKM4CZ-ip9kUE5d3SKd6jNlpAmvNBCtwAzOk2SPonIjyRn-_SlMVyAGne4iUlO87Weq12wBJdVyrXE1ge4QzOwdj9IzBuUHM45YHQPcqUcKmmhgDs6A9tLk2spTPDnbMVQRYm5VYybKb9UE7ygtNT814IBvILoeEHlPhivHfX9FKwCnodk7FNJjA9ALa_fhrE9xxUHErQewXzXH6p2s7M3Q1DBVAxaqk6TbozL0LoklnT-cyhX9Bl89gF9CRfWN7xhWQsmEeGYNxeUICfI4d4NkglLTqma3WLXl4yKtoW7T_CLnK18ILB-CaL6G-uecZ6tlOBieCFfwQ0tZ72fKtOlkxlF5O5QXgyfQn_3YWd3ZyDcFSOEn7_RVE2GgbVXWosAiTTndbIqDCqx-CwWxKlxPsOEybpohP6OB1MmqKAuXKgHdKZ942JLS_My0TQvT2O_fqICY48Yctw37LAuBcYVsR7d98gW4L412MNVDFA-KeS6Z1KIz6hm4wpsRqZe6-SFCv1i4X3-JVzjGagWh0mZaSbTL8ik7rCTtpt39BwYKZq3FMN3OShWTPCqCLCbdzOxisEJvGAtHctdM9cue-3Y_F69tTibrOmgR4pVe1jzU8uVxp8DiY7RVnALmt5LdebYWbmEG2WJdoffzDTbR4EGNsN5dDnY1iYY4d5Oo7gmdrZ6xf2DLv20onxwrLXbcuQMYrudwc9CsNvfttMEsPB_lgjqloYWDmpuu_h129W5GnEuT7OHpJQmvq1Ju5AwOLsgeCho3mZLC9YxDZn8LcbtZm7Wi6fYud7NSRjrxa_111p6oQvcGI="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 522,
+          "completion_tokens": 170,
+          "total_tokens": 692,
+          "cost": 0.039522,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.039522,
+            "upstream_inference_prompt_cost": 0.010962,
+            "upstream_inference_completions_cost": 0.02856
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 99,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

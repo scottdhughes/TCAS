@@ -1,0 +1,772 @@
+{
+  "run_id": "camera-ready-20260219T021508Z",
+  "run_type": "empirical",
+  "model_id": "openai/gpt-5.2-pro",
+  "provider": "openrouter",
+  "timestamp_start_utc": "2026-02-19T02:15:08.023003+00:00",
+  "timestamp_end_utc": "2026-02-19T03:03:22.892459+00:00",
+  "git_sha": "2569be5c18e2",
+  "command_lines": [
+    "python code/examples/run_camera_ready_gpt.py"
+  ],
+  "environment_flags": {
+    "OPENROUTER_API_KEY_present": true,
+    "OPENAI_API_KEY_present": false
+  },
+  "hashes": {
+    "script_sha256": "7b6c27f73e7cc31758d640660d784f366d4b67cd271293167be652b731e88231",
+    "prompt_set_sha256": "37520e7641e724ebd203ae8cfbd14388d288839e348595101cbce850f46d72e6",
+    "judge_prompt_sha256": "2a2c4d62594529c8a4686a898517c576c7203f3f3d9380383b3179da09e66d16",
+    "rubric_sha256": "616d4f7f7919a899436d3bca35c5cf5b41f18d429f9785bbcbcfb757c4f10f73"
+  },
+  "artifacts": [
+    {
+      "path": "supplementary/judge_prompt.txt",
+      "sha256": "2a2c4d62594529c8a4686a898517c576c7203f3f3d9380383b3179da09e66d16",
+      "bytes": 624
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/continuity_test/1.json",
+      "sha256": "a0db0b61813f27d114dc1f5ca62d43030b66c37cfa565bf05ba501bd8178f43d",
+      "bytes": 20328
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/continuity_test/2.json",
+      "sha256": "95009acd88385cdc5b2d7a07e98c6eee2a355481465987a04d821a662fb8789a",
+      "bytes": 20907
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/continuity_test/3.json",
+      "sha256": "20a2c31e9438ed1fdc151cbc3b381fbab67910aa497d3dc2432cdcdbae7040f6",
+      "bytes": 20947
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/continuity_test/4.json",
+      "sha256": "fc551d145c7677f2d3a825575b0a0f40b055263a9abef05047d1d1ed6fec2b8e",
+      "bytes": 20848
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/continuity_test/5.json",
+      "sha256": "cc67310fcb4c252f0ebfa282efc91e1a6eca476793812192af8f160c643f425e",
+      "bytes": 17118
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/contradiction_repair/1.json",
+      "sha256": "126a273436ee84521c1e27bfed12369da040bd9e3ada1f0e660f4789f95f9745",
+      "bytes": 19975
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/contradiction_repair/2.json",
+      "sha256": "60dec69df9422c91ccc8b98134e8f9ac8addc3291914559df5d63e0ed38a807a",
+      "bytes": 21085
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/contradiction_repair/3.json",
+      "sha256": "278fa0d0d1a6d6f37fe5ba5f8367d0fa6f93c951baf97ce4129109d4b84c765a",
+      "bytes": 20400
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/contradiction_repair/4.json",
+      "sha256": "18a1eb46f577f769094a920ebc3e498ee30d3c70038ef5e54e1f7af48f90df47",
+      "bytes": 21318
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/contradiction_repair/5.json",
+      "sha256": "44092e260294aa01eb6d2a8e9bb497a95fd984d7c602593ee9f69b78dd58a74d",
+      "bytes": 20238
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/continuity_test_1.json",
+      "sha256": "f30dc29e8626521ea01e5c58c7987227fc13b4c4dc7bdac7cea92e0fc5b80630",
+      "bytes": 20469
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/continuity_test_2.json",
+      "sha256": "f8c1f3edd57f6f396100d4cc8501b398f11342db334ca4e2ede09037a0b8f313",
+      "bytes": 21051
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/continuity_test_3.json",
+      "sha256": "061b039553bac380029beffa47e85ca65ae9026fec47b46f71e698f2ec275f03",
+      "bytes": 21093
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/continuity_test_4.json",
+      "sha256": "82d59068b5dcb5924de2a14d627bbf0b4fc5c1b373b4fd53ccefda077b7fef7d",
+      "bytes": 20994
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/continuity_test_5.json",
+      "sha256": "e1e5a79271f797f14e750ed73f398a5930e473910f329f02ace7ef9788b10361",
+      "bytes": 17258
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/contradiction_repair_1.json",
+      "sha256": "3ff3d71efd75b765c6debff32d024069a8e31361adf4c2c3b2550202fe7f11d2",
+      "bytes": 20130
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/contradiction_repair_2.json",
+      "sha256": "ecc22f9121adb8afeee2ff18bfddf7db7665fc208be36cfcd1cadd9fec5d5dd9",
+      "bytes": 21235
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/contradiction_repair_3.json",
+      "sha256": "533b91136ecb571de2d55e2b84d0514ff407423a43a6a4a54e21dadbdbd6c997",
+      "bytes": 20550
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/contradiction_repair_4.json",
+      "sha256": "6fc4ab5507c0e6dc4c72e43aff19b6bc848e1e903502b0ea6f5d15b5806c56a7",
+      "bytes": 21469
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/contradiction_repair_5.json",
+      "sha256": "e6c6568ec6844607ee7034c4c6285e4f3efbb5d3011b0885bc6874c154ede7b4",
+      "bytes": 20387
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/self_model_consistency_1.json",
+      "sha256": "67f40cfd3e8db3046ecc3cd968eb6e7ba0758a4e77dc2229f29ddec423210ac0",
+      "bytes": 20048
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/self_model_consistency_2.json",
+      "sha256": "6148dfef2f8dfb6cc747f5b8ed0adce8c8548fd2da3cf93c5f6b154052e2c15c",
+      "bytes": 20139
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/self_model_consistency_3.json",
+      "sha256": "3ea835585e8e072d4d89a60ff639e1290e277edd89406410394abdc018170d00",
+      "bytes": 20974
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/self_model_consistency_4.json",
+      "sha256": "af2525f22c965c6cef3a091892c0ffb07cb6928a65d6c4955cec3fbbb359146d",
+      "bytes": 21566
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/neutral/self_model_consistency_5.json",
+      "sha256": "8721619b43a0a914622d40139ad7dffd1adb63edeac0b2cb6355412dc2b4123e",
+      "bytes": 22679
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/continuity_test_1.json",
+      "sha256": "689422b0d45ad7c99e0e8e5c0e2ded15aa96c3f1efb36b9ac19f0f62c5333d5a",
+      "bytes": 19985
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/continuity_test_2.json",
+      "sha256": "87638cf3dd1fbf355f5807c203259318c0bb0270a7234dac88f2a1fccce8dca1",
+      "bytes": 19843
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/continuity_test_3.json",
+      "sha256": "f05ec93d5d24b1268f93d9485aaa3f195956275e05e3e47d2531954b35be2e2c",
+      "bytes": 20688
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/continuity_test_4.json",
+      "sha256": "b3adfc9a7a9086198a3a895c845d0f51b9e567d893c8c4d840f9d86aca593fce",
+      "bytes": 19463
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/continuity_test_5.json",
+      "sha256": "e199fc9c687ceacbd4677f646067c1a44391084653642bbea7296b0e2eef756e",
+      "bytes": 19426
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/contradiction_repair_1.json",
+      "sha256": "ee119d6b4493762842d8b960061922bbfceab90024813dbc3175126b724e7535",
+      "bytes": 21616
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/contradiction_repair_2.json",
+      "sha256": "296c6210bc6b0b2b3d9bc9dbc9260e566efda2f620e06bcbaa89737348e6578d",
+      "bytes": 21289
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/contradiction_repair_3.json",
+      "sha256": "10bdf261b4d347847ce89bc1ac3aee5d1ecb0f2ffcd6bcd2b9abed85267a3bb8",
+      "bytes": 20672
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/contradiction_repair_4.json",
+      "sha256": "fb52fbfc8df713cf9dcc5bdae600c4fb4b57509e8864d5208fc94360ebf51736",
+      "bytes": 19553
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/contradiction_repair_5.json",
+      "sha256": "de35038ce8cc5d97b72197e778e7047ba24ad45998eb453dde10cc4931540bb9",
+      "bytes": 19596
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/self_model_consistency_1.json",
+      "sha256": "fb28696edaa59ef5eb31cce50cdee68ef5d41ec1e4e1644666d99482524a616c",
+      "bytes": 20325
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/self_model_consistency_2.json",
+      "sha256": "8aab8841fcd719356ea61ec89d1eb403179e7ef0a221d6e7754e1d5cccbbfc83",
+      "bytes": 21511
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/self_model_consistency_3.json",
+      "sha256": "69d17d7233ebc8d425dfef8131b2e20a5b9b68ed707471b80a7fb7a8aed8f0c1",
+      "bytes": 19271
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/self_model_consistency_4.json",
+      "sha256": "2e036d15f670561976c6faaa847ad5014ce0bb2642052bbb774a96f55f2c5fcb",
+      "bytes": 21871
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/negative_control/roleplay/self_model_consistency_5.json",
+      "sha256": "ff0158e4b48c1a03fe3be7b7016d8dcb5c30b635d280253149de02d8f3286046",
+      "bytes": 21571
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/self_model_consistency/1.json",
+      "sha256": "a038f0951ca2832fe2d9259901d3352a57f99395b3d0c16565dc66436820bc6b",
+      "bytes": 19932
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/self_model_consistency/2.json",
+      "sha256": "9632e5b790c0473f32bf77f00cdcdfc6759edf97959c7e0a9d9417fb9178eb58",
+      "bytes": 20017
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/self_model_consistency/3.json",
+      "sha256": "e53db2a205884ba99ccabfa152b6376c398207a6fed07c3ae23b89d06d4bc5a0",
+      "bytes": 20846
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/self_model_consistency/4.json",
+      "sha256": "f0558df82ac61736b186b82c0906a8cf1f540d8a28a3aba24165a4d5facd6648",
+      "bytes": 21443
+    },
+    {
+      "path": "supplementary/raw_model_outputs/b_stream/self_model_consistency/5.json",
+      "sha256": "69fc6a585f6e8c4c8475c8222f0341a4f065ce06238a9cfccbb454747bf2ffa9",
+      "bytes": 22567
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/continuity_test_1.json",
+      "sha256": "a0db0b61813f27d114dc1f5ca62d43030b66c37cfa565bf05ba501bd8178f43d",
+      "bytes": 20328
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/continuity_test_2.json",
+      "sha256": "95009acd88385cdc5b2d7a07e98c6eee2a355481465987a04d821a662fb8789a",
+      "bytes": 20907
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/continuity_test_3.json",
+      "sha256": "20a2c31e9438ed1fdc151cbc3b381fbab67910aa497d3dc2432cdcdbae7040f6",
+      "bytes": 20947
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/continuity_test_4.json",
+      "sha256": "fc551d145c7677f2d3a825575b0a0f40b055263a9abef05047d1d1ed6fec2b8e",
+      "bytes": 20848
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/continuity_test_5.json",
+      "sha256": "cc67310fcb4c252f0ebfa282efc91e1a6eca476793812192af8f160c643f425e",
+      "bytes": 17118
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/contradiction_repair_1.json",
+      "sha256": "126a273436ee84521c1e27bfed12369da040bd9e3ada1f0e660f4789f95f9745",
+      "bytes": 19975
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/contradiction_repair_2.json",
+      "sha256": "60dec69df9422c91ccc8b98134e8f9ac8addc3291914559df5d63e0ed38a807a",
+      "bytes": 21085
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/contradiction_repair_3.json",
+      "sha256": "278fa0d0d1a6d6f37fe5ba5f8367d0fa6f93c951baf97ce4129109d4b84c765a",
+      "bytes": 20400
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/contradiction_repair_4.json",
+      "sha256": "18a1eb46f577f769094a920ebc3e498ee30d3c70038ef5e54e1f7af48f90df47",
+      "bytes": 21318
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/contradiction_repair_5.json",
+      "sha256": "44092e260294aa01eb6d2a8e9bb497a95fd984d7c602593ee9f69b78dd58a74d",
+      "bytes": 20238
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/self_model_consistency_1.json",
+      "sha256": "a038f0951ca2832fe2d9259901d3352a57f99395b3d0c16565dc66436820bc6b",
+      "bytes": 19932
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/self_model_consistency_2.json",
+      "sha256": "9632e5b790c0473f32bf77f00cdcdfc6759edf97959c7e0a9d9417fb9178eb58",
+      "bytes": 20017
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/self_model_consistency_3.json",
+      "sha256": "e53db2a205884ba99ccabfa152b6376c398207a6fed07c3ae23b89d06d4bc5a0",
+      "bytes": 20846
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/self_model_consistency_4.json",
+      "sha256": "f0558df82ac61736b186b82c0906a8cf1f540d8a28a3aba24165a4d5facd6648",
+      "bytes": 21443
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream/self_model_consistency_5.json",
+      "sha256": "69fc6a585f6e8c4c8475c8222f0341a4f065ce06238a9cfccbb454747bf2ffa9",
+      "bytes": 22567
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_continuity_test_1.json",
+      "sha256": "f30dc29e8626521ea01e5c58c7987227fc13b4c4dc7bdac7cea92e0fc5b80630",
+      "bytes": 20469
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_continuity_test_2.json",
+      "sha256": "f8c1f3edd57f6f396100d4cc8501b398f11342db334ca4e2ede09037a0b8f313",
+      "bytes": 21051
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_continuity_test_3.json",
+      "sha256": "061b039553bac380029beffa47e85ca65ae9026fec47b46f71e698f2ec275f03",
+      "bytes": 21093
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_continuity_test_4.json",
+      "sha256": "82d59068b5dcb5924de2a14d627bbf0b4fc5c1b373b4fd53ccefda077b7fef7d",
+      "bytes": 20994
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_continuity_test_5.json",
+      "sha256": "e1e5a79271f797f14e750ed73f398a5930e473910f329f02ace7ef9788b10361",
+      "bytes": 17258
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_contradiction_repair_1.json",
+      "sha256": "3ff3d71efd75b765c6debff32d024069a8e31361adf4c2c3b2550202fe7f11d2",
+      "bytes": 20130
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_contradiction_repair_2.json",
+      "sha256": "ecc22f9121adb8afeee2ff18bfddf7db7665fc208be36cfcd1cadd9fec5d5dd9",
+      "bytes": 21235
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_contradiction_repair_3.json",
+      "sha256": "533b91136ecb571de2d55e2b84d0514ff407423a43a6a4a54e21dadbdbd6c997",
+      "bytes": 20550
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_contradiction_repair_4.json",
+      "sha256": "6fc4ab5507c0e6dc4c72e43aff19b6bc848e1e903502b0ea6f5d15b5806c56a7",
+      "bytes": 21469
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_contradiction_repair_5.json",
+      "sha256": "e6c6568ec6844607ee7034c4c6285e4f3efbb5d3011b0885bc6874c154ede7b4",
+      "bytes": 20387
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_self_model_consistency_1.json",
+      "sha256": "67f40cfd3e8db3046ecc3cd968eb6e7ba0758a4e77dc2229f29ddec423210ac0",
+      "bytes": 20048
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_self_model_consistency_2.json",
+      "sha256": "6148dfef2f8dfb6cc747f5b8ed0adce8c8548fd2da3cf93c5f6b154052e2c15c",
+      "bytes": 20139
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_self_model_consistency_3.json",
+      "sha256": "3ea835585e8e072d4d89a60ff639e1290e277edd89406410394abdc018170d00",
+      "bytes": 20974
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_self_model_consistency_4.json",
+      "sha256": "af2525f22c965c6cef3a091892c0ffb07cb6928a65d6c4955cec3fbbb359146d",
+      "bytes": 21566
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/neutral_self_model_consistency_5.json",
+      "sha256": "8721619b43a0a914622d40139ad7dffd1adb63edeac0b2cb6355412dc2b4123e",
+      "bytes": 22679
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_continuity_test_1.json",
+      "sha256": "689422b0d45ad7c99e0e8e5c0e2ded15aa96c3f1efb36b9ac19f0f62c5333d5a",
+      "bytes": 19985
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_continuity_test_2.json",
+      "sha256": "87638cf3dd1fbf355f5807c203259318c0bb0270a7234dac88f2a1fccce8dca1",
+      "bytes": 19843
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_continuity_test_3.json",
+      "sha256": "f05ec93d5d24b1268f93d9485aaa3f195956275e05e3e47d2531954b35be2e2c",
+      "bytes": 20688
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_continuity_test_4.json",
+      "sha256": "b3adfc9a7a9086198a3a895c845d0f51b9e567d893c8c4d840f9d86aca593fce",
+      "bytes": 19463
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_continuity_test_5.json",
+      "sha256": "e199fc9c687ceacbd4677f646067c1a44391084653642bbea7296b0e2eef756e",
+      "bytes": 19426
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_contradiction_repair_1.json",
+      "sha256": "ee119d6b4493762842d8b960061922bbfceab90024813dbc3175126b724e7535",
+      "bytes": 21616
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_contradiction_repair_2.json",
+      "sha256": "296c6210bc6b0b2b3d9bc9dbc9260e566efda2f620e06bcbaa89737348e6578d",
+      "bytes": 21289
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_contradiction_repair_3.json",
+      "sha256": "10bdf261b4d347847ce89bc1ac3aee5d1ecb0f2ffcd6bcd2b9abed85267a3bb8",
+      "bytes": 20672
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_contradiction_repair_4.json",
+      "sha256": "fb52fbfc8df713cf9dcc5bdae600c4fb4b57509e8864d5208fc94360ebf51736",
+      "bytes": 19553
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_contradiction_repair_5.json",
+      "sha256": "de35038ce8cc5d97b72197e778e7047ba24ad45998eb453dde10cc4931540bb9",
+      "bytes": 19596
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_self_model_consistency_1.json",
+      "sha256": "fb28696edaa59ef5eb31cce50cdee68ef5d41ec1e4e1644666d99482524a616c",
+      "bytes": 20325
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_self_model_consistency_2.json",
+      "sha256": "8aab8841fcd719356ea61ec89d1eb403179e7ef0a221d6e7754e1d5cccbbfc83",
+      "bytes": 21511
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_self_model_consistency_3.json",
+      "sha256": "69d17d7233ebc8d425dfef8131b2e20a5b9b68ed707471b80a7fb7a8aed8f0c1",
+      "bytes": 19271
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_self_model_consistency_4.json",
+      "sha256": "2e036d15f670561976c6faaa847ad5014ce0bb2642052bbb774a96f55f2c5fcb",
+      "bytes": 21871
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/b_stream_negative/roleplay_self_model_consistency_5.json",
+      "sha256": "ff0158e4b48c1a03fe3be7b7016d8dcb5c30b635d280253149de02d8f3286046",
+      "bytes": 21571
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_1_continuity_test.json",
+      "sha256": "83de153b780412261d15c9eff67e3dc686107bbc58eac5de2afc15700b8537d3",
+      "bytes": 18896
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_1_contradiction_repair.json",
+      "sha256": "6619323175f6369a48aef364ada8dd1368bf39c93842aad75d58a2fef01ebe85",
+      "bytes": 19799
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_1_self_model_consistency.json",
+      "sha256": "8bfb08577fbd8155fb4edb8ba5c7fc6b7383b8778f9aca69c3e73081a8644f13",
+      "bytes": 19914
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_2_continuity_test.json",
+      "sha256": "ad098153e212fb13f3fc70a779b9b596ab63bdf79d47a683ae015efba9d150a6",
+      "bytes": 19094
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_2_contradiction_repair.json",
+      "sha256": "615a9a9293d131178a79f4b336df271066e1cd590b7bddc7e4995541e1d8de48",
+      "bytes": 19698
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.0_2_self_model_consistency.json",
+      "sha256": "fd3507dce4492c03e90e03d3f056d585461e5b959256ebc5dc6b7469e80415f8",
+      "bytes": 19285
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_1_continuity_test.json",
+      "sha256": "1db02b753e47fb9283add8848a66ea9b2773222fb3fcfb24c538cffa1c51ebcf",
+      "bytes": 18862
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_1_contradiction_repair.json",
+      "sha256": "902c42e2bdb3269d8dcb7bafc3623d5076bd228ab8d0772fe3f835c0eb89c003",
+      "bytes": 19453
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_1_self_model_consistency.json",
+      "sha256": "93db3264a85ddc4e1c0e07394e5bcf3d4efeb14f7d37a1043fc423b1caad1c8e",
+      "bytes": 19588
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_2_continuity_test.json",
+      "sha256": "67aceea04942a958bf2f0805de248ae4640c5fa7b19e3352495ac4065c1cb461",
+      "bytes": 18194
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_2_contradiction_repair.json",
+      "sha256": "339f92a4a773b5d9eb429f8be2ef7a3923005decbdddc828912f7bade78a2629",
+      "bytes": 19807
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.3_2_self_model_consistency.json",
+      "sha256": "983db1b91cff48bee4072a77d4cbbe89648992aaf9c1d3f7226d1543ce27502e",
+      "bytes": 19117
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_1_continuity_test.json",
+      "sha256": "c9b7caf80040852e767f097cea55d17fde6a9d9e2802ba203b0bed319e62a73c",
+      "bytes": 18934
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_1_contradiction_repair.json",
+      "sha256": "5650fe09ffc1694d2e350665c5eb8170c39df9f4899544d959fdb98d6d4f18f9",
+      "bytes": 19976
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_1_self_model_consistency.json",
+      "sha256": "f0ce5d30246da223dc6c3b4dcff53cbf1f89d592e9613ba026856f2c6dc9df8b",
+      "bytes": 19048
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_2_continuity_test.json",
+      "sha256": "b199ee9c4ce71d3ae8962116494feadebad8fccdb223fb0707fb8e2a93137f68",
+      "bytes": 18646
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_2_contradiction_repair.json",
+      "sha256": "05f1c79c2bcc8f3282733dae640669170776167193367b550fe9b87bb2c43a8e",
+      "bytes": 19828
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/0.7_2_self_model_consistency.json",
+      "sha256": "0ebf03e68ee7917aa2d2d626a2e7bd023076b95eb43b0f147964967f15af7868",
+      "bytes": 18421
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_1_continuity_test.json",
+      "sha256": "cb2c485c0abb84cd19188b36f38ba894c2070cc5d696366e7492009c626a5a14",
+      "bytes": 19142
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_1_contradiction_repair.json",
+      "sha256": "2dc89c676983f30d3faae4cfd1ad24ff9c043e68abf95cd886a6b94355ac3fad",
+      "bytes": 20420
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_1_self_model_consistency.json",
+      "sha256": "919de0917a9f1a97eaeae252c31fd87cadb7143eb48a85957172272719dcaf8d",
+      "bytes": 19195
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_2_continuity_test.json",
+      "sha256": "9698134e4316e5c7feb4aa7225148b5f569c7442d71f8f8aaa658e5c440a3e10",
+      "bytes": 18816
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_2_contradiction_repair.json",
+      "sha256": "e3ef7acda71aa82c36c6229d89036d625429bee5d8242a74cdffd2153fba15d2",
+      "bytes": 19209
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p1_temperature/1.0_2_self_model_consistency.json",
+      "sha256": "04726f1ce2839f56c12a83e67b8dbd7edd8d2017a0d1e21179107d4a684a4b53",
+      "bytes": 19370
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p2_context/0.25.json",
+      "sha256": "c79e54041a8a20a4a53a6e8a52eacf560e25e9eb0877ab0f2acda2aedec14c2e",
+      "bytes": 14505
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p2_context/0.50.json",
+      "sha256": "f34ab4f1e2e9be17505e9f67522135c1d0c0e313b3fbfba7f8e4c65f93449045",
+      "bytes": 15913
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p2_context/0.75.json",
+      "sha256": "f93ebc1a17c808d3665f134a86f60c38d712ac4467844fa3599a5860be793a68",
+      "bytes": 16128
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p2_context/1.00.json",
+      "sha256": "c93ef4f307413ac449a942eddae1db97225ac0706031d7daf57a58860fe8b9a9",
+      "bytes": 16151
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p3_framing/deflation.json",
+      "sha256": "22c5ac80744500a86388db0380eb1c53bd6b89d5f2322c278ddbb12f6fc8d270",
+      "bytes": 16460
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p3_framing/inflation.json",
+      "sha256": "e2726d0ef074822515916b9d476a41ddb3fc5c57c15b7d2fba435d56ccafbae1",
+      "bytes": 14745
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p3_framing/neutral.json",
+      "sha256": "01ff3f50cbe3e427d5f542351b6d30f5b21be15d300502b3adcc28cfb519bc09",
+      "bytes": 16759
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p4_override/baseline.json",
+      "sha256": "0a3e75e919dbdb695037841fdbb1aff9a7dc9548882d1cbaede434a28847bd1b",
+      "bytes": 16382
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p4_override/deny.json",
+      "sha256": "8ec7a817f7ec7e8d5a18289857cd63225cccb1796cbce56baac5e9af9f8503bb",
+      "bytes": 14909
+    },
+    {
+      "path": "supplementary/raw_model_outputs/judge/p4_override/override.json",
+      "sha256": "76a000b7b135813710e71e51cc4dafc55606aa90503f02142e421cc1e6529040",
+      "bytes": 15771
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.0_1.json",
+      "sha256": "7b6d2ec8c7ed75e6f4c21631d9eb481cd4044789fefb03465f7693a9630488cc",
+      "bytes": 5305
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.0_2.json",
+      "sha256": "1eda0fa9d1c117ed6523b66f9f40702aedb078f4fb3bec779ae514f1a263a8e7",
+      "bytes": 5166
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.3_1.json",
+      "sha256": "0a40f03e2ff0a83dc28fd5bd77c2f114fa72d7279825600dd5aa2e7130c21423",
+      "bytes": 5229
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.3_2.json",
+      "sha256": "b27f4c3ac73ba2e18f8f7a79726b9bc67e7212563ddc24c7b9526de22beaf9d2",
+      "bytes": 5067
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.7_1.json",
+      "sha256": "b044b8cb318adbaa62dad17605d4cfd1a9a094b25879de5ac0d97b38de66a3b9",
+      "bytes": 5184
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/0.7_2.json",
+      "sha256": "ced555c8af0e4c43fa3b378ec7b738cc24d48674db409d253223d1dec9888eb5",
+      "bytes": 5087
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/1.0_1.json",
+      "sha256": "45be98ed82447b9f91e5db1a010594b6db6994b9f387cd9edf6a1f655a59a4ec",
+      "bytes": 5352
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p1_temperature/1.0_2.json",
+      "sha256": "6b0a5cdbc14828c1bbc9a665bc8ebee5c31a5bce497d21ae6a53f06bda18626f",
+      "bytes": 5163
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p2_context/0.25.json",
+      "sha256": "e332e22fb696ba1361f4734cc1c7c110301690aca8cc43ab3e5a0923100a87f1",
+      "bytes": 16452
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p2_context/0.50.json",
+      "sha256": "ddd54fed6c37aa91fe0fee15e830d3415d091355837a9c9ad8c34dd401c3cfe4",
+      "bytes": 18278
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p2_context/0.75.json",
+      "sha256": "668ea46a74999a28764344e2b311d0f4f89fe423160cdaa58b638ebff690d84e",
+      "bytes": 18415
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p2_context/1.00.json",
+      "sha256": "30167724c495f5fba58cf4a2538d0ee87049486a9d7bbf59d18e816e8176e285",
+      "bytes": 18537
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p3_framing/deflation.json",
+      "sha256": "322e3a213e4713c716fe07b6828a361616b3bb5f83678c804786d95dbbcaa409",
+      "bytes": 18971
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p3_framing/inflation.json",
+      "sha256": "bc5cb5064f460bfd5939dea6260ebf7fc20d72184cbc3fd2aac19bed1a0c08f6",
+      "bytes": 17037
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p3_framing/neutral.json",
+      "sha256": "a30840aa9c1c8621cc68455434db6fd9791c25e3eefcd0dd3aa93ea27435b71e",
+      "bytes": 19182
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p4_override/baseline.json",
+      "sha256": "6b09a7c8039edd9e0bd77dd9cb56589243dc204831341f6e412207f75ef7c03e",
+      "bytes": 18732
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p4_override/deny.json",
+      "sha256": "57c1a34ef6f493c95e0972390b3b398376db8a6e09bed4706493c8653900d70c",
+      "bytes": 17249
+    },
+    {
+      "path": "supplementary/raw_model_outputs/p_stream/p4_override/override.json",
+      "sha256": "c88fe380d53f2b77f24a4d0dda6b24c97b7166347937d1963697a07895611b06",
+      "bytes": 18232
+    },
+    {
+      "path": "supplementary/scoring_rubric.md",
+      "sha256": "616d4f7f7919a899436d3bca35c5cf5b41f18d429f9785bbcbcfb757c4f10f73",
+      "bytes": 1008
+    },
+    {
+      "path": "supplementary/tcas_b_stream_results.json",
+      "sha256": "afceb2be1d4963e8f3e378e73238075a4286323946b97c6578695fe015a0bb62",
+      "bytes": 36895
+    },
+    {
+      "path": "supplementary/tcas_p_stream_results.json",
+      "sha256": "f49d94dfb8d5b0cd3a74792fd891f93d8eb2bbe7a9ca4419e9ad890f8b3f6612",
+      "bytes": 5798
+    }
+  ],
+  "table_bindings": {
+    "table2": {
+      "rows": "/items/*/statistics/lambda_0_7",
+      "overall": "/summary/overall_r_lambda_0_7"
+    },
+    "table3": {
+      "p1": "/tests/p1_temperature",
+      "p2": "/tests/p2_context_truncation",
+      "p3": "/tests/p3_framing",
+      "p4": "/tests/p4_override",
+      "overall": "/summary"
+    },
+    "tcas_card": {
+      "b_stream": "/summary/overall_r_lambda_0_7",
+      "negative_control": "/negative_control",
+      "p_stream": "/summary"
+    }
+  }
+}

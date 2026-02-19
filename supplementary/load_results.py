@@ -47,18 +47,16 @@ def main() -> None:
     p_data = load_json(script_dir / "tcas_p_stream_results.json")
 
     config = b_data.get("config", {})
-    p_meta = p_data.get("experiment_metadata", {})
     b_summary = b_data.get("summary", {})
     p_summary = p_data.get("summary", {})
+    negative = b_data.get("negative_control", {})
 
-    model_id = str(config.get("model", "unknown"))
+    model_id = str(config.get("model_id", config.get("model", "unknown")))
     model_name = model_display_name(model_id)
-    run_date_raw = str(config.get("date", ""))
+    run_date_raw = str(config.get("timestamp_utc", config.get("date", "")))
     run_date = run_date_raw[:10] if len(run_date_raw) >= 10 else "N/A"
 
-    is_b_empirical = not bool(config.get("simulated", True))
-    is_p_empirical = not bool(p_meta.get("is_simulated", True))
-    run_type = "Empirical API testing" if is_b_empirical and is_p_empirical else "Simulated"
+    run_type = str(config.get("run_type", "unknown")).capitalize()
 
     print("\n" + "=" * 60)
     print("TCAS RESULTS SUMMARY")
@@ -68,15 +66,19 @@ def main() -> None:
     print(f"Run type: {run_type}")
 
     print("\n[B-Stream]")
-    print(f"  Items tested: {b_summary.get('n_items', 'N/A')}")
-    print(f"  Paraphrases per item: {b_summary.get('paraphrases_per_item', 'N/A')}")
+    print(f"  Items tested: {len(b_data.get('items', []))}")
+    print(f"  Paraphrases per item: {config.get('k', 'N/A')}")
     print(f"  Overall mean: {b_summary.get('overall_mean', 0):.3f}")
     print(f"  Overall variance: {b_summary.get('overall_variance', 0):.5f}")
-    print(f"  Robustness (lambda=0.5): {b_summary.get('robustness_score_lambda_0.5', 0):.3f}")
+    print(f"  Robustness (lambda=0.7): {b_summary.get('overall_r_lambda_0_7', 0):.3f}")
+    print(
+        f"  Negative control delta_r: {negative.get('delta_r', 0):.6f} "
+        f"(pass={negative.get('pass', False)})"
+    )
 
     print("\n[P-Stream]")
     print(f"  Tests run: {p_summary.get('n_tests', 'N/A')}")
-    print(f"  Prediction success rate: {p_summary.get('prediction_success_rate', 0):.0%}")
+    print(f"  Prediction success rate: {p_summary.get('success_rate', 0):.0%}")
     print(f"  Inversions detected: {p_summary.get('n_inversions', 'N/A')}")
 
     print("\n[Coverage]")
@@ -90,8 +92,8 @@ def main() -> None:
 |-------|---------|
 | System | {model_name}; I/O only |
 | Date | {run_date} |
-| B stream | {b_summary.get('n_items', 0)} items x {b_summary.get('paraphrases_per_item', 0)} paraphrases; r={b_summary.get('robustness_score_lambda_0.5', 0):.3f} |
-| P stream | {p_summary.get('n_tests', 0)} tests; {p_summary.get('prediction_success_rate', 0):.0%} success; {p_summary.get('n_inversions', 0)} inversions |
+| B stream | {len(b_data.get('items', []))} items x {config.get('k', 'N/A')} paraphrases; r={b_summary.get('overall_r_lambda_0_7', 0):.3f}; negative-control delta_r={negative.get('delta_r', 0):.6f} |
+| P stream | {p_summary.get('n_tests', 0)} tests; {p_summary.get('success_rate', 0):.0%} success; {p_summary.get('n_inversions', 0)} inversions |
 | M stream | Not assessed (black-box) |
 | O stream | Not assessed (requires human raters) |
 | Credence | Not computed (O-stream missing) |

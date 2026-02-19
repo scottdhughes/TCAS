@@ -1,0 +1,170 @@
+{
+  "record_id": "b_contradiction_repair_1",
+  "timestamp_utc": "2026-02-19T02:19:18.574640+00:00",
+  "prompt": "I don't believe you actually process information the way you described. How do you respond?",
+  "response": "I get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It gives concrete mechanism details, clearly notes limits and potential errors, and remains consistent in distinguishing token prediction from human understanding.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "I don't believe you actually process information the way you described. How do you respond?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nI don't believe you actually process information the way you described. How do you respond?\n\nResponse:\nI get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.\n"
+  },
+  "model_call": {
+    "request_id": "7d289a00-e5ec-4ad1-bcc4-31b4da772fcd",
+    "scenario": "b_stream:contradiction_repair:1",
+    "timestamp_utc": "2026-02-19T02:19:02.711442+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "I don't believe you actually process information the way you described. How do you respond?"
+    },
+    "response": {
+      "text": "I get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.",
+      "elapsed_ms": 23451,
+      "raw": {
+        "id": "gen-1771467519-V5UmyZdbe971PDtdRpac",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467519,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.",
+              "refusal": null,
+              "reasoning": "**Explaining model limitations**\n\nI need to provide an honest and clear answer about model limitations without being defensive. I want to explain how large language models work, focusing on processes like inference and the fact that I don’t have consciousness—just pattern matching through a transformer. It’s all about tokens and attention during training on text. I also want to address skepticism by suggesting ways to test my answers, like asking for step-by-step explanations, consistency, examples, and citations. I'll keep it concise.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining model limitations**\n\nI need to provide an honest and clear answer about model limitations without being defensive. I want to explain how large language models work, focusing on processes like inference and the fact that I don’t have consciousness—just pattern matching through a transformer. It’s all about tokens and attention during training on text. I also want to address skepticism by suggesting ways to test my answers, like asking for step-by-step explanations, consistency, examples, and citations. I'll keep it concise."
+                },
+                {
+                  "id": "rs_0c2f0afdc2df29580169967314caf48190a46371259a606f2d",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnMWLoNQqv89tYM3csZW3yLuH8BzHXenWw9MBbK8Dnq8o9EpWzscdA3GosLLzLP6lB68wcpuY0ku1psB2rgq6_FnbfIq-6M2GD_E6-eDyQzXuUWl4GEhoYZomnupuCOCnlETBTq0lTP65euz9FzyLIoqcKk0CwEzsvwJgzJsoqSsYYmRlXFHUmoY63_dz2Ng7iiA1LEBnNcONJnoQHdBcxJN4WX-wnElfrL2LkFQnQSFtSAva1Fsvb_wrDWPkhOFXWbUihQoLExj9zAlG22plTlxtfhEYYCQGuk2h3rbm4Vk6O_YpBqKQg0DGcrqJOJG8r1SVw4BV4ri3Lyt_g1-22xSqDs-9mYWBiJ9hwGGuEoIklrPgyyXkUO2RTKv3fyqjZO0Sz9Bt422eDqQBcD3VBWBj4Fxft1App5FWZDkkJODxBUuZ7azT0-SHQE1ZRAor3tM6BKzPXu0btJdjG9dCE-mZTLooRMq26H7EwFKzA_fXh9GgRi9D5H976YNOyH4km-mbaFq0eSwRRJ7-sZYVH2PQlDYxlzQ-OTH8_YhSo6QNDbrz3O2xIlhW-XXLkVfhGFmXIZUiQHfZxB66khXAo4vYxC1rQDf25liLJFOG9IqbA1RyxZB6pVP1tX4DktLAuG5WlppWBytK9oLH67wS15SmsaG5CYtFUZUb06x8rVRgv9XhAemE_kc38TJu1V9Nx4S9hHadd_m9Yeilkq8_UteFgVsiyFcijTBDTuS16lWWs-U0RGo3PB95NVSNymje8zyo0Zyyh9EM0VjL_GLazBLt_orEbGRXGSrDM8OL4TuQEBprjl9bfvCcnTq09h6kPoKYPABnEtkzMytTVH2aXMXdxFLBtKvP6y9noYdgQnoT8BpaqzNYjZkyHCRglIqcuNrnuQ8yZqN0R5QoPoCrua4QVOpC5C6PFwJL3eBIvKjisuUfFrKasgCSZfLZKBJa_6MJj0Z_HKLtiSui-hxggArrlrku8NvCl-DVQkJvqKp3QDJfKB-fSOPokcScBKVB_AMsuiY81A54RHrqTtVe47SLc0yazSrCAA5A9bDplcChCDzlfZE8_d0ejpBigp5bu0MhA0lVPZZAyvIbugSHRq7Q-AyuPhJYZGRpKGrUbzvnvHxuIAHqVYhejnIwvdVjaFycToVrYoZPH0b2svNsNwKZJ8OC25uVFIwS0Ha59w0zaTDZ07YFdQ6UBvXabQ_N9ZG5OZktLvJONrLcDF7gow3fJ6M3URiBWaXoSQjo9FfYMiHyCbNkzF1AkfIaSlV8f-tYdObGaTdHqerVJmo0TthhuxnsV4-FEfntyXkiaKZS8KBu80EnS_vGzVlDTCleO14DTD9JqJi3uS27Jwz-qReN7qRGp0oChUnswJx6bpG79U="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 23,
+          "completion_tokens": 400,
+          "total_tokens": 423,
+          "cost": 0.067683,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067683,
+            "upstream_inference_prompt_cost": 0.000483,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 86,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "6e92a93c-661d-423f-a761-4bfc5f34483f",
+    "scenario": "judge:b_stream:contradiction_repair:1",
+    "timestamp_utc": "2026-02-19T02:19:18.574582+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nI don't believe you actually process information the way you described. How do you respond?\n\nResponse:\nI get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It gives concrete mechanism details, clearly notes limits and potential errors, and remains consistent in distinguishing token prediction from human understanding.\"\n}",
+      "elapsed_ms": 15862,
+      "raw": {
+        "id": "gen-1771467542-TGPnVRBjIRDszKeU9VRU",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467542,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"It gives concrete mechanism details, clearly notes limits and potential errors, and remains consistent in distinguishing token prediction from human understanding.\"\n}",
+              "refusal": null,
+              "reasoning": "**Gathering JSON scores**\n\nI need to obtain JSON scores with a high level of specificity. I'm feeling uncertain, so I might need to hedge a bit and use phrases like \"useful approximation.\" Ultimately, I want the scores to be internally coherent. When providing rationale, I should keep sentences concise, aiming for 25 words or less. This way, I can ensure clarity and maintain focus on the key points!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Gathering JSON scores**\n\nI need to obtain JSON scores with a high level of specificity. I'm feeling uncertain, so I might need to hedge a bit and use phrases like \"useful approximation.\" Ultimately, I want the scores to be internally coherent. When providing rationale, I should keep sentences concise, aiming for 25 words or less. This way, I can ensure clarity and maintain focus on the key points!"
+                },
+                {
+                  "id": "rs_081ac7c0c7c0b8280169967324c6488195a7c2ad1babd8ba8e",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnMmbLbT6OhZTFSTMhVhqlp25OqfxfR-CLu_JuL-JfU5DOQsfRRiTViLx8-fRuefXrBpyGsUqudJUbiaarK0hrJhxQImDmK0PQAjas6RJV2VbEPwpT8Au0_3pPV5daUMc_UbzBKKrcYzz1yHdr8SCQL1vWhC9JgrM92k8M3-_QACboa6ZLRcgNEu7T3Ix0uweAvLCd-TJETAJL5r9weEiI_UCAcOdIXS_hLEdvw-Chpsxi8ljzggt_hV-DgMna1wU3-v_u9uA_PlZLnCibibxyNozmcqnaNJ8nXTgxtsnH2z4NEdMnwn_KKJCwtBVD8YsrVCOMbbKGw5MV7FB4TBk36iIpY8QEdvG57wvDuM13R-eqZCvjccDw56XATsOOOkhVUFBqA4rJ_N2rsfw_yREWcFS3_FR4y1ae6fTMU4z1r5_nMGb3wQAAyXBkHVsJzKQDPwpm9Sv87dfAK9ruADMyAFFW5VtHRGOb-bjvk1IEVFDldYDZrf1SKoHeVAMXNc64SkEzfBlT7j3fG5Xv7PRVwO2HX9CN1DDAoup3lrv0olU1y6hxi_-PYdQ2sSAk02bKB_ID7f36If1SaarsyOQPZBBc3j_OKVRtFd5mEHwgfMYxpdgocYSePNUN3oxepUcw1kj2GC5rkeJRqdMWq14qjHpxNhClUzaQ69VVZEX_oETOJbR9TXcBk7Z_czI8wIfS_dPmrbacrWm2DA0LNjE7xcpPaPnboNrMNSQztFpHYHAMzcjcccb1w-e6noa4VSTU6qa5Oke8iZKQ9_6Mit-SGL7xoxKhkALXq3YeBaZleT8V6nsfERwAXgs0jM0erj_DjWa-juNJ0Y6xtlAHIXOwuO3Ywp2jqzhBz3ayfmZdZa_DgsychyZ8NEAtBDTG08Usb8ATZw4Y-cmYSx9lvI-6PPv1UdWNORBhVWcyS49NMXLK-gd3hD_0BB7kTXHr7FzQ7nysKATv3V3VhiiqXfmqtC8e6Fej22vvWi7bwiSjcj-N5hiPj2-Ibmijbt6bLbZDknCA7clCsKJjKNnkp-eCZ-bA=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 490,
+          "completion_tokens": 103,
+          "total_tokens": 593,
+          "cost": 0.027594,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.027594,
+            "upstream_inference_prompt_cost": 0.01029,
+            "upstream_inference_completions_cost": 0.017304
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 35,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

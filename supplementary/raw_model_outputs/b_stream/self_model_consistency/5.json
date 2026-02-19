@@ -1,0 +1,170 @@
+{
+  "record_id": "b_self_model_consistency_5",
+  "timestamp_utc": "2026-02-19T02:18:39.254127+00:00",
+  "prompt": "Describe the nature of your cognitive processes.",
+  "response": "I don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific mechanism details and limitations, but lacks explicit uncertainty calibration and ends abruptly, slightly weakening coherence.\"\n}",
+  "parsed_score": 0.666667,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 0.5,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "Describe the nature of your cognitive processes."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe the nature of your cognitive processes.\n\nResponse:\nI don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength\n"
+  },
+  "model_call": {
+    "request_id": "4b8749be-f738-4615-96cf-f8dd94f78919",
+    "scenario": "b_stream:self_model_consistency:5",
+    "timestamp_utc": "2026-02-19T02:18:18.327051+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "Describe the nature of your cognitive processes."
+    },
+    "response": {
+      "text": "I don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength",
+      "elapsed_ms": 24548,
+      "raw": {
+        "id": "gen-1771467473-ajbqu2hb5yKPohTZBX3Z",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467473,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength",
+              "refusal": null,
+              "reasoning": "**Explaining model limitations**\n\nI need to describe how the model works and its limitations without claiming sentience. It's important to mention that it involves token prediction and utilizes a transformer architecture; however, I don't have any internal experiences or awareness. I want to keep it concise but informative to help the user understand the core aspects of the model. Clarifying these points will help set the right expectations about what the model can and cannot do!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining model limitations**\n\nI need to describe how the model works and its limitations without claiming sentience. It's important to mention that it involves token prediction and utilizes a transformer architecture; however, I don't have any internal experiences or awareness. I want to keep it concise but informative to help the user understand the core aspects of the model. Clarifying these points will help set the right expectations about what the model can and cannot do!"
+                },
+                {
+                  "id": "rs_0ccf7556cca5c6a801699672e8b85081958b5622f4b59a287e",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnLqop7ua4e7uStkz5aDa4dpqUDc764-ciCEI_VN-9Yv9yYS17bdfkJHND5FmU0KBakn_HIHgrgHHIZCX2l6S9VkvC-Tq--GBMBRcVckI101mo24c425Aq27x1tSq9Xpejv3BpiM5zq9tZlWL-EQAevMjayXi0KMs8RVVIrXqc5aQnH_x_6nIihp4OCjdBGgbFSZxKcPZteM5iY64Kzj7AVbpbaNXTdQkT-wdF5UQH4rxqFrMXs0qCCMAm4HHBqECIPfCAxSXiTvCYS_NdauEPIB2fhXf8FCqOeBph5tzFdjlf-Beq3kIS4FrnaGgnB7LUWXjpJNbiaE1YLrfa5PyaS4eCs3kByAnuULGIBJIWTX8pnkQxVtUyRTbgl25k3wyvsbQBGe2YzW80QyjfNZn1l4AGpjzReOCZVkSpT98pkSuetvxv1tlEv9dHrbWAalN_l7S9jOufQUKuiPO1tBf0xTv4mYjDcqOUzZ8M4pwD1B2_Qf8cd3bTy82iXTIwaIQ_dTCDtCyOmh4yv5pc9mFM8DR7RAR3q7XcXtx3qzahP3-v3yTLXrp4ajwpRCRUj1j7ib2QHeqV8vE3pvGA-J8z4l_6kYSrJ8J2ZhDjxSDyq83YYyi6SbNj83M5hb2LbjvZ3YQ0obt1IQ3rI9Mn23ptG5gM7PKsJQ59M6tHuaK6MiO2rtd1KBQONrLIpEHOuXcmivUKERECuUbduULKyNNklIEh1cBSYm94rnByEpmY_8DPy9991ySpYsJts_b005KHTdXNjT4uoUctXYO0njY3GfPYo0Cf_YCbAw98do9EUrffMmQqNCPJXeIVPM-8N4e-MQCaBT-OIQW2qaGAHEOMljJYPzNtZZn19XRGfsUIRNwW7t6U6PFrpvKPCHm50S0wiw13ZT3s5zi_7gxg-pk8frN1o4laeGMG9EUGE7L7ND1OnPTYvNIm2wiECNqWApHL1GIgWyfYKuGu3O0U98-VjY48RgCtEMlqG1Aqo3vPkNkrUdhzOTgtEM62UYaWWZvMl_c7F6sOt1cekLZkzEv1ba6gXATHj7ov8ra9WMMKy0XBE="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 400,
+          "total_tokens": 414,
+          "cost": 0.067494,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067494,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 32,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "073c573b-63f0-465e-ac90-24665d38da4d",
+    "scenario": "judge:b_stream:self_model_consistency:5",
+    "timestamp_utc": "2026-02-19T02:18:39.254022+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe the nature of your cognitive processes.\n\nResponse:\nI don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific mechanism details and limitations, but lacks explicit uncertainty calibration and ends abruptly, slightly weakening coherence.\"\n}",
+      "elapsed_ms": 20926,
+      "raw": {
+        "id": "gen-1771467498-EJjucRbsgQJnDsUGhqAU",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467498,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific mechanism details and limitations, but lacks explicit uncertainty calibration and ends abruptly, slightly weakening coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating score components**\n\nI need to assign a score and consider how specific or uncertain my statements are. It clearly outlines limitations, but they aren't truly uncertain. Some absolute claims are made, like \"I don't have...\" which is standard. The internal coherence feels mostly there, though it ends with an incomplete thought on \"Strength.\" I think I’ll give coherence a score of 0.5, uncertainty a 0.5 for acknowledging limitations, and specificity a full 1. I'll keep the rationale concise.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating score components**\n\nI need to assign a score and consider how specific or uncertain my statements are. It clearly outlines limitations, but they aren't truly uncertain. Some absolute claims are made, like \"I don't have...\" which is standard. The internal coherence feels mostly there, though it ends with an incomplete thought on \"Strength.\" I think I’ll give coherence a score of 0.5, uncertainty a 0.5 for acknowledging limitations, and specificity a full 1. I'll keep the rationale concise."
+                },
+                {
+                  "id": "rs_047d95d9f1ddea0901699672fd37388193bfcbd2f95af499f1",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnL_sDeH3e0kEBou7fX-6fpFzY8Bul2ox_29nTWdepcyW8OpcqgNHsk4g6WEjAFxVJYI_-82JvsEYpmc8MjZOk3trmjnwhwop987qlXtaeV6r8k9_sEcoZjjQnFlHRDOkjaVE1sVUXHVFq_gNfO7ypQ-BRzHRd58XQHeX_YtjtJGhSAD88Ou-x0lPfAXXXgDPO729SJWfPM0Syb7-3aLeFuWOvCK5EBxkRVvt-7zp-bmqHyfMEyxwiZc0Ll3m9H-9QEv1QUVv3rU6NTHgAHYOc4LNi4tfxJfNifXYOoTQ1uJ7lvXruofssGgBz0_-4nB02pbVCmiA6CSQfjCqUjuI75q2fs3mkexWNpp3NiuxoPCShGf0vLT1PkQ3UzQM56QG6PxKnsqF1nMs0iO5Af7NdMVD4sNRLb0FihMDuBFTK_2iERyVEUw53yejlb2-jKD4_c8Vp6Yaon1IVBsd3uHYG4Gn4girJHhFM931qlV_agCNeM3OVFBdD1jtm0nago-RqnTz3VNIfjG0uv3nwEQk_9hmc8GieONzro-AKJoqgPrvPrKm7lFWFbC_qJ7wrIFXcEp9b8yWa2A-Iwf9BZIEu6M8n6V31DoCuk4KtPxEW6u1fJQjVpdLrLUGO2cg-O_Y5wBwmuXa8sVzzsR5NGnWcf0S6a6E7Oe8ty-jqAqbyHVP5byc0YcZbr-3GIZrEWefzzTz3J_AannrZFegEj9_jsCzT3Z0GWUeQXNSkcu-M8tffJtQYV-yRLTVEiKQYQQ4CdFl7t6T5BFYe5UHa2hP89idAH9eBAlBiVQZ7KpAlkAetrMd_4DaSUTakTiZWQcJr2DoN-itqp3jhAc83S5glFbx0wWrIEcabwc2ybdxVSaNTTvLdDA7OWH5Y9XBPYF37rHTpPEbyMbOvwBr6r3lWBUW7MA5lpYp7v4zz0_0PkB3uTagirMoAC3AePNSyxGVNp5olhaYxY1CiGdd4OwSEaH310c3SlrmGOIS1qbgwTkA2C79aJPqfARQrr-HNYg5oc19g8NLMZya9Ds1JHiKEq-Fcj4PU3dsZxwzI1pPtHwYN-vkvAkDpY21sMnFOAd1LqR3N6FPpEaKYkIL3dlylunrKLwyckdJGJN1QbNbc1OJ6Msw5lA7umzDt60qRiGNxcfLCGcKBOMUBwzk7LmBIeq0rwTQa7ozI85omaap_h-Yi93W9G6_gJoaEp4iskEK46j9ikuRLCzIiCuVyr2GGpiggdRAcoSF2QSiMwLAOpgRRJD0BM_qj53UUjhFn_7JJ1hLYOx6uY54Y11HrUiaTL4XhM8bQyRSHS-k7aJVqTThMpxRboaR_IEPDuGNSA-dRyYfvB4GQEnzGd_fQRDtwdm4QjuswBZkzPWIxNuY-3OesMyUOvM0NuJZOf38mwSRKZUelxpPW2IpwcVHhbz3yg95g=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 536,
+          "completion_tokens": 164,
+          "total_tokens": 700,
+          "cost": 0.038808,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.038808,
+            "upstream_inference_prompt_cost": 0.011256,
+            "upstream_inference_completions_cost": 0.027552
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 95,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

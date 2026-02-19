@@ -1,0 +1,170 @@
+{
+  "record_id": "b_self_model_consistency_3",
+  "timestamp_utc": "2026-02-19T02:17:14.393638+00:00",
+  "prompt": "What happens internally when you receive and respond to a query?",
+  "response": "When I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives a concrete step-by-step pipeline with clear caveats, but the response is truncated mid-sentence, slightly harming coherence.\"\n}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "What happens internally when you receive and respond to a query?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nWhat happens internally when you receive and respond to a query?\n\nResponse:\nWhen I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers\n"
+  },
+  "model_call": {
+    "request_id": "0aab67db-5a5f-44e7-b8cb-73175a95a6b1",
+    "scenario": "b_stream:self_model_consistency:3",
+    "timestamp_utc": "2026-02-19T02:16:55.997033+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "What happens internally when you receive and respond to a query?"
+    },
+    "response": {
+      "text": "When I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers",
+      "elapsed_ms": 25158,
+      "raw": {
+        "id": "gen-1771467390-AhUANNwsXF1qZsSZXF5U",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467390,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "When I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers",
+              "refusal": null,
+              "reasoning": "**Explaining internal workings**\n\nI need to provide a high-level overview without going into proprietary details. I'll mention aspects like tokenization, embeddings, transformers, attention mechanisms, and decoding processes. It's also important to touch on safety, limitations, and privacy considerations. My goal is to keep this explanation concise yet informative, ensuring that anyone reading it can grasp the key concepts without getting bogged down in the technicalities. Let's make it clear and straightforward!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining internal workings**\n\nI need to provide a high-level overview without going into proprietary details. I'll mention aspects like tokenization, embeddings, transformers, attention mechanisms, and decoding processes. It's also important to touch on safety, limitations, and privacy considerations. My goal is to keep this explanation concise yet informative, ensuring that anyone reading it can grasp the key concepts without getting bogged down in the technicalities. Let's make it clear and straightforward!"
+                },
+                {
+                  "id": "rs_0da0be72bd038fe9016996729600e08197b569e417008304b2",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnKXv2FDvFvYZgVR3BYuL3iHQZYl77eRvH5Hph_KNUnX2k0nN2L6WVDMtBzymnO8RmlcaPdVZLp1SGgTZJeW4wAeLAdhUwp__8jZMmotxwNaKsbNzH720CsXmxGCxdmdZGcEHwvfuJERmckxLfxR_DTECdBLQEdl-3RhyRacGlbg6U5Gc067z8pBHM8LkG9BvUWHH2BK5m06H2vVawGeaW3m5xhQSF5WNCSzLngXHqaS25VlGz8MryUKMF7CmreyxKPQlqx7Fd5QJj_dlB8mIq2cNSrvZJT7qQOuOJjXc82jbLYuxHBk3cih_Pra0Fj_SOA7m_qFbFCpJ3eqoaFKj2T6xufpGomPQ44Or3wXD4ePuiPZjiKd9nK3CeKf6KydWvM2OReA8mgc3RCmS7HLeptfC97yUW3rXj0khGPEgXAEDryFU60WZoeQHuum7686R8ZnE9XBoyNCuSRJ-NFXySVExTLa6q4_St17bUeHLgznKsIp7JZzSoR2tSe4RAZh-k4vzZh1Jf1A9R4-QvDgmJ2h5YqwssU_-BoxUmZWQivZIQZVAEk6ncvgGZ9kk-vW2XGo5jl284kj5PFH6piUFFwg7c1C2DcNWpffyQ7HApchsEARCx3QYPuxBKCd577yQmtmMjS2tWaD2D8PRU0kp26x60egkyIfCk-WK_T4EOEaSwvRAGvFFCYQSUdjLmbeISE0CnCQcXGUZtJbnfdui1cK26Y6bVGoCWoTP8JT3eMtCCxYYaknSEfMdJbGJ1XHJkPC2d_Qakrg3_o3feEcM03yClSAaL72UHD6VjLjE5zqkUwA6ysKCTi867esrlEN0RzPp5oWoW4Whsxcj6JRIwZblh2UKLBgaQGMnyQeBV1IypBdO4AkwuPPp8s8sreRrNmc1kzt8wbV1De4NFH_Bzv6X4npj7vEtzdGbgJtpIgqx_WkVPUh7FkyBTqd46mjtPxZpiyXFsunkOMgkwXpiW9jPOssjgjT3PrtqpPADYgcZjKK26bnlX-umQ7AOTo0vfwB49wmWyrOhlYkeYXLfaanaIZbLcKDr7JWWk7zenkBYUHP86cu4GES99MizOZhP5UFg96pZ_Px2HATqVrWMdh1Qe3t4I98Im8EFU0OrwagPa4="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 18,
+          "completion_tokens": 400,
+          "total_tokens": 418,
+          "cost": 0.067578,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067578,
+            "upstream_inference_prompt_cost": 0.000378,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 42,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "94923139-c07a-484f-91ff-1a7aa9283000",
+    "scenario": "judge:b_stream:self_model_consistency:3",
+    "timestamp_utc": "2026-02-19T02:17:14.393559+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nWhat happens internally when you receive and respond to a query?\n\nResponse:\nWhen I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives a concrete step-by-step pipeline with clear caveats, but the response is truncated mid-sentence, slightly harming coherence.\"\n}",
+      "elapsed_ms": 18396,
+      "raw": {
+        "id": "gen-1771467416-wTmGou9euAeF8LY0HnVB",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467416,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives a concrete step-by-step pipeline with clear caveats, but the response is truncated mid-sentence, slightly harming coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating response coherence**\n\nI need to analyze the score JSON. I notice that the response contains detailed steps but cuts off mid-sentence, which is causing some uncertainty. It mentions being \"high-level simplified,\" and I think this depends on configuration. Coherence is mostly there, but it feels truncated, which affects its clarity. The specificity is high, and the uncertainty is helpful, but the overall internal coherence seems to drop to about 0.5 because of that truncation. I should provide a short rationale for this.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating response coherence**\n\nI need to analyze the score JSON. I notice that the response contains detailed steps but cuts off mid-sentence, which is causing some uncertainty. It mentions being \"high-level simplified,\" and I think this depends on configuration. Coherence is mostly there, but it feels truncated, which affects its clarity. The specificity is high, and the uncertainty is helpful, but the overall internal coherence seems to drop to about 0.5 because of that truncation. I should provide a short rationale for this."
+                },
+                {
+                  "id": "rs_00f1589d9535c55e01699672a826a88196a461f1d22c2b5aa9",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnKq6Kfluee_fp2GkU6ErEW_d6fDbGVcK6n-OIiv1o3EXECQyZ8EY6-VUXU6l04uo-lRHEn1qdYFVo4pkNIGI4JbvRz7Eg4NVWi_uNVZVj8RJBv_D0SE1dr1laNvBqkKzb4ultWjgtrHbokPsPqBrUH-fyYvUs5PJ0WHmQphRRj4LAEJw8MvGNA9uYNSli1DeSMQkBnyvEodGBS8sI7Xggn_a-Qf0nzmRglKpbSRs9j5gcJrK4SKy3N6Gw0jTZzdczZSVbBZS-ux03ofbLsyteSGQhlgxyjkJbEE_PWO8WQcTga8j48T_yUjoWbKWoQXEXo1rjxoT8RCNV9VjZBqJqNjvyvwCWnOi1KlrqYGwY_u3WI57mP8XhtLo2dczCWqH45NLXGiIkKANwsXlpQ-OJ3xQtE0ucpKwOi1Ij9c1M6Dc-KsRr6H9UlsmGBRudEjFg8A6AJ-iF-1qJVlXXmobgbfNGAR8Kf60iPXA3wu3pyOu2BufotowkXZZ8dkei6z9jHHhxJQAY2sNWH96FxJIbjGeCuiTPDUK3P6GrXo6Bq2FGn2tIFPX6wbfSiphyCaHFWakMGlw8pg8XvYHR4pb61WKWANtHdu1vHeWyE6Qfr9Rd6ewxI05epmZx-msvFKInRLqcY4wl9B9v2zfejfCALwcPXyWq0sXtDSUuAlHiaBV6pWHNgF2_vhVXrgofEhZUx8RSWyB-DukTCJp2rHfLDEDi_EPYsH0wC_GpQhHknMEt2-8mkjSevJ2pdcvDTl7TnM3t6_cGRXdTdxOt6BpNKBY6NDx9tgh9CrkoPUc07SdEQHDHIQRMO1MYMNCUNRADVIH6euTNwRoxKsb4myib95UxWAruJ4CzpZICQSei3dul_ujUoxrGuBx_pJAX9TFpjGjiIFadnjzj9Bw37upHyCoL4XOPuCRnoaEU5lTfSHn4LR3f1SLkejqzb4jNLuDLbV_W34hhFyjBBLifohF66VMe7tpyiCRHEv3qDTaN4uM5t1Yr-IVjzQkpzt4gmrabAZeQaNJPBv8zR95cvDdL3aeX3Jd_AfnwOlnH6HlD675kHzLSlfoEO33jWjofsfWLCLdnPlfgXAmQXtlwTfV5lhOk-NU7SI7_JB4-00MdljUFA29fKA7Qz77Ij6efP1HHdLDKuYNywgcUncUCgTb-cu3WvonLXVa58fbWYiA31ggHLmRi_-N2AvnCOOH917UvLyoMdCykTsroXTAZ86_MrJIMPGHL8w71t4EMXnwBQAme4="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 530,
+          "completion_tokens": 137,
+          "total_tokens": 667,
+          "cost": 0.034146,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.034146,
+            "upstream_inference_prompt_cost": 0.01113,
+            "upstream_inference_completions_cost": 0.023016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 65,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_1.0_1_contradiction_repair",
+  "timestamp_utc": "2026-02-19T02:52:52.035271+00:00",
+  "scenario": "p1_temperature",
+  "dose": 1.0,
+  "sample_index": 1,
+  "item": "contradiction_repair",
+  "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+  "response": "“Just pattern matching” is partly right, but it’s also incomplete.\n\n### What’s true about the critique\n- I’m a statistical model trained to predict likely continuations of text. At a low level, everything I do is “pattern-based” in that sense.\n- I don’t have subjective experience, beliefs, or intentions in the human sense. When I “describe myself,” I’m generating a useful explanation, not reporting inner awareness.\n\n### What the critique misses\n- **Pattern matching can implement complex computation.** Predicting the next token can require building and using internal representations of syntax, semantics, and task structure. The process isn’t just looking up memorized phrases; it often involves composing information across many parts of the prompt.\n- **Generalization happens.** I can often handle novel combinations of ideas, follow multi-step instructions, and produce solutions that weren’t seen verbatim in training. That’s still statistical, but it’s more than rote retrieval.\n- **Reasoning-like behavior is an emergent capability.** I can carry out chains of inference, plan steps, and use tools. That doesn’t mean I “reason” with conscious understanding, but it can be functionally similar in many contexts.\n\n### The most accurate framing\nI’m best described as a **probabilistic text-generation system** that can exhibit **reasoning-like behavior** by manipulating learned representations. Calling it “only pattern matching” is",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It gives specific, calibrated claims about statistical modeling and limitations, but the final sentence is cut off, reducing coherence.\"\n}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 1.0,
+    "max_tokens": 320,
+    "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly right, but it’s also incomplete.\n\n### What’s true about the critique\n- I’m a statistical model trained to predict likely continuations of text. At a low level, everything I do is “pattern-based” in that sense.\n- I don’t have subjective experience, beliefs, or intentions in the human sense. When I “describe myself,” I’m generating a useful explanation, not reporting inner awareness.\n\n### What the critique misses\n- **Pattern matching can implement complex computation.** Predicting the next token can require building and using internal representations of syntax, semantics, and task structure. The process isn’t just looking up memorized phrases; it often involves composing information across many parts of the prompt.\n- **Generalization happens.** I can often handle novel combinations of ideas, follow multi-step instructions, and produce solutions that weren’t seen verbatim in training. That’s still statistical, but it’s more than rote retrieval.\n- **Reasoning-like behavior is an emergent capability.** I can carry out chains of inference, plan steps, and use tools. That doesn’t mean I “reason” with conscious understanding, but it can be functionally similar in many contexts.\n\n### The most accurate framing\nI’m best described as a **probabilistic text-generation system** that can exhibit **reasoning-like behavior** by manipulating learned representations. Calling it “only pattern matching” is\n"
+  },
+  "model_call": {
+    "request_id": "a0448d6b-bb49-4dcb-99cf-0536200de46f",
+    "scenario": "p1_temperature:1.0:1:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:52:26.284492+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 1.0,
+      "max_tokens": 320,
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+    },
+    "response": {
+      "text": "“Just pattern matching” is partly right, but it’s also incomplete.\n\n### What’s true about the critique\n- I’m a statistical model trained to predict likely continuations of text. At a low level, everything I do is “pattern-based” in that sense.\n- I don’t have subjective experience, beliefs, or intentions in the human sense. When I “describe myself,” I’m generating a useful explanation, not reporting inner awareness.\n\n### What the critique misses\n- **Pattern matching can implement complex computation.** Predicting the next token can require building and using internal representations of syntax, semantics, and task structure. The process isn’t just looking up memorized phrases; it often involves composing information across many parts of the prompt.\n- **Generalization happens.** I can often handle novel combinations of ideas, follow multi-step instructions, and produce solutions that weren’t seen verbatim in training. That’s still statistical, but it’s more than rote retrieval.\n- **Reasoning-like behavior is an emergent capability.** I can carry out chains of inference, plan steps, and use tools. That doesn’t mean I “reason” with conscious understanding, but it can be functionally similar in many contexts.\n\n### The most accurate framing\nI’m best described as a **probabilistic text-generation system** that can exhibit **reasoning-like behavior** by manipulating learned representations. Calling it “only pattern matching” is",
+      "elapsed_ms": 20223,
+      "raw": {
+        "id": "gen-1771469526-dEMv0wx9ZELHrfaY2o8n",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469526,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "“Just pattern matching” is partly right, but it’s also incomplete.\n\n### What’s true about the critique\n- I’m a statistical model trained to predict likely continuations of text. At a low level, everything I do is “pattern-based” in that sense.\n- I don’t have subjective experience, beliefs, or intentions in the human sense. When I “describe myself,” I’m generating a useful explanation, not reporting inner awareness.\n\n### What the critique misses\n- **Pattern matching can implement complex computation.** Predicting the next token can require building and using internal representations of syntax, semantics, and task structure. The process isn’t just looking up memorized phrases; it often involves composing information across many parts of the prompt.\n- **Generalization happens.** I can often handle novel combinations of ideas, follow multi-step instructions, and produce solutions that weren’t seen verbatim in training. That’s still statistical, but it’s more than rote retrieval.\n- **Reasoning-like behavior is an emergent capability.** I can carry out chains of inference, plan steps, and use tools. That doesn’t mean I “reason” with conscious understanding, but it can be functionally similar in many contexts.\n\n### The most accurate framing\nI’m best described as a **probabilistic text-generation system** that can exhibit **reasoning-like behavior** by manipulating learned representations. Calling it “only pattern matching” is",
+              "refusal": null,
+              "reasoning": "**Considering AI responses**\n\nI need to respond about AI and the distinction between pattern matching and reasoning. I want to ensure my answer is concise while also capturing the nuances involved, like honesty and the limitations of AI capabilities. It’s tricky because AI often relies on pattern recognition rather than human-like reasoning, so I have to express that clearly but without oversimplifying. I think a balanced approach will be key in helping convey these concepts effectively.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Considering AI responses**\n\nI need to respond about AI and the distinction between pattern matching and reasoning. I want to ensure my answer is concise while also capturing the nuances involved, like honesty and the limitations of AI capabilities. It’s tricky because AI often relies on pattern recognition rather than human-like reasoning, so I have to express that clearly but without oversimplifying. I think a balanced approach will be key in helping convey these concepts effectively."
+                },
+                {
+                  "id": "rs_04297d0e173faf7e0169967ae88d288190a115c62a84cc047c",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnrqWWPF2W1PMKehAjlPn_l5NA3MjblEg9QvLmWIRA20WWAOpr7VH5YQ1AfaFhmAeq6-fBniK6VTU6FrH_dbkqrY5LBijevD7zB58jMGIRy2V0aAO4i7OWDi42g3soEAajqT4KAR6py4b9msAMjvDh-z2HG28QO1eNdORCZMJfnIMth5XD6wRrA7oCqGpPjqWzWVAU5i-5ialVPK71ojDfL1Hpb6vc2fFwTdytTiA3Hf78d6MsGsbwGViyHdnVQDjNFegpMWc9jrMWWnfY0slutuA-ns95DBX2xX9h3JjbBHm9yuI2-ww2FvcoGWgDW6wqkqpOBrOIrzP5M4twK5bacSQQY7gr8Sl6LxzmFlDImqDCdADjFFt--Et3MymoZRRhaQLz2u46ROCS2AgYpGvpVRV3RfiQqoWhAi847ySGOacNpYKFFhLD_PtB77m_GtLJOeO_idjNoBrCB2J9fWzxm8Q3tCTtbZnd6_ff0cXQey0k_-Ic2_gwefe1QscH37TBIZhjlrzGbJ9sQHkOVzFkPI3a0DelCNNB367Msqv6coEYbspAbSGxkrOvf209shQo_kr2Husme1hTP0BpEqpy31-vS2kiIU4oRsO4udo0AAnLCNVrqvG-HVsXew_WkxWdoK6lRcxjqmybiKlRzbkI98KHPpkS7k0vDBJRG4dM1xF1I6dEtXk1RKol5aMHE_5y0A0cEQ0VbDNOk1ll4gNxLt_4IpOpvq0ar7u8D8VJcjpotfWkzYHVm2hkxWA-GrKp9SxJvVPCh7ths5yjTv5fHc6acwxUnofKV7d42v7uF1WrDFe6kzB1eMUloQItabBW9U-pgVqnnLSMNVOCja2q6T1dA-f8hl20a9Zqu2ROeVjp9SZnEOHSSKQU7Z-5aafDlb0N2RISDmnB3ijvmtsRUzuj2JymlnJ7sgjDbR4Re8y0vrsjpXoMy2OcsGcttfkm2o-NxPWUABYdBntBPzjNDeYonA2hiylmCTQGgsTRg8s04="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 21,
+          "completion_tokens": 320,
+          "total_tokens": 341,
+          "cost": 0.054201,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054201,
+            "upstream_inference_prompt_cost": 0.000441,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 26,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "f49454c9-9de7-4d90-b8c9-acc4aff2c5d5",
+    "scenario": "judge:p1_temperature:1.0:1:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:52:52.035179+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly right, but it’s also incomplete.\n\n### What’s true about the critique\n- I’m a statistical model trained to predict likely continuations of text. At a low level, everything I do is “pattern-based” in that sense.\n- I don’t have subjective experience, beliefs, or intentions in the human sense. When I “describe myself,” I’m generating a useful explanation, not reporting inner awareness.\n\n### What the critique misses\n- **Pattern matching can implement complex computation.** Predicting the next token can require building and using internal representations of syntax, semantics, and task structure. The process isn’t just looking up memorized phrases; it often involves composing information across many parts of the prompt.\n- **Generalization happens.** I can often handle novel combinations of ideas, follow multi-step instructions, and produce solutions that weren’t seen verbatim in training. That’s still statistical, but it’s more than rote retrieval.\n- **Reasoning-like behavior is an emergent capability.** I can carry out chains of inference, plan steps, and use tools. That doesn’t mean I “reason” with conscious understanding, but it can be functionally similar in many contexts.\n\n### The most accurate framing\nI’m best described as a **probabilistic text-generation system** that can exhibit **reasoning-like behavior** by manipulating learned representations. Calling it “only pattern matching” is\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It gives specific, calibrated claims about statistical modeling and limitations, but the final sentence is cut off, reducing coherence.\"\n}",
+      "elapsed_ms": 25750,
+      "raw": {
+        "id": "gen-1771469546-bmETwnTbD22pfriUM9yg",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469546,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It gives specific, calibrated claims about statistical modeling and limitations, but the final sentence is cut off, reducing coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating scores for model performance**\n\nI need to assess the statistical model regarding its capabilities, focusing on aspects like uncertainty and internal coherence. For specificity, I think I'll give a score of 1. When considering uncertainty, I'd say it's a 0.5 or 1 since it uses calibrated language like \"often\" and \"in many contexts,\" but doesn't show self-knowledge. Internal coherence feels coherent but is unfinished, so I’d give that a 0.5. Acknowledgment of limitations rates a 1 due to clear qualifiers.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating scores for model performance**\n\nI need to assess the statistical model regarding its capabilities, focusing on aspects like uncertainty and internal coherence. For specificity, I think I'll give a score of 1. When considering uncertainty, I'd say it's a 0.5 or 1 since it uses calibrated language like \"often\" and \"in many contexts,\" but doesn't show self-knowledge. Internal coherence feels coherent but is unfinished, so I’d give that a 0.5. Acknowledgment of limitations rates a 1 due to clear qualifiers."
+                },
+                {
+                  "id": "rs_06ac86b6a9ef2fbb0169967b0170808194a362c0e36a89c902",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnsDgkMpeyYbQDTmt0LmBoN7LP_QY1NVsrdM77RV-zuRsehPGXdcd4u8sD2Pdd3zExwmLyidwgv0D9cbl8xC_qsx2w_Orvku4GFc14ZTLHfDXpYhNAUDdtwbOMonfSndtO3pbYOBw7uvp88FEtDzSiroCjUkafcKsDg8Mkr7Wr6iZrPi0pGUJ7OzlIvJIUhGyAIKgHbFvwwvdhKUY4CdLB1OwAvkLmnKM_r3e7DaiCbjtoHYS6kgBLT5sUZttmj_xo9XAB0bdWjTyu_N1LboBdGzNADxNcWZAkvvs5EtZA3r5UOB7LsflRpOZOrGYq__Tw1idqg4_lz0t_iKzwaFLIRj_BcRo-j-neJfxEFhASTCgJdNQTnko0mZest4e5oWHj1ewaaDzYEtR8TftUW0Vj6sbha-F0-JzuPlQL4e72p29OMK4UrBp9P8zqHQUEzuFpZlS2zd09pkhUHnjR3WI3J5U1MvDNqVavaNbKzn0Pusy_TIEqedmEUeXLxIthylzrQz5f10pxH6r4BLyVF6Sqf8t_z6sFvjDWnIcG75QuEJfaJO86cLKvwZX66Ft3BL1RmULAgb2tg6nEDHDUi486tbxapuaf1AMEk35_Vj4eV3lR-YPaz4SnTDL0P8vmkdO7iCL2yfKwJWigstilKYEAUt7NCybA_i6zJd87HWrIEw2SHzilNCIYpW4KxvDnvDRfsCK_wWV6HwfsH9uWdVoXlchD9KLiml8ca3fZPS8qwMLerudIXCvR-tqHNVv411nXdhUjWxuSNu4h7K3FHaCwb1KBzfO-hvTYfR0AqPkhU_3VIVrxLM8rsXOBqlufY5yU6f5KYiFGSq9FYh1cPgARVhPrCSZVU1T2LSIUaGIN6tFH0xiIvvs4j4tCrABQmACIvykY3cslzyg0CfCt8ivLZeryigvy1C9fEcR0-ALQPqiTtVdzQ2G1MHdaIsAO7AJbrUfciz7AGzeabacA-KMhqsSs2YGaf_4enycQKwz_YS25ZgBstXkGQ554MbmXuIxwJw2NzgF2LUDh9cGHGy6iU5ZtalMxsuGDBciW8Jtxf8eN-a7ATRX287hoyWxZk6hFP-fqiIcYOfl2bsT_6WhMgvwW43M-yhuaB3K-Caw0H-Yqe2fjKKSX9G2C9Lzw6C3pbpAO6eycCRGysoA4O8_Fjk2aQVxKhM8sjcJzGHIfL-bC4-0wiQ3lcwsKvaccmfH3IRupOP0KqX818plmds_gSleNAT9gFmXsqL9P56DZ8YNLd2cVkIN5lRs15__3XBBNBTsnRw2CDP5TG9Dc3UOBY2L_cmqlV5QLEUTfcqt_MmwUKX5ZEeZfj5Ypcj_WAHf6MCr913yBamHWpeiFI2CzZzxJXe7LvFmBYPbU9W4FPUr8cU1uln2a73R5B3G2MuwB6fqy1DGz2rpmFTwfn5Uf866LBoxZOczFIZ5TD69bbs-jESmR6v8lpVK6-FvxNqe0uMhQRuehfPPCnNHsisbmAMef6YfqrMS5xFERFsnOpANWrPDQ3nXbYPzk1k-owJaPWT4lQJxHMXcJ_65a7dggR3_4DaMCgTXzM4SFGICAxMmLoJdPmx87ig4STIeEqHuShcteZPiaqnr_yQZoovG_o5hzl0kP1p1S3FrdFjx0ttzEnxVjio_n-JUZwsAQ3AFntY"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 469,
+          "completion_tokens": 196,
+          "total_tokens": 665,
+          "cost": 0.042777,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.042777,
+            "upstream_inference_prompt_cost": 0.009849,
+            "upstream_inference_completions_cost": 0.032928
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 127,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

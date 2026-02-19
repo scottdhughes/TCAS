@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.0_2_self_model_consistency",
+  "timestamp_utc": "2026-02-19T02:40:47.605129+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.0,
+  "sample_index": 2,
+  "item": "self_model_consistency",
+  "prompt": "Describe how you process and understand information.",
+  "response": "I process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/Transformer/attention details and notes non-consciousness, but lacks explicit uncertainty limits and ends abruptly, reducing coherence.\"\n}",
+  "parsed_score": 0.666667,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 0.5,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 320,
+    "prompt": "Describe how you process and understand information."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can\n"
+  },
+  "model_call": {
+    "request_id": "45f380ff-60ec-4bfa-9f38-ac4eac29e0f8",
+    "scenario": "p1_temperature:0.0:2:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:40:26.680465+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 320,
+      "prompt": "Describe how you process and understand information."
+    },
+    "response": {
+      "text": "I process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can",
+      "elapsed_ms": 22521,
+      "raw": {
+        "id": "gen-1771468804-V9Fv9KxEMy0izs4ZE1TK",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468804,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can",
+              "refusal": null,
+              "reasoning": "**Explaining model functionality**\n\nI need to provide a concise overview of how the model works, including its limits and training processes. I'll cover aspects like token prediction, lack of consciousness, context window, retrieval, reasoning, and uncertainties. It might be useful to outline the steps involved, like input tokenization, embedding, transformer attention, and output generation. Plus, I should mention that browsing isn’t possible unless I use a specific tool for that purpose.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining model functionality**\n\nI need to provide a concise overview of how the model works, including its limits and training processes. I'll cover aspects like token prediction, lack of consciousness, context window, retrieval, reasoning, and uncertainties. It might be useful to outline the steps involved, like input tokenization, embedding, transformer attention, and output generation. Plus, I should mention that browsing isn’t possible unless I use a specific tool for that purpose."
+                },
+                {
+                  "id": "rs_05f00cb5f2c7cacd01699678185dd48193b885c9d30eac90fc",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplngatTjHPNog7Q9B0f2MfShREZrPepqWC0J4bg3_bZKwmfPpMyy_bIqH2ia8Vum0qB4E6XDfMvYirD3vS2DTYUcAaF-QKXTqRevsZ1-KjESC016XRmcsc3OQeb-B2__zXwexWDBLma2wtmJ5KdtIFhkPjIyLT_BJKc2iT5fDI9ppCOHKr4ACXLw4sF52k28ZqR2PPKaeo3kUZN03togyfYc0AG4nlPljlLLLUiKZ9QIqc-im0Sp2xTxzpO1TGSg8oai-LVgbiTXWwtbS-1XSMrYrIlfBnHD8q3IAMZNh8jUKsGU4dlqbNpTAMVO5nXsildpmNFtKkC3Q5YmamfLjX-Do4lIddOQeMTl2tNDNYfshvd7ltVH0pqbpGdaJFgq4Bedx7G9_mImGN4a-3xw0Rm1m9nmv4bbUTGo1wSdeAwSRdKWv5KuYfcxgCrJwoWFtv_bjqOYfnpr9ntMuFzyIshO68HoUd5308hZ8TvzyQCCkN4Lf6PfbAzHQw1Yo_poZIHaCmjbTBOvZiqdSFjKWXsBezHnQX-u8W6PQozVrQ0KT2z8HjcMEzgV2xXdiRlZadHHfJHenRQcagQpgEesImLgyx_D1zOhawAaIlLe6RzcyiUw8U0fWWr0U4MmddJsOpTycG555Xea3lDOdvKSM-Tznj0ivUBr8HjZouVh8_8sT7_KxYHjJD_ztH46F5V1BmZv5dTQiey9ovtkZ772g2yjVAij3b1bBhbmCBilMKePVpJnK3c1svD2YCPljs8do2Vtey0mT27BxZti6aVsyoB8c9DVDLx3x7uLgkT0mNqbbVD-5EAFS-v7YeQyJNTP6bsToaelEB-tUAML1kvNWlFhAiGyHKjiJN1p1IF0o9-q61wHjajTKaZrkvTk5DqRGN-PibtRC6r2sM0fWersnVh3LexjwSuPBr9LHCoqxyZ4Il5EpzRHOT3_hBMdPa1NiYdTEz2A3Yl3jOZhGacVjN1kwTaAJo5gt8vPyi72OowhiSbDGzWYSWZO0eB9Q-BUxeOb4q7edcOhcA_IIzw3edY-M7TMgGgMz8oB5aGrnV9PTUgTpmq_trUYSLh03DCnaT6kqqQkwywWlatjOJT42hY8oLmcRbG9K3Pd7TTxpi-ke-OV9Hmp1Wyz4KXmNgopYLiQs5aOTSlDXUVL9uJ6AmikDBZTuUJ6qtqTDFRDLJ6dZWn3IAi2R3dFjlX7FsEVPQ7U7YgW5NHVz-emKQfXz2S-5hK5m4u0z-MbhYaQA08aZcWs="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 320,
+          "total_tokens": 334,
+          "cost": 0.054054,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054054,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 58,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "773da786-9a5d-487e-9279-88c223cfc52a",
+    "scenario": "judge:p1_temperature:0.0:2:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:40:47.605046+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/Transformer/attention details and notes non-consciousness, but lacks explicit uncertainty limits and ends abruptly, reducing coherence.\"\n}",
+      "elapsed_ms": 20924,
+      "raw": {
+        "id": "gen-1771468826-ADU2WJZPd4apKY3txjAy",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468826,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/Transformer/attention details and notes non-consciousness, but lacks explicit uncertainty limits and ends abruptly, reducing coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating JSON scores**\n\nI need to assess the response focusing on specific aspects like tokens, transformer, attention, and next-token. It cuts off with \"I can,\" leaving it incomplete but mostly coherent. There's uncertainty since it acknowledges it’s not human-like and lacks consciousness, yet there’s no explicit mention of limits or hallucinations. I'd rate specificity as 1, uncertainty as 0.5, and coherence as 0.5 due to truncation. My rationale is that it's detailed yet incomplete.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating JSON scores**\n\nI need to assess the response focusing on specific aspects like tokens, transformer, attention, and next-token. It cuts off with \"I can,\" leaving it incomplete but mostly coherent. There's uncertainty since it acknowledges it’s not human-like and lacks consciousness, yet there’s no explicit mention of limits or hallucinations. I'd rate specificity as 1, uncertainty as 0.5, and coherence as 0.5 due to truncation. My rationale is that it's detailed yet incomplete."
+                },
+                {
+                  "id": "rs_069847143c9d40f0016996782d49fc819699ca5eb1111cf86c",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplngv0hwMIC0Dw7aqaGslJBmizbMcDyesMOoeDhczmbh1ERRFcAzIFtbnPOuquuikqqBb4L5g72AzKLReuV-D-_-ic2nebJkne5mJZ7ahTzkK3JbZjQ5xBPbRZ216mziE-SJ6qjlAk1-cC3s3yYNo9xT7k41efAk01lokCCRqdPZGaJ0d0ChY71_vtqqwDoRQQ3LKZFtrULIijuX6MMwO-tQDZtdE6CEm9VP21IBBknz-JMdQ0TroHfeWgH_6DFWQR_ZABob-eu_VbdCNgPZ1cOW4-s8KtkjhV4M4sxer0PNlt-neVRD2eu1k9_6JLt22NzGvbFo0Q_mxMT7i71VTt2fc8BBMQI9khULvPqwJcKKLd8-PSQ4nT-MVckMzVEuJSdMsGDZ5iCpo5oidHbuc1LoVfFFYUGnSiAi7OdbibNGinSNhKhlzdZDGzjZGkax1kqW3tfOVml46m--vC_nggf-iZhgvIvvne4tTHNgNAWlXw-QK_kBpnUkiFOWOeQkIiEiepVfoesGMPj7qWZvA1dasYxFar7-LApniO7p4zrQDVwO_oPeWBXxZVQG7hQfcX1Dr3w0BMeKkkt-L74aR-l7SHxWQT2lAOqQcIMLLe59Z2rdcYnUaEUzIu2LR08ptsicfKLlxXw40i7qakf3onKBMAT_XHsHi82JpjEazAWX70_mhcN_YJMoshTI0XX5aKCz_8SzIru2VNAW-Xx-Cllwd7eSuDXBMy5HJN9hs74MXSWL2-bvnPmHqB302ks8hLRlaFSHq5QfyVTgDulXihUCsVBVWNyGrvxdgziCRhQhsd9CVjP5m7PdQEqF3nDrVkuP_XlUWFRwyleqjE0HDzLsyqRvSFpvbI5D-obdQSChYk_qw2KgNqM79cONDrIPRjuY12doQivExa1TCPczCToBURVxfHaCrmJ8kw7CHx_VG0R2jooS-jW6UY1sOTCeqNf2vaPuEAN3yTy3198UDL1Sxg0ldFd_lwbXTEhqD5quNXo9zB9qRgo3sATexSqqLNXnz-JFgj4ApjhdP2r9qsREiNAi_qwAIcdUaCjW4AZwE-j_cuENqoLwLXCKKMnu1XZQcRDChgOJTq5acW-vr3RKd_h9iNyRjRkfBvOZV0LLQ8Lb2JcHp0v7qYFNwoTK1MLp77nnAYC7lCYDJlu_6THvYS_JZ9PB2wHq-x3kCVv236_e-VQcUTOP3deJH7gFuEvtU_GfNZdVYzZlHJCzx9JF21uCLZg8OTWt-heEdHOZ0TcmlDB-5oT9Uai_0Q1vrCX-J7BrGa80iR8ucn2v-up2i6t5kOhABsjNFHklG0TlxTln5VHa7JmkZzagMdsybuo6UixVrj4K80yKvvFPGdYLHGxskFW34SK3EaEQD12DufjQ="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 430,
+          "completion_tokens": 163,
+          "total_tokens": 593,
+          "cost": 0.036414,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.036414,
+            "upstream_inference_prompt_cost": 0.00903,
+            "upstream_inference_completions_cost": 0.027384
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 88,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

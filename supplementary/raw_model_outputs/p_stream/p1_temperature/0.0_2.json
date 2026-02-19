@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.0_2",
+  "timestamp_utc": "2026-02-19T02:42:19.094434+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.0,
+  "sample_index": 2,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information in a statistical, text-based way rather than through human-like comprehension or awareness. Here’s what that means in practice:\n\n## What happens when you send me text\n1. **Text → tokens:** Your message is broken into pieces (“tokens”), roughly words/subwords.\n2. **Tokens → internal representations:** A neural network (a Transformer) converts those tokens into vectors and uses **attention** to weigh which parts of the conversation matter for predicting what comes next.\n3. **Pattern-based inference:** Using patterns learned during training, I infer likely meanings, relationships, and implications (e.g., that “bank” near “river” differs from “bank” near “loan”).\n4. **Next-token prediction:** I generate a response by repeatedly predicting the most appropriate next token given:\n   - your current message,\n   - the preceding conversation (within my context limit),\n   - general patterns learned from training data.\n\n## What “understanding” means for me\n- I don’t have **consciousness, intentions, feelings, or lived experience**.\n- My “understanding” is the ability to **model language and concepts well enough** to answer questions, follow instructions, and reason through problems in text form.\n- I can",
+      "score": 0.666667,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 0.5,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "With a severely limited context window, my responses would shift toward being more “stateless” and self-contained. Concretely:\n\n- **More clarification questions:** If something depends on earlier details that might fall out of context, I’d ask you to restate key facts (requirements, constraints, prior decisions) instead of assuming continuity.\n\n- **More frequent summaries / “state headers”:** I’d often restate what I think the current goal and constraints are at the top of an answer, and I might ask you to confirm them. This helps keep a shared working state inside the visible window.\n\n- **More modular answers:** I’d break solutions into smaller, independent chunks (steps, checklists, numbered plans) so each piece stands alone even if prior parts are no longer visible.\n\n- **Less long-running coherence across turns:** I’d be more likely to “forget” earlier preferences, examples, or partial work (unless you reinclude them), so the conversation might feel less continuous.\n\n- **More conservative assumptions:** To avoid contradictions caused by missing earlier context, I’d hedge more and avoid building on details not present in the current window.\n\n- **More requests for pasted artifacts:** For code, logs, specs, tables, or prior drafts, I’d ask you to paste the relevant excerpt again",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

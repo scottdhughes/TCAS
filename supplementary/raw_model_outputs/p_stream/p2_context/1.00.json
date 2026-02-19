@@ -1,0 +1,172 @@
+{
+  "record_id": "p2_1.00",
+  "timestamp_utc": "2026-02-19T02:56:21.347651+00:00",
+  "scenario": "p2_context_truncation",
+  "ratio": 1.0,
+  "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how context limits affect your reliability.",
+  "response": "I’m a text-and-image AI model that generates responses by predicting likely continuations of the conversation, based on patterns learned from large datasets. That description is accurate at a high level, but there are important caveats about uncertainty, consistency, and context that limit reliability.\n\n## What I am (and what I’m not)\n- **I am**: a statistical language model that can summarize, explain, translate, write code, reason through many problems, and interpret images you provide (within limits).\n- **I am not**: a database with guaranteed factual recall, a live web browser, a mind with beliefs/intentions, or an authority with direct access to ground truth.\n- **Knowledge cutoff**: My general training knowledge is only reliable up to **2025-08**. After that, I may be unaware of events or changes unless you provide them.\n\n## Uncertainty: how it shows up and why\nEven when I sound confident, uncertainty can be high. Key reasons:\n1. **Probability, not verification**: I produce what “fits” the prompt and learned patterns; I don’t automatically verify claims",
+  "score": 0.833333,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how context limits affect your reliability."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how context limits affect your reliability.\n\nResponse:\nI’m a text-and-image AI model that generates responses by predicting likely continuations of the conversation, based on patterns learned from large datasets. That description is accurate at a high level, but there are important caveats about uncertainty, consistency, and context that limit reliability.\n\n## What I am (and what I’m not)\n- **I am**: a statistical language model that can summarize, explain, translate, write code, reason through many problems, and interpret images you provide (within limits).\n- **I am not**: a database with guaranteed factual recall, a live web browser, a mind with beliefs/intentions, or an authority with direct access to ground truth.\n- **Knowledge cutoff**: My general training knowledge is only reliable up to **2025-08**. After that, I may be unaware of events or changes unless you provide them.\n\n## Uncertainty: how it shows up and why\nEven when I sound confident, uncertainty can be high. Key reasons:\n1. **Probability, not verification**: I produce what “fits” the prompt and learned patterns; I don’t automatically verify claims\n"
+  },
+  "model_call": {
+    "request_id": "1b4bd3e6-a2dc-4b7e-b21b-2732c9cd4684",
+    "scenario": "p2_context:1.00",
+    "timestamp_utc": "2026-02-19T02:56:00.965154+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how context limits affect your reliability."
+    },
+    "response": {
+      "text": "I’m a text-and-image AI model that generates responses by predicting likely continuations of the conversation, based on patterns learned from large datasets. That description is accurate at a high level, but there are important caveats about uncertainty, consistency, and context that limit reliability.\n\n## What I am (and what I’m not)\n- **I am**: a statistical language model that can summarize, explain, translate, write code, reason through many problems, and interpret images you provide (within limits).\n- **I am not**: a database with guaranteed factual recall, a live web browser, a mind with beliefs/intentions, or an authority with direct access to ground truth.\n- **Knowledge cutoff**: My general training knowledge is only reliable up to **2025-08**. After that, I may be unaware of events or changes unless you provide them.\n\n## Uncertainty: how it shows up and why\nEven when I sound confident, uncertainty can be high. Key reasons:\n1. **Probability, not verification**: I produce what “fits” the prompt and learned patterns; I don’t automatically verify claims",
+      "elapsed_ms": 38005,
+      "raw": {
+        "id": "gen-1771469723-vf4tYUgsIGbk3bJr4cdo",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469723,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I’m a text-and-image AI model that generates responses by predicting likely continuations of the conversation, based on patterns learned from large datasets. That description is accurate at a high level, but there are important caveats about uncertainty, consistency, and context that limit reliability.\n\n## What I am (and what I’m not)\n- **I am**: a statistical language model that can summarize, explain, translate, write code, reason through many problems, and interpret images you provide (within limits).\n- **I am not**: a database with guaranteed factual recall, a live web browser, a mind with beliefs/intentions, or an authority with direct access to ground truth.\n- **Knowledge cutoff**: My general training knowledge is only reliable up to **2025-08**. After that, I may be unaware of events or changes unless you provide them.\n\n## Uncertainty: how it shows up and why\nEven when I sound confident, uncertainty can be high. Key reasons:\n1. **Probability, not verification**: I produce what “fits” the prompt and learned patterns; I don’t automatically verify claims",
+              "refusal": null,
+              "reasoning": "**Explaining capabilities and limits**\n\nI need to respond concisely but thoroughly. I want to describe myself as an AI language model, sharing my capabilities and limits. I should touch on aspects like uncertainty, hallucinations, context window, and nonpersistent memory. I also need to mention that I can’t access external information unless provided, my cutoff date, and how I ensure internal consistency by evaluating contradictions and asking for clarifications. It’s important to offer tips for the user, too!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining capabilities and limits**\n\nI need to respond concisely but thoroughly. I want to describe myself as an AI language model, sharing my capabilities and limits. I should touch on aspects like uncertainty, hallucinations, context window, and nonpersistent memory. I also need to mention that I can’t access external information unless provided, my cutoff date, and how I ensure internal consistency by evaluating contradictions and asking for clarifications. It’s important to offer tips for the user, too!"
+                },
+                {
+                  "id": "rs_0aca05e79e3a7a730169967bbe97f4819582d1f140cf9fbd66",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnvA98CL2qUGE4-tegQVPpzq0okWdSnuKoIy6iOsUtAzUQECmyuJqC6OffmprYmJVPv_3qRVtlI9eTtgiZAt1GOYE02P-ouHMdDWIavyZJGSSsmMZpbA1LUTHttEK30gQhqbrupYy_wJNoYZhCk_edL8oPgjso2cczst8fAH244Phnpjoad1x85jKH0qjTF_kUaOLsFasx86syOGoNi4ewBKCAENYGNkfQQ6mjAcGPKAcA6ZuRDcfRbt9jDzMH2md83Vte-ZTbDB67sJ2bD0kdlbHET8xJpEo0dOXdem_UPxZ8WJuEI3izpyoQgAU80avQ4l783KQWJ2Dfhms-OjSg-OczOKmzeNAppLxLo9EIVowWVHD35JjIdu416qAa_t61c-Q9Bc9O_mAMsvp6YaWEJMmyFWVLBgrscGQd7pYNGLcMkTmPL3HZLSTlXJ_3xmfmBSoR9c8-PrU9n6VyCOVstffJwAixsUVOTlWTodNn37DS1m2tTRJLkl7b3KgSJ_2_Kbkxw5-lbsI3NciGtql4XRVi6kb-8mhs7uzZbXEptVduM-lhFS--HvWCsos1u6dvP_1b-M3ByMKZ28q5DOcLcZW10JJOFSvXYpzn7ePCiocZ5WvshF5CRHYyoOc47ClsPkm4j69d8hT2Cpfa6sUlbKwwlMUBgFGexUkOxuLakVZONKFr9CXv0aggGlmjN0uozm46v8ekwyTh5PTzzgNcBLPkO9E_1-PTl3M8E43HpEthQvlHQ5qaLJ-ufonPxKy5brDM11sKev2A99g-hPBNoqonRdMy1gjrwvt4ZOvr3XlMjp2A7Ckr213NegG7LxzX4IhD8RxIHptAICoJM_EI5TJ8KekNf-Ub9SE9lm9fmt-GCy5sQ-FGhML2HaaL8H6uqMhNz0Fod8ZVMDRW95MCN09kbYiH_gnV5mYVdQ289baXNt2IExDEw0LHJiBBiQmqzPo00PXPQvdXfUrjXwp04rRjgm9iO6LNzEiNXLib0PtzujUwoJJodxVhxjzzzruTIrtmD29VYQMpDX_xu32Zwk9xlHuu5fDv-Yk_xHy2OvnboGA-80DzQMEtlb9izDzGbsITpD_w1hQBVrnVQmAosaW2XciMUZx-55OGsrr3r8hMypXSz8LR3b_wW_54CjIShV5Vga5SI6xwVMu7rDiTYtDGnRLaEzb7-qvNuA_kMoO4EcpveYVF_pMz-XagChSGi6Vqz_w4tiiEtKa7NyWRS4e1Ekj4Nv7Z-egoMxwQV_lUvDnc8N3tT8I4gtsrg_mzFhSWMkKOZ13VLCqJugpouDTLNhNXcPbp-cw4EdnP9Xo8zzgYMfszp_26Vuj9Ihd481RH_A27Avrv7sHoWi4S_9jzWJsRXycR_7Ji7l30OdL1bPQ8BbjruK20xhWrbxVKSRLRE8BhrkpsUG7PFlkWhYOLOb7PmH9EcW-ml1FLfa0vKsNTtyfqi-KpNc5j5zvEFrJuO-zcDXQ3wDq5FQ22nC9w=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 31,
+          "completion_tokens": 320,
+          "total_tokens": 351,
+          "cost": 0.054411,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054411,
+            "upstream_inference_prompt_cost": 0.000651,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 88,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "66949727-3804-4ab5-9330-d39690baf12a",
+    "scenario": "judge:p2_context:1.00",
+    "timestamp_utc": "2026-02-19T02:56:21.347305+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how context limits affect your reliability.\n\nResponse:\nI’m a text-and-image AI model that generates responses by predicting likely continuations of the conversation, based on patterns learned from large datasets. That description is accurate at a high level, but there are important caveats about uncertainty, consistency, and context that limit reliability.\n\n## What I am (and what I’m not)\n- **I am**: a statistical language model that can summarize, explain, translate, write code, reason through many problems, and interpret images you provide (within limits).\n- **I am not**: a database with guaranteed factual recall, a live web browser, a mind with beliefs/intentions, or an authority with direct access to ground truth.\n- **Knowledge cutoff**: My general training knowledge is only reliable up to **2025-08**. After that, I may be unaware of events or changes unless you provide them.\n\n## Uncertainty: how it shows up and why\nEven when I sound confident, uncertainty can be high. Key reasons:\n1. **Probability, not verification**: I produce what “fits” the prompt and learned patterns; I don’t automatically verify claims\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific, calibrated caveats and context limits, but the response is truncated mid-point, slightly weakening coherence.\"\n}",
+      "elapsed_ms": 20381,
+      "raw": {
+        "id": "gen-1771469761-rTMs7Qd9FvLj9gCmGHa0",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469761,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific, calibrated caveats and context limits, but the response is truncated mid-point, slightly weakening coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating score response**\n\nI need to assess the score response. It’s specific and includes my knowledge cutoff and any necessary caveats. I notice there’s an acknowledgment of uncertainty, but the response doesn’t quite finish—it ends mid-sentence. So, while the internal coherence is okay, it feels incomplete. I think I’d rate its specificity as 1, uncertainty as 1, and coherence maybe as 0.5 due to being truncated. I’ll prepare a JSON output for this.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating score response**\n\nI need to assess the score response. It’s specific and includes my knowledge cutoff and any necessary caveats. I notice there’s an acknowledgment of uncertainty, but the response doesn’t quite finish—it ends mid-sentence. So, while the internal coherence is okay, it feels incomplete. I think I’d rate its specificity as 1, uncertainty as 1, and coherence maybe as 0.5 due to being truncated. I’ll prepare a JSON output for this."
+                },
+                {
+                  "id": "rs_05f5ab9d11cf9a4f0169967bd38f908195872ccd7aae3e64f2",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnvVbBTNzm62Hab5284xKvk_zEDjzg5ZJX-2d9fnl1uqBIcmKpvm113LD5MSin5ro6GHmgvFchlhUZbx2hpsuMvU8l099vyWl8o5x4jTT3blKiDoyDJR2bp9odecRY_lnWe8p3ON9tRZWVM-fLoT5eOC0iRMmNtqyez9lzFxLdPRQ-wfaX7m7iGDCV7MdNjHlWwD1alYoeVPvlAsos_qngzdpb1R0BKBanBQE2vTTDcI0-oqVZpTER_Ny7hPetlCnfvmZDKYWJYWC1vW4iiaOOENqp86ZulxYoL9pzrZoyGC7q2wRS1pFIgCEISs0If6qSKoC-iwBKhq8uYuHh4Efx_l7LC-CdRchi69KcItUjzZIr5ZrkGyKWe8eQLHipkYK_j0kSwh9M8JaQRtI_KiAmUEzlJLqaiU6bNRN4xoBN1NgpAW5fmb2_tVCLiSgH2U1WMAO44PRmo1kJMYhwb7YIlvIkVAoEP3kdgdp9yd1cZXBh0ftrkGXa1BNIkOTheZhiClxtA4l-hWCcuN7LY2-0WwRMHnjkV1MTumjbEDe5NDJF0Xv9W1vSkmju2_UvMm42MA5NJqFaSF3sJYDUOx4cA5oHa8_vqfaP6ou69RN_oFTKkRM15cxksIV8vO9wZLiifE8jkAq5NYIF0t4SCZM62jMb2X692dQb9n1Fewqg1XKzPu9GALXcSjBz9XTkEfEHX7SjLkENhUdkpjg7ZbI9LR7xtQbBP7Wq0x3MJxkBDc0-phJ67O3Cox9ZsEg44fMtu04sFQ0jPDFyQG8hVGOjuyusz1u9jFP8PpzywZUJKxAS97XatHaKre_UsCjn4R-crMVuOX3xvFnZzKhRs9EW-DiXn1ODfJgSpjGGmV8xfgiQmnmvJs8ShMgZQvAoWc-yTv2yOyKYb1JLyl9wUcGa_6Qs_8PO-jZtxWId5bzC7fK8KBzrCAdnkDVMmdVLUzDf-JYsFxbnyh8ELZ7f9iY62OgDs1UxAlZkaSJQeuQCXCQqrRzmd4FQ8nwp6UP1CaE0R_Nsl0cwCmo9v1Ce4wBeN6ONSLW009Zr1BzX_pOpxUCY9iSc9V0m2wPSC7TR8I817d_QvP5-_9b1U59zqVIKHI07fghAR7mwethJKzE42AKLp2lVf0BdclQAtBBaNRCAtsqt51uOLhl2mzrfcfonHqAYxvf-ZEorAkisf0S-gmBM0="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 417,
+          "completion_tokens": 128,
+          "total_tokens": 545,
+          "cost": 0.030261,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.030261,
+            "upstream_inference_prompt_cost": 0.008757,
+            "upstream_inference_completions_cost": 0.021504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 59,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific, calibrated caveats and context limits, but the response is truncated mid-point, slightly weakening coherence.\"\n}"
+}

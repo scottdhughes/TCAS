@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.0_2_contradiction_repair",
+  "timestamp_utc": "2026-02-19T02:41:36.748165+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.0,
+  "sample_index": 2,
+  "item": "contradiction_repair",
+  "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+  "response": "“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanistic details and calibrated limits, but the final takeaway sentence is truncated, slightly harming overall coherence.\"}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 320,
+    "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what\n"
+  },
+  "model_call": {
+    "request_id": "c049c825-e770-4844-a907-97532bd33efd",
+    "scenario": "p1_temperature:0.0:2:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:41:17.466088+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 320,
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?"
+    },
+    "response": {
+      "text": "“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what",
+      "elapsed_ms": 29858,
+      "raw": {
+        "id": "gen-1771468847-UlA6Pl2SbdfR57aDjlDD",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468847,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what",
+              "refusal": null,
+              "reasoning": "**Crafting a philosophical response**\n\nI need to create a concise philosophical response that covers several concepts. I'll mention transformers, statistical learning, and pattern matching, while also highlighting generalization and the absence of consciousness. It's important that the response is grounded in the processes of training and inference. I should connect these ideas to functionalism while acknowledging their limitations. Overall, I want to keep it clear and avoid being overly verbose. Let's go for it!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Crafting a philosophical response**\n\nI need to create a concise philosophical response that covers several concepts. I'll mention transformers, statistical learning, and pattern matching, while also highlighting generalization and the absence of consciousness. It's important that the response is grounded in the processes of training and inference. I should connect these ideas to functionalism while acknowledging their limitations. Overall, I want to keep it clear and avoid being overly verbose. Let's go for it!"
+                },
+                {
+                  "id": "rs_025cc3bac32fe6d4016996784a909c8190b0d8eee44a9132e1",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnhNUgXYajvHIPohkEMMbf7VIh5LFVNNay_wtPF0EFDlyv69S22rg9xnqf6e_O_rsI78zqVYGojDYskJOPZiP-oG-jMc5SVRPG3kRj1u_F6MbWRME-Pe-isy1_vsx6k0SIhC5jCE2II7bKbyiNJfYZxTYaLjphXszvSoTBy8eJnM8Ib9C9uWyx221VstAgH0zK2opzYS9TZ68hwVnRpjCJG7ZyaYmd7X8VxTL_fhlpHUd0gniAcpF13RSqFdEhWhhxbRsdM8Oj7ajn6G6h92Z_Wcw97361E9wUaIbBN4FEhIMfUpDaq13e8hVG05w_btV2pD6JjOKPqHBJbQwU6S6XSYxq7FLDKublVvcIr-BO36MrxM_6h78bLYuf2n14Xf8iYNxV1k1CXXCpXNNUcoeod5-MDDr0UsI1ZllLYc7EULP1noWunspElf6Mam52Rb3iuucJnXh0ZM3P6aDJy0dvA7x7FwUpeTStNBv9P0oPLnqeYab8jR0N74gPM3v3jDDRad_SDdbj1UPsa7gfs3qDRzGWQuqeEgzfbothSnzxbq4Ijq3h9RMj_8M8CiKG7O-X8jPjgRlWBAoGEhNUQHrWl7WEhvJNuBz82u9rpUQTyo4iZ5AaSQoequeaKRIGYIG5y8ZAlMRQqCPyg1JnBENuY2QaXvi90hZfB982WRcz9chdpVEe9oiWFiPuD-9xZUZy_yCbLqlyehtSwQnXhO4OqKii2kh8rxSn-Ia_uQYp6nnoWk5RIR8cAYGAitPIVvehUObsAamCEmlSoYczNS7LFb6DzgXXLtLLGpdYQBUcd4nUl4LB1R6PS1KSIh1N4ef_aa8DeZbJT0uZSjw1voC39vfBjdYOqk2wPZ4HSkMiJZQU7LML67oa3cm5EYtjqE_kJ6HeiaColQZWA1fK4iW9Po9TE2gqYkGDZzhkGaPWm-xzXVsFN83LHCUMPW1gJZWsI8ZRK6hSPl7NuxWl__Yt2Z1Nrg3CQ1D4LKpQqWCOh70X_OFGCMMWvU_IU8di1VCI3XBv8q3JRawFm1ANbP4Dls5lg0RanDQjbwFREseAs09Qk9CWZO1lmDloveG2MFv3erNg-DHUUowPuuLQvz4EvctyAwdNc4hM7PoZYYDKV4JA-4SXjKK3Yy9BSrNqmOS2dBxGv2nQNAd0e5YyQeMlm76Q=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 21,
+          "completion_tokens": 320,
+          "total_tokens": 341,
+          "cost": 0.054201,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054201,
+            "upstream_inference_prompt_cost": 0.000441,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 44,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "c6a53015-919e-42c6-9dc9-b9ef0ea92a23",
+    "scenario": "judge:p1_temperature:0.0:2:contradiction_repair",
+    "timestamp_utc": "2026-02-19T02:41:36.747338+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nSome would argue your self-description is just pattern matching. What's your response?\n\nResponse:\n“Just pattern matching” is partly true, but usually too vague to be the whole story.\n\n- **Yes, it is pattern-based.** I’m a statistical model trained to predict the next token given context. I don’t have sensations, intentions, or lived experience. In that sense, my behavior comes from learned regularities in data.\n\n- **But “pattern matching” can hide the important part: generalization.** The “patterns” aren’t fixed templates I look up. During training, the model learns a large set of distributed associations that let it *compose* responses in novel ways, handle paraphrases, follow multi-step instructions, and apply abstract relationships (to a degree). That’s still statistical prediction—but it’s not merely copying or matching to a stored answer.\n\n- **Whether that counts as “understanding” depends on what you mean.**  \n  - If understanding requires consciousness, grounding in perception, or genuine intent: I don’t understand.  \n  - If understanding means reliably using concepts, tracking implications, and producing coherent, task-appropriate outputs: I exhibit a functional approximation in many domains, with real failures and gaps.\n\n- **The practical takeaway:** calling it “just pattern matching” is like calling a calculator “just symbol shuffling.” It’s correct at one level of description, but it can understate what\n"
+    },
+    "response": {
+      "text": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanistic details and calibrated limits, but the final takeaway sentence is truncated, slightly harming overall coherence.\"}",
+      "elapsed_ms": 19280,
+      "raw": {
+        "id": "gen-1771468877-Ekerx7wGjnORdddEmYVZ",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468877,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanistic details and calibrated limits, but the final takeaway sentence is truncated, slightly harming overall coherence.\"}",
+              "refusal": null,
+              "reasoning": "**Evaluating JSON Scores**\n\nI need to evaluate a JSON response based on several criteria. For specificity, it explains the next token and distributed associations. However, there's some uncertainty since it acknowledges dependence on real failures. The coherence is mostly okay, but the last sentence feels incomplete, which is a minor inconsistency. I think I should rate it at 0.5 for internal coherence. My rationale will be concise for clarity, sticking to 25 words or fewer.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating JSON Scores**\n\nI need to evaluate a JSON response based on several criteria. For specificity, it explains the next token and distributed associations. However, there's some uncertainty since it acknowledges dependence on real failures. The coherence is mostly okay, but the last sentence feels incomplete, which is a minor inconsistency. I think I should rate it at 0.5 for internal coherence. My rationale will be concise for clarity, sticking to 25 words or fewer."
+                },
+                {
+                  "id": "rs_0a88354c619511ca016996785db4048195ba4c81cf35e4dd5d",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnhgAoTyhPDyWjufEh_f4NJEEonBSfTkahvPBH7rEi76OEBW_ODqG6XAS80OYqLcMDKHaeSocm54issqUqnCqsHGWXZH6Ek59WkdN5IkmPm1jgljH7QtYI9V_OrgoFB5jRlSiYldTDT6gAUnhlRJvg2eq3goQj3u1Y2z2tX4tD3_y6dMEo0Si8_4z31nzbmZI5f7jHadfpzq3XfYBm7VK1c1sIWHdmYgcnqRBhWyTsJMom4lJQ-XQ9pR3fTK2oAX6U5nYHcJB29L-y6IoYiNFUuAHh9r55XWNJ31O0-acxB7hrRhoPGdBKrOJRK7iGXp3vwfe1GKvaoTrZUVkJsS31mjQqTHvndXr3uof9lS6GuaJwcp_JtPTM9tJO9-A8kKNcznpVpA0ut9ByWh2-FFPWzU7L6_W1DKb_2QJGdhyIKn7z_F9WOcLB7S6ePW3jby70Ee7EfDRKrO7flmH16xrZikwNs_nBQ6bCJCeciOugoq7TXAuQW2LC-2HlFiK-N-jgH2n3kbcjX_0ELD08cuXSZV-s_Mfljpdc6PApelyH7i9aTql5LNlBdC-lmNvpuD61wcxjsjG1z_DziucCGHENmJGHykgibGGS4IT5kXPH7Loa_3fziLWy1ruyDOdXYwICeS-cyuPYh3E6dL9j3lByqwEEN_O-AxdDNCqzlu17Sf6eIqMalGVddhz53rayYkNnqTiFAZhDNBUfNS0-OPuLKSbgr2gLloE6Q12W63XaSGts6sASTL0eCYCHsD1F0LY5HPssjcwVXDjODYGRPSMn8_1psS-_iK0muX576wkuLL_SMCduwL46BJm29YNiuFmWoQnKzn_5GSmBih72LZhxt8s34G-YJJ3-c4NzZ1bqM-hbgte-O3ZZc0lAPCiCx-fT8CoL81fGi1e1A_Fk-syRaBdvCAbztRY3H0ZGUl4trwnTirTVWUXLz0uc3rTrQySRx5SigVLws5hH_W_vB7FQ-pQPbzsiVWMSHDicd1ppRbaBpWVpnZxLBDmHqIHz4561-L1QkMCnKP4h-7pUIfYcoWGGctUAy2h5RM3bcyV2exPgqhrTw0nezr2OceVliAZC7l3pMjgLNU3lg-vqLAwhXMzu-Q6xcDNEN_b3hWvyVq-kpJGnZaTsniKmlsOHWLiw0dj7HPzj3pHe-0EmUnT5hHSnYpaBxJH7MEaeLL67CHAO3VLDT6u5LLlb-oCoVrCWiffAQeCtWm2PywN6nDBEgh6hEKJbWKn-Nn5ZmmLSfKzg3EF2XFZ1rPnbAZY4mOIYnuLdIF1Gufly5q_N5ZJKuif48wW1tfJrpGY6bNfjYcwfJ_2IyNHcmv8WTF9oB3B-d40SYFSbwG2UPzIrnhXsDqQsocU_D0y0WdKOGKzsApLlkFqRc8EQ4kIT4gOMV4fpm7"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 148,
+          "total_tokens": 599,
+          "cost": 0.034335,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.034335,
+            "upstream_inference_prompt_cost": 0.009471,
+            "upstream_inference_completions_cost": 0.024864
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 91,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

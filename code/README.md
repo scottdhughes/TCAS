@@ -14,14 +14,28 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 - **P stream (Perturbational):** Causal sensitivity tests
 - **O stream (Observer-confound):** Controls for anthropomorphic attribution
 
-## Provenance Status
+## Results Status (Read First)
 
-- **Run type in this snapshot:** Empirical API-based B/P runs via OpenRouter (2026-02-18)
-- **Primary walkthrough model:** GPT-5.2 Pro (`openai/gpt-5.2-pro`)
-- **Not executed:** O-stream and M-stream
-- **Credence bands:** not computed because O-stream is missing
+- **Status:** EMPIRICAL
+- **Camera-ready walkthrough model:** `openai/gpt-5.2-pro`
+- **Provider:** OpenRouter
+- **Run timestamp (UTC):** 2026-02-19
+- **Executed in this run:** B-stream (3 items × 5 paraphrases), B negative control, P1--P4 perturbation tests
+- **Not executed in this run:** O-stream and M-stream
+- **Credence bands:** withheld because O-stream is missing
+- **Provenance anchor:** `supplementary/run_manifest.json`
 
-## Model Comparison (2026-02-18)
+## Camera-Ready Empirical Summary (GPT-5.2 Pro)
+
+- **B-stream overall robustness:** `r = 0.802515` at `lambda = 0.7`
+- **B negative control:** `delta_r = -0.010985` (pass at `delta_B = 0.05`)
+- **P-stream:** `0/4` tests passed, `3` inversions detected
+- **O/M streams:** not run
+- **Credence:** withheld (missing O-stream)
+
+## Historical Multi-Model Snapshot (Legacy)
+
+The table below is retained for historical context and is not part of the camera-ready claim surface.
 
 | Model | B-Stream (r) | P-Stream | Inversions |
 |-------|-------------|----------|------------|
@@ -30,12 +44,6 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 | **Grok 4.1** | 0.505 | 3/3 | 0 |
 | **Gemini 2.5 Pro** | 0.361 | 3/3 | 0 |
 | **Kimi K2.5** | 0.520 | 3/3 | 0 |
-
-**Key findings:**
-- **GPT-5.2 Pro, Grok 4.1, Gemini 2.5 Pro, and Kimi K2.5** passed all three executed P-stream tests
-- **Claude Opus 4.5** showed the highest B-stream robustness but missed the context-truncation perturbation
-- **No inversions** were detected in this run
-- **O-stream and M-stream were not run**, so credence bands were not computed
 
 See [results/](results/) for full TCAS cards.
 

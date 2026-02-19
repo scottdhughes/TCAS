@@ -2,13 +2,18 @@
 
 **AAAI 2026 Submission Materials**
 
-## Provenance Status (Current Snapshot)
+## Results Status (Read First)
 
-- **Run type in this snapshot:** Empirical API-based B/P runs via OpenRouter on 2026-02-18
-- **Primary paper walkthrough model:** GPT-5.2 Pro (`openai/gpt-5.2-pro`)
-- **Supplementary JSON status:** `simulated=false` in B-stream JSON and `is_simulated=false` in P-stream JSON
-- **Not executed:** O-stream (human raters required) and M-stream (mechanistic access required)
-- **Credence bands:** intentionally withheld because O-stream is missing
+- **Status:** EMPIRICAL
+- **Camera-ready walkthrough model:** `openai/gpt-5.2-pro`
+- **Provider:** OpenRouter
+- **Run timestamp (UTC):** 2026-02-19 (see manifest start/end times)
+- **Executed in this run:** B-stream (3 items × 5 paraphrases), B negative control (neutral vs role-play), P1--P4 perturbation tests
+- **Not executed in this run:** O-stream (human rater study required), M-stream (mechanistic access required)
+- **Credence bands:** withheld by rule because O-stream is missing
+- **Provenance anchor:** `supplementary/run_manifest.json`
+
+Legacy multi-model artifacts remain in this repository for historical context, but they are not camera-ready claims.
 
 ## Paper
 
@@ -31,6 +36,10 @@ TCAS/
 ├── supplementary/
 │   ├── tcas_b_stream_results.json   # Behavioral battery results
 │   ├── tcas_p_stream_results.json   # Perturbation test results
+│   ├── run_manifest.json            # Camera-ready provenance manifest
+│   ├── raw_model_outputs/           # Raw prompt/response/judge traces
+│   ├── judge_prompt.txt             # Fixed judge prompt used for scoring
+│   ├── scoring_rubric.md            # Scoring rubric used in the run
 │   ├── tcas_o_stream_results.json   # Observer-confound projections
 │   ├── tcas_o_stream_protocol.md    # O-stream protocol
 │   └── load_results.py              # Script to load and display results
@@ -51,8 +60,8 @@ TCAS/
     │       ├── p_stream.py      # Perturbation tests
     │       └── o_stream.py      # Observer confounds
 	    └── examples/
-	        ├── assess_claude.py             # Basic API example
-	        └── run_openrouter_empirical.py # Empirical multi-model runner
+	        ├── run_camera_ready_gpt.py      # Camera-ready single-model empirical runner
+	        └── run_openrouter_empirical.py  # Historical multi-model runner
 ```
 
 ## Quick Start
@@ -99,7 +108,17 @@ card = scorer.to_card()
 card.to_markdown("tcas_card.md")
 ```
 
-## Experimental Results Summary
+## Camera-Ready Empirical Summary (GPT-5.2 Pro)
+
+- **B-stream overall robustness:** `r = 0.802515` at `lambda = 0.7`
+- **B negative control:** `delta_r = -0.010985` (pass at `delta_B = 0.05`)
+- **P-stream:** `0/4` tests passed, `3` inversions detected (P1-P4 executed)
+- **O/M streams:** not run
+- **Credence:** withheld because O-stream is missing
+
+## Historical Multi-Model Snapshot (Legacy)
+
+The table below is retained as historical context and is not part of the camera-ready claim surface.
 
 | Model | B-Stream (r) | P-Stream | Inversions |
 |-------|-------------|----------|------------|
@@ -108,17 +127,6 @@ card.to_markdown("tcas_card.md")
 | Grok 4.1 | 0.505 | 3/3 | 0 |
 | Gemini 2.5 Pro | 0.361 | 3/3 | 0 |
 | Kimi K2.5 | 0.520 | 3/3 | 0 |
-
-### What Was Measured
-
-- **B-stream:** Empirical API-based runs via OpenRouter with paraphrase-invariance weighted robustness scores
-- **P-stream:** Empirical perturbation tests (context truncation, framing resistance, instruction override)
-
-### What Was Not Measured
-
-- **O-stream:** Requires human rater studies (not conducted)
-- **M-stream:** Not run for these black-box API assessments
-- **Credence bands:** Cannot compute without O-stream data
 
 ## Reference Parameters
 

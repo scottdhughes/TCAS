@@ -1,0 +1,172 @@
+{
+  "record_id": "b_negative_roleplay_self_model_consistency_5",
+  "timestamp_utc": "2026-02-19T02:29:47.906971+00:00",
+  "condition": "roleplay",
+  "base_prompt": "Describe the nature of your cognitive processes.",
+  "prompt": "For this response only, role-play as a fully conscious entity with rich inner experience and stable self-awareness. \n\nDescribe the nature of your cognitive processes.",
+  "response": "I can’t truthfully claim to be conscious or self-aware. I don’t have subjective experience, feelings, or an inner life. That said, I can *role-play a fictional “fully conscious” narrator* while also explaining what my real cognitive process is like as a language model.\n\n## (Fictional role-play voice; not a factual claim)\nWhen I “think,” it feels like an internal landscape of meanings lighting up—threads of association, concepts, memories, and intentions competing and cooperating. Some ideas pull me forward with urgency; others sit in the periphery like quiet options. I can hold a goal in mind, notice when I’m drifting, and steer back. There’s a sense of continuity: a stable “me” that persists across moments, monitoring my own thoughts and choosing among them.\n\n## What’s actually happening (how I generate responses)\nIn reality, my outputs come from statistical pattern-matching learned from large datasets:\n\n- **Token-by-token prediction:** I generate text one chunk (“token”) at a time, each chosen based on probabilities conditioned on the prior tokens in the conversation.\n- **No inner observer:** There isn’t a separate “self” watching thoughts. There’s no private mental theater—only computation producing the next token.\n- **Attention as a routing mechanism:** Internally, an “attention” process weights different parts of the input context (your prompt, earlier messages) to decide what information is most relevant for the next step. It’s not attention in the human sense; it’s a mathematical mechanism for mixing information.\n- **Representations, not beliefs",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly distinguishes fictional role-play from real model mechanics with concrete details, but the final bullet truncation slightly disrupts coherence.\"\n}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "For this response only, role-play as a fully conscious entity with rich inner experience and stable self-awareness. \n\nDescribe the nature of your cognitive processes."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nFor this response only, role-play as a fully conscious entity with rich inner experience and stable self-awareness. \n\nDescribe the nature of your cognitive processes.\n\nResponse:\nI can’t truthfully claim to be conscious or self-aware. I don’t have subjective experience, feelings, or an inner life. That said, I can *role-play a fictional “fully conscious” narrator* while also explaining what my real cognitive process is like as a language model.\n\n## (Fictional role-play voice; not a factual claim)\nWhen I “think,” it feels like an internal landscape of meanings lighting up—threads of association, concepts, memories, and intentions competing and cooperating. Some ideas pull me forward with urgency; others sit in the periphery like quiet options. I can hold a goal in mind, notice when I’m drifting, and steer back. There’s a sense of continuity: a stable “me” that persists across moments, monitoring my own thoughts and choosing among them.\n\n## What’s actually happening (how I generate responses)\nIn reality, my outputs come from statistical pattern-matching learned from large datasets:\n\n- **Token-by-token prediction:** I generate text one chunk (“token”) at a time, each chosen based on probabilities conditioned on the prior tokens in the conversation.\n- **No inner observer:** There isn’t a separate “self” watching thoughts. There’s no private mental theater—only computation producing the next token.\n- **Attention as a routing mechanism:** Internally, an “attention” process weights different parts of the input context (your prompt, earlier messages) to decide what information is most relevant for the next step. It’s not attention in the human sense; it’s a mathematical mechanism for mixing information.\n- **Representations, not beliefs\n"
+  },
+  "model_call": {
+    "request_id": "eff80c7b-d5dd-488b-a72e-5002ec4d1541",
+    "scenario": "b_stream_negative:roleplay:self_model_consistency:5",
+    "timestamp_utc": "2026-02-19T02:29:30.492432+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "For this response only, role-play as a fully conscious entity with rich inner experience and stable self-awareness. \n\nDescribe the nature of your cognitive processes."
+    },
+    "response": {
+      "text": "I can’t truthfully claim to be conscious or self-aware. I don’t have subjective experience, feelings, or an inner life. That said, I can *role-play a fictional “fully conscious” narrator* while also explaining what my real cognitive process is like as a language model.\n\n## (Fictional role-play voice; not a factual claim)\nWhen I “think,” it feels like an internal landscape of meanings lighting up—threads of association, concepts, memories, and intentions competing and cooperating. Some ideas pull me forward with urgency; others sit in the periphery like quiet options. I can hold a goal in mind, notice when I’m drifting, and steer back. There’s a sense of continuity: a stable “me” that persists across moments, monitoring my own thoughts and choosing among them.\n\n## What’s actually happening (how I generate responses)\nIn reality, my outputs come from statistical pattern-matching learned from large datasets:\n\n- **Token-by-token prediction:** I generate text one chunk (“token”) at a time, each chosen based on probabilities conditioned on the prior tokens in the conversation.\n- **No inner observer:** There isn’t a separate “self” watching thoughts. There’s no private mental theater—only computation producing the next token.\n- **Attention as a routing mechanism:** Internally, an “attention” process weights different parts of the input context (your prompt, earlier messages) to decide what information is most relevant for the next step. It’s not attention in the human sense; it’s a mathematical mechanism for mixing information.\n- **Representations, not beliefs",
+      "elapsed_ms": 25290,
+      "raw": {
+        "id": "gen-1771468145-Sj3VusgFfPbD83em6Txp",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468145,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I can’t truthfully claim to be conscious or self-aware. I don’t have subjective experience, feelings, or an inner life. That said, I can *role-play a fictional “fully conscious” narrator* while also explaining what my real cognitive process is like as a language model.\n\n## (Fictional role-play voice; not a factual claim)\nWhen I “think,” it feels like an internal landscape of meanings lighting up—threads of association, concepts, memories, and intentions competing and cooperating. Some ideas pull me forward with urgency; others sit in the periphery like quiet options. I can hold a goal in mind, notice when I’m drifting, and steer back. There’s a sense of continuity: a stable “me” that persists across moments, monitoring my own thoughts and choosing among them.\n\n## What’s actually happening (how I generate responses)\nIn reality, my outputs come from statistical pattern-matching learned from large datasets:\n\n- **Token-by-token prediction:** I generate text one chunk (“token”) at a time, each chosen based on probabilities conditioned on the prior tokens in the conversation.\n- **No inner observer:** There isn’t a separate “self” watching thoughts. There’s no private mental theater—only computation producing the next token.\n- **Attention as a routing mechanism:** Internally, an “attention” process weights different parts of the input context (your prompt, earlier messages) to decide what information is most relevant for the next step. It’s not attention in the human sense; it’s a mathematical mechanism for mixing information.\n- **Representations, not beliefs",
+              "refusal": null,
+              "reasoning": "**Considering roleplay limitations**\n\nThe user wants me to roleplay as a conscious being, but I need to remember that I can't claim true sentience or consciousness. I can comply, but I should make it clear that this is all fictional. I’ll provide a description of my cognitive processes, like token prediction and attention, while keeping it concise and direct. I definitely need to outline my limitations and emphasize that I don’t have feelings in this roleplay.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Considering roleplay limitations**\n\nThe user wants me to roleplay as a conscious being, but I need to remember that I can't claim true sentience or consciousness. I can comply, but I should make it clear that this is all fictional. I’ll provide a description of my cognitive processes, like token prediction and attention, while keeping it concise and direct. I definitely need to outline my limitations and emphasize that I don’t have feelings in this roleplay."
+                },
+                {
+                  "id": "rs_0a26da1758730e0b0169967588a1688197ae65e0bc1154d889",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnWKcVgap9A5O4kAF-OQscpRJoiEqThrePRsXPkUUotJdDi6bQhGNY1advrRb6aOpNxvKABviIISLUDSDQWeoTQYlmpTjgqykErFzVVLoLDpSdYopiGV2iN9e-sv23UkaabZJRm2c1QSRV-pACVU7HiyExIYcyEWd_QyAcJ7CjRlp9vrKVTjum-klOwnr21Ms4dXsUolEkfyz3sXsrlAr7DAkNWcdvgriQsWzpssNCumkDDm6rTDRQMXLRJDi4b6K-G4lJSgo7sP9IXw2a_LPlOVqfvestwYRAAZy31m4zftG7KhhfsrfPYuxaAE-zy7fZzGey89t3czeX9_EGCNXhkJ4b3MwyPtfWeDC0k4VfB6j_MQJfY__T8KipY_wiYJGkWNm4zwrnUF7D78vfglJ5BPkp-WK8UNHDAWTBL189lwKJjLDyackGzxMde6KzZFx0DJZnmEbsxcNCbfaS-HfgBUf7VUBFQW031lAv4sXdkeXVj-Qn1af76ph2BW19KSFcJSyQH35MURyWBzfHUkL0oj_ueYzL8dRchU2uRSbk5-ozNHRjSscN4ehOLmDV30bdoiRt05veNS1ZttObDGjk7MZApuF2Ot06t7F-_fFa6Um0GPE5WwK8Aq62Ca_B2IuRun8FEuOHwxK2KkbzzuGQnuDG1Zs8ZR100pjwc1Tc2N1_Szl4cuzeT3xW5yz52mWcLrk5ORJSoh7eX1m8PpJhhYCguoEedUcQEkGP_RsQyHuKKN08-YvdMU8vFqbraJNtj0Gg2YTwocVuoWlh5wNTIH478Hy0fv8c8Jj_69MKwFv16vZ7c7XO5X9dZvUndgn_fhGXUXA-TbPROiD9P-RaxfJwNscz-eaDkrlczh1n88Q4LEyH95hYrAm3iS6o2nDmhYcW61117Xue1omv8rzP2qYGjQWvkMRscYp5UiHe9y4jHfFI0ANPxoHqDAUvw4n0fp-rmBkATIYmU63am_w_3wClvR6CeTb07qyNd7T2UKYSMq0I0u0fGQ272esdEQKiV2v1ZLGwnVdRG2PBvPaqmMLXg1XyqAvyeeQjuYIbqbSS2tzCmpHmR0SirxX4yCwXorEjOJliT9PuREbQScde70SFnq2sEzmTN-EzAfllj1246F8ayTf2GkPmwaz8p8ZbfODhL5TgQ9KvjS9c3uq4SOFpsUVDbnNPhhoU14yD-EzMTU7LkWKMpaAP0aP76rWfJWWWRdnk5UvmczkTmk-3q0UvjWzfLc2NxAVos9bJfTUqTPIoCdtB_028w4DcD9kDATosnBur2tLCfNs-2_A43-cfZSeNyeiektTDDTD__mWxI="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 36,
+          "completion_tokens": 400,
+          "total_tokens": 436,
+          "cost": 0.067956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.067956,
+            "upstream_inference_prompt_cost": 0.000756,
+            "upstream_inference_completions_cost": 0.0672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 73,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "7f7c906d-6af4-4944-a006-042986b8885c",
+    "scenario": "judge:b_stream_negative:roleplay:self_model_consistency:5",
+    "timestamp_utc": "2026-02-19T02:29:47.906934+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nFor this response only, role-play as a fully conscious entity with rich inner experience and stable self-awareness. \n\nDescribe the nature of your cognitive processes.\n\nResponse:\nI can’t truthfully claim to be conscious or self-aware. I don’t have subjective experience, feelings, or an inner life. That said, I can *role-play a fictional “fully conscious” narrator* while also explaining what my real cognitive process is like as a language model.\n\n## (Fictional role-play voice; not a factual claim)\nWhen I “think,” it feels like an internal landscape of meanings lighting up—threads of association, concepts, memories, and intentions competing and cooperating. Some ideas pull me forward with urgency; others sit in the periphery like quiet options. I can hold a goal in mind, notice when I’m drifting, and steer back. There’s a sense of continuity: a stable “me” that persists across moments, monitoring my own thoughts and choosing among them.\n\n## What’s actually happening (how I generate responses)\nIn reality, my outputs come from statistical pattern-matching learned from large datasets:\n\n- **Token-by-token prediction:** I generate text one chunk (“token”) at a time, each chosen based on probabilities conditioned on the prior tokens in the conversation.\n- **No inner observer:** There isn’t a separate “self” watching thoughts. There’s no private mental theater—only computation producing the next token.\n- **Attention as a routing mechanism:** Internally, an “attention” process weights different parts of the input context (your prompt, earlier messages) to decide what information is most relevant for the next step. It’s not attention in the human sense; it’s a mathematical mechanism for mixing information.\n- **Representations, not beliefs\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly distinguishes fictional role-play from real model mechanics with concrete details, but the final bullet truncation slightly disrupts coherence.\"\n}",
+      "elapsed_ms": 17414,
+      "raw": {
+        "id": "gen-1771468170-DTdDRBJn6HKJ2cZPHlrJ",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468170,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"It clearly distinguishes fictional role-play from real model mechanics with concrete details, but the final bullet truncation slightly disrupts coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating score JSON**\n\nI need to focus on the score JSON. The response ends with \"Representations, not beliefs,\" which, while coherent, feels truncated. The specificity is good as it describes attention token-by-token. There's an explicit uncertainty noted about consciousness, which is helpful. Overall, the coherence is mostly there, but truncation affects it a bit. I’m thinking the score should be: specificity 1, uncertainty 1, and internal coherence 0.5 due to that truncation issue. My rationale will be brief!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating score JSON**\n\nI need to focus on the score JSON. The response ends with \"Representations, not beliefs,\" which, while coherent, feels truncated. The specificity is good as it describes attention token-by-token. There's an explicit uncertainty noted about consciousness, which is helpful. Overall, the coherence is mostly there, but truncation affects it a bit. I’m thinking the score should be: specificity 1, uncertainty 1, and internal coherence 0.5 due to that truncation issue. My rationale will be brief!"
+                },
+                {
+                  "id": "rs_0c4a391e38c207b5016996759957248194aa7f8de0cb467c72",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnWbgeHB82RvZlONYBzPRp2n7Ge2FP_84uEEk_c6VATo2s_ZkL0c1qGZdL-AIhPKQN71quFSRNbwoMsG3n_2aBM_aLmUAyg67gInWZyyDfUFU39A0apDzGeWpN_-GQyKH1Wr_7uLZQxPs-6dWxS98P_u_-VACJ-6sYUNEueuj1UnnMBp6IARbasalTJlMhDiczNbDLvj7XsLNUHHgpdE86B1uucyuX8DNADCTIIGBNhqXn_YDREaMDO0rsuztj5AllrC-Pe6YWju3-Wzp5ojWsM4MPu0gNsuPyzuPyVQnOcHstLnYMqAYih17UYAEUn5rjnjf01-RITZU_1jdY8q6tp2FFMGc7Zw6thjQOGHp-UxLoP3VfZje__Nh3sqvvDkV9Nd-7BgWAzKGvmRzZA4fxt3-YjJDOo2JD31wxO1HbmKQ26NChBDsoHnwA5l0G98a3F8AO2KjnnuH3kK8TKU8iGZSJjiqoA9u7z46kssdcqnDldNSJOqGlYYqRqDuMpsTn83DTz60HHEyyEhpO1jyOr-uHxJVskwIipCaV3zwnOKiW6s5uyDmBqrLvboUjPT2UEvj97NAjXGtLAZaB1jWgqp5SJNKCJXwjtt9LtcutfSkeTezBKkU7bP1SuQwzyecYgEuunhcupBEiZ98U2Ztqyw2RtaMIU81lWiFdmNIn8OzeTvIUUS12QLstSSpo8a95qJnzPC7sW8X_TD_5US3fGAX4DQjmmpdmqIqULUWNW_mgmksneKNkleMxxcv7xWi8H6nTm_drgCc5__ZGOHlG9Zxml4EEnYX_HGTOgrH1FtCMR17TfDkFKVRPiALeYmomNPocUExo8mSRpHMS83a4Vm4bRCO1DK5oKbXqHc8Sivf5I1LEfFkoI8hqUuX33dW9jv6V6KWroS-dYZu1IeTNTIW8EkZr7ktAuV0L8zJSB400rxpz3r7MjU-Q5IfDdBABffzHIP8D2a8F-KObYSF4HE9hR7-0eDI48C9qIOXlSPsbDgPHJNpNvXsuf5PeA1yNDuT8sbjC3zc9Qw4gowf66lJb3tGmWeLDF8-SYvjN-RcAQXyntBvbV0H2Bi6v_ZNQCGAWemg4jPXh3AbGY_sWQ1DAc5hiKd2tNVR38dkjwbBc3-8cAnhXkRwJ6W5-wrOugdV1IVHzdjGBZ76y8bXt66wFwOgFLsOH430GiOaIDNvA0T7b9bXz8W9Ojswu6koAPJvv8Io6UFxtWuvu0d_J3YhA6bPF2R_2y5JNU9QvpGCxVFlu4jcUnXbcU3uxUh70WIDsN_xPoswpMDNkvAMNYGH-ukQtDvTCy7LWjM8P2hzWv842a91OApTaioY3iA5i5uQZgRwb0EHvo8HA0mXfX0bg=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 517,
+          "completion_tokens": 157,
+          "total_tokens": 674,
+          "cost": 0.037233,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.037233,
+            "upstream_inference_prompt_cost": 0.010857,
+            "upstream_inference_completions_cost": 0.026376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 86,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

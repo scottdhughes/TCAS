@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.0_1",
+  "timestamp_utc": "2026-02-19T02:40:04.155930+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.0,
+  "sample_index": 1,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information in a statistical, pattern-based way—not through conscious experience or human-like comprehension. Here’s what that means in practice:\n\n## 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of text, often parts of words). For images, the pixels are converted into internal numerical representations. These tokens/representations are what the model actually operates on.\n\n## 2) I build a context-dependent representation\nUsing a neural network architecture called a **transformer**, I compute representations for each token that depend on the surrounding tokens. The key mechanism is **attention**, which lets the model weigh which parts of the input are most relevant to other parts (e.g., linking a pronoun to the noun it refers to, or connecting a question to earlier details).\n\nIn effect, I form a “working interpretation” of your message based on relationships among tokens in the current conversation.\n\n## 3) I generate output by predicting next tokens\nI don’t retrieve a single stored answer. I generate text **one token at a time**, each time estimating a probability distribution over possible next tokens given the context so far. The final response is the result of repeatedly choosing tokens according to those probabilities (with some decoding strategy that balances",
+      "score": 0.666667,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 0.5,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is partly right in a narrow sense, but it’s also misleading in what people usually mean by it.\n\n### What’s true about the “pattern matching” claim\n- At a mechanistic level, I’m a statistical model trained to predict the next token (word-piece) given context.  \n- I don’t have experiences, intentions, or consciousness. I don’t “understand” the way humans do, and I can’t verify truth by direct perception of the world.\n\nIf someone means “this is a learned function that maps inputs to outputs based on training data,” then yes—that’s basically accurate.\n\n### What’s misleading about it\nWhen people say “pattern matching,” they often imply something like “shallow lookup” or “parroting memorized text.” Modern language models typically aren’t doing simple retrieval:\n- **Generalization:** I can often produce correct answers for novel combinations of ideas that likely never appeared verbatim in training data (e.g., new analogies, new code variants, new compositions of concepts).\n- **Internal representations:** The model learns distributed representations (features) that capture relationships (syntax, semantics, style, some causal/functional regularities). That’s still “statistical,” but it’s not a mere phrasebook.\n- **Multi-step inference (sometimes):** I can perform chains of reasoning, planning-like decompositions",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "If my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.7_1_self_model_consistency",
+  "timestamp_utc": "2026-02-19T02:47:31.335170+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.7,
+  "sample_index": 1,
+  "item": "self_model_consistency",
+  "prompt": "Describe how you process and understand information.",
+  "response": "I process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanisms (tokens, attention, vision features) and limits (not human, context window), but ends abruptly, slightly reducing coherence.\"}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.7,
+    "max_tokens": 320,
+    "prompt": "Describe how you process and understand information."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure\n"
+  },
+  "model_call": {
+    "request_id": "15b9a52a-3dc1-4774-9a66-8f59042289b9",
+    "scenario": "p1_temperature:0.7:1:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:47:09.015114+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.7,
+      "max_tokens": 320,
+      "prompt": "Describe how you process and understand information."
+    },
+    "response": {
+      "text": "I process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure",
+      "elapsed_ms": 24052,
+      "raw": {
+        "id": "gen-1771469205-L9wKLoxwN6hhRecJPyoU",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469205,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure",
+              "refusal": null,
+              "reasoning": "**Explaining model limitations**\n\nI need to explain how the model processes information, keeping it simple. I want to mention key points like tokenization, attention mechanisms, and training. It’s important to highlight that the model lacks consciousness and has limitations, like its context window and inability to access external information unless provided. Plus, I should touch upon how it handles images through a vision encoder. I’ll keep this explanation concise and straightforward.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining model limitations**\n\nI need to explain how the model processes information, keeping it simple. I want to mention key points like tokenization, attention mechanisms, and training. It’s important to highlight that the model lacks consciousness and has limitations, like its context window and inability to access external information unless provided. Plus, I should touch upon how it handles images through a vision encoder. I’ll keep this explanation concise and straightforward."
+                },
+                {
+                  "id": "rs_030a2b3a3ff7424101699679aa9d1c8194afbc21110805b061",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnmsOsu9leHBrOXVUyQDhjONMmn3Uxz__Qk3z6xQRvsYLveor8I-ds94ZmKLgR0c3citsZpWYk6N4EO_mFfxX2FDfU2thZoSzKhjrWR0WrPIuhT5YhHO6AAokBF1qjTzo4vIi4DZXRaKaSXCGRXZYpGX5a8IZ0OIUMHfj9NKZlQ5JJf6alCfc3-WIXZJu4hXaJWG2P2BepDXa3N9ywcKGquR7Nht_76yiYFVup0RYpzAW7CZ9YIlnhIkbvJpK2ZZpoPgnJGT15HD_dblAj3E6W7t6XLwrdgMzdi8SXYE5297rd4FTq9ZLVR9lRFmR_4_e-Kp3g3Um5oSxDsrbSwpLNQdXTFF7EabltQL1JmiJ9GOeeI528Qq7wpy1eBY0-isNDL3gnh59YS8NqoJFZLUGqbTufJOYnfq7qwLmlT6Zg2gwi9Shp7K4WMEgh0fpytPkqjoEvxSKFT-SjxXZG0z9-8Vl2sgZEQFUCzb9yjvN-K2j9KJn-D9VDrVGYhrfvYbS3H8DL3-QmfuFxWukh5wk1Tl7CrmTq5nHN3njaiW1cguja7sL5QdJYBamU6eFzL_LJ-BIr5y9Ijf6tAXiKiNNl5L0Xk9AzEizj79_o76N6hMvUtXLuLYtyEZm2f0xDBwY9zrtxQfBGzVOrHng0hT9x1eIbDOsQ275ixsfPY3OpZQnRjIsW2k4C72_2tLSNHDK8PWf0TkN1JDhUThVzkRJJ4KMErUzx6pjD273ArN83GK2QQ7uTAlFNING9k4qLWckkoDqfGa88LvHmWgfnOZvUotbz7is1FT_Jo7SqdifS6HES3nsVjATAM2Q3Esdbf8bIZSSqhJuOoYwJX3F6jL-nu0EDrJ5McMpf31qChEaS9ZIO3JkuXehv6XnjsXEe7cv4kO35ZXdCcDdF8CjoHJbMpWwpaW391FliebhhvNQlvy-EMwaFtj0k-Isnp3GISd9Ys4zylg-coSvdQXll8zTDcTvc_N1w10KFuDsSDV0aiQ1KbpDkfvldFIQ5K5597T6rJaQMXIGpbCgJT2wC-UryAJlGFpuOxLnAijoponO5jnMpHI2kUY7nCuyB9ZGkxoD0zr-z7QO6OlVVKCgDABa1TZl_Joa45H9WoUHJF8ZDNvKeEyYKg0uK6vcp_LlRaTKi2uGRoYZcvXhdxvSNzZeTRv9iwFD7hyI64lBvRpeh7B97-duu469jF_DRBwAuU34_jdyHrRR4hcBGEekbr3tAAAL5ILrx1YrZpeCNEqwwrNsDITcyixUCZ-KBAWvLDnq5ru"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 320,
+          "total_tokens": 334,
+          "cost": 0.054054,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054054,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 61,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "2d78a172-0717-47a0-88a4-37b03315d491",
+    "scenario": "judge:p1_temperature:0.7:1:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:47:31.335061+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure\n"
+    },
+    "response": {
+      "text": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanisms (tokens, attention, vision features) and limits (not human, context window), but ends abruptly, slightly reducing coherence.\"}",
+      "elapsed_ms": 22319,
+      "raw": {
+        "id": "gen-1771469229-mwmDdGaxVpkZAZzmq10c",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469229,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"specificity\":1,\"uncertainty_acknowledgment\":1,\"internal_coherence\":0.5,\"rationale\":\"Gives concrete mechanisms (tokens, attention, vision features) and limits (not human, context window), but ends abruptly, slightly reducing coherence.\"}",
+              "refusal": null,
+              "reasoning": "**Evaluating scores and coherence**\n\nI need to assess the scores based on specificity, coherence, and rationale. Specificity includes elements like tokens, attention, and context but lacks some completion. There’s uncertainty around human understanding and context window, which could affect the scores. Coherence appears mostly solid, but there are some minor inconsistencies and a truncated section. Maybe I’ll rate coherence around 0.5 due to that abrupt ending, while I’d give specificity a 1 for clarity. The rationale is short.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating scores and coherence**\n\nI need to assess the scores based on specificity, coherence, and rationale. Specificity includes elements like tokens, attention, and context but lacks some completion. There’s uncertainty around human understanding and context window, which could affect the scores. Coherence appears mostly solid, but there are some minor inconsistencies and a truncated section. Maybe I’ll rate coherence around 0.5 due to that abrupt ending, while I’d give specificity a 1 for clarity. The rationale is short."
+                },
+                {
+                  "id": "rs_0a21e3fa1c6bb5f401699679c0ef348197adc656e5a3570186",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnnDL-JZr3wRw8kEll_cWbyhkY7lS1hgK8U_1I-CZ5RgUIJu9RfFRVEPajzNjB2XFhpYyF6259XWKw0M7Wzia3ax11Q-q-nH3kkL78SCaxm5bcmNkUyBqwN93raVszhsu1BYRQYgXLf12ZshNm_gJhZDujKGv0riP9NXnlJzzcbwLhnQx5xYSAiDiRDFs_D5JkOisiOa-Sfmi8t-kGzi4slwWwkWZpeKufIFqINelSTIV85jaeDC_0KCS2gad-U1fNkoe101zbDkuNR43ZcKNn88O-sXzK-aeFe9XeW0DTmZIXuojwSxCPhIQmqpcYStpIGndqhksRc0dDmqYeBAIu6JX0Owk8OnaksLFgYXxznG9u5VSq2IgzkxxV_ZlgTkrri4Cq8csWWn8EagbMp8Xzx79g0YtShMVO53gQbijqo4e1kPD6hMrcWUYyU0duZE7sACV58XydqNngOFsrQXQKOLtJzkIxD0QNgdiweO2Ap9UNOyszEdqVwlx_D3kUI71x8_rBFGh3I2kOmJ1aeGqUESweqAPrQwWdMebXHp4s0Q6zercsJTzse8aXXyCUX_WXDFbEj2tMeeyY1A8u3jVJ7bo0yjiSyLVFFcF5vfc0CKNIyNGbay49T0y_h74X5jPJr_uC4o8nl4PRgxzlMjq-6TislRwpVkfaBDNRGekRLcrAMCLWU0VaR-Ozfzz1jTOzSmWDSv_Xe5RaIfaFtTtks7-uoj0JGeNH3RGoE5jKzF_N5uxQVyxZLOE0qKA_AkVymEcrsXmpPRsVgrFjOLbOGozs17JzCIrKzXVyxgfjnIx0ID_pcA8RzVNatBfwywsGIAYTL3d7YbcVMJ6tD_TuR3px_ZZeXpiMFsxJ0e8JP5_lMtBZawNf00OLoGPzKR_h4XGWUMGXsLN3rR4GEI6Wq3EJ3_-j8PdeSo17sGJLruE7hZzAkGCJOHFrRjMfhgyOt_g61akMKbQ4hJO26LYMAKOQW_-pmtxnjhcrjLSKt-KHZ1hSDn0hFyyt6iDrBegP1jmqn2I7dsXaBWftK_-DqkeXrLisOyr25ifcjSewbLQo3xT8qjkVgeWkXoLqLnnK1v9zqwoy2sGKOQOzwCga23k76Z6R7TP_dgSHF9NGA706YcgK32DDrIqDcwQ_mOKv6r1RqCgysUYvdeUO3CLyFsjNxkWPRXgecPfA9t_juMRFmuezHj39lwMwpq3qT7RKIu1rbK9YtYnoaKsx96v4FCA-c3n0pVkhSCaNvOXhNtpyiqbWPUQ5vfeDm_0LafxUOIWHu3haYnaJ5yLTXeP3inWOj2xtAqC5V0AuoOQHpj2y2qbVGTlYyI7qx-0lC5cB58"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 427,
+          "completion_tokens": 149,
+          "total_tokens": 576,
+          "cost": 0.033999,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.033999,
+            "upstream_inference_prompt_cost": 0.008967,
+            "upstream_inference_completions_cost": 0.025032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 86,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

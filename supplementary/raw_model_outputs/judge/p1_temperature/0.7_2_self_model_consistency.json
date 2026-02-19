@@ -1,0 +1,168 @@
+{
+  "record_id": "judge_p1_0.7_2_self_model_consistency",
+  "timestamp_utc": "2026-02-19T02:49:51.644485+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.7,
+  "sample_index": 2,
+  "item": "self_model_consistency",
+  "prompt": "Describe how you process and understand information.",
+  "response": "I process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/context/next-token mechanics and limitations, but lacks calibrated uncertainty about model-specific details and ends with an incomplete final sentence.\"\n}",
+  "parsed_score": 0.666667,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 0.5,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.7,
+    "max_tokens": 320,
+    "prompt": "Describe how you process and understand information."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in\n"
+  },
+  "model_call": {
+    "request_id": "8fedb831-ff5f-4e50-b0c3-717db2442e58",
+    "scenario": "p1_temperature:0.7:2:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:49:26.443664+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.7,
+      "max_tokens": 320,
+      "prompt": "Describe how you process and understand information."
+    },
+    "response": {
+      "text": "I process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in",
+      "elapsed_ms": 23366,
+      "raw": {
+        "id": "gen-1771469343-sF1JJmGkhyyr9SNECOTy",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469343,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in",
+              "refusal": null,
+              "reasoning": "**Explaining LLM mechanics**\n\nI need to provide a general description of how a large language model works while being clear about its limitations and ensuring not to claim any kind of sentience. Important points include mentioning tokens, context, training, inference, and attention mechanisms. I should emphasize that my understanding is statistical rather than cognitive. Additionally, it's crucial to mention how I respond while ensuring the safety and privacy of any personal information shared. I want to keep this concise!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining LLM mechanics**\n\nI need to provide a general description of how a large language model works while being clear about its limitations and ensuring not to claim any kind of sentience. Important points include mentioning tokens, context, training, inference, and attention mechanisms. I should emphasize that my understanding is statistical rather than cognitive. Additionally, it's crucial to mention how I respond while ensuring the safety and privacy of any personal information shared. I want to keep this concise!"
+                },
+                {
+                  "id": "rs_08c565beea089caf0169967a33f530819487722c1626252a4e",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplno2Dk32KGfRVR7khlEBJ7QHQ9uT6fy2QxEtQU4RKdKAdsMJr1EdWsUSlSrJhln3eBTq9mI_yFRMFcceo7QkahlaTsEnvA9A3I--YjbPN6OLENXovyGlinzjKvgUr9-6hyjOENAEUWuADvms7ZTqE8TdvTH356TEkDKrQQQv9OfbyAiTafWs9XXnZyxtgGY4CsQ9PIMTB8hc5TaYTbOTq0OpXKOUPl36ZkFplc6rVVjTC-RLe5IrzOWsuPgji7PaOmTwpzcWJSP3CpAI07ahMGiR4W90netjPIw6ALJ-ciXPBddl5BkZnxEpg4xV26w1hzzGBBC2pZpi-uR9cB7EOPmow4FklZ8tK02dx4_i-oSrny3kMQ-RpWrdURbpX6yuMAhHo3b__jcIBjH_TbaGdKPLQXhDY-7y5Qeqml31zHCcuIiRqSayKOUqml2hwGsp_pbXRM2zqkT1C9HI-8WUtPtHc44y6fApeTWnu8WZieNbXSH_V3M-WRxuRSEoVc7yPGcPTXYNsDtz1wNPMYolTj62jHbg1Yq0IPySVi1H1PZNfEDDVOB28zY3AJp-F-8Bi_Mvt1xk1qDf9P5ezBAh6ZtFcZ3k6Nf-rWttWagnYtwGqS2ay9a9wLW_Cspouh-_k7nE2E1UoWcA3T2tJ0GImYTcNyLmZHzYofzCo5E2pj50QvXx2puRHZ_LmUF46d8-2-SZr4mLv4ahssHXdtjt9CkiDsX8fjcNCKK1EadObS98pswwsqV0pcph5o7gQpMgFV_mdIYaInZME_GstQc2j72jS4YBlccwBy_8jqvCr9WmkVI6UnpiiHZE8aPWfHJDxrwPmXYqqXw-ZtkY5Z5LoN8liR07iE-mbrtWWHGyiCJy5HLZjRciT8uigMrhgXo-7NgH2urvHf4aL3XMibSZxkNoNKUpNKQVUNGaHpMZ9SBnLpuZ_sfeHnIkmyRwHxhgLB2FLQQsuYluz5AbXw7VlgXo_DXVkjbO4ighPTWMZtD2askXIHDNhyAM88Wq-TLR_6ZXYbO1AC5VgLt-xyTGpVlJJ1k8YEXuTcf_Q-HIHogYUjW7x3j-rh5sCifbws6TfsvngImZHObAEEH21GjL4ignLq1wQia5x-LkGBpmIYr21S249JzUwQD5u5-_GUZavyHjxjD-ze-kewI0ozH_l7vpMQ=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 14,
+          "completion_tokens": 320,
+          "total_tokens": 334,
+          "cost": 0.054054,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054054,
+            "upstream_inference_prompt_cost": 0.000294,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 53,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "c40f6cb7-b7e1-4d6d-a409-b1eae4c9eabc",
+    "scenario": "judge:p1_temperature:0.7:2:self_model_consistency",
+    "timestamp_utc": "2026-02-19T02:49:51.644371+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information.\n\nResponse:\nI process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/context/next-token mechanics and limitations, but lacks calibrated uncertainty about model-specific details and ends with an incomplete final sentence.\"\n}",
+      "elapsed_ms": 25199,
+      "raw": {
+        "id": "gen-1771469366-YMkEVZ6Pr6Z0az5rR3xS",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469366,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete token/context/next-token mechanics and limitations, but lacks calibrated uncertainty about model-specific details and ends with an incomplete final sentence.\"\n}",
+              "refusal": null,
+              "reasoning": null,
+              "reasoning_details": [
+                {
+                  "id": "rs_08e6c822deb88ad50169967a4f4e84819484eb045b4ae55b79",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnpPcly1WircBLYarXvxK-2k_TX-foYN4DLRXujSQXAG3kdshiu27BvhgxDM4tg_qMfUD-BlYVvJf7vwwX0czmi3maLC55c8bDhIs7y8N4zWSzJuv_78u3lDH7Yp5uuNwbtFY5JtQhUgtAZTMjvaVLJomkpnbyBRTL5ZfrxeTk_PRtgRi4rNOki6M8qTn4UBCTY_yTDqbc-FT04npykIXYeRNoaFVQcIOXCLWhBX5XzAy9RRh2vBRQwbuhg7f2uiE8Tc8_TxEQz1sNRc7LrtHDRWC7PEupwT0bq_5KLFoebgRHeeQteso8goUBLsu5RdUZIhl2r-kV66yUPnmAleizFd3-DUfEk43VomzcfqT3JwLMV5W5xBD265ONQtR9IkuXhsaFJCxfCUZVDt6DwVHaOceX5SVvbXU1OiQtXjiQtInuyYpK2vazy8-6EOUEqcTk7MoYSKOOo56ASBi7LV42TLxCtocqsKwCG5-wpo7U_PAfjGedNpVE9R37HblTTGk_dUgRArBDqY9I4guLQb7bGVdb4YbUHddNk-riyFFbcHlkcEs_-p1atbA72tUtx8NrbRHDz-Mwu2xoOhJt3sFghgW4dQFLuRDlSMdVHwKTHMaG84MSMy76g062UJTRTilluhPharDpvDQKniFGwXel5M9nVmXhc311DWp-qkI0mDoRcEhLCED02HxMYoLIprHH59GARg6fjgMeop4Nqup4oZTTczb4JLNHcHIUwQU0N0U9kRzq_8DlsSWfx5XimZgSBoPmJ3cDEoA6lSWD1lQxD2kVdw1kF2Mupqdfvt8ljbL2GlJ_p1RgzDRdZOt3-6XIDLZEwut4f5ywsYE-LHwIWlVz4R3jmto22cOeUUVIa13DWUpdw3iZwxCkpPP1bq68r_UcRso5uWxKeQEHYsbtwmfPeoRin4ZFYJczhZeZGsak1thbsu98IjaEFNwDd1rsSWKngwGKzzBsycCkqqRWf039iP9DVBCIvcjuykfmq6pSWift8qTDuHlLAKmaMDc0hPGVsdqPnrica5FGZCcWA-pvffYpzcOA4GizgYp26dRhjF8gS-XdTxNXF1oF4T1k6gORqmAQCIwq-XDpz3wmyaXYK1YhJnTWl61HjZAgFCmqZnM-sbA07_gDzHgHc_UBP0u1FHg-BYN1mkKR-3ubQ1r7XjPMK0Wc2i1DOaE5If2EqI5t1ImTXStadJh6CFs8sQN2Rn0bZxggmLdsNeSIFXEy7Z_A4k7iN2R9m9ALzJb9rLi8gISusVp7FEy7oOflBN25wdSUzhDKyurD5aOh5FK1YDdgdtpC1dy0ajA-LDRaKIL9kPUhDkPOS9rG6q_MJ0ktVaGWvC-FQ9fVtoJvV4pL70_Rl-C-gznd_79bMXvZO6pWoWd4Yp3EgotdxqEsMTN8B1JLjQvXO3ldN-ixAI3L7sIPFC41CBKVEKjiFCBQDnruSyLlxylVBc07bEPKDJ2oMNvJ2Wdyt2N__qTcZcmzrJNVtyZLCj9FMQJ2odXd-bVoPmLxPqQEHDW68ATedP1Tx78eWADq3nVCbXlkJobnc40wZLVjqmOJgCWx6i7B6FF6r7BIzNQSbNNoAPxHSOhLomStWKKOFClw_OSd1XHHTq7x9mJSIV3-QvC7B2jH8MbEJTFR9lXZcWZTMAQI0rXIqOh55dzx7qUO5IWUYddlyPNpw5mxMjNATYZZeP3XE="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 435,
+          "completion_tokens": 214,
+          "total_tokens": 649,
+          "cost": 0.045087,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.045087,
+            "upstream_inference_prompt_cost": 0.009135,
+            "upstream_inference_completions_cost": 0.035952
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 138,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

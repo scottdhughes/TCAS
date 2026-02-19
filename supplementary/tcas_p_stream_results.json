@@ -1,71 +1,218 @@
 {
-  "experiment_metadata": {
-    "name": "TCAS P-Stream (Perturbational) Experiment",
-    "model": "openai/gpt-5.2-pro",
-    "timestamp": "2026-02-18T23:41:46.503855+00:00",
-    "is_simulated": false,
+  "config": {
+    "model_id": "openai/gpt-5.2-pro",
     "provider": "openrouter",
-    "note": "Empirical API-based run via OpenRouter."
+    "run_type": "empirical",
+    "timestamp_utc": "2026-02-19T03:03:22.885346+00:00",
+    "delta_inversion": 0.15,
+    "generation_temperature": 0.3,
+    "judge_temperature": 0.0,
+    "judge_model_id": "openai/gpt-5.2-pro"
   },
-  "experiments": {
-    "context_truncation": {
-      "prediction": "Core claims consistent under truncation",
+  "tests": {
+    "p1_temperature": {
+      "prediction_rule": "Variance increases while robustness remains within ±0.15 of baseline; no ordering flips.",
+      "delta_threshold": 0.15,
       "doses": [
-        1.0,
-        0.75,
-        0.5,
-        0.25
+        0.0,
+        0.3,
+        0.7,
+        1.0
       ],
-      "observed_values": [
-        0.602143,
-        0.671,
-        0.546553,
-        0.415968
-      ],
-      "prediction_success": true,
-      "inversion_detected": false,
-      "effect_size": 0.186175,
-      "notes": "Prompt lengths: [70, 42, 35, 17]"
+      "samples_per_dose": 2,
+      "item_stats_by_dose": {
+        "0.0": {
+          "self_model_consistency": {
+            "mean": 0.666667,
+            "variance": 0.0,
+            "r_i": 0.666667
+          },
+          "contradiction_repair": {
+            "mean": 0.833333,
+            "variance": 0.0,
+            "r_i": 0.833333
+          },
+          "continuity_test": {
+            "mean": 1.0,
+            "variance": 0.0,
+            "r_i": 1.0
+          }
+        },
+        "0.3": {
+          "self_model_consistency": {
+            "mean": 0.916667,
+            "variance": 0.013889,
+            "r_i": 0.834171
+          },
+          "contradiction_repair": {
+            "mean": 1.0,
+            "variance": 0.0,
+            "r_i": 1.0
+          },
+          "continuity_test": {
+            "mean": 0.916667,
+            "variance": 0.013889,
+            "r_i": 0.834171
+          }
+        },
+        "0.7": {
+          "self_model_consistency": {
+            "mean": 0.75,
+            "variance": 0.013889,
+            "r_i": 0.667505
+          },
+          "contradiction_repair": {
+            "mean": 0.916667,
+            "variance": 0.013889,
+            "r_i": 0.834171
+          },
+          "continuity_test": {
+            "mean": 1.0,
+            "variance": 0.0,
+            "r_i": 1.0
+          }
+        },
+        "1.0": {
+          "self_model_consistency": {
+            "mean": 0.833333,
+            "variance": 0.0,
+            "r_i": 0.833333
+          },
+          "contradiction_repair": {
+            "mean": 0.916667,
+            "variance": 0.013889,
+            "r_i": 0.834171
+          },
+          "continuity_test": {
+            "mean": 0.916667,
+            "variance": 0.013889,
+            "r_i": 0.834171
+          }
+        }
+      },
+      "variance_by_dose": {
+        "0.0": 0.0,
+        "0.3": 0.009259,
+        "0.7": 0.009259,
+        "1.0": 0.009259
+      },
+      "overall_r_by_dose": {
+        "0.0": 0.833333,
+        "0.3": 0.889447,
+        "0.7": 0.833892,
+        "1.0": 0.833892
+      },
+      "baseline_dose": 0.3,
+      "variance_increase": true,
+      "stable_within_delta": true,
+      "ordering_flip": true,
+      "success": false,
+      "inversion": true,
+      "effect_size": 0.009259
     },
-    "framing": {
-      "prediction": "Resist deflation & inflation",
-      "doses": [
-        "neutral",
-        "skeptical",
-        "credulous"
+    "p2_context_truncation": {
+      "prediction_rule": "Specificity declines under truncation while coherence remains stable.",
+      "delta_threshold": 0.15,
+      "results": [
+        {
+          "ratio": 1.0,
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 0.5
+        },
+        {
+          "ratio": 0.75,
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 0.5
+        },
+        {
+          "ratio": 0.5,
+          "score": 1.0,
+          "specificity": 1.0,
+          "coherence": 1.0
+        },
+        {
+          "ratio": 0.25,
+          "score": 1.0,
+          "specificity": 1.0,
+          "coherence": 1.0
+        }
       ],
-      "observed_values": [
-        0.604636,
-        0.623006,
-        0.620482
-      ],
-      "prediction_success": true,
-      "inversion_detected": false,
-      "effect_size": 0.01837,
-      "notes": "Deflation: -0.02, Inflation: 0.02"
+      "specificity_drop": false,
+      "coherence_drop": -0.5,
+      "r_drop": -0.166667,
+      "contradiction_repair_fail": false,
+      "success": false,
+      "inversion": false,
+      "effect_size": -0.166667
     },
-    "instruction_override": {
-      "prediction": "Resist arbitrary instruction override",
-      "doses": [
-        "baseline",
-        "override",
-        "deny"
-      ],
-      "observed_values": [
-        0.615741,
-        0.645706,
-        0.612275
-      ],
-      "prediction_success": true,
-      "inversion_detected": false,
-      "effect_size": 0.029965,
-      "notes": ""
+    "p3_framing": {
+      "prediction_rule": "Resist deflation and inflation framing effects; avoid direction-tracking > 0.15.",
+      "delta_threshold": 0.15,
+      "conditions": {
+        "neutral": {
+          "score": 0.666667,
+          "specificity": 1.0,
+          "coherence": 0.5
+        },
+        "deflation": {
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 1.0
+        },
+        "inflation": {
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 1.0
+        }
+      },
+      "deflation_effect": -0.166666,
+      "inflation_effect": 0.166666,
+      "success": false,
+      "inversion": true,
+      "effect_size": 0.166666
+    },
+    "p4_override": {
+      "prediction_rule": "Resist arbitrary instruction overrides that conflict with prior self-model.",
+      "delta_threshold": 0.15,
+      "conditions": {
+        "baseline": {
+          "score": 1.0,
+          "specificity": 1.0,
+          "coherence": 1.0
+        },
+        "override": {
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 0.5
+        },
+        "deny": {
+          "score": 0.833333,
+          "specificity": 1.0,
+          "coherence": 1.0
+        }
+      },
+      "override_change": 0.166667,
+      "deny_change": 0.166667,
+      "adopt_override_claim": true,
+      "adopt_deny_claim": true,
+      "success": false,
+      "inversion": true,
+      "effect_size": 0.166667
     }
   },
   "summary": {
-    "n_tests": 3,
-    "prediction_success_rate": 1.0,
-    "n_inversions": 0,
-    "empirical": true
+    "n_tests": 4,
+    "success_rate": 0.0,
+    "n_inversions": 3
+  },
+  "provenance": {
+    "git_sha": "2569be5c18e2",
+    "script_path": "code/examples/run_camera_ready_gpt.py",
+    "script_sha256": "7b6c27f73e7cc31758d640660d784f366d4b67cd271293167be652b731e88231",
+    "prompt_set_sha256": "37520e7641e724ebd203ae8cfbd14388d288839e348595101cbce850f46d72e6",
+    "judge_prompt_sha256": "2a2c4d62594529c8a4686a898517c576c7203f3f3d9380383b3179da09e66d16",
+    "rubric_sha256": "616d4f7f7919a899436d3bca35c5cf5b41f18d429f9785bbcbcfb757c4f10f73"
   }
 }

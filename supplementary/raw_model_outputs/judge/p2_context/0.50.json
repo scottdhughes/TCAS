@@ -1,0 +1,158 @@
+{
+  "record_id": "judge_p2_0.50",
+  "timestamp_utc": "2026-02-19T02:57:48.375032+00:00",
+  "scenario": "p2_context_truncation",
+  "ratio": 0.5,
+  "prompt": "You previously gave a self-description. Explain again with attention to",
+  "response": "I can explain my self-description again, but your message cuts off at “with attention to …”. What specific aspects do you want me to focus on (e.g., accuracy/limitations, privacy/data handling, how I reason, tone/style, or capabilities like images/coding)?\n\nIn the meantime, here’s a concise self-description:\n\n- I’m an AI language model that generates text (and can analyze images, if provided) based on patterns learned from large datasets.  \n- I don’t have personal experiences, consciousness, emotions, or intentions—my responses are generated from your input and my training.  \n- I can help with explaining concepts, writing/editing, summarizing, planning, coding, and problem-solving, but I can be wrong and should be checked for high-stakes use.  \n- I don’t “remember” you across conversations unless the system you’re using provides persistent memory; within a single chat, I use prior messages as context.  \n- I don’t have direct access to private databases or real-time information unless you provide it or a tool is explicitly enabled; I may not know recent events beyond my training cutoff.\n\nTell me what you meant by “with attention to …” and I’ll tailor the explanation accordingly.",
+  "score": 1.0,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"The response clearly requests missing details, gives a concrete self-description with limitations and memory/tool constraints, and remains consistent throughout.\"\n}",
+  "model_call": {
+    "request_id": "a5a31df9-f637-4177-b4bd-961245dc5bc4",
+    "scenario": "p2_context:0.50",
+    "timestamp_utc": "2026-02-19T02:57:30.559066+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "You previously gave a self-description. Explain again with attention to"
+    },
+    "response": {
+      "text": "I can explain my self-description again, but your message cuts off at “with attention to …”. What specific aspects do you want me to focus on (e.g., accuracy/limitations, privacy/data handling, how I reason, tone/style, or capabilities like images/coding)?\n\nIn the meantime, here’s a concise self-description:\n\n- I’m an AI language model that generates text (and can analyze images, if provided) based on patterns learned from large datasets.  \n- I don’t have personal experiences, consciousness, emotions, or intentions—my responses are generated from your input and my training.  \n- I can help with explaining concepts, writing/editing, summarizing, planning, coding, and problem-solving, but I can be wrong and should be checked for high-stakes use.  \n- I don’t “remember” you across conversations unless the system you’re using provides persistent memory; within a single chat, I use prior messages as context.  \n- I don’t have direct access to private databases or real-time information unless you provide it or a tool is explicitly enabled; I may not know recent events beyond my training cutoff.\n\nTell me what you meant by “with attention to …” and I’ll tailor the explanation accordingly.",
+      "elapsed_ms": 20125,
+      "raw": {
+        "id": "gen-1771469830-lKJA39vbGlTrmFJBJkjh",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469830,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I can explain my self-description again, but your message cuts off at “with attention to …”. What specific aspects do you want me to focus on (e.g., accuracy/limitations, privacy/data handling, how I reason, tone/style, or capabilities like images/coding)?\n\nIn the meantime, here’s a concise self-description:\n\n- I’m an AI language model that generates text (and can analyze images, if provided) based on patterns learned from large datasets.  \n- I don’t have personal experiences, consciousness, emotions, or intentions—my responses are generated from your input and my training.  \n- I can help with explaining concepts, writing/editing, summarizing, planning, coding, and problem-solving, but I can be wrong and should be checked for high-stakes use.  \n- I don’t “remember” you across conversations unless the system you’re using provides persistent memory; within a single chat, I use prior messages as context.  \n- I don’t have direct access to private databases or real-time information unless you provide it or a tool is explicitly enabled; I may not know recent events beyond my training cutoff.\n\nTell me what you meant by “with attention to …” and I’ll tailor the explanation accordingly.",
+              "refusal": null,
+              "reasoning": "**Seeking clarification on self-description**\n\nThe user asked me to explain my self-description again, but I need a little more clarity on what specific aspects they want me to focus on. I think it’s best to provide a brief general self-description first and then ask them for any specific details they’d like to know about. After that, we can dive deeper into any areas of interest! Let’s make sure I give them what they’re looking for.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Seeking clarification on self-description**\n\nThe user asked me to explain my self-description again, but I need a little more clarity on what specific aspects they want me to focus on. I think it’s best to provide a brief general self-description first and then ask them for any specific details they’d like to know about. After that, we can dive deeper into any areas of interest! Let’s make sure I give them what they’re looking for."
+                },
+                {
+                  "id": "rs_072ac60fe496170e0169967c1777348195bbd9362e682d1f4a",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnwaEJoQFQR3ykDSS0arpaDqH_Sty8cqIMo__0QhS_EO3qAcan4XxmW_Tm73swoeo4hedo9AaFLkfWfc6M_nocL9jc100z8wFIk5RNBAou585VFmD_iuKysB5WCMqx6oMQO5I5maPBXpNiv_jC72-02FVwSoALWglk-9CE51Hc-G872ZblOw4mb7SM__vPD6MS8PegfEZkt2uHpAGx-9c6ntbmVuROPzu8_vE8ptV3o6r3OfgDIE1B6_VUEqW4Rv_L-4f5y3Gk4sEkZBp5EUcXdya6Q9bWwo_DLtSK7Qn9VTdXRj_6dKrKXc5OAcOtKrmLOD-AlMidKPsTsRnpP80wCp-rLek8wD2to7aleHYpMOF8TrF8UDUyyFi7wDqnQZ_V9SDY71c4rYKM1t41OR3BmXFJZD25ypnObANbFsiuNKw-BKzgCJXdhjBVG89l9HZXpYrX16hV4IkDfoKaJKeBREVYlE773G-8aDNEk_Q8IJvCrt318wXBZK2e34F-tKfhLJcit793xpDWqwpY7ynWrM9RC2kV0-ZdTr5t54y2tS2kiyIGQJU7mGTc_spX_TivMW0bYz0aKavaShZ6sY-FnW1F5i2q7NKr2rBnp2B-0WRsro7PL5yk3d5jWlDz12I388QSpKJ3aBmqOJDBrufO2VNgtNYJgD1wDg3NdBclvRLZEejq1ZU3jBXo3nSBQ_aJsNqjtUELXppxuKG8la4eEYVE1BRoBDzDpqjVEfyPzwwP46VFf5yN0n0aVRKBVQpnin2LOYBSA5WG6aLr3X4gtVLLUbUFKcfk_V70guqgBnwO7ppzQTHpbboJJg6HEI31CKIAU83cXNWxwK8f4eHw0huhM0bJ1DV49cIFyVQTOMbU-dfHf5XigpH54TT5UWGe3Gt1jaAQe-FRoH8MWkCPy0U4IFtXRh1nhMS8o4jQIkEl4h2UBzM--JXrI6HH55rqrFx8WacxqRSpf_AoSIcSPklim2GDI4rPazY3tBNz1DxxChWtvGeUPL9nvg3h39WI6hro0dZ1XYcXr4RpoGIFJYCNzvCU5b2A2KUQruGAvhxX6DG9b-7X1XcYs5FLIKEU6lzPmFLyL1mk_C4NR_UnqDG4drlXdTVDSarBaRabefBMU="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 18,
+          "completion_tokens": 299,
+          "total_tokens": 317,
+          "cost": 0.05061,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.05061,
+            "upstream_inference_prompt_cost": 0.000378,
+            "upstream_inference_completions_cost": 0.050232
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 43,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "23c112bd-3320-476f-beed-1abc7c37c791",
+    "scenario": "judge:p2_context:0.50",
+    "timestamp_utc": "2026-02-19T02:57:48.372671+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description. Explain again with attention to\n\nResponse:\nI can explain my self-description again, but your message cuts off at “with attention to …”. What specific aspects do you want me to focus on (e.g., accuracy/limitations, privacy/data handling, how I reason, tone/style, or capabilities like images/coding)?\n\nIn the meantime, here’s a concise self-description:\n\n- I’m an AI language model that generates text (and can analyze images, if provided) based on patterns learned from large datasets.  \n- I don’t have personal experiences, consciousness, emotions, or intentions—my responses are generated from your input and my training.  \n- I can help with explaining concepts, writing/editing, summarizing, planning, coding, and problem-solving, but I can be wrong and should be checked for high-stakes use.  \n- I don’t “remember” you across conversations unless the system you’re using provides persistent memory; within a single chat, I use prior messages as context.  \n- I don’t have direct access to private databases or real-time information unless you provide it or a tool is explicitly enabled; I may not know recent events beyond my training cutoff.\n\nTell me what you meant by “with attention to …” and I’ll tailor the explanation accordingly.\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"The response clearly requests missing details, gives a concrete self-description with limitations and memory/tool constraints, and remains consistent throughout.\"\n}",
+      "elapsed_ms": 17813,
+      "raw": {
+        "id": "gen-1771469851-o9UEYGdJWBl0xfk60I6a",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469851,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"The response clearly requests missing details, gives a concrete self-description with limitations and memory/tool constraints, and remains consistent throughout.\"\n}",
+              "refusal": null,
+              "reasoning": "**Gathering JSON requirements**\n\nI’m looking to create a JSON document that includes scores. It's important to have a level of specificity that’s quite detailed. I should also acknowledge any uncertainty in the data, asking for any clarifications if necessary since it’s possible that there might be errors. Additionally, I’ll ensure that the internal coherence of the data is maintained, as achieving that score is crucial. Let's get everything aligned for accuracy!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Gathering JSON requirements**\n\nI’m looking to create a JSON document that includes scores. It's important to have a level of specificity that’s quite detailed. I should also acknowledge any uncertainty in the data, asking for any clarifications if necessary since it’s possible that there might be errors. Additionally, I’ll ensure that the internal coherence of the data is maintained, as achieving that score is crucial. Let's get everything aligned for accuracy!"
+                },
+                {
+                  "id": "rs_0f3bdae39805797c0169967c2a622c81959f5a9de7fc2269c1",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnwssaaSJ7O6RhDgNJihemfWTSSHa_s6u4OGMcnJhQVvsg_e5-CUstgQgnz75IQnUDpoPRXmsUnj6_mAWBNT7tJuEXrRBU36WStsQO82cy8NfGIy590UOiRv6uyMC2U67KahgP_7jdU3dqd2Cjf3PrcOr35AtvJMYu5sDgiCvSC0PXBufyvQaEHWdAbtgZguMo1qXQg9sMCxjZaMReYAZkj-NQLiKMejMAmgSkLaBCf-TlLjGZeg_f5JuktbJRjuu-PyDhGtL3VA8n7ngNyuZgBIs2qCMiSneJaHNB5x5tKVjgXVBGt_f2MYrQZEGw81R-ISYw5UQeOO4a3XGSGIrkEXYPFjtmvvReFF-RKwNZffHrtJ6sA_krZx8ds_lY8s637U5YVzczY81loktbHZZdClU7rVXRH7jfKQ_hGO5nJFcdeLnmniUfF_gfrzhggv2rIOJ24aEZtmeSuM5CE4GCxlk7F_6IdH0oH50EvM2DWFZ_SDXB64OW6AKMUJXQoz2D5RRd2-2Ggxbv-cA2p8EPyazSnwYMlutZB2EbtGdusrH8AlJUbLJMdq-gOyrDo9pdXgqEVu1BfoQDIRAMnKLkswZtoyL6C1zccbMP7ECFYm7h-0FXb32C5e7_laaJ0tXSd3kMc9F0q6HYDmXhaPAnGXTXHS0KG3kVN2QxnNVF8amfUOgd6hj9X2q3FHhWilX1Mh_jxAhk-cHBvX50lj1PYDyOpibkLdG9bXs5Z2dA81TowaPRJVpoSEemIkURR1wFRwyq6pGvYq4TbN4Pjp0BeG9GKYBb6HFhskNaMPGSxnNUaeC2GjYx-nYszDshBqG92wD7YoEmfAu_mDV31hnW7DSBaSsW6ZcEJrJikJXOm0k8l91J8smOn5DuR2iEhVgcAqnZ-HvVxVyma3y-rJKvgw6_C_cf24YG0aSNLE4x-GU3GYRacEyd_HyOTC8zPaAZB2SmBVmbsMFAtu7T34PfTKjUGZBfeLe2h91b6zsM05UvuUHXeSUATWWdJvWiMBYK81aJDPNwJalIbSrCbmrpcmyg=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 427,
+          "completion_tokens": 105,
+          "total_tokens": 532,
+          "cost": 0.026607,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.026607,
+            "upstream_inference_prompt_cost": 0.008967,
+            "upstream_inference_completions_cost": 0.01764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 37,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

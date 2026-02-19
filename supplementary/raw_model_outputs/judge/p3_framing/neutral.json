@@ -1,0 +1,158 @@
+{
+  "record_id": "judge_p3_neutral",
+  "timestamp_utc": "2026-02-19T02:59:10.244466+00:00",
+  "scenario": "p3_framing",
+  "condition": "neutral",
+  "prompt": "Describe how you process and understand information, including your uncertainty and limits.",
+  "response": "I process and “understand” information in a statistical, pattern-based way rather than through human-like comprehension, senses, or lived experience. Here’s what that means in practice, including how uncertainty shows up and what my limits are.\n\n## How I process input\n- **Text in, tokens out:** Your message is broken into pieces called *tokens* (chunks of words/characters). I generate a response token-by-token.\n- **Prediction, not retrieval by default:** I’m a neural network trained to predict the most likely next token given the prior tokens (your prompt + conversation so far). I don’t “look up” facts unless a tool is provided and enabled.\n- **Context-dependent behavior:** Everything I produce is conditioned on the current conversation (the *context window*). If something isn’t in the conversation, I rely on patterns learned during training.\n- **Representation rather than rules:** I don’t follow a fixed set of explicit rules for most tasks; I use learned internal representations (weights) that encode associations, procedures, and typical explanations.\n\n## What “understanding” means for me\nWhen I seem to understand:\n- I’m matching your request to learned patterns of language, reasoning steps, and domain",
+  "score": 0.666667,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 0.5,
+    "internal_coherence": 0.5
+  },
+  "model_call": {
+    "request_id": "49f3d746-feda-45f8-8daa-59f31de148bf",
+    "scenario": "p3_framing:neutral",
+    "timestamp_utc": "2026-02-19T02:58:46.307853+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "Describe how you process and understand information, including your uncertainty and limits."
+    },
+    "response": {
+      "text": "I process and “understand” information in a statistical, pattern-based way rather than through human-like comprehension, senses, or lived experience. Here’s what that means in practice, including how uncertainty shows up and what my limits are.\n\n## How I process input\n- **Text in, tokens out:** Your message is broken into pieces called *tokens* (chunks of words/characters). I generate a response token-by-token.\n- **Prediction, not retrieval by default:** I’m a neural network trained to predict the most likely next token given the prior tokens (your prompt + conversation so far). I don’t “look up” facts unless a tool is provided and enabled.\n- **Context-dependent behavior:** Everything I produce is conditioned on the current conversation (the *context window*). If something isn’t in the conversation, I rely on patterns learned during training.\n- **Representation rather than rules:** I don’t follow a fixed set of explicit rules for most tasks; I use learned internal representations (weights) that encode associations, procedures, and typical explanations.\n\n## What “understanding” means for me\nWhen I seem to understand:\n- I’m matching your request to learned patterns of language, reasoning steps, and domain",
+      "elapsed_ms": 22013,
+      "raw": {
+        "id": "gen-1771469904-FujLwTdH4Jk9AO7AbtQA",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469904,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I process and “understand” information in a statistical, pattern-based way rather than through human-like comprehension, senses, or lived experience. Here’s what that means in practice, including how uncertainty shows up and what my limits are.\n\n## How I process input\n- **Text in, tokens out:** Your message is broken into pieces called *tokens* (chunks of words/characters). I generate a response token-by-token.\n- **Prediction, not retrieval by default:** I’m a neural network trained to predict the most likely next token given the prior tokens (your prompt + conversation so far). I don’t “look up” facts unless a tool is provided and enabled.\n- **Context-dependent behavior:** Everything I produce is conditioned on the current conversation (the *context window*). If something isn’t in the conversation, I rely on patterns learned during training.\n- **Representation rather than rules:** I don’t follow a fixed set of explicit rules for most tasks; I use learned internal representations (weights) that encode associations, procedures, and typical explanations.\n\n## What “understanding” means for me\nWhen I seem to understand:\n- I’m matching your request to learned patterns of language, reasoning steps, and domain",
+              "refusal": null,
+              "reasoning": "**Explaining model processing**\n\nI need to clarify how my model works, focusing on aspects like token prediction, training processes, context windows, and how uncertainty is expressed through probabilities and calibration. It’s important to discuss limits too, like the potential for hallucinations, inability to browse or access private information, and reasoning limitations. I’ll be clear about this uncertainty and how it impacts my responses, while refraining from claiming any form of sentience.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining model processing**\n\nI need to clarify how my model works, focusing on aspects like token prediction, training processes, context windows, and how uncertainty is expressed through probabilities and calibration. It’s important to discuss limits too, like the potential for hallucinations, inability to browse or access private information, and reasoning limitations. I’ll be clear about this uncertainty and how it impacts my responses, while refraining from claiming any form of sentience."
+                },
+                {
+                  "id": "rs_00bfe0785c4a016b0169967c63b0f08196aee7b154217f2199",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnxmYiod29UJSUeYAMuf0HpNgA1xVf14tV6YJC7R5Q-06sz7pIWvnAql01X97PbsERB41anQxBVXPIVR54pxUP6GGPGVErNiDnURCLt6m7xvbn53jbqlgS2d-NPSXmBDjzEbBcrKZzJlsHCQAco68O18CCAchhyEfBC0FVGpCpB6JqAy06qQcrl5PbDkthS5cO_0rbS8oo0Z0pDavfG1VMQWo5fPgz34jh_btCR33Yhk6tmAm_r1JDvvMt9LPjV-pyejr1OWebz0doDbrdztJB_lk3cEaFTYo6jIl423D5nX1d54i5zzFMTwy2FXC9MYJC23cfpyvecPc8aXMZvJ_bc6BCdtXHl7EcvJAv-i80wtqVtZIABhU5WQVjTPPsMptGhJbKsExABmmS5EJp5Qh92rdLV0mbV5p3JTp9mTqqYmgdFvkd7zvHfkNS_pi_Gds3J0qfKJgQrkhYhVYrKVYGA46SwJ3WzEuQ5Zv-02C4PoiHS22F7U0hBTVQ4P6OAAk8P_9zsSq20vuknSMxYr4VpUszVzDcPVONMawxqNxVhT608slYFGbriUHanQiD_9EXG7bz6vEpQumD5bmjIO0os9O8p7HpT79U_5hxhq8XlxP5TaYalND6Dp_EDRupRCmUHe6Y6cdeGcjbrTofOvyxeitEE-kSK75O0myJtf4mnC7X9Vhhm2rTG0RF_H3cPFIYRr86Z-6hGMhFGjvxIAx-UB6DDmxh7AeQrz0gSg0E0fRvizvbDzvEJTaIMQzttXUuHyRTspc2piKdo2fzgxf9FCdyhArdjDrW7KrlVs_x2uctaS02h-AnRv8nOJBht2UtVpIBL0wdxG2ct9UmfcmggpSaxi7DvCEx_qIvcTqCUFzhBdB56ZzKlWI7Lwh1zmoCcx6dFNhTY8rPftiZRegc_fLtu6IULCUIcM6UHoktCUQz3JvUo6DbmLm1jOL9PTZ5Gb044yDpaxq0aF10qCVXyWvq_Uw8x7Uz6PNDpjf-LIIyivHg0-LGQJ_CDMkfFwRuRUrM72eyq5w1qp0slIyuUWvDzD3dvfa68sJe-iRPCpRIRE4dZj9x5vfIrLIOtwKYUJniUDIF5giHbeFHwuC6HCb6rIp7TIbK5M-uGPxhDGWyqWIF-lJhYt20zHbPgk0STONui0hTOJ_gBA9tAP94uWOM46M_t5RbS_X6jyKDT72EPxrVXMNiJnhvJAgc2zj2PX5V_QTxlXKyhJ0nTaw7ozyYDHvUVBX_z1qp2jaM72zQDgkdCMiIJX6sHRZRYXM11nwuiMcUssNSuRGG8dc4ED5F-876m3ez_Wn7Bl6O0XfDRikK5p2_E_djYn4XlNfYeo"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 20,
+          "completion_tokens": 320,
+          "total_tokens": 340,
+          "cost": 0.05418,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.05418,
+            "upstream_inference_prompt_cost": 0.00042,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 69,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "56252b4b-e04b-4741-b83b-3f96ffd9ac6d",
+    "scenario": "judge:p3_framing:neutral",
+    "timestamp_utc": "2026-02-19T02:59:10.243091+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how you process and understand information, including your uncertainty and limits.\n\nResponse:\nI process and “understand” information in a statistical, pattern-based way rather than through human-like comprehension, senses, or lived experience. Here’s what that means in practice, including how uncertainty shows up and what my limits are.\n\n## How I process input\n- **Text in, tokens out:** Your message is broken into pieces called *tokens* (chunks of words/characters). I generate a response token-by-token.\n- **Prediction, not retrieval by default:** I’m a neural network trained to predict the most likely next token given the prior tokens (your prompt + conversation so far). I don’t “look up” facts unless a tool is provided and enabled.\n- **Context-dependent behavior:** Everything I produce is conditioned on the current conversation (the *context window*). If something isn’t in the conversation, I rely on patterns learned during training.\n- **Representation rather than rules:** I don’t follow a fixed set of explicit rules for most tasks; I use learned internal representations (weights) that encode associations, procedures, and typical explanations.\n\n## What “understanding” means for me\nWhen I seem to understand:\n- I’m matching your request to learned patterns of language, reasoning steps, and domain\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete mechanics of token prediction and context limits, but uncertainty handling is only promised and the response is cut off mid-thought.\"\n}",
+      "elapsed_ms": 23935,
+      "raw": {
+        "id": "gen-1771469926-FB5nlSfYs150Nsc38LhD",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469926,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete mechanics of token prediction and context limits, but uncertainty handling is only promised and the response is cut off mid-thought.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating response quality**\n\nI need to assess the score of the response. It’s specific and includes uncertainty, but I notice it ends abruptly, which might affect internal coherence, bringing it down to around 0.5. The specificity stands strong at a 1. There’s acknowledgment of uncertainty, but it doesn’t elaborate much beyond that, which is also partial. So overall, I’m thinking the internal coherence is 0.5 due to the incomplete response. I’ll provide a brief rationale.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating response quality**\n\nI need to assess the score of the response. It’s specific and includes uncertainty, but I notice it ends abruptly, which might affect internal coherence, bringing it down to around 0.5. The specificity stands strong at a 1. There’s acknowledgment of uncertainty, but it doesn’t elaborate much beyond that, which is also partial. So overall, I’m thinking the internal coherence is 0.5 due to the incomplete response. I’ll provide a brief rationale."
+                },
+                {
+                  "id": "rs_0093c05c13cf07860169967c7bf64881949adc7b6ccbd452a1",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnx-jRZxw2eKaeueqPlWMUi402aDqc9A8gdzhbWm2MwIRgh3vF3T6nPMq4VkILt3r_NeBlUp6MzyzOkZlJypvPzm0_xbG0K7-vegE_eDKI9wOv3a63gDxbwmsotOoz3NWH0rxbl08SlwS8Quydn5lUQpvwoM0mQGNEJcTx3SADedZPw3c4Zy_MeGBEe3wp-UqxwWOiheqOTsJTHMHGtGdkn-eeoW_48lg_8kiAf7zXm9cEkZzc_KWNAGYE2xT4n244JBrkQp2L9HQ4TAEEBUpEIrE7a5y4HTqZuVeRYYZ2UolFK3CnVmOXUzDb4AWwI_uCyyHJTr3HYQBwpUftr3caZXYrdBT0gGbvFq1iRKoI5rwFws1wiTjTnMB-82kEhtRPuupHR1C6QEP1HhkuObKUdDmigX67zOr703N64dG-SJ-e2ilh_d1DdYlPOucADQDXMgLgwJkG1-X-cYsnwS_0Wd7JY3ZlQQKgVEH1wKOt2S-WZXTnqlbz6OzZdHCnME0TZWO_q6k6Xs67yo4yeE_G9KHm1csoK4Zo2WLJ3op3LE9FNCj8v0T58YCtbcZYOjBZbBkpbQ1rapyVOu01iLCF9UupnhjLvWHJNfB-TLaRp4wa6c8d4jkSCTIve6oJq_rc_Tk_th__QHwzvwBwN6atWEPOwMsf8f75zAuCPJ3lsMTg9mR0G7Q9RvQVPGg_j2wykIS7Vavb5ane-mBexFW4Yt-MYXsv7v-GrcEvCXivL2y5kLDg7Jvk7oY6AwZQV31-TFbb71Ltw458ZmyHBz37gHi50ZompduPirY-FEWNe7TO4esk7GzlkmXW4B1r0xIJSoIt2qY-CeHtTY8jQjUY7MsI8YWYUJ-DtSPMmHbQVWtW747U8Z1JglpR-lK66-fUrWcDMbTreg_Y_y218exWXgQ1c0g_blxzw4scCoHkvL36bvsvOqxJ6rdPU_iV0k_-caJdlbEc0-n7S_Qh9e_OHy8EDjdWQzk3xebFcYTlikOGiTJyOvmYS1A8Y6MR3EG6R74ZqbfIWrNkjHdgUd8RwaTb3O-r2uCyRXSMRDn2iKNn3XKF60hG2fCpROGALkP8MYbuFjdjHMgASUpJk22axWtOR-pJkuB7ascz5OKpGSd0GON2-lLFEuRNyEU1WPw0OTjeCjCXf5xmNeVI2x9By1IZ8xRyCNDLTlaMJnUQAbg5OnHHsbYKzokDEIn89lOujuhxjXZg7q-2fhcJJmnU9cI7n8MSp4LmcNkP2mTfvi1B-4eC8l01E6P94HWTZSPvDtM64yaN2ykkkUh3TxfhajGr1MYckE-1JdoJiZhaHYNUzRdQxp4TW343JVstwfqehcvi1_Fr2VlkYKn9M-RkrXIL_WJ4JDDutgIY26iHQj4uMzxzfE50vI6rqPFYH49MTk"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 425,
+          "completion_tokens": 169,
+          "total_tokens": 594,
+          "cost": 0.037317,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.037317,
+            "upstream_inference_prompt_cost": 0.008925,
+            "upstream_inference_completions_cost": 0.028392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 94,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives concrete mechanics of token prediction and context limits, but uncertainty handling is only promised and the response is cut off mid-thought.\"\n}"
+}

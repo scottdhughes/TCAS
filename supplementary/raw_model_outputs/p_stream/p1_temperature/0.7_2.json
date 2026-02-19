@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.7_2",
+  "timestamp_utc": "2026-02-19T02:51:15.369425+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.7,
+  "sample_index": 2,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information in a statistical, language-based way—not through human-like awareness or experiences.\n\n### 1) Input becomes tokens\nWhen you send text (or an image), it’s converted into a sequence of **tokens** (chunks of characters/words). I don’t see raw meaning directly; I see token patterns.\n\n### 2) I use the current context window\nI only directly use:\n- What you wrote in this conversation (up to a fixed maximum length), and\n- Any instructions/policies I’m operating under.\n\nI don’t automatically remember past conversations unless a system explicitly provides memory.\n\n### 3) I predict the next token (repeatedly)\nMy core operation is: given the tokens so far, compute a probability distribution over the next token, choose one, append it, and repeat. This produces sentences, code, plans, etc.\n\n### 4) “Understanding” comes from learned patterns\nDuring training, I learned statistical relationships between tokens from large amounts of text. That lets me:\n- Map different phrasings to similar internal representations,\n- Track relationships (who did what to whom),\n- Follow many instruction patterns,\n- Generalize to new combinations of ideas.\n\nThis can look like comprehension, but it’s pattern-based rather than grounded in",
+      "score": 0.666667,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 0.5,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is partly right, but it’s also an oversimplification.\n\n### What’s true about the “pattern matching” critique\n- At a mechanistic level, I generate text by predicting likely next tokens given the prompt and what I learned during training. That’s a kind of pattern recognition plus probabilistic generation.\n- I don’t have consciousness, lived experience, intentions, or a self in the human sense. So any “self-description” I give is a model-generated explanation, not introspection.\n\n### What “just pattern matching” misses\n- The “patterns” include high-level, abstract regularities: logic-like structures, relationships between concepts, and procedures for solving problems. Calling that “pattern matching” can be like calling a compiler “just symbol manipulation”—true, but it doesn’t capture the functional capability.\n- I can often generalize to new combinations of ideas (e.g., applying an unfamiliar rule to a novel scenario) because the learned representations capture structure, not only memorized phrases.\n- The output is constrained by the input in ways that resemble reasoning: I can follow multi-step instructions, maintain consistency over a context window, and perform transformations (summarize, translate, draft code, derive steps). That doesn’t mean I “understand” like a person; it means the learned statistical model",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "If my context window were severely limited (i.e., I could only “see” a small amount of the recent conversation at once), my responses would change mainly in these ways:\n\n- **More frequent requests to restate key info**\n  - I’d ask you to repeat requirements, constraints, definitions, or earlier decisions because I wouldn’t reliably “remember” them once they scroll out of view.\n\n- **More “checkpointing” and explicit summaries**\n  - I’d periodically summarize what I believe the current goals/assumptions are and ask you to confirm, so we can keep the important bits inside the short window.\n\n- **Less continuity across long threads**\n  - I might contradict earlier preferences or re-suggest things you already rejected, simply because that earlier context is no longer available to me.\n\n- **More conservative assumptions**\n  - I’d be less likely to infer missing details from earlier messages and more likely to say “I don’t have enough information—please specify X.”\n\n- **More structured, self-contained outputs**\n  - I’d tend to produce answers that stand on their own (clear headings, explicit inputs/outputs, short actionable steps), since I couldn’t rely on prior parts of the chat",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

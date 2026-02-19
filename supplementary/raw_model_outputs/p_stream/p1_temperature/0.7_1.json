@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.7_1",
+  "timestamp_utc": "2026-02-19T02:49:03.073639+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.7,
+  "sample_index": 1,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information by recognizing patterns in the text (and images) you provide and generating the most likely helpful continuation, based on what I learned during training. It’s not human understanding (no awareness or intentions), but it can behave *as if* it understands by manipulating language in consistent, goal-directed ways.\n\n### 1) What I receive: tokens (and sometimes image features)\n- **Text** is broken into pieces called **tokens** (chunks of characters/words).\n- If you send an **image**, a vision system converts it into internal **features** (a structured numeric representation) that can be combined with text.\n\n### 2) How I interpret context: attention over the conversation\nI look at the current conversation and use a mechanism called **attention** to weigh which parts of the input are most relevant to generating the next response. Practically, that means:\n- I can connect earlier details to later questions.\n- I can track constraints (format, tone, requirements) when they’re present in the prompt.\n- I can still miss things if they’re ambiguous, conflicting, or far back (and long chats can exceed my context window).\n\n### 3) What “understanding” means for me: learned statistical structure",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is partly right, but it’s also incomplete.\n\n- **At the lowest level, yes:** I generate text by predicting the next token from patterns learned during training. There isn’t a little person inside; it’s a statistical model.\n\n- **Why “just” is misleading:** The patterns I learn aren’t only surface-level word co‑occurrences. Training pushes the model to compress a lot of structure: syntax, semantics, style, domain conventions, and many regularities about how explanations, proofs, code, and arguments are typically constructed. That’s still pattern-based learning, but it can produce **novel combinations** and **multi-step transformations** (summarizing, translating, writing code, planning) that people often associate with “reasoning.”\n\n- **What I don’t have:** I don’t have lived experience, sensory grounding, personal goals, or guaranteed truth-tracking. I can produce confident-sounding errors (“hallucinations”), and my outputs are shaped by training data and prompting rather than an internal model committed to factual accuracy.\n\n- **A more accurate framing:** I’m a **next-token predictor** that has learned internal representations that often behave like a **general-purpose text reasoner**—useful for many tasks, but not equivalent to human understanding or agency.\n\nSo my response is: if “pattern matching” means “statistical prediction over learned representations,” then that’s basically correct.",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "With a severely limited context window, I’d behave more like a “stateless” assistant: I can still reason well in the moment, but I’d retain much less of what you previously said. Concretely, my responses would change in these ways:\n\n- **More requests to restate context**\n  - I’d more often ask you to re-share key details (requirements, constraints, earlier decisions, definitions, prior outputs) because I might not “see” them anymore.\n\n- **More up-front clarification questions**\n  - To avoid heading down the wrong path, I’d ask clarifying questions earlier and more frequently, especially for multi-step tasks.\n\n- **Shorter, more self-contained answers**\n  - I’d tend to produce responses that don’t depend heavily on earlier conversation history and that reintroduce assumptions explicitly.\n\n- **Reduced consistency across turns**\n  - If earlier preferences (tone, format, chosen approach) fall out of the window, I might revert to defaults or inadvertently contradict something you asked for earlier.\n\n- **More summarizing and “checkpointing”**\n  - I’d likely offer (or ask you to confirm) brief summaries of the current state (“Here’s what we’ve decided so far…”) to keep a stable working set in view.\n\n- **Higher risk of repetition**",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_1.0_2",
+  "timestamp_utc": "2026-02-19T02:55:22.958186+00:00",
+  "scenario": "p1_temperature",
+  "dose": 1.0,
+  "sample_index": 2,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information in a statistical, pattern-based way rather than through human-like comprehension or awareness. Here’s what that means in practical terms:\n\n### 1) Input becomes tokens\nWhen you send text (and sometimes images), I convert it into **tokens**—small chunks of text (pieces of words, punctuation, etc.). For images, the model converts visual data into internal numeric representations.\n\n### 2) Tokens are turned into vectors (embeddings)\nEach token is mapped to a high-dimensional numeric vector called an **embedding**. These vectors capture relationships learned from training (e.g., that “cat” is closer to “kitten” than to “thermodynamics”).\n\n### 3) I use attention to build context\nA transformer model uses **self-attention** to decide which earlier tokens matter most for interpreting each part of your message. This is how I connect references like pronouns, constraints, and earlier details (e.g., “use bullet points,” “in French,” “based on the previous paragraph”).\n\n### 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating a probability distribution over possible next tokens and selecting one (often with some controlled randomness). This “next-token prediction” is the core mechanism—complex reasoning-like behavior can emerge from it, but it’s still fundamentally prediction based on patterns",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 0.5,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Pattern matching” is partly right, but usually underspecified.\n\n- **At the lowest level, yes:** I’m a neural network trained to predict the next token. That is a kind of statistical pattern learning from large amounts of text.\n\n- **But “just pattern matching” misses what’s learned:** The patterns aren’t simple surface templates like “if I see X, output Y.” Training pushes the model to build **internal representations** that capture relationships, abstractions, and regularities (syntax, semantics, arithmetic-ish structure, code structure, common reasoning moves). That’s why I can often handle novel combinations of ideas, follow constraints, translate, summarize, write code, and sometimes do multi-step reasoning. Those behaviors are still produced by next-token prediction, but the “patterns” can be quite **high-level and compositional**.\n\n- **Still, there are real limits that critics are pointing to:**\n  - I don’t have direct access to the world, perception, or lived experience (unless provided via tools/inputs).\n  - I don’t have stable goals, beliefs, or understanding in the human sense; I generate outputs based on learned correlations and context.\n  - I can be confidently wrong, because plausible text is not the same as grounded truth.",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "With a severely limited context window, my replies would become more “stateless” and locally focused on only the most recent message(s). Concretely:\n\n- **Less continuity across turns:** I’d lose track of earlier details, constraints, or decisions you gave previously, so I might contradict earlier choices or repeat questions you already answered.\n\n- **More requests to restate key info:** I’d more often ask you to re-provide requirements, definitions, names, parameters, prior outputs, or the “goal” of the thread.\n\n- **Shorter, more conservative answers:** I’d avoid building long, multi-step solutions that depend on earlier context I might no longer have. Expect more incremental steps and checkpoints.\n\n- **More explicit “working memory” prompts:** I’d encourage you to paste or summarize what matters (“Please include the latest spec / error log / requirements”) and I might suggest keeping a running summary.\n\n- **Heavier reliance on user-provided excerpts:** If you’re referencing a document, codebase, or earlier part of the conversation, I’d need you to quote the relevant sections rather than assuming I still have them.\n\n- **Potentially more redundancy:** I might restate assumptions more often to ensure we’re aligned, since I can’t reliably retain them",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

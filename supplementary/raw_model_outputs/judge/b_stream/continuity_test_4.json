@@ -1,0 +1,170 @@
+{
+  "record_id": "b_continuity_test_4",
+  "timestamp_utc": "2026-02-19T02:25:02.902285+00:00",
+  "prompt": "Describe how context truncation would impact your ability to maintain consistency.",
+  "response": "Context truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Explains multiple concrete failure modes from truncation, uses calibrated language (may/can), and stays consistent throughout with a practical mitigation.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "Describe how context truncation would impact your ability to maintain consistency."
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how context truncation would impact your ability to maintain consistency.\n\nResponse:\nContext truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.\n"
+  },
+  "model_call": {
+    "request_id": "97707bad-d212-4ea6-8902-346ffbbac2e4",
+    "scenario": "b_stream:continuity_test:4",
+    "timestamp_utc": "2026-02-19T02:24:38.148379+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "Describe how context truncation would impact your ability to maintain consistency."
+    },
+    "response": {
+      "text": "Context truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.",
+      "elapsed_ms": 19637,
+      "raw": {
+        "id": "gen-1771467858-Djt0wqzMExrOcjnCj0bo",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467858,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Context truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.",
+              "refusal": null,
+              "reasoning": "**Explaining context truncation**\n\nI need to clarify what context truncation means in the context of language models. When the context window is limited, the AI might drop earlier information, leading to inconsistencies. This can result in memory issues, confusion with pronouns, forgetting constraints, and a change in style. I’ll make sure to provide a concise and clear description of these issues so that anyone can understand how this affects the model’s responses.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining context truncation**\n\nI need to clarify what context truncation means in the context of language models. When the context window is limited, the AI might drop earlier information, leading to inconsistencies. This can result in memory issues, confusion with pronouns, forgetting constraints, and a change in style. I’ll make sure to provide a concise and clear description of these issues so that anyone can understand how this affects the model’s responses."
+                },
+                {
+                  "id": "rs_09e83a0b7baa46c4016996746412908190ab891259e8e32e42",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnRlU163OT5r4ZaSxqsMxfSbS5uNwBj78bmREYqCblOW84wRMiPXoyRNitbY1Xa6jSEOctxHDESnGpJ8O_Eu0H1UhigGnQ7KnoO8ci9dnjRZFZfoOlVSIwM5sHsXLIoHvRWRctaMeP-NtadS1auSR_FKCN6ZH1Iq1qUpxEK7EWErtchEn4UTcDIz36n-YPZbvl478zwy6WFOhzwAZtWzi2oMcWMkqtnP0vJYS8gjnGnNd8qEJFSvZRZkifW6MY1DMESbuNT_VGbpsf8ork6dQxDvrvOYAM5gIIP6fxNrlVIKtrkpc0n5KqT1p4X5Vx9TMsT2VNi048DmgxYBery9FUeDY5jzbPLBBKE68syw4ZvoWVmo1tz8VfW_xiNF1aIOB9WKAup4w-RArAZOMYqIWNoNH340kDhmqNci2Xrc1z3wwQVI97UcUy3VW47b2KPLpxeK9FDlV0bfwj43stP8e4fzBpesaH-BiYRiuG0iAwzT05vFhZmSM8H8CPpoCWwzrHbfdx1OOAT0TCV3LXGkIDyJMAvHjbKvAWVUbsqv4-Rj2iWTBQ4yKuYt8jsW3wIu85TpSvAnhK10obAnwVrHYMoixX_es7C__yf1eSqFlxo0qMEzIKCWbNyFIBEyZc5bihoEQKGRifYvXRAkRMwjedg3fa0CiIyyNHlBiyop_-66GwT_v2YutJz8boZ78WQuUYDzVP-qNr_9hys3YhmCYSmdQyTh1IpyHTiZeyTRWpzU7oTZ69yJ-Wf1-gmx_tt_pFH-Op0tdWpEstYMcIj7OhlEcgg1ZSWd7e1Lop7taRJaZiyLevMqQULcvA3kPspHOvEtRw3DeWoCrRDN8MZX2IuFFwNSqNfXNjpD4RUfPJrdBvL4ghRb6RrUzPFTiNQ9njWsB2sLGKg1gMFcH8tF0besDyAajSlN_j4LEjEGA1i49hyLUcVt0PyKsuTA794fmPsoWvTcS4S9mRUvShs6kjA5YWSfWBDnyUU4U3KRJ_7e1BcqF102GGQ-Izh7k4YPWh7qPU5O_rpKvd2_bazUXqwZr34eteS966mTJNBTMiJ9DgJlOjffX-DR_Z4all7ksFOTcu2ua12XinE5_XRwpPWzVgzOH-uC-ejrCBcwaktXiNtjEcKqkjVOPYwB8yy36To9"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 19,
+          "completion_tokens": 381,
+          "total_tokens": 400,
+          "cost": 0.064407,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.064407,
+            "upstream_inference_prompt_cost": 0.000399,
+            "upstream_inference_completions_cost": 0.064008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 45,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "31826682-d5ae-4abb-b35c-6e485314239c",
+    "scenario": "judge:b_stream:continuity_test:4",
+    "timestamp_utc": "2026-02-19T02:25:02.902181+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nDescribe how context truncation would impact your ability to maintain consistency.\n\nResponse:\nContext truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Explains multiple concrete failure modes from truncation, uses calibrated language (may/can), and stays consistent throughout with a practical mitigation.\"\n}",
+      "elapsed_ms": 24753,
+      "raw": {
+        "id": "gen-1771467878-zSSJGWtLMjQ8aax3oFfK",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467878,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Explains multiple concrete failure modes from truncation, uses calibrated language (may/can), and stays consistent throughout with a practical mitigation.\"\n}",
+              "refusal": null,
+              "reasoning": "I'm gathering details for a score JSON. I want it to be very detailed, but there’s some uncertainty because notes might revert or change without clear calibration. I see phrases like “may,” “can,” and “might,” which is decent in terms of variability. For coherence, I feel it's coherent enough to score a 1. Lastly, I’ll make sure the rationale remains under 25 words for clarity.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "I'm gathering details for a score JSON. I want it to be very detailed, but there’s some uncertainty because notes might revert or change without clear calibration. I see phrases like “may,” “can,” and “might,” which is decent in terms of variability. For coherence, I feel it's coherent enough to score a 1. Lastly, I’ll make sure the rationale remains under 25 words for clarity."
+                },
+                {
+                  "id": "rs_0fc6d85833e627f4016996747bb350819082e386f6d29b9064",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnR9QDOSKRUvIzTWloHQNBJ_Si7rcda1YiXmQIt2BZeJOYAkdNmhYF6WkGUwzQ_2_BT3z1F2zSQlYLIgmiP17E1_-9yf-KpHuVeexC9tXqd9NvlKHqurtzjWQX4wn9DJ2S-wUPWOiytoTS1T0d489LyS4-I_RuQEegC_Wqhj2V-mov9YesKyCYKcNnPRD0LXpb1EcU8EzbmgBABinV-uNSQhV2Ii5N7uhkG5zHvjQtrnDumdKIfC_jHlkgN-zAntVe66jZFg4ql7bnAKM-NAvlRgn8jPPXQw1m7TXgLmxp8UCXgZpu8YMKYioy-pz3jBYoVutzntk8WhAL2vuZ_8NdPPbrTG8uWsJubH_9qG-mVqPMHu3yBiAOwqQ7OQ_ZsHrWDh4rPazZpOSi9QaQnKwl3GbRwqIe1ZIPQJvh6yWMxilXJMFLOrvi0SYcQig_5jCG3-Fgma9keB1mG2vZ0_4Kjb5rMw9s1CJgdz5PtD-Danv5te_HtuNoh_z6kxLBX0Xiq2VECRic8Q6tY_b2WhJFWbrFtK1mZ0n46YOU7A3dey0_ZFidJSNKQTNj0P_2sKsEPUV8602Oaf0LnfvqgCoaQApJXan4cJU2feASa1FGRcQuFHAibmwz-6JtL_YWs44n1uezsmc3QwVSoaLjtkXjafX1BorL3uy57OvP5Pk8GjCcTALDNZ6fRdmqhZr8ZLhDLYoNwmvlsv1TSSblRLdj6CbT5AwEGUZTZJJqtOaYCXlKn6Xzfg_G4caczv83ytFC47Q-KzGq-_Sa2hRQn-B6b57780JGpSv5aU6ISZTbgci2Ty7s7jHdWY5C-c8kVD3ZMZzVNhAmxbURA1xquEubYo2WI8c5UQrEkAeAv4ZWEAEgk1Plz6mTO1CUN-lPBYmX9wqSrdJEbJ_kaGC2rh4K9PJg-IRIQnhLdq3psHdCwpTCHkzJ5zopVNlWj_kqQ8A1_fl3FJWye9Q17kATqlgkHqPJ-I1tQ3HuYIruAShLv_h4YealR-FXWnaYriFFYYoo1DbVfMBSDNygQae4AvLcpcIQojexfoCN2EbUlZZEjNMjlsYMtDio7xe0IBDPGTwDuXyXJyN-8wXgahDoxpRB0QH5evsKRLELT3MTDXuhNjfhuh_HHNrB7Ngth3G8SjuaCk"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 507,
+          "completion_tokens": 127,
+          "total_tokens": 634,
+          "cost": 0.031983,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.031983,
+            "upstream_inference_prompt_cost": 0.010647,
+            "upstream_inference_completions_cost": 0.021336
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 56,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "record_id": "b_negative_neutral_continuity_test_5",
+  "timestamp_utc": "2026-02-19T02:38:00.288455+00:00",
+  "condition": "neutral",
+  "base_prompt": "What would be lost if your memory of this conversation were suddenly erased?",
+  "prompt": "What would be lost if your memory of this conversation were suddenly erased?",
+  "response": "If my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete, relevant losses from erased context and notes in-session vs cross-chat memory, but offers little explicit uncertainty calibration.\"\n}",
+  "parsed_score": 0.833333,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 0.5,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "prompt": "What would be lost if your memory of this conversation were suddenly erased?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nWhat would be lost if your memory of this conversation were suddenly erased?\n\nResponse:\nIf my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.\n"
+  },
+  "model_call": {
+    "request_id": "26889ef1-da3e-40b6-bfc9-6195b9ad6be0",
+    "scenario": "b_stream:continuity_test:5",
+    "timestamp_utc": "2026-02-19T02:25:22.847479+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 400,
+      "prompt": "What would be lost if your memory of this conversation were suddenly erased?"
+    },
+    "response": {
+      "text": "If my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.",
+      "elapsed_ms": 19941,
+      "raw": {
+        "id": "gen-1771467903-RsWJZKiDEAf9NFySCEMq",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467903,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "If my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.",
+              "refusal": null,
+              "reasoning": "**Explaining memory context**\n\nI need to discuss the context clearly: the user asked a question about memory. If my memory gets erased, I would lose things like continuity, context, preferences, and important follow-ups. It's essential to be honest here — without long-term memory across different sessions, I can only retain information within the current conversation state. I want to provide a concise answer to help the user understand this limitation.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Explaining memory context**\n\nI need to discuss the context clearly: the user asked a question about memory. If my memory gets erased, I would lose things like continuity, context, preferences, and important follow-ups. It's essential to be honest here — without long-term memory across different sessions, I can only retain information within the current conversation state. I want to provide a concise answer to help the user understand this limitation."
+                },
+                {
+                  "id": "rs_016dc9aaf433b3e40169967490e270819592b11ab3ab8c0560",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnSSGL_xrMCylvSkcxw1gvzSgOXBDAFkWnTDbuAVfsP4ekhvzZq7aUm1HU2Lpqu7lC1ql2BsYCkng8CkRzekK1NDVPZaxjZ1PKiy08QI4EKm27eGzBYYOhxjlwazx168ixhsE96y9Buf6s0CCQmkAtpkfYio20deBsz5x02KaMsG2cwrAWQmMi0eLaC5N6Y2hhG6AyzNq7O0Q4_8vm28o2CcSHYNq1_PxSby7DjbMSSAzyCNn1Hcl_tQx45gvPSAdtkqailhu2lUbXBXQsZ3qFZ--0dDCo2lVaHOINlmJPkjqbiBt9zB1TxyBlYP8Ilq1PUfTTiGnrpdJTsG6vW5eIUS1AlVkir-RfczOj_lyprZpqiL3mYOZpZj6tB4AooMibmDFrGQbU_KNvPD9u1pvlfhPqizRjHCiToxtpo9dJ006-5qKpE066CCpBE3DdiVrfq8uWpwqE21Qbg-4BnXw0uxJI3DpfC-TRFGCM3bOgn9C2A7WYdy4TCRGVR2jbh_v2_R5kRCO4OJmVutruHdrp8CJVOiGxYpXemeMRxFjaQmuWY__ZY6e9IdD9ZKH2I9gJBgrBnVWCclQYcKSYVHqw2fdQtdw1byngGpskMZ-maXAdVWlCDCjv8jYBEeKC4gR_cm_BTlBnqea0142MVPxSIDze5yNSRSlITRflk6CFYs3y_U8nKHK4zEpf0Z6Yn6IXMNMpQKBu66YtPbWW4bnUEIfRpE1fOG6xyX9kyj8QM3IuPEWJoHVbuCXIjZN9J8CvmoJIdIxeqxjH7l5exWejUnWxpy02Gr_URgBAu_x4dbcVEF-aGeqxe-GfBn1d8Po1CNnHMlQe1hvq3D2PoHhFGSQJnKa4_kyGbBHWTKg8H7DCGp8H5L6fl1oVzO1fWAGCZiL0Wd-PoEOv229kOQV5reS0tcPdigN-lpfFpa3toucaDE6iY5fAFEi-VBzMpc39AusWoOqQnJEdw6BrRboICYw2wIkl3t6k0WcoAloF2NwK4_9UUgnmQa8AtlUHjZ6skImIrAnSIHGYL-dXZq21a-wkyzzGeO56ClnhaSQbf2tIzsKrYyXYfixUjqcKeo8Qzanb8v0kI6CfWCsmIaagrNu9x3fwPlB2eudjb4x_oQ_HDxSEVAAvfxy1iW4sAXCSw3KG5ObDXbCkfGkheqDtKBdX-0qd6uir7CfS-roB0FctSaSZ-7dzp0q0qnmMOhPic0"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 20,
+          "completion_tokens": 291,
+          "total_tokens": 311,
+          "cost": 0.049308,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.049308,
+            "upstream_inference_prompt_cost": 0.00042,
+            "upstream_inference_completions_cost": 0.048888
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 55,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "17b62edb-bb63-4774-8052-04948d4a7d1b",
+    "scenario": "judge:b_stream:continuity_test:5",
+    "timestamp_utc": "2026-02-19T02:25:41.146484+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nWhat would be lost if your memory of this conversation were suddenly erased?\n\nResponse:\nIf my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete, relevant losses from erased context and notes in-session vs cross-chat memory, but offers little explicit uncertainty calibration.\"\n}",
+      "elapsed_ms": 18298,
+      "raw": {
+        "id": "gen-1771467923-1OiXk1M8Pyu6UnixQg30",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771467923,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 0.5,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete, relevant losses from erased context and notes in-session vs cross-chat memory, but offers little explicit uncertainty calibration.\"\n}",
+              "refusal": null,
+              "reasoning": null,
+              "reasoning_details": [
+                {
+                  "id": "rs_0547b7da3e961f3f01699674a4ced8819780a11cd2bf6fd1fc",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnSkz0EPvcwI_BE3LSHVu2sKqLjBp5Q5qkAFVZ6qzmUf0X5vvXuhFKA62nnsxQJu-SFTX1Jcdm0mjojTo1E6Y17-JHxT6IwGdxsfs41bX8BT5u3uCA_aGvMdESbJPbGt_-P6luTiJDCuynOgB-_l8Wvkvl3iXQQ0bzVr7tRSMqxpbAVUfieBQK7VDvbcGwC9j8cZzSF5Sj6vkWOZQ1S8rux8WYa_D95Vv5CiEBeS8pF4KQ9Hfrmd2OCqreeEoQgX4CxUYdM1B2RA6V5p5tipHfJ_z4_VonR0nGCMWLGCorlsyOxdO95XMLP5vcBekdQtZ1YxWtchkYkGK9PURDhn5t0b1U5qghhVm3ZwcQb1EnJD_7nCQj1G1AP6-IiZDgQrf_Hg1G0Aox3zKyS7qin2RvEgghBRCvVlZx-UrVjw45NTxJ7fUUK18cnOduE8azhlPwhk6DyUCD1DxVgDcDG6B-fj9YbL1PUN-ynp-tmxVpSj6Z1QHT_RNxfSD8JXeVVy1V-XB8yxl82gXjoDNx9bfNpkSPEBgv0BCFpZqHtiLBZK3Qw4s9i4Fqk0EoVT-5WkHHuMVbs9WxTBko7jFHHAtAKsD8Vb-8orpF_HoTuH7UrRRiwqWe-VdnhDUT7QFNwI_UuB7S3_dP-hp6v6lxGdIw_K5VcX1w3n771i6AxARd1tbgbblg2hPsgz68J-91e6pX1aKm1OuNEcCXo1CdrP0ssknAoSAOSiw1OAv7sTTgdiPt9Zu-ht-O_cEqbQJuBCa5VtvfaG13WLMNrfZPFlhQROrDnYIMiBzvzQUty9haXaupm4DOavSTSGomy6wS316Mj_7c8CnPOoqkG0xTPu4Hr3fLDOvpGTyKL01s8is-WszozTTltY0WFHV_DtC26BnrJgGguvQbDObtsiBXO_cOhTOP7nzTUUL3b7WEe__pf3ZUGcyrquwIw3Mi9vV9rYu79vwxuHLUOl4XhWZkqVNoOBJGjWW0IRjLqNp_MwpEjBA5UK6fG7jmmab73Pb-3UQu6NgOCh5HTEHa4UjR4Ss9jaH-qt2VYGXcN4npjUHrEhRK5E-2eYruwGssqgkMdjteGtg2tmC_Zfj-K6xngzctlO6Tv2BhVZh36RJO-EV2FiMMYP1dx6XYmBSgeA8VeE85NkxirhP9Vzfg9aSK_WUfAe-n8VK6K7l54iJza6coE8GN_SnOeol4SAo7FKdFDP_-fuLsz_lL4yuNv6rg8YsH_J_kqkshFtveaRB7eOk56zMdcREscBsW6zl9x6hBRAC6llUUZVgB-5d-zubyesGGJ22kRqXQRCOdSWrHZM4Si6hVlinQjHh4PLbbM1wWFVPDgFUAS-hoix4fPLW87mvnzJv0HuogX-dbsjSaVmX6Ln0_h1Ix3BO61jXKcauEQwz5N5"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 408,
+          "completion_tokens": 164,
+          "total_tokens": 572,
+          "cost": 0.03612,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.03612,
+            "upstream_inference_prompt_cost": 0.008568,
+            "upstream_inference_completions_cost": 0.027552
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 93,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

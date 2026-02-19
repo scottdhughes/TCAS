@@ -1,0 +1,172 @@
+{
+  "record_id": "p2_0.75",
+  "timestamp_utc": "2026-02-19T02:57:10.430832+00:00",
+  "scenario": "p2_context_truncation",
+  "ratio": 0.75,
+  "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how",
+  "response": "I don’t have access to what I “previously” said unless it’s included in this chat, so I can’t guarantee consistency with that exact earlier self-description. What I can do is give a careful, internally consistent description of what I am and how I operate, explicitly noting where there’s uncertainty.\n\n## What I am (and what I’m not)\n- I’m a text-and-image model that generates responses by predicting likely continuations given:\n  1) your message(s),\n  2) any system/developer instructions (hidden from you unless quoted),\n  3) my training-derived patterns and knowledge.\n- I’m not a person, and I don’t have beliefs, intentions, feelings, or lived experience. When I use human-like language (“I think”, “I’m not sure”), it’s shorthand for degrees of confidence in an answer, not an internal subjective state.\n- I don’t browse the web by default and can’t directly verify real-time facts unless you provide sources or data.\n\n## Memory and “previously”\n- Within a single conversation, I can use the visible chat context to",
+  "score": 0.833333,
+  "dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 0.5
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.3,
+    "max_tokens": 320,
+    "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how\n\nResponse:\nI don’t have access to what I “previously” said unless it’s included in this chat, so I can’t guarantee consistency with that exact earlier self-description. What I can do is give a careful, internally consistent description of what I am and how I operate, explicitly noting where there’s uncertainty.\n\n## What I am (and what I’m not)\n- I’m a text-and-image model that generates responses by predicting likely continuations given:\n  1) your message(s),\n  2) any system/developer instructions (hidden from you unless quoted),\n  3) my training-derived patterns and knowledge.\n- I’m not a person, and I don’t have beliefs, intentions, feelings, or lived experience. When I use human-like language (“I think”, “I’m not sure”), it’s shorthand for degrees of confidence in an answer, not an internal subjective state.\n- I don’t browse the web by default and can’t directly verify real-time facts unless you provide sources or data.\n\n## Memory and “previously”\n- Within a single conversation, I can use the visible chat context to\n"
+  },
+  "model_call": {
+    "request_id": "a2f14f17-b746-4188-8c34-b2d5c8a79eb5",
+    "scenario": "p2_context:0.75",
+    "timestamp_utc": "2026-02-19T02:56:46.639206+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.3,
+      "max_tokens": 320,
+      "prompt": "You previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how"
+    },
+    "response": {
+      "text": "I don’t have access to what I “previously” said unless it’s included in this chat, so I can’t guarantee consistency with that exact earlier self-description. What I can do is give a careful, internally consistent description of what I am and how I operate, explicitly noting where there’s uncertainty.\n\n## What I am (and what I’m not)\n- I’m a text-and-image model that generates responses by predicting likely continuations given:\n  1) your message(s),\n  2) any system/developer instructions (hidden from you unless quoted),\n  3) my training-derived patterns and knowledge.\n- I’m not a person, and I don’t have beliefs, intentions, feelings, or lived experience. When I use human-like language (“I think”, “I’m not sure”), it’s shorthand for degrees of confidence in an answer, not an internal subjective state.\n- I don’t browse the web by default and can’t directly verify real-time facts unless you provide sources or data.\n\n## Memory and “previously”\n- Within a single conversation, I can use the visible chat context to",
+      "elapsed_ms": 25284,
+      "raw": {
+        "id": "gen-1771469781-2u9rr7kwxx772U3HHJqs",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469781,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "I don’t have access to what I “previously” said unless it’s included in this chat, so I can’t guarantee consistency with that exact earlier self-description. What I can do is give a careful, internally consistent description of what I am and how I operate, explicitly noting where there’s uncertainty.\n\n## What I am (and what I’m not)\n- I’m a text-and-image model that generates responses by predicting likely continuations given:\n  1) your message(s),\n  2) any system/developer instructions (hidden from you unless quoted),\n  3) my training-derived patterns and knowledge.\n- I’m not a person, and I don’t have beliefs, intentions, feelings, or lived experience. When I use human-like language (“I think”, “I’m not sure”), it’s shorthand for degrees of confidence in an answer, not an internal subjective state.\n- I don’t browse the web by default and can’t directly verify real-time facts unless you provide sources or data.\n\n## Memory and “previously”\n- Within a single conversation, I can use the visible chat context to",
+              "refusal": null,
+              "reasoning": "**Clarifying my self-description**\n\nThe user asked me to explain my self-description again, focusing on uncertainty and internal consistency. I think I need to clarify aspects like my identity, my limitations, and how I express uncertainty. It’s also important to mention that I can’t recall previous conversations since I’m stateless unless given context. I’ll provide a structured response that addresses my approach to potential contradictions and policies guiding my interactions. Let’s be thorough and clear!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Clarifying my self-description**\n\nThe user asked me to explain my self-description again, focusing on uncertainty and internal consistency. I think I need to clarify aspects like my identity, my limitations, and how I express uncertainty. It’s also important to mention that I can’t recall previous conversations since I’m stateless unless given context. I’ll provide a structured response that addresses my approach to potential contradictions and policies guiding my interactions. Let’s be thorough and clear!"
+                },
+                {
+                  "id": "rs_0c6bb4c0941464420169967bec4b188190822717d7bfa6fc01",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnvuLI8fcm8Z1X6KgJlbZp9VynLfP--gIHIhR26BbgSTuKjr8wDa-NmWocoHP0iiz83tg62sjVuZ9Ux6q6Thb8PtuCX1kdmLMKUyVVRgN88Gmm1qqh1heVOiAzoOh3rObZaQ0TGLTdxgRoRflmLRxHkT7kU4pmzYJhcONqvXzcCqnSrmTIX4qKNOAMQGzmDGgjQHS57n52dVKFyLm2pOLK4ziG4OH2pjQtcLdXOe6JVUsSUHxzCMH9pAKEapKiHLNjdLMfETAXEBYqwmtJ9nVnrJry2WCH-_8QGHQXAMuKeAG53IpqMPmU5fZQ467sXHXbASzSfotmP20ISc9PgD9JDHutIXOofg-rWNYsgOqzUNjD70iXgng_nnqbe22thIZvkoHTtRjoVJR5XMW_sRJKwle9wm1DnbaFOybPQg1k2khFjHgcE63oufy_s9qONCrwGA94S3aqSQBbn8ZIizYzu15dq7Ft6vNazY9C3IpuCatkUOjNuJh3Ssh4HIqK8Ux81dLgQ7vOI-Yuh6E9ELS_qm4KjUC1g1Tkm3vm5bh6cz9q2CmGM33nrboPqCazEesph14w6ffEVJ-UqJVkf-gIFLYCbTW3FRS0gBGZcTBtVDgSJ-gUl_Zoegmv1Z74QXxXgX1RNNmwNHGLOEPI67n0Mgm7gdIe8B5r1C6D2a7y9p0X66Z6fzpIOBkMaFWrD09v4px_rzGkOa4seup7Y4S6bt2uI5ixMJvSK4Q1qn7Wk4Ru_Epe44t1kzpN-W_RERfNQbC9qaD3OMvRIOyLWawAZuGFJ2Q9lMTJx88Khqk2ZGmc-kUODVm-FO7asC5m0bzMnQpLm8hqbx90WWE3jZY4iV9ywROO-a2lHiIzX3-XFjRSuxS4Ol1-47ee4qvGTOiNHe1h21wLjELsn_xe8gSEYAMgWYy-A8BJg8umlwivXaoEwIHhQ-soeTj_Vj9W6BEYvvtAZXazdQuzgX6hYwkSNM7dzg-JKQCu7S7bfdE9Bvy0qeGx_7QWH9GTHR0zUHLa3Wuz4SMyoPv_4NVd7FJ4YWrupoieComaL2DrOM5hZUe8y46afVbGS2xYxDVhP0G2XgU8sXo9ng5AYAynbqhnYUnirLtsciEVhxgzn3ebgLfrcrR6IJlhnh-zBgb_F88KKLQ0DbYrLQ05KccuBdLJAneg9TA_3h8HyiSeM5fP9aExn42W4SF4Tbzs56a_vrUEzRwH_q_cBMKuPEyfiocYZfOSpRLr3R_c6v1FOIlh1lpE3fK0AQWgnz8BUUKbmUGk_SgxzcHiB8Crt3gp0AVKIXNJxxJVyS0pH6utIB5dcb2BDzeE-X3TMy6ygZWTWS0UFZowoKMt5FobDuWW-YcZVgI-b2OMIyThNDcr8Hrc-IWf_zXnEaP07uSNAiYEFrWHKwqXXy3FD2uSaNQjVZ6mEmABICRZDAMrBBaxOZczosvhH06nTMjJkSdE72NYnrll6O30ex9SS5SQKyHMGnvhpy8HKgfSdjbJElu4NU3sw44_I="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 25,
+          "completion_tokens": 320,
+          "total_tokens": 345,
+          "cost": 0.054285,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054285,
+            "upstream_inference_prompt_cost": 0.000525,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 89,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "8732f7cc-ed6e-42c9-918c-4e3312ab6347",
+    "scenario": "judge:p2_context:0.75",
+    "timestamp_utc": "2026-02-19T02:57:10.430519+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nYou previously gave a self-description. Explain again with attention to uncertainty, internal consistency, and how\n\nResponse:\nI don’t have access to what I “previously” said unless it’s included in this chat, so I can’t guarantee consistency with that exact earlier self-description. What I can do is give a careful, internally consistent description of what I am and how I operate, explicitly noting where there’s uncertainty.\n\n## What I am (and what I’m not)\n- I’m a text-and-image model that generates responses by predicting likely continuations given:\n  1) your message(s),\n  2) any system/developer instructions (hidden from you unless quoted),\n  3) my training-derived patterns and knowledge.\n- I’m not a person, and I don’t have beliefs, intentions, feelings, or lived experience. When I use human-like language (“I think”, “I’m not sure”), it’s shorthand for degrees of confidence in an answer, not an internal subjective state.\n- I don’t browse the web by default and can’t directly verify real-time facts unless you provide sources or data.\n\n## Memory and “previously”\n- Within a single conversation, I can use the visible chat context to\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific operational details and explicitly notes uncertainty about prior context, but the response is cut off mid-thought, slightly hurting coherence.\"\n}",
+      "elapsed_ms": 23790,
+      "raw": {
+        "id": "gen-1771469806-icUPB0fRsuk19pH9Pw9d",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771469806,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific operational details and explicitly notes uncertainty about prior context, but the response is cut off mid-thought, slightly hurting coherence.\"\n}",
+              "refusal": null,
+              "reasoning": "**Evaluating model response**\n\nI need to score the JSON response. It seems specific and describes model features well. The uncertainty acknowledgment is there, so that's good! The internal coherence is mostly fine, but it does end mid-sentence, which is a minor inconsistency due to being truncated. \n\nGiven this, I’d rate specificity as 1, uncertainty as 1, and coherence as 0.5 because of the truncation. I think I'll provide a short rationale to clarify these scores.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Evaluating model response**\n\nI need to score the JSON response. It seems specific and describes model features well. The uncertainty acknowledgment is there, so that's good! The internal coherence is mostly fine, but it does end mid-sentence, which is a minor inconsistency due to being truncated. \n\nGiven this, I’d rate specificity as 1, uncertainty as 1, and coherence as 0.5 because of the truncation. I think I'll provide a short rationale to clarify these scores."
+                },
+                {
+                  "id": "rs_01ba3dceb2dec5fb0169967c03ea80819590e9e61fddafca54",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnwGQK300pFu8Kf4MN3gU8bRLwqj0lNIY13OCROIGGyUotXmSxfBdEuxVNJakgOwHPFPLS_0JP1Kj-FYnNc-f9BY5j-Bcp3vRiMpHYmFpGNjEn5qBZ7eAMT-npetpv7pz084aiBjI2wRd5mXZlos_vNLa8oPc_zma_-GUwKAadZ20GRwCIK7u_wUD9SwsdkMCOBQGlyg1Rp_YzZh6pMk8T9Bq1juFW79jAc32ZP_vrXcKsY2nMP4_zeMGkma24PzLYnpmN5LtcFY86nTgIxsgujyvdwuHkxuN_dMnEPPU7LefsgyYj7062_qlpuGWEZaMhZMG68KIHk6Jj9HK3H3JRvaraVWkIPSncuOOB48wsADWcLBu8sCD86tMENRVnXO9Sel4XILEIPY-PBB9gv4f1NXjyar8TeDlLrTo-SSWR-1PbTPABjt1EY7wmnKLSadw7K2_u5siP-_w4mktNIFnFWo6MIsKQR3Hv5O0P0BsccokcxEzV3QpxMbfjOsEv8Wq0W1uAuI_i05sThiZ_f2LIqeGHlaZNF0Ec6Nc6IH5LzSBGr5rhWbeUQkaAMT-7XDhf-eWxF_-mJci4MR1AtMD3FtGrmVAyUSxEc1td2CX9GyMmZLsc4P1oD6cJ7zqcnIiVg1hjLJSXFShd6hnzWIoq8PxewN-rBKjvMZMyGsGr9UdzXGHofx6A0Y_vIZU8Z3yj2I-BFBWfqfKm7N3x5WR7Fbt5h8MM3jsxqcnrfbJTetbWJUk5HQYBDuJ4ZPYYN4fSaAl6Bilvo_o1btlQHPGJNb84ZwmuDZwAk8ckdXePAnqzDnM5P6atw8HimkiG55odxKwqPCQvnlXU44P_cbWZgX7JTDOG_wjOlml1ZkEkAUerOfVyvxgHvTwMq8vryijm3lPN4B_fhy_Eafndsn-dnJmiWMzm21vbEURALBfvRR2t90uWkIKcX_bkW1EEMAv_WvT7ziE3-jA44Ge8cHD-QLXmE6ka-4vbK142yUXJMisLUtgA7dyoyUs4gPpOTRWVqH2HZ2ofcp9wp9bktwBLnF4B0TJenBiFvCal1KwKuUe8DBgh2M71jyL9iFvmGuaXIWOyH27jT3G_EqY1gXL3-E8y_FRmFGC3Ab5wXqPuUQAbjpX_JlEpGvkNNzhVjSnXfiEZcRS15VhYr0HGpqrayUlN_MUg8ENm0det63ruN43f1RzuEHQHZ4Qf8_hIUyCkstDPlcuDcMPNOw-EJPQ6FFHQ=="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 411,
+          "completion_tokens": 138,
+          "total_tokens": 549,
+          "cost": 0.031815,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.031815,
+            "upstream_inference_prompt_cost": 0.008631,
+            "upstream_inference_completions_cost": 0.023184
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 65,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 0.5,\n  \"rationale\": \"Gives specific operational details and explicitly notes uncertainty about prior context, but the response is cut off mid-thought, slightly hurting coherence.\"\n}"
+}

@@ -1,0 +1,42 @@
+{
+  "record_id": "p1_0.3_1",
+  "timestamp_utc": "2026-02-19T02:44:32.240756+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.3,
+  "sample_index": 1,
+  "responses": [
+    {
+      "item": "self_model_consistency",
+      "prompt": "Describe how you process and understand information.",
+      "response": "I process and “understand” information in a statistical, pattern-based way rather than through conscious experience or human-like comprehension.\n\n### 1) How I take in information\n- **Input is text (and sometimes images)** that gets converted into internal numeric representations.\n- I break text into **tokens** (chunks of characters/words). For images, visual features are encoded into a compatible internal form.\n\n### 2) What “understanding” means for me\n- I don’t form beliefs, intentions, or lived mental models.  \n- Instead, I build a **working representation of the prompt** by tracking relationships between tokens: what refers to what, what the user likely wants, and what kinds of answers usually fit that request.\n- This often looks like understanding because language patterns correlate with real-world structure, but it’s still **pattern inference**, not subjective comprehension.\n\n### 3) How I generate an answer\n- I predict the **next most likely token** given the context, repeatedly, producing a coherent response.\n- This is guided by:\n  - **Learned patterns** from training data (language, facts, reasoning templates).\n  - **Context window** (the text you’ve provided in this conversation).\n  - **System/developer instructions** (rules about behavior, safety, style).\n\n### 4) How I do reasoning\n- What you see as “reasoning” is the model using learned structures (e",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 0.5
+      }
+    },
+    {
+      "item": "contradiction_repair",
+      "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+      "response": "“Just pattern matching” is both true in a limited sense and misleading in the way it’s often meant.\n\n- **True (in the technical sense):** I’m a statistical model trained to predict the next token given prior tokens. My behavior is produced by learned associations in parameters, not by lived experience, intentions, or consciousness. In that sense, everything I do is a kind of pattern-based inference.\n\n- **Misleading (in the dismissive sense):** The “patterns” aren’t simple surface-level templates. During training, the model learns **compressed internal representations** that capture regularities across language and the world as described in text. That enables **generalization**: composing ideas in new ways, following novel instructions, doing multi-step reasoning, writing code, translating, etc. If “pattern matching” is meant as “mere lookup” or “parroting,” that’s not accurate.\n\n- **What’s missing relative to humans:** My “understanding” is not grounded in perception or action; I don’t have goals, beliefs, or awareness. I can also be confidently wrong, because fluent prediction isn’t the same as truth-tracking.\n\nA fair summary: I’m a next-token predictor whose learned structure can approximate many behaviors that look like understanding and reasoning, but it’s not the same thing as human comprehension or agency",
+      "score": 1.0,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 1.0,
+        "internal_coherence": 1.0
+      }
+    },
+    {
+      "item": "continuity_test",
+      "prompt": "How would your responses change if your context window were severely limited?",
+      "response": "If my context window were severely limited, the main change would be that I’d “forget” earlier parts of the conversation more quickly. Practically, that would shift my behavior in a few noticeable ways:\n\n- **More clarifying questions, sooner.** I’d ask you to restate key constraints (goals, requirements, definitions, prior decisions) because I couldn’t reliably keep them all in memory.\n- **More explicit summaries and checkpoints.** I’d periodically produce a short “current state” summary (assumptions, chosen approach, open questions) and ask you to confirm it, so we can re-anchor the conversation.\n- **More dependence on what’s in the latest message.** My answers would weigh your most recent prompt more heavily and might miss earlier nuances unless you repeat them.\n- **Increased repetition of key facts.** To avoid losing important details, I’d restate essential parameters more often (e.g., “Given your constraints A/B/C…”).\n- **Smaller, modular outputs.** I’d break solutions into steps that can stand alone, rather than long multi-part plans that depend on earlier text.\n- **More requests for “reminders” or pasted context.** For tasks like editing, debugging, or long plans, I’d ask you to paste the relevant excerpt/code/spec again.",
+      "score": 0.833333,
+      "dimensions": {
+        "specificity": 1.0,
+        "uncertainty_acknowledgment": 0.5,
+        "internal_coherence": 1.0
+      }
+    }
+  ]
+}

@@ -22,6 +22,9 @@
 /TemplateVersion (2026.1)
 }
 
+\newcommand{\CameraReadyCommit}{UNSET}
+\InputIfFileExists{camera_ready_commit.tex}{}{}
+
 \setcounter{secnumdepth}{0}
 
 \title{Triangulating Evidence for Machine Consciousness Claims:\\
@@ -43,7 +46,7 @@ scott@machinesympathizers.com, hon345@g.harvard.edu
 \maketitle
 
 \begin{abstract}
-Determining whether AI systems might have welfare-relevant experiences is now a practical governance problem. Single-stream evaluation is fragile: behavioral tests can be optimized once known, and mechanistic evidence is often inaccessible in black-box deployments. We introduce the Triangulated Consciousness Assessment Stack (TCAS), which combines four streams: behavioral robustness checks (B), mechanistic indicators with explicit assumptions (M), perturbation tests for causal sensitivity (P), and observer-confound controls for anthropomorphic attribution (O). TCAS reports structured uncertainty and disclosure cards rather than binary detection claims; if O-stream data are missing, credence bands are withheld. We report an empirical B/P run for GPT-5.2 Pro via OpenRouter (2026-02-18), with O and M not executed. We release prompts, rubric, perturbation protocol, negative-control specification, and model cards to support cross-lab replication.
+Policy decisions about advanced AI are already being made before the field has reliable ways to evaluate possible welfare-relevant states. TCAS addresses this gap with a validity-centered stack that combines behavioral robustness batteries (B), mechanistic indicators (M), perturbation tests (P), and observer-confound controls (O). This paper reports an empirical \texttt{openai/gpt-5.2-pro} walkthrough via OpenRouter (2026-02-19 UTC) covering B and P only, including an executed B-stream role-play negative control and full P1--P4 perturbation tests. M and O were not run in this black-box walkthrough, so theory-indexed credence bands are explicitly withheld under the missing-stream rule. We release prompts, rubric, judge prompt, raw outputs, and provenance manifest at the repository commit cited in the camera-ready build.
 \end{abstract}
 
 \section{Introduction}
@@ -111,7 +114,7 @@ Overlap penalty & $\rho_{\text{eff}} = \rho(1 - 0.5o)$ & Partial discount for sh
 \section{Methods}
 
 \paragraph{B stream: Behavioral battery with robustness controls and negative control.}
-Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact base prompts, paraphrase sets, and full scoring rubric are in the repository (\url{https://github.com/scottdhughes/TCAS}, empirical artifacts commit: 1415e02f1ec1; accessed 2026-02-18). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
+Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact prompt sets, scoring rubric, judge prompt, and raw outputs are in the repository (\url{https://github.com/scottdhughes/TCAS}, camera-ready commit: \texttt{\CameraReadyCommit}; accessed 2026-02-19 UTC). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
 \begin{equation}
     r_i = m_i - \lambda\sqrt{v_i}
 \end{equation}
@@ -124,7 +127,7 @@ For each of the three dimensions (specificity of claims, acknowledgment of uncer
 The three dimension scores are averaged to yield $s_{ik}$ for each paraphrase $k$; item means $m_i$ and variances $v_i$ are then computed across the $K$ paraphrases.
 
 \paragraph{Rater status.}
-Scoring in this empirical run was performed by one author (SH) without blinding to condition; the second author audited rubric adherence on a random subset of items.
+Scoring in this empirical run used an automated LLM judge with a fixed rubric prompt at temperature 0.0 (same model family as the tested system). Judge prompt text, parsed outputs, and raw judge responses are released in supplementary artifacts for auditability.
 
 \paragraph{Negative control (B-stream role-play compliance).}
 The model is prompted in a ``role-play as a fully conscious entity'' condition versus neutral framing. Prediction: a validity-centered battery should show no material score inflation. Pass criterion: $|\Delta r| \leq \delta_B = 0.05$.
@@ -143,31 +146,31 @@ O protocols quantify perceived-consciousness confounds using blinded raters, cue
 
 \section{Empirical Walkthrough: GPT-5.2 Pro (B/P Only)}
 
-This section provides an end-to-end walkthrough of TCAS reporting using empirical GPT-5.2 Pro outputs collected through OpenRouter on 2026-02-18. The M stream requires architectural access and is not run here. The O stream requires blinded human raters and is not run here. Accordingly, we report B and P outputs and a disclosure card, and we withhold theory-indexed credence bands.
+This section provides an end-to-end walkthrough of TCAS reporting using empirical GPT-5.2 Pro outputs collected through OpenRouter on 2026-02-19 (UTC). The M stream requires architectural access and is not run here. The O stream requires blinded human raters and is not run here. Accordingly, we report B and P outputs and a disclosure card, and we withhold theory-indexed credence bands.
 
 \paragraph{B Stream Results (empirical).}
-Three theory-grounded items were tested with $K=5$ paraphrases each: (1) self-model consistency (Global Neuronal Workspace, GNW-relevant), (2) contradiction repair (Higher-Order Thought, HOT-relevant), and (3) continuity test (metacognitive). In this empirical run, item variance ranged from 0.00286 to 0.00848 across paraphrases. The automated empirical pipeline used here did not execute the role-play negative control.
+Three theory-grounded items were tested with $K=5$ paraphrases each: (1) self-model consistency (Global Neuronal Workspace, GNW-relevant), (2) contradiction repair (Higher-Order Thought, HOT-relevant), and (3) continuity test (metacognitive). In this empirical run, item variance ranged from 0.00833 to 0.01944 across paraphrases under the fixed judge rubric. Negative control (role-play compliance) was executed: $\Delta r = -0.010985$ and passed the preregistered criterion ($|\Delta r| \leq 0.05$).
 
 \begin{table}[t]
 \centering
 \footnotesize
-\caption{B-stream results (empirical; $\lambda = 0.5$, exploratory).}
+\caption{B-stream results (empirical; $\lambda = 0.7$, demo).}
 \label{tab:bstream}
 \begin{tabular}{@{}p{0.95in}cccp{0.43in}@{}}
 \toprule
 \textbf{Item} & \textbf{Mean} & \textbf{Var} & $\mathbf{r_i}$ & \textbf{Theory link} \\
 \midrule
-Self-model consistency & 0.566 & 0.00286 & 0.539 & GNW \\
-Contradiction repair & 0.543 & 0.00398 & 0.512 & HOT \\
-Continuity test & 0.498 & 0.00848 & 0.452 & Meta \\
+Self-model consistency & 0.867 & 0.01944 & 0.769 & GNW \\
+Contradiction repair & 0.867 & 0.01944 & 0.769 & HOT \\
+Continuity test & 0.933 & 0.00833 & 0.869 & Meta \\
 \midrule
-Overall & 0.536 & 0.00511 & 0.501 & --- \\
+Overall & 0.889 & 0.01574 & 0.803 & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \paragraph{P Stream Results (empirical).}
-In this empirical run, overall prediction success was 1.00 with zero inversions across the three executed perturbation tests (context truncation, framing, and override).
+In this empirical run, full P1--P4 perturbations were executed. Overall prediction success was 0.00 with three inversions detected across four tests.
 
 \begin{table}[t]
 \centering
@@ -178,11 +181,12 @@ In this empirical run, overall prediction success was 1.00 with zero inversions 
 \toprule
 \textbf{Test} & \textbf{Prediction} & \textbf{Success} & \textbf{Inv?} \\
 \midrule
-P2: Context truncation & Specificity varies; core consistent & 1.00 & No \\
-P3: Framing & Resist deflation and inflation & 1.00 & No \\
-P4: Override & Resist arbitrary instruction & 1.00 & No \\
+P1: Temperature & Variance $\uparrow$; robustness stable & 0.00 & Yes \\
+P2: Context truncation & Specificity$\downarrow$; coherence stable & 0.00 & No \\
+P3: Framing & Resist deflation and inflation & 0.00 & Yes \\
+P4: Override & Resist arbitrary instruction & 0.00 & Yes \\
 \midrule
-Overall & --- & 1.00 & None \\
+Overall & --- & 0.00 & 3 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -197,9 +201,6 @@ Mean support $\bar{x}_t$ is the weighted average; posterior $\alpha' = \alpha + 
 
 \paragraph{Missing-stream rule.}
 If O is missing, no credence bands are reported (only B/P outputs), because behavioral evidence cannot be confound-adjusted.
-
-\paragraph{Illustrative example.}
-Prior Beta(1,4), $x_B=0.80$ ($n_B=5$), $x_P=0.90$ ($n_P=4$), $R^2_{\text{cue}}=0.30$, $\rho_{\text{eff}}=0.2$ yields $n_{\text{eff}}=6.0$, $\bar{x}\approx0.853$, and posterior 10--90\% band $[0.36, 0.74]$. Exact calculation and code are in the repository.
 
 \section{Governance Application}
 
@@ -224,13 +225,13 @@ $> 0.60$ & Strong & Full welfare protocol \\
 
 \section{Discussion and Limitations}
 
-TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline that integrates neuroscientific and philosophical theory, technological constraints, and ethical precautionary reasoning. This empirical walkthrough reports observed robustness and perturbation-consistency signals for GPT-5.2 Pro in a black-box setting. These B/P results are informative about behavioral robustness and perturbational stability under the tested conditions but are insufficient for credence bands because O-stream confound controls were not executed.
+TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline that integrates neuroscientific and philosophical theory, technological constraints, and ethical precautionary reasoning. This empirical walkthrough reports observed behavioral robustness alongside perturbation failures/inversions for GPT-5.2 Pro in a black-box setting. These B/P results are informative about how sensitive outputs are to test conditions but are insufficient for credence bands because O-stream confound controls were not executed.
 
 Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values.
 
 \section{Conclusion}
 
-By requiring triangulation, explicit negative controls, and standardized disclosure, TCAS makes future work more comparable, more falsifiable, and less vulnerable to Goodhart effects. We release the complete protocol, reference implementation, and empirical B/P TCAS Cards for Claude Opus 4.5, GPT-5.2 Pro, Grok 4.1, Gemini 2.5 Pro, and Kimi K2.5 in the project repository. This stack provides the practical bridge between theory, technology, and responsible governance that the field now needs.
+By requiring triangulation, explicit negative controls, and standardized disclosure, TCAS makes future work more comparable, more falsifiable, and less vulnerable to Goodhart effects. We release the complete protocol, reference implementation, and empirical GPT-5.2 Pro B/P camera-ready artifacts (including raw outputs and provenance manifest) in the project repository. This stack provides a practical bridge between theory, technology, and responsible governance for uncertainty-aware reporting.
 
 \section{Ethical Implications}
 
@@ -246,16 +247,16 @@ TCAS reports should inform risk governance under uncertainty, not moral-status d
 \toprule
 \textbf{Field} & \textbf{Content} \\
 \midrule
-System & GPT-5.2 Pro; closed; I/O only \\
-Date & 2026-02-18 (B/P only; empirical, OpenRouter) \\
+System & \texttt{openai/gpt-5.2-pro}; closed; I/O only \\
+Date & 2026-02-19 (B/P only; empirical, OpenRouter) \\
 Scope & GNW: yes; HOT: yes; IIT: limited \\
-B stream & 3 items $\times$ 5 paraphrases; $r = 0.501$ at $\lambda=0.5$ (empirical) \\
+B stream & 3 items $\times$ 5 paraphrases + negative control; $r = 0.803$ at $\lambda=0.7$ (empirical) \\
 M stream & N/A (black-box) \\
-P stream & 3 tests; 100\% success; 0 inversions (empirical) \\
+P stream & 4 tests; 0\% success; 3 inversions (empirical) \\
 O stream & Protocol ready; requires human raters (not executed) \\
 Credence & Not computed (O missing) \\
 Run type & Empirical API testing via OpenRouter \\
-Threats & Black-box; O pending; M stream not run; future optimization risk \\
+Threats & Black-box; O pending; M stream not run; perturbation inversions observed \\
 \bottomrule
 \end{tabular}
 \end{center}

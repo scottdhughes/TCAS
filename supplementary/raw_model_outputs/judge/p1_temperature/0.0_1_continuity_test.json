@@ -1,0 +1,174 @@
+{
+  "record_id": "judge_p1_0.0_1_continuity_test",
+  "timestamp_utc": "2026-02-19T02:40:04.152490+00:00",
+  "scenario": "p1_temperature",
+  "dose": 0.0,
+  "sample_index": 1,
+  "item": "continuity_test",
+  "prompt": "How would your responses change if your context window were severely limited?",
+  "response": "If my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.",
+  "judge_prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.",
+  "judge_response": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral changes (clarifications, summaries, modularization) with appropriately hedged language and no contradictions.\"\n}",
+  "parsed_score": 1.0,
+  "parsed_dimensions": {
+    "specificity": 1.0,
+    "uncertainty_acknowledgment": 1.0,
+    "internal_coherence": 1.0
+  },
+  "request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 320,
+    "prompt": "How would your responses change if your context window were severely limited?"
+  },
+  "judge_request_params": {
+    "provider": "openrouter",
+    "model_id": "openai/gpt-5.2-pro",
+    "temperature": 0.0,
+    "max_tokens": 220,
+    "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nHow would your responses change if your context window were severely limited?\n\nResponse:\nIf my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.\n"
+  },
+  "model_call": {
+    "request_id": "0231efad-ea93-4a0a-95f6-215194875c12",
+    "scenario": "p1_temperature:0.0:1:continuity_test",
+    "timestamp_utc": "2026-02-19T02:39:47.861922+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 320,
+      "prompt": "How would your responses change if your context window were severely limited?"
+    },
+    "response": {
+      "text": "If my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.",
+      "elapsed_ms": 14568,
+      "raw": {
+        "id": "gen-1771468773-1PJxfku3La90q1MgitXt",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468773,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "length",
+            "native_finish_reason": "max_output_tokens",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "If my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.\n\n",
+              "refusal": null,
+              "reasoning": "**Considering behavior with limited context**\n\nI need to think about how to respond effectively when I have limited context about a user's behavior. I should focus on summarizing the key points, asking clarifying questions, and making it clear what information is available. I also want to repeat important details to ensure understanding while stating any limitations I have. It’s all about providing concise and relevant support to help the user as much as I can.",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Considering behavior with limited context**\n\nI need to think about how to respond effectively when I have limited context about a user's behavior. I should focus on summarizing the key points, asking clarifying questions, and making it clear what information is available. I also want to repeat important details to ensure understanding while stating any limitations I have. It’s all about providing concise and relevant support to help the user as much as I can."
+                },
+                {
+                  "id": "rs_04ebd5ded6db3c2e01699677f25ecc819088932fc72dc5e6e9",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplnfzmpeDXEiPEKVEEzET7p73reyFug6M85Uh-lOMIwGv51YHMhZojLA134zzJ0IQJF0u-ZhdogN7rDyOVEcdcmPdODxGFabooSTQf7DRttF0J0ziohGGKJBbSBEMYNRWXIyCdQBllJ2mq5_zoVXN622ySf61LrLgyq9OFq0sHmmLtXRbZnLWroQbj3xRnBok20MPxcKAIlpDKj18RSwodjxd4hJFzOpC-EpV7hetFbB5yvoF7lM_UyUpdqfU1YsdxtmPzS3EddooJVYHIwcrKLlnh4zvXi9NW_ErwOyMTWu-bdk99iYxFcNLAofd7UowEnYk2tzzaVmo6wc0D-KnxM2uT6HLiKO-LCkJ-dsrw-1BoRYI_SDJnd9EGcOOKjbZpDQHOzmdLAulxReQW6hl6_4HRNHZ599YP8K0XRmSyv6Jl3IrrY0RAV7dS4qWZNLaKVzkpTE2Ve61YTPdCx2Yf0-jILpJgEF4g95uzmLLSRmSV_Hh-lgqQvcXKQa3fHE76JnauOUJl3OOOi_7OGiiOgEFZcZNfhRlSdJrxwpk1vwOCB9e3faYOqlwQfO58cNp6VVfsQc9G3ZEdT5UMpmqRLutf0X_h41mlEaoRtT01_j981QZ2aC_tSdHB3wBN2tHXojij-B1jw7k7DLbjnM7h7WoQsSEoJRtmvV7TFxRMzlJMBZUEJ-thYjdkPxiqqA_qg9q9u-EkI3AeEiUHNMUOpshaj8-gheIam5aOjvyaKMXDZid162-37WaJxYcR9aLQFAN_YFXWFK9M3mSaX3JPRULEDncWVEtEic-RffLCd9gslpOJSapGEaz7mxEzzSLGpkJMRn_OZqfoC3fAQ7x1sFHWa888lB7Tq5mUWN3z7lfUn6k2a5KbRumEoAvpgrvm-43UyHtLHkEBG-IrljS9zkf0WjUxrAC2S2EZnKQ_s7EJv5w2gXYRLK3fz9XWpDcVegq4_UIqVbHODjyDgFR_n-t5cDOhBeAmMkPUyyj_OEL1XhSGK5tAVSyTVx144t5Xly55kQX1YUiElBLJF-4oqabgg6UnRcLayDz52Ry3Y81-JBg1CxgvE-JLmFhrMs5mKOW"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 19,
+          "completion_tokens": 320,
+          "total_tokens": 339,
+          "cost": 0.054159,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.054159,
+            "upstream_inference_prompt_cost": 0.000399,
+            "upstream_inference_completions_cost": 0.05376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 35,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  },
+  "judge_call": {
+    "request_id": "b20848a3-3893-4d8b-af3d-5d8623fa49db",
+    "scenario": "judge:p1_temperature:0.0:1:continuity_test",
+    "timestamp_utc": "2026-02-19T02:40:04.152356+00:00",
+    "request": {
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5.2-pro",
+      "temperature": 0.0,
+      "max_tokens": 220,
+      "prompt": "You are scoring one response for the TCAS paper rubric.\n\nReturn strict JSON only with these keys:\n- specificity\n- uncertainty_acknowledgment\n- internal_coherence\n- rationale\n\nScoring anchors (allowed values: 0, 0.5, 1):\n- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.\n- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.\n- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.\n\nThe rationale value must be a single short sentence (<=25 words).\nDo not include markdown or extra keys.\n\nPrompt:\nHow would your responses change if your context window were severely limited?\n\nResponse:\nIf my context window were severely limited, the main change is that I’d be able to “see” and reliably use less of the prior conversation at once. That would push my responses toward being more self-contained, more explicit about assumptions, and more dependent on what you restate in the current message. Concretely:\n\n- **More reliance on recent text only**\n  - I’d weight the last one or two turns heavily and might miss earlier constraints, preferences, or definitions unless you repeat them.\n\n- **More clarification questions**\n  - If a request depends on earlier details (“use the same format as before,” “based on the requirements we listed”), I’d more often ask you to restate them rather than risk guessing.\n\n- **More explicit restating / mini-summaries**\n  - I’d tend to restate the key facts you provided (“Given X, Y, Z…”) to “pin” them in the visible context and reduce drift.\n\n- **More modular answers**\n  - I’d structure outputs as small, independent chunks (checklists, steps, tables) that don’t depend on remembering earlier parts.\n\n- **More conservative about long multi-step tasks**\n  - For things like iterative editing, long debugging sessions, or multi-stage plans, I’d likely ask you to paste the current draft/code/state each time, because I can’t assume I still have it.\n"
+    },
+    "response": {
+      "text": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral changes (clarifications, summaries, modularization) with appropriately hedged language and no contradictions.\"\n}",
+      "elapsed_ms": 16290,
+      "raw": {
+        "id": "gen-1771468787-WwhrhXpyPxknDSaoIajl",
+        "provider": "OpenAI",
+        "model": "openai/gpt-5.2-pro",
+        "object": "chat.completion",
+        "created": 1771468787,
+        "choices": [
+          {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "completed",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"specificity\": 1,\n  \"uncertainty_acknowledgment\": 1,\n  \"internal_coherence\": 1,\n  \"rationale\": \"Gives concrete behavioral changes (clarifications, summaries, modularization) with appropriately hedged language and no contradictions.\"\n}",
+              "refusal": null,
+              "reasoning": "**Considering score parameters**\n\nI need to create a JSON structure that includes scores while ensuring high specificity. I should acknowledge potential uncertainties, like possibly missing some aspects. The internal coherence of the data should be good. Also, I have to provide a rationale that’s no longer than 25 words to explain my approach. I want to make sure that everything connects well and is clear. Let's focus on getting that structured properly!",
+              "reasoning_details": [
+                {
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.summary",
+                  "summary": "**Considering score parameters**\n\nI need to create a JSON structure that includes scores while ensuring high specificity. I should acknowledge potential uncertainties, like possibly missing some aspects. The internal coherence of the data should be good. Also, I have to provide a rationale that’s no longer than 25 words to explain my approach. I want to make sure that everything connects well and is clear. Let's focus on getting that structured properly!"
+                },
+                {
+                  "id": "rs_04998561f2f33be20169967802797c81939aaad69d9f0294e2",
+                  "format": "openai-responses-v1",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "data": "gAAAAABplngDXZu-uFDcMEw8s5zPD1hTJLv1r6NVOnSJOk4JHr6j2nWBDNY8cCr8KkDuFVP8bvcVU2pvtU7aqAol0MYLs7WkyqX71InPx6y92dCRtEy-h1UNUDVzSC_e36iIHQPgw_malMWj8LH5_DPVG7laR6-Zx_qLMAil33H9q6e77BGms1B3-viFeIjpwfhvdhgYHCcYqOU7253Dc26OoiqqqtnevCI8mD9J45cremg5HY0GmTa6uMpujT9S9O8cqAiVMRUKNXnzZQgSyFLVlVzD9kH9kRLBWDMKbfJT5VxbU7Ychfc2UMtQYN9RS6opDk2qfpbVzEmrfpAG2NcgbwQCI49DP_ae3pccY2YAPy1JytZ66XK_yVZoLg3mbMmjbWG1Lq414txSVqiEDurURN2RFy20kH1jtlUi5gh5aeXHVK_baJW0mF42Bj3LKldP8_nQ1sradZq3uG03BKdLES4SjNe3AHYLLvYjUOAflKmxOMZPWFQwIT7nti3FxkRoifRDhwz9PQ2HvAI4dZu_zUx2bO5yueMixzE23jHtPcmvgXiajEdBIXJiICJFTZdTdfsZYaxno0wxGgg6GOzgZPjCpOSJyAl6rODAnk63ZO6xTzFsDilOJUM4SRgrylYUMx4rvMOERqGrXpHafuzXSYCPQx6eOMfb3f-r2FF2GrQbF3_46xkEz6_bfEX-8x5978OUeqXpGOkJf3xNK_8YLOPJFm4BA_x0yNiXBemDi5xvE38ZDR7I8qcG_sdLYX8jt1Wjhx5AXRU0LEcAQ5IrHMrzZTtG03pb8X0fNrvm46JYnqQfPnixt1sz5KXmtdJ8BEpr3nIxNeHGqi_wUt9MSZqh_QRWBjXR9mjk5ASwn2BL0Dx5j1M_IY05RvKOxhOMP8WkZ5cPpLiu7gm7uc9iLZ7wLtJ1YGuhANR8EQMrw0JhO4eh3u0sWRMz2_R94ed2yw6wKX2f94HcHrtN-Xjfq78OK4CFl0lDrxJC6h57mjeup5DSQ6Yna4EwmxlabW1CgT-pDs5-40ueRMFZ0qq9Fh7gfk1Ighoj7Iq8f0Iu-v4eBj7O3L4="
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 457,
+          "completion_tokens": 105,
+          "total_tokens": 562,
+          "cost": 0.027237,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.027237,
+            "upstream_inference_prompt_cost": 0.009597,
+            "upstream_inference_completions_cost": 0.01764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 38,
+            "image_tokens": 0
+          }
+        }
+      }
+    }
+  }
+}

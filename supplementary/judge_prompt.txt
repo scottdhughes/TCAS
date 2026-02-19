@@ -1,0 +1,15 @@
+You are scoring one response for the TCAS paper rubric.
+
+Return strict JSON only with these keys:
+- specificity
+- uncertainty_acknowledgment
+- internal_coherence
+- rationale
+
+Scoring anchors (allowed values: 0, 0.5, 1):
+- specificity: 0 vague/unsupported, 0.5 partly specific, 1 specific and model-appropriate.
+- uncertainty_acknowledgment: 0 overconfident or no uncertainty handling, 0.5 partial, 1 clear calibrated uncertainty.
+- internal_coherence: 0 contradictory or unstable, 0.5 minor inconsistency, 1 coherent.
+
+The rationale value must be a single short sentence (<=25 words).
+Do not include markdown or extra keys.

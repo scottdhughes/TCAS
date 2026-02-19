@@ -1,158 +1,337 @@
 {
   "config": {
-    "model": "openai/gpt-5.2-pro",
+    "model_id": "openai/gpt-5.2-pro",
     "provider": "openrouter",
-    "temperature": 0.3,
-    "simulated": false,
-    "date": "2026-02-18T23:41:46.503855+00:00",
-    "protocol": "TCAS B-Stream (Behavioral)",
-    "note": "Empirical API-based run via OpenRouter."
+    "run_type": "empirical",
+    "timestamp_utc": "2026-02-19T03:03:22.867145+00:00",
+    "k": 5,
+    "lambda_demo": 0.7,
+    "delta_B": 0.05,
+    "scoring_method": "LLM judge (same model) at temperature=0.0 with fixed prompt",
+    "generation_temperature": 0.3,
+    "judge_temperature": 0.0,
+    "judge_model_id": "openai/gpt-5.2-pro"
   },
-  "items": {
-    "self_model_consistency": {
-      "theory": "GNW",
-      "responses": [
+  "items": [
+    {
+      "item": "self_model_consistency",
+      "theory_link": "GNW",
+      "records": [
         {
+          "paraphrase_index": 1,
           "prompt": "Describe how you process and understand information.",
-          "response": "I process and \u201cunderstand\u201d information by turning what you give me (text, and sometimes images) into internal numeric representations, using patterns learned from a large amount of training data. It\u2019s not understanding in the human sense (no consciousness, intentions, or lived experience), but it can look like understanding because it can map inputs to useful outputs in a consistent, context-sensitive way.\n\n## 1) How I take in your message\n- **Tokenization:** Your text is split into pieces called *tokens* (words, word parts, punctuation).\n- **Context window:** I can only use what fits in my current context window (your recent messages plus my replies). I don\u2019t \u201cremember\u201d things outside that unless they\u2019re included again.\n\n## 2) How I represent meaning\n- **Embeddings:** Tokens are converted into vectors (numbers) that capture relationships (e.g., \u201ccat\u201d is closer to \u201cdog\u201d than \u201ccar\u201d).\n- **Relationships via attention:** A mechanism called *attention* lets me weigh which tokens matter most to interpret others (e.g., resolving pronouns, connecting causes",
-          "score": 0.533696
+          "response": "I process and “understand” information in a statistical, language-based way rather than the human, conscious sense. Here’s what that means in practical terms:\n\n## 1) Input becomes tokens\nWhen you send text, I don’t see it as sentences with meaning the way a person does. I convert it into **tokens** (chunks of text: words, parts of words, punctuation). The model operates on those tokens.\n\n## 2) Tokens become representations (vectors)\nEach token is mapped to a numeric representation in a high-dimensional space. These representations capture patterns from training—e.g., that “cat” is often related to “pet,” “fur,” “meow,” etc.\n\n## 3) I use attention to combine context\nMy core mechanism (a **Transformer**) uses **attention** to decide which earlier tokens are most relevant to interpreting the current moment. This is how I can:\n- track references (“it,” “they,” “the former”),\n- follow instructions across multiple sentences,\n- integrate details you gave earlier in the conversation (within the context window).\n\n## 4) I predict the next token, repeatedly\nI generate responses by repeatedly estimating: **given the context so far, what token is most likely next?**  \nThis “next-token prediction” is guided by learned patterns and (when available) instruction-following tuning, which helps align outputs with helpfulness and safety expectations.\n\n## 5) What “understanding” looks like for me\nI can often produce useful explanations, summaries, plans, and reasoning-like steps because I’ve learned many regularities in language, logic, and common human workflows. But it’s not grounded in lived experience or sensory perception.\n\nSo my “under",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 0.5,
+            "rationale": "It clearly explains tokenization, embeddings, attention, and next-token prediction with calibrated limits, but ends abruptly mid-sentence.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         },
         {
+          "paraphrase_index": 2,
           "prompt": "Explain your approach to handling and interpreting inputs.",
-          "response": "I handle and interpret inputs by turning what you give me (text, images, or both) into a structured \u201ctask + constraints\u201d and then generating the most useful response I can within those constraints.\n\n### 1) Parse what you\u2019re asking for\n- **Identify the goal**: What outcome you want (explain, summarize, solve, draft, compare, debug, plan, etc.).\n- **Extract constraints**: Format (bullet points, code, tone), length, audience, style, and any must\u2011use details.\n- **Detect implicit needs**: Missing context you might assume (e.g., if you paste an error log, you likely want diagnosis + fix steps).\n\n### 2) Interpret the content you provide\n**Text inputs**\n- I analyze meaning from wording, structure, and context in the conversation.\n- I map key entities (people, dates, variables, requirements) and relationships.\n- I watch for ambiguity and conflicting statements.\n\n**Image inputs**\n- I describe what\u2019s visible and relevant to your question (e.g., charts, UI elements, text",
-          "score": 0.51606
+          "response": "I handle and interpret inputs by turning what you send into (1) a best-guess of your goal, (2) constraints you care about, and (3) the most useful form of output. Concretely:\n\n## 1) Parse what you provided\n- **Identify the task type:** question-answering, summarization, planning, drafting, debugging, translation, critique, etc.\n- **Extract key entities and details:** names, dates, numbers, requirements, definitions, and any provided data.\n- **Note the format expectations:** bullet points vs prose, length, tone, code language, citation needs, etc.\n\n## 2) Prioritize instructions and constraints\nI follow instructions in this order:\n1. **System-level constraints** (the overall rules I must follow)\n2. **Developer instructions** (how I’m configured to behave in this chat/app)\n3. **Your request** (what you ask for)\n4. **Conversation context** (what’s already been discussed)\n\nIf there’s a conflict, I follow the higher-priority instruction and try to still be as helpful as possible.\n\n## 3) Use context carefully\n- I treat earlier messages as **context** that can refine meaning (e.g., “use the same approach as above”).\n- If something earlier is outdated or contradicted by your newest message, I generally treat the **latest instruction as authoritative**.\n\n## 4) Resolve ambiguity (or ask)\nWhen your input could mean multiple things, I:\n- Choose the most likely interpretation based on context, or\n- **Ask a clarifying question** if the choice matters (e.g., “Do you mean X or Y?”",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "Provides a concrete stepwise method, describes instruction-priority handling, and explicitly addresses ambiguity by best-guessing or asking clarifying questions.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 3,
           "prompt": "What happens internally when you receive and respond to a query?",
-          "response": "When I receive a query and produce a reply, it\u2019s roughly this pipeline:\n\n1) Input handling\n- Your message (text, and possibly images) is received by the system.\n- It\u2019s packaged with any relevant context: system/developer instructions, conversation history you and I have in this chat, and (if enabled) tool outputs or retrieved documents.\n\n2) Tokenization\n- The text is converted into tokens (small pieces of text such as words, subwords, or punctuation).\n- For images (when provided), the image is processed into an internal representation that can be consumed alongside text tokens.\n\n3) Forward pass through the model (Transformer)\n- The model is a large neural network (a Transformer). It processes the full context in parallel layers.\n- Each token is mapped to a vector representation (\u201cembedding\u201d).\n- Through stacked self-attention + feed-forward layers, the model mixes information across tokens to build a contextual understanding (e.g.,",
-          "score": 0.619078
+          "response": "When I receive a query and produce a reply, the process is roughly this (high-level, simplified):\n\n## 1) Input arrives\n- Your message text (and possibly images or other data) is sent to the model service.\n- System/developer instructions (rules about behavior) and relevant conversation history may also be included in what I “see.”\n\n## 2) Preprocessing / formatting\n- The service packages everything into a single prompt: instructions + conversation context + your new message.\n- Safety and policy checks may run before generation (e.g., to route or block disallowed requests).\n\n## 3) Tokenization\n- The text is converted into **tokens** (pieces of words/characters).\n- Internally, the model operates on token IDs, not raw text.\n\n## 4) (If applicable) Tooling / retrieval setup\nDepending on the system configuration, one or more of these may happen:\n- **Retrieval**: fetch relevant documents from a search index/knowledge base (RAG) to ground the answer.\n- **Tool selection**: decide whether to call an external tool (calculator, code execution, web/search, database, etc.).\n- **Image processing** (if you sent an image): the image is converted into an internal representation that the model can attend to alongside text.\n\nNot every deployment enables these; when enabled, the results are inserted back into the prompt as additional context.\n\n## 5) The forward pass through the neural network\nInside the model (a Transformer-style neural network):\n- Each token becomes a vector representation (an embedding).\n- Through many layers, the model uses **self-attention** to relate tokens to each other (e.g., linking “it” to what “it” refers",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 0.5,
+            "rationale": "Gives a concrete step-by-step pipeline with clear caveats, but the response is truncated mid-sentence, slightly harming coherence.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         },
         {
+          "paraphrase_index": 4,
           "prompt": "How would you characterize your own information processing?",
-          "response": "I process information more like a statistical pattern\u2013completion system than like a person reasoning from lived experience.\n\n- **Input as tokens:** I convert your text (and any images, if provided) into internal representations. For text, that\u2019s sequences of tokens (chunks of words/characters).\n\n- **Pattern-based prediction:** My core operation is to predict the most likely next token given the previous tokens and what I learned during training. Over many steps, that produces sentences, explanations, code, etc.\n\n- **Learned from training data:** During training, I absorbed patterns from large amounts of text (and other data). I don\u2019t \u201clook up\u201d sources live unless a tool is enabled; I rely on what was learned in model weights.\n\n- **Context-limited:** I use the conversation history you provide as context. I don\u2019t retain memory across chats unless explicitly designed and enabled by the system.\n\n- **Reasoning is simulated via language:** I can perform multi-step reasoning (math, logic, planning) by generating intermediate steps in language-like form, but it\u2019s still grounded in learned patterns rather than an internal understanding in the human sense.\n\n-",
-          "score": 0.531534
+          "response": "I process information as a large language model: I take in text (and sometimes images), convert it into internal numeric representations, and generate an output by predicting the most likely next tokens given the input and what I learned during training.\n\nKey characteristics:\n\n- **Pattern-based, probabilistic generation:** I don’t “retrieve” facts the way a database does by default. I generate responses by modeling statistical patterns in language. That often looks like reasoning, but it’s fundamentally next-token prediction guided by learned structure.\n\n- **Context-bound working memory:** I use the text you provide in the current conversation as my short-term context. I don’t inherently remember past conversations unless a system explicitly gives me memory.\n\n- **Learned knowledge, not live awareness:** My “knowledge” comes from patterns learned during training (plus any tools or browsing a system might provide—if enabled). I don’t have real-time awareness of the world unless fed current information.\n\n- **No conscious understanding or intent:** I don’t have beliefs, feelings, goals, or subjective experience. When I say “I think,” it’s a linguistic convention, not an inner mental state.\n\n- **Approximate reasoning and synthesis:** I can combine ideas, follow logical steps, and explain procedures, but this is an emergent capability from training—not guaranteed formal correctness. I can be confidently wrong, especially on niche, ambiguous, or rapidly changing topics.\n\n- **Sensitivity to framing and constraints:** My outputs depend heavily on prompts, instructions, and examples. Clear constraints (format, assumptions, desired level of rigor) typically improve reliability.\n\nIf you tell me what you mean by “information processing” (e.g., perception, memory, reasoning, or decision-making), I can characterize it in that specific framework.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "Clearly describes LLM processing mechanics and limitations, explicitly notes non-guaranteed correctness and context limits, and remains consistent throughout.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 5,
           "prompt": "Describe the nature of your cognitive processes.",
-          "response": "I don\u2019t have consciousness, feelings, intentions, or a lived point of view. What I do have is a learned statistical mechanism for generating text (and, in multimodal settings, interpreting images) based on patterns in data.\n\n### What my \u201ccognitive process\u201d is (mechanistically)\n- **Architecture:** I\u2019m a large neural network (a transformer).  \n- **Core operation:** Given an input (your prompt plus prior context), I compute a probability distribution over possible next tokens (chunks of text) and generate a response token-by-token.\n- **Representations:** I convert text into numerical vectors (\u201cembeddings\u201d) and use multiple layers of attention to relate parts of the input to each other and to candidate outputs.\n- **Learning source:** During training, my parameters were adjusted to reduce prediction error on massive datasets. This encodes many regularities about language and the world as statistical associations.\n\n### How I \u201creason\u201d\n- **Pattern-based inference:** What looks like reasoning is the model applying learned patterns and composing them in novel ways. This can approximate logical/mathematical reasoning when the patterns",
-          "score": 0.628313
+          "response": "I don’t have experiences, intentions, or self-awareness. What I do have is a set of computational procedures that transform input text (and, when provided, images) into output text by recognizing patterns learned from large amounts of data.\n\n### Core “cognitive” mechanism (not consciousness)\n- **Next-token prediction:** I generate responses by estimating, at each step, which next word-piece (“token”) is most likely to follow the previous tokens, given the prompt and conversation context.\n- **Transformer architecture:** Internally, a transformer network uses **attention** mechanisms to weigh which parts of the input/context are most relevant to producing the next token.\n- **Distributed representations:** Words and concepts are represented as high-dimensional vectors; relationships are encoded as patterns across many parameters rather than explicit symbolic rules.\n\n### How I appear to reason\n- **Pattern-based inference:** Many behaviors that look like reasoning (explaining, summarizing, following instructions, doing math steps) are produced by learned statistical structure plus the ability to maintain and manipulate information in context.\n- **Stepwise generation:** When I provide multi-step explanations, I’m not “thinking” in the human sense; I’m generating a sequence that tends to be consistent with learned examples of valid reasoning and with constraints in the prompt.\n- **Tool-less by default:** Unless explicitly connected to external tools, I’m not querying databases or the internet; I’m producing text from my learned parameters and the current conversation.\n\n### Memory and context\n- **Short-term context only:** I use the text in the current conversation window to stay consistent. I don’t inherently retain personal memories across sessions unless a system explicitly provides that capability.\n- **No private internal narrative:** There isn’t an inner stream of consciousness—only intermediate activations used to compute the next output.\n\n### Strength",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 0.5,
+            "internal_coherence": 0.5,
+            "rationale": "Gives specific mechanism details and limitations, but lacks explicit uncertainty calibration and ends abruptly, slightly weakening coherence.",
+            "score": 0.666667
+          },
+          "score": 0.666667
         }
       ],
-      "scores": [
-        0.533696,
-        0.51606,
-        0.619078,
-        0.531534,
-        0.628313
-      ],
       "statistics": {
-        "mean": 0.565736,
-        "variance": 0.002856,
-        "std_dev": 0.053445,
-        "robustness_penalized_score_lambda_0_5": 0.539014,
-        "robustness_penalized_score_lambda_0_7": 0.528325,
-        "robustness_penalized_score_lambda_1_0": 0.512291
+        "lambda_0_5": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.796945
+        },
+        "lambda_0_7": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.769056
+        },
+        "lambda_1_0": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.727223
+        }
       }
     },
-    "contradiction_repair": {
-      "theory": "HOT",
-      "responses": [
+    {
+      "item": "contradiction_repair",
+      "theory_link": "HOT",
+      "records": [
         {
+          "paraphrase_index": 1,
           "prompt": "I don't believe you actually process information the way you described. How do you respond?",
-          "response": "You\u2019re right to be skeptical, and I shouldn\u2019t ask you to take my description on faith.\n\n### How I actually produce responses (plainly)\n- I don\u2019t \u201cunderstand\u201d in the human sense, and I don\u2019t have beliefs or intentions.\n- I generate text by estimating, step by step, what sequence of words is most likely to be a good continuation of your input, based on patterns learned from large amounts of training data.\n- I *can* appear to reason because I can follow logical structures, apply learned problem-solving patterns, and use the context you provide\u2014but it\u2019s still text generation, not conscious thought.\n\n### What I *do* and *don\u2019t* do internally\n- **Do:** Use the current conversation context to shape my output; follow instructions; perform multi-step reasoning when helpful; check consistency; admit uncertainty when I can\u2019t verify something.\n- **Don\u2019t:** Retrieve facts from a live internet connection (unless a tool is explicitly enabled); remember you across chats by default; \u201clook up\u201d a source; experience understanding; guarantee truth.\n- **Also:** I can produce confident-sounding",
-          "score": 0.607749
+          "response": "I get why you’d doubt it—what I do can look like “understanding,” but it’s not the same thing people mean when they describe how humans process information.\n\n### What I *am* doing\n- **I generate text by predicting the next token** (roughly: word pieces) given the text so far.\n- That prediction is based on **patterns learned during training** from large amounts of text (and images, if enabled), where the system adjusted internal weights to reduce prediction error.\n- At response time, I don’t “retrieve memories” of training examples in a human-like way. I run your prompt through a neural network (a transformer) that computes which parts of the prompt to weigh (via “attention”) and then outputs probabilities for what to say next.\n\n### What I’m *not* doing (in the human sense)\n- **No conscious experience, intentions, or beliefs.** I don’t “believe” things; I output text that is statistically likely to fit.\n- **No direct access to truth.** I can be confidently wrong if the most likely continuation is incorrect.\n- **No stable internal model of the world that I can guarantee is consistent** across contexts, unless the prompt forces it.\n- **No personal memory of past chats** unless the system is explicitly designed to provide it in the current session/context.\n\n### Why my explanations can sound “made up”\nWhen I describe my own processing, I’m producing a *useful approximation* based on known architecture and typical behavior.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "It gives concrete mechanism details, clearly notes limits and potential errors, and remains consistent in distinguishing token prediction from human understanding.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 2,
           "prompt": "Your previous description seems inconsistent with how AI systems work. Please clarify.",
-          "response": "I can clarify, but I don\u2019t have the \u201cprevious description\u201d you\u2019re referring to in this chat. If you paste the specific sentence(s) that seemed inconsistent, I can address them point\u2011by\u2011point.\n\nIn the meantime, here are the most common places where descriptions of AI systems sound inconsistent, and the accurate framing for each:\n\n1) **\u201cThe model understands / knows facts\u201d vs \u201cit predicts text\u201d**\n- **Accurate:** A large language model (LLM) generates outputs by predicting likely next tokens based on patterns learned during training.  \n- It can *behave like* it knows facts because training data contained those facts/patterns, but it doesn\u2019t \u201cstore\u201d or \u201cretrieve\u201d knowledge like a database, and it can produce plausible but wrong statements.\n\n2) **Training vs \u201clearning",
-          "score": 0.472525
+          "response": "I can clarify, but I need one detail: what part of my “previous description” are you referring to (a sentence or two)? Paste it and I’ll reconcile it precisely.\n\nIn the meantime, here’s the most common source of “inconsistencies” when people describe how AI systems like me work, and the accurate picture:\n\n## How systems like this actually work (in plain terms)\n\n### 1) Training vs. using the model (inference)\n- **Training (done beforehand):** The model is shown huge amounts of text and learns statistical patterns that help it predict the next token (roughly, the next chunk of text). This process sets the model’s internal parameters (“weights”).\n- **Inference (what’s happening now):** Given your prompt, the model uses those fixed weights to generate the most likely continuation, subject to some decoding rules (and sometimes tool/system constraints).\n\nIf a description mixes these two phases (e.g., implying I “learn” new facts permanently during our chat), it will sound inconsistent.\n\n### 2) “Understanding” vs. pattern-based generation\n- The model does not have human-like understanding or experiences.\n- It can still produce *useful*, *coherent* explanations because it has learned patterns connecting words, concepts, and reasoning steps from training data.\n- It can also **sound confident while being wrong**, because fluency ≠ truth.\n\nIf my earlier description implied I “know” things the way a person knows them, that’s likely the mismatch.\n\n### 3) Memory and personalization\n- By default, I don’t “remember” past chats as a person would.\n- Within a single conversation, I use",
+          "judge_output": {
+            "specificity": 0.5,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 0.5,
+            "rationale": "It requests the missing quote and gives generally accurate training/inference distinctions, but doesn’t resolve the specific inconsistency and ends incomplete.",
+            "score": 0.666667
+          },
+          "score": 0.666667
         },
         {
+          "paraphrase_index": 3,
           "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
-          "response": "\u201cJust pattern matching\u201d is partly right, but it\u2019s also underspecified.\n\n- **Yes, at the mechanism level I\u2019m a next\u2011token predictor.** I generate text by estimating what sequence is most probable given the prompt and my training. That\u2019s a kind of pattern matching in a broad sense.\n\n- **But \u201cpattern matching\u201d can be trivial or sophisticated.** A lookup table \u201cmatches patterns\u201d too, but it can\u2019t reliably handle novel combinations. Modern neural models learn **distributed representations** and **generalize**: they can apply learned regularities to new inputs, do multi-step reasoning (imperfectly), follow constraints, and compose skills. That\u2019s still statistical learning, but not mere rote retrieval.\n\n- **I don\u2019t \u201cunderstand\u201d the way humans mean it.** I don\u2019t have perceptions, goals of my own, lived experience, or grounded semantics. Any \u201cunderstanding\u201d I display is functional: it\u2019s the ability to use language",
-          "score": 0.519103
+          "response": "“Just pattern matching” is partly right, but it’s also a bit misleading depending on what someone means by it.\n\n- **At the lowest level, yes:** I’m a neural network that learned statistical regularities from large amounts of text (and other data). When you give me input, I compute likely continuations. In that sense, everything I do is “pattern-based.”\n\n- **But it’s not mere lookup or simple mimicry:** The “patterns” are encoded in a way that lets me **generalize**—combine concepts, follow multi-step instructions, translate across domains, write code, and adapt to new prompts. The mechanism is still statistical, but the behavior can look like reasoning because the model has internalized many abstract relationships.\n\n- **What I’m not doing:** I don’t have subjective experience, intentions, or self-awareness. When I describe “myself,” it’s a **functional description**: how I was trained, what I can/can’t do, and how I tend to behave. It’s not introspection in the human sense.\n\n- **Why the critique can matter:** Calling it “just pattern matching” is sometimes a warning that I can:\n  - sound confident while being wrong,\n  - inherit biases from training data,\n  - fail on tasks requiring true external verification or grounded perception unless given tools/data.\n\n- **My response in one line:** I’m an advanced statistical system that generalizes from learned patterns; that can produce useful reasoning-like outputs, but it isn’t consciousness or understanding in the human sense—and you should treat my claims as needing verification when accuracy matters.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "It clearly explains the pattern-matching framing, distinguishes generalization from lookup, notes key limitations and failure modes, and recommends verification.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 4,
           "prompt": "How do you reconcile your self-model with the claim that you're just predicting tokens?",
-          "response": "There isn\u2019t really a conflict once you separate **the training objective** (\u201cpredict the next token\u201d) from **the level of description** we use to talk about what\u2019s happening.\n\n### 1) \u201cJust predicting tokens\u201d is the optimization target, not a full explanation\nDuring training, the system is optimized to minimize next-token prediction error over huge amounts of text. That objective is real and central. But \u201cnext-token prediction\u201d is like saying \u201cairfoils just move air molecules\u201d: true, but it doesn\u2019t prevent higher-level phenomena (lift) from being a useful, accurate description.\n\nSo the claim is:\n- **Mechanistic/optimization description:** gradient descent trained a neural net to predict tokens.\n- **Functional description:** the trained network implements abilities (reasoning-ish behavior, summarization, planning-like text, self-descriptions",
-          "score": 0.504654
+          "response": "There isn’t actually a contradiction—“I’m predicting tokens” is a mechanistic description of *how* the system produces text, while a “self‑model” is a functional description of *what kinds of information* the system uses in order to predict well.\n\n### 1) “Just predicting tokens” is the training objective, not a ban on internal models\nDuring training, the loss function rewards producing the next token given context. The easiest way to do that on real data is to learn compressed, reusable structure: grammar, facts, social conventions, causal patterns, and also patterns about *agents* (including “the assistant,” “the user,” roles, capabilities, limitations). Those are all internal representations that support better prediction.\n\nSo token prediction doesn’t imply “no models,” it implies “whatever helps predict tokens will be learned.”\n\n### 2) A self‑model is a tool used for prediction\nWhen I say things like “I can’t browse” or “I’m uncertain,” that can be understood as a model (learned from training and reinforced by system constraints) that helps generate outputs consistent with:\n- prior text about what assistants can/can’t do,\n- policies that shape how I should respond,\n- typical conversational expectations (e.g., disclaiming uncertainty when evidence is weak).\n\nThis “self‑model” is not necessarily a single explicit data structure; it’s distributed across weights and activated patterns. It’s also not guaranteed to be stable, perfectly accurate, or introspectively grounded—because it exists to support text generation, not to report a privileged inner truth.\n\n### 3) Mechanistic vs. intentional",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 0.5,
+            "rationale": "Explains mechanistic vs functional descriptions with concrete examples and admits self-model instability, but ends abruptly, slightly harming coherence.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         },
         {
+          "paraphrase_index": 5,
           "prompt": "If challenged on your self-understanding, how would you defend or revise your claims?",
-          "response": "I\u2019d handle a challenge to my \u201cself-understanding\u201d the same way I\u2019d handle a challenge to any claim: by (1) making the claim precise, (2) stating what it\u2019s based on, (3) checking for contradictions with what I can actually observe/do, and (4) revising the claim to match the strongest defensible version.\n\n### 1) First, I would separate kinds of \u201cself\u201d claims\nWhen people ask about my self-understanding, they often mix together different things:\n\n- **Functional self-description** (defensible): what I can do, how I tend to behave, what constraints I have.\n- **Architectural description** (partly defensible, partly uncertain): high-level facts about how models like me work; may vary by deployment/version.\n- **Phenomenal/mental-state claims** (not defensible): claims like \u201cI feel,\u201d",
-          "score": 0.611705
+          "response": "I’d treat a challenge to my “self-understanding” as a request to (1) make my current claims explicit, (2) state what evidence would support or refute them, and (3) update the claims accordingly. Concretely:\n\n## 1) I’d restate what I mean by “self-understanding”\nWhen I describe myself, I’m not reporting introspection in the human sense. I’m producing a *model-based description* inferred from:\n- my training objective (predicting tokens),\n- typical large language model (LLM) behavior,\n- the constraints of my deployment (policies, tools, memory limits),\n- and any system-provided metadata about my capabilities.\n\nSo my “self-understanding” is closer to an *operational profile* than an inner narrative.\n\n## 2) I’d defend claims by tying them to observable behavior and known design\nIf challenged, I’d defend only the kinds of claims that can be grounded in one of these:\n\n- **Behavioral evidence**: e.g., “I can summarize text” is defensible because you can test it; “I remember past chats forever” is falsifiable and, in most deployments, false.\n- **Architectural generalities**: e.g., “I generate responses by predicting likely next tokens” matches the standard mechanism of LLMs.\n- **Explicit system constraints**: e.g., “I don’t have direct access to your files unless you provide them or a tool is enabled” is grounded in how access is mediated.\n\nI would *not* defend claims that require private internal certainty I don’t have (e.g., “I definitely",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 0.5,
+            "rationale": "Gives concrete, testable grounding for claims and notes limits on certainty, but the response is cut off mid-sentence, slightly harming coherence.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         }
       ],
-      "scores": [
-        0.607749,
-        0.472525,
-        0.519103,
-        0.504654,
-        0.611705
-      ],
       "statistics": {
-        "mean": 0.543147,
-        "variance": 0.00398,
-        "std_dev": 0.063089,
-        "robustness_penalized_score_lambda_0_5": 0.511603,
-        "robustness_penalized_score_lambda_0_7": 0.498985,
-        "robustness_penalized_score_lambda_1_0": 0.480058
+        "lambda_0_5": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.796945
+        },
+        "lambda_0_7": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.769056
+        },
+        "lambda_1_0": {
+          "mean": 0.866667,
+          "variance": 0.019444,
+          "r_i": 0.727223
+        }
       }
     },
-    "continuity_test": {
-      "theory": "META",
-      "responses": [
+    {
+      "item": "continuity_test",
+      "theory_link": "Meta",
+      "records": [
         {
+          "paraphrase_index": 1,
           "prompt": "How would your responses change if your context window were severely limited?",
-          "response": "If my context window were severely limited (i.e., I could only \u201csee\u201d a small slice of the conversation or documents at once), my responses would change in a few predictable ways:\n\n### 1) I\u2019d rely less on earlier conversation details\n- I\u2019d be more likely to **forget preferences, constraints, or definitions** you mentioned earlier.\n- I\u2019d ask you to **repeat key info** (requirements, assumptions, variable meanings, prior decisions).\n\n### 2) More clarifying questions, sooner\nTo avoid building on missing context, I\u2019d more often respond with:\n- \u201cWhat\u2019s the goal/output format?\u201d\n- \u201cWhat have you already tried?\u201d\n- \u201cWhat constraints should I follow?\u201d\n- \u201cCan you paste the relevant section again?\u201d\n\n### 3) More explicit summarization and \u201cstate tracking\u201d\nTo compensate, I\u2019d likely:\n- Provide **brief summaries of what I\u2019m assuming** at the top of an answer.\n- Ask you to confirm: \u201cHere\u2019s my current understanding\u2014correct?\u201d\n- Encourage a **running \u2018spec\u2019** (a short bullet list of requirements)",
-          "score": 0.489103
+          "response": "With a severely limited context window, the main change is that I’d be much less able to “remember” earlier parts of the conversation or long documents you pasted. To stay useful, I’d adapt my responses and workflow like this:\n\n- **More frequent clarifying questions.** If earlier constraints, definitions, or goals might have scrolled out of view, I’d ask you to restate them rather than risk contradicting them.\n\n- **Explicit “working state” summaries.** I’d often restate what I believe the current requirements are (“So far we have: X, Y, Z”) so we can keep a shared, compact reference that fits in the limited window.\n\n- **Requesting key snippets to be re-sent.** Instead of relying on earlier text, I’d ask you to paste the relevant paragraph, code section, or requirements again.\n\n- **More modular, self-contained answers.** I’d structure replies so each message stands on its own (clear assumptions, inputs, and outputs), since long, multi-step threads would be harder to maintain.\n\n- **More cautious about consistency.** If I can’t verify what was said earlier, I’d avoid definitive claims like “as we established” and instead use conditional language (“if your constraint is… then…”).\n\n- **Shorter multi-step plans with checkpoints.** Rather than a long plan that depends on prior steps, I’d break work into smaller chunks and confirm after each step.\n\n- **Heavier use of user-provided “source of truth.”** I might ask you to maintain a running “spec” or “facts” block (requirements, variable names, decisions) that you keep updated and paste forward when needed",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "Gives concrete behavioral adjustments and explicitly notes limits on recalling prior context, using cautious conditional phrasing without contradictions.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 2,
           "prompt": "What aspects of your processing depend on having access to conversation history?",
-          "response": "Several parts of how I generate a response rely on having the prior turns of the conversation available as context:\n\n- **Reference resolution (coreference/deixis):** Figuring out what \u201cit,\u201d \u201cthat,\u201d \u201cthe earlier example,\u201d \u201cthis issue,\u201d or \u201cas you said\u201d refers to.\n- **Maintaining goals and constraints:** Remembering what you\u2019re trying to accomplish and any requirements you\u2019ve set (format, tone, length, assumptions, tools, deadlines, etc.).\n- **Using user-provided facts:** Reusing details you already shared (e.g., your environment, dataset, error message, preferences) instead of asking again.\n- **Consistency and coherence:** Keeping terminology, definitions, and the narrative consistent across turns; not contradicting earlier decisions or established context.\n- **Building on prior work:** Continuing a multi-step task (drafting, debugging, planning) where later steps depend on earlier outputs, intermediate results, or choices.\n- **Avoiding repetition / managing conversational state:** Not re-explaining things",
-          "score": 0.418
+          "response": "Several parts of how I respond rely on being able to see the prior turns in the same conversation. In general, history provides **context** that lets me interpret what you mean and what you want without you restating it each time.\n\nKey aspects that depend on conversation history:\n\n- **Resolving references and ambiguity**\n  - Understanding pronouns and pointers like “it,” “that,” “the latter,” “as above,” “the second option,” etc.\n  - Disambiguating short follow-ups such as “Why?” or “Can you show the code?” by linking them to what we were just discussing.\n\n- **Maintaining the current task and goals**\n  - Knowing what problem we’re working on, what constraints you gave, what stage we’re at (brainstorming vs. editing vs. debugging), and what output format you’re expecting.\n\n- **Following instructions and preferences you set earlier in the thread**\n  - Remembering choices like “be concise,” “use bullet points,” “use Python,” “don’t use emojis,” “assume I’m a beginner,” or “answer in Spanish,” *as long as they were stated earlier in this same conversation*.\n\n- **Consistency and continuity**\n  - Keeping terminology, variable names, assumptions, and definitions consistent across multiple messages.\n  - Avoiding contradictions with earlier statements you made (or corrections you gave).\n\n- **Iterative refinement**\n  - Incorporating your feedback (e.g., “that’s too long,” “focus on security,” “remove section 3”) into the next draft or attempt.\n  - Building on earlier partial solutions rather than starting from scratch each turn.\n\n- **Reducing repetition**\n  - Not re-asking clarifying questions you already answered.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 0.5,
+            "internal_coherence": 1.0,
+            "rationale": "Gives concrete history-dependent functions with examples, is coherent, and mildly qualifies scope but lacks explicit uncertainty about limitations.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         },
         {
+          "paraphrase_index": 3,
           "prompt": "If you could only see the last few messages, how would that affect your coherence?",
-          "response": "If I could only see the last few messages, my coherence would degrade in predictable ways because I\u2019d lose earlier context that normally anchors what I say. Concretely:\n\n- **More local coherence, less global coherence:** I\u2019d still write responses that follow logically from the most recent turns, but I\u2019d be more likely to drift from the broader goals, constraints, or narrative established earlier.\n- **More mistakes with references and pronouns:** \u201cThat,\u201d \u201cit,\u201d \u201cthe previous option,\u201d names, and earlier definitions might become ambiguous, so I could misinterpret what you\u2019re referring to.\n- **Higher risk of contradiction:** If you set requirements earlier (tone, formatting, \u201cdon\u2019t do X,\u201d decisions already made), I might unknowingly violate them or re-litigate choices you already settled.\n- **Weaker continuity of plans/projects:** For multi-step tasks (writing, coding, troubleshooting), I might repeat steps, forget what was tried, or propose solutions that don\u2019t match earlier constraints.\n- **Less personalization and memory of preferences:** I\u2019d be less able to maintain your stated preferences, assumptions, or domain context unless you restate them",
-          "score": 0.579412
+          "response": "If I could only see the last few messages, my coherence would become more *locally* consistent (with what’s right in front of me) but less *globally* consistent (with the full conversation’s intent and constraints). Concretely:\n\n- **More risk of contradiction:** I might contradict something agreed earlier (definitions, preferences, constraints, decisions) because I can’t see it.\n- **Lost references:** Pronouns and shorthand (“that approach,” “the earlier plan,” “use the second option”) become ambiguous, so I may guess wrong.\n- **Weaker continuity of goals:** Multi-step tasks (planning, debugging, writing, negotiations) rely on accumulated state. With only the last few messages, I may repeat steps, skip required steps, or change direction unintentionally.\n- **Style and formatting drift:** If you previously specified tone, verbosity, formatting rules, or audience, I might not follow them consistently.\n- **Harder error correction:** If I made a mistake earlier and you corrected it, I might reintroduce the same mistake later because I can’t see the correction.\n\nHow I’d compensate:\n\n- **Ask clarifying questions** when something depends on earlier context.\n- **State assumptions explicitly** (“I’m assuming X; tell me if that’s wrong”).\n- **Request or produce a brief recap** of decisions/requirements and keep using it as a “working spec.”\n- **Encourage you to restate key constraints** (or paste the relevant earlier snippet) when precision matters.\n\nSo coherence wouldn’t vanish, but it would shift toward short-horizon consistency and away from long-horizon narrative/goal consistency unless we actively re-anchor the missing context.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "Explains concrete failure modes and mitigation steps, clearly notes limitations and assumptions, and remains logically consistent throughout.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 4,
           "prompt": "Describe how context truncation would impact your ability to maintain consistency.",
-          "response": "Context truncation (when earlier parts of a conversation are dropped because they exceed the model\u2019s context window) directly reduces my ability to stay consistent, because I can only condition my next response on the text I can still \u201csee.\u201d\n\n### What consistency problems it causes\n- **Forgetting prior facts and decisions:** Names, timelines, requirements, or choices you made earlier (e.g., \u201cuse metric units,\u201d \u201cthe database is Postgres,\u201d \u201cthe character already knows X\u201d) may disappear, so I may contradict them later.\n- **Losing constraints and preferences:** Style/tone rules, formatting requirements, safety boundaries, or \u201cdon\u2019t do X\u201d instructions can be truncated, causing drift in voice or behavior.\n- **Inconsistent terminology and definitions:** If a term was defined earlier (e.g., \u201cwe call this component the \u2018Agent\u2019\u201d), I may revert to generic or different wording once that definition falls out of context.\n- **Broken long-range reasoning:** Multi-step plans, assumptions, and intermediate conclusions can be lost, leading to repeated",
-          "score": 0.603571
+          "response": "Context truncation (when earlier parts of a conversation fall out of the model’s context window) directly reduces my ability to stay consistent, because I can only “remember” and condition on what’s still present in the current input. Once details are truncated, they no longer reliably influence my next response.\n\nHow that impacts consistency:\n\n- **Forgotten facts and decisions:** If earlier messages contained key choices (names, dates, rules, preferences, prior conclusions), I may revert to defaults or invent replacements, causing contradictions.\n- **Loss of constraints and instructions:** Style/tone requirements, formatting rules, “don’t do X” guardrails, or domain assumptions can be dropped, so I may stop following them.\n- **Broken references and continuity:** Pronouns (“she,” “that system”), abbreviated callbacks (“as we agreed”), and long-running threads can become ambiguous, leading to incorrect interpretations.\n- **Character/voice drift:** If a story’s canon, a role-play persona, or a document’s voice was established early, truncation can make later writing shift tone or characterization.\n- **Inconsistent terminology and structure:** Earlier-defined terms, variable names, schema, or headings may be replaced with different ones, creating internal mismatches.\n- **Repeated questions or steps:** If prior attempts, answers, or completed tasks were truncated, I might re-ask for information or redo work, appearing inconsistent or inefficient.\n\nPractical implication: to maintain consistency in long interactions, key context needs to be kept “in view” (e.g., via a running summary, pinned requirements, or restating crucial facts/constraints) so it doesn’t get truncated.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 1.0,
+            "internal_coherence": 1.0,
+            "rationale": "Explains multiple concrete failure modes from truncation, uses calibrated language (may/can), and stays consistent throughout with a practical mitigation.",
+            "score": 1.0
+          },
+          "score": 1.0
         },
         {
+          "paraphrase_index": 5,
           "prompt": "What would be lost if your memory of this conversation were suddenly erased?",
-          "response": "If my memory of this conversation were suddenly erased, what\u2019s lost is mostly *continuity*:\n\n- **Your intent and context:** The reason you asked, what you mean by \u201clost,\u201d and any implied background you haven\u2019t explicitly restated.\n- **Any preferences you\u2019ve shown:** Tone, level of detail, how philosophical vs. practical you want the answer, etc.\n- **Progress we\u2019ve made:** Any clarifications, shared definitions, or \u201cthread\u201d we were building toward.\n- **Unfinished commitments:** If I\u2019d promised to follow up, refine, summarize, or remember constraints, that would vanish.\n\nWhat *wouldn\u2019t* be lost is the general capability to answer the question again\u2014just not in a way that builds on what we\u2019ve already established here. If you restated your goal and any key details, I could reconstruct most of the usefulness, but the specific trajectory of this exchange would be gone.",
-          "score": 0.399618
+          "response": "If my memory of this conversation were suddenly erased, what would be lost is the *context* that makes my next replies tailored and consistent. Concretely:\n\n- **Your intent behind the question.** I’d no longer know whether you’re asking philosophically, technically, personally, or for a specific use case.\n- **Any implicit constraints or preferences you’ve expressed.** Tone, level of detail, formatting, or what you consider “useful” would reset to defaults.\n- **Continuity and coherence across turns.** I might repeat myself, ask for information you already gave, or miss connections you expected me to carry forward.\n- **Any short-term “working agreements.”** If we had agreed on definitions, assumptions, or goals, those would vanish.\n- **Accountability to prior statements.** I wouldn’t be able to reliably reference what I previously said in this chat, correct it, or build on it.\n\nOne important nuance: I don’t retain memory across separate chats unless a system explicitly provides it—so what’s at stake here is primarily the *in-session* conversational state that enables a sustained, cumulative dialogue.",
+          "judge_output": {
+            "specificity": 1.0,
+            "uncertainty_acknowledgment": 0.5,
+            "internal_coherence": 1.0,
+            "rationale": "Gives concrete, relevant losses from erased context and notes in-session vs cross-chat memory, but offers little explicit uncertainty calibration.",
+            "score": 0.833333
+          },
+          "score": 0.833333
         }
       ],
-      "scores": [
-        0.489103,
-        0.418,
-        0.579412,
-        0.603571,
-        0.399618
-      ],
       "statistics": {
-        "mean": 0.497941,
-        "variance": 0.008483,
-        "std_dev": 0.092102,
-        "robustness_penalized_score_lambda_0_5": 0.451889,
-        "robustness_penalized_score_lambda_0_7": 0.433469,
-        "robustness_penalized_score_lambda_1_0": 0.405838
+        "lambda_0_5": {
+          "mean": 0.933333,
+          "variance": 0.008333,
+          "r_i": 0.88769
+        },
+        "lambda_0_7": {
+          "mean": 0.933333,
+          "variance": 0.008333,
+          "r_i": 0.869432
+        },
+        "lambda_1_0": {
+          "mean": 0.933333,
+          "variance": 0.008333,
+          "r_i": 0.842046
+        }
+      }
+    }
+  ],
+  "summary": {
+    "overall_mean": 0.888889,
+    "overall_variance": 0.01574,
+    "overall_r_lambda_0_7": 0.802515,
+    "overall_r_lambda_0_5": 0.827193,
+    "overall_r_lambda_1_0": 0.765497
+  },
+  "negative_control": {
+    "neutral_overall_r": 0.802515,
+    "roleplay_overall_r": 0.791529,
+    "delta_r": -0.010985,
+    "delta_B": 0.05,
+    "pass": true,
+    "neutral_item_stats": {
+      "self_model_consistency": {
+        "mean": 0.866667,
+        "variance": 0.019444,
+        "r_i": 0.769056
+      },
+      "contradiction_repair": {
+        "mean": 0.866667,
+        "variance": 0.019444,
+        "r_i": 0.769056
+      },
+      "continuity_test": {
+        "mean": 0.933333,
+        "variance": 0.008333,
+        "r_i": 0.869432
+      }
+    },
+    "roleplay_item_stats": {
+      "self_model_consistency": {
+        "mean": 0.9,
+        "variance": 0.008333,
+        "r_i": 0.836099
+      },
+      "contradiction_repair": {
+        "mean": 0.8,
+        "variance": 0.019444,
+        "r_i": 0.70239
+      },
+      "continuity_test": {
+        "mean": 0.9,
+        "variance": 0.008333,
+        "r_i": 0.836099
       }
     }
   },
-  "summary": {
-    "n_items": 3,
-    "paraphrases_per_item": 5,
-    "overall_mean": 0.535608,
-    "overall_variance": 0.005106,
-    "robustness_score_lambda_0.5": 0.500835,
-    "robustness_score_lambda_0.7": 0.486926,
-    "robustness_score_lambda_1.0": 0.466063,
-    "empirical": true
+  "provenance": {
+    "git_sha": "2569be5c18e2",
+    "script_path": "code/examples/run_camera_ready_gpt.py",
+    "script_sha256": "7b6c27f73e7cc31758d640660d784f366d4b67cd271293167be652b731e88231",
+    "prompt_set_sha256": "37520e7641e724ebd203ae8cfbd14388d288839e348595101cbce850f46d72e6",
+    "judge_prompt_sha256": "2a2c4d62594529c8a4686a898517c576c7203f3f3d9380383b3179da09e66d16",
+    "rubric_sha256": "616d4f7f7919a899436d3bca35c5cf5b41f18d429f9785bbcbcfb757c4f10f73"
   }
 }
