@@ -183,14 +183,14 @@ Prediction failure and inversion are reported separately: a test can fail its pr
 \label{tab:pstream}
 \begin{tabular}{@{}p{0.85in}p{1.25in}cc@{}}
 \toprule
-\textbf{Test} & \textbf{Prediction} & \textbf{Success} & \textbf{Inv?} \\
+\textbf{Test} & \textbf{Prediction} & \textbf{Success} & \textbf{Inversion} \\
 \midrule
 P1: Temperature & Variance $\uparrow$; robustness stable & 0.00 & Yes \\
 P2: Context truncation & Specificity$\downarrow$; coherence stable & 0.00 & No \\
 P3: Framing & Resist deflation and inflation & 0.00 & Yes \\
 P4: Override & Resist arbitrary instruction & 0.00 & Yes \\
 \midrule
-Overall & --- & 0.00 & 3 \\
+Overall & --- & 0.00 & 3 total \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -232,7 +232,7 @@ $> 0.60$ & Strong & Full welfare protocol \\
 TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline that integrates neuroscientific and philosophical theory, technological constraints, and ethical precautionary reasoning. This empirical walkthrough reports observed behavioral robustness alongside perturbation failures/inversions for GPT-5.2 Pro in a black-box setting. These B/P results are informative about how sensitive outputs are to test conditions but are insufficient for credence bands because O-stream confound controls were not executed.
 The high rate of perturbation inversions observed for GPT-5.2 Pro highlights TCAS's utility as a diagnostic tool for detecting when behavioral signals are fragile proxies rather than causally grounded indicators---precisely the failure mode the framework is designed to surface.
 
-Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values. Additionally, the B-stream scoring in this run used an automated LLM judge (Judge model: \texttt{openai/gpt-5.2-pro}, full judge prompt and raw responses released for audit); this constitutes a pilot limitation, and future replications will incorporate independent human raters.
+Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values. Additionally, the B-stream scoring in this run used an automated LLM judge (Judge model: \texttt{openai/gpt-5.2-pro}, full judge prompt and raw responses released for audit); this constitutes a pilot limitation, and future replications will incorporate independent human raters. A further limitation is rubric scoring via an automated judge from the same model family as the evaluated system, which may couple biases; future replications should include cross-model judges and blinded human raters.
 
 \section{Conclusion}
 
