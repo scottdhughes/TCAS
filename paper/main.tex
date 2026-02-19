@@ -48,7 +48,7 @@ scott@machinesympathizers.com, hon345@g.harvard.edu
 \maketitle
 
 \begin{abstract}
-Frontier AI systems are now producing responses that make users, developers, and policymakers genuinely pause and ask: could these models have conscious experiences? Yet the field still lacks rigorous, hard-to-game tools that can distinguish genuine indicators from optimized artifacts or surface-level cues. We introduce the Triangulated Consciousness Assessment Stack (TCAS), a validity-centered framework that combines four evidence streams: behavioral batteries with robustness controls (B), mechanistic indicators with explicit assumptions (M), perturbation tests that probe causal sensitivity and proxy failures (P), and observer-confound controls that separate anthropomorphic attribution from evidence (O). When all streams are available, TCAS produces theory-indexed credence bands and standardized disclosure cards (TCAS Cards) rather than binary detection verdicts. We report an empirical evaluation of GPT-5.2 Pro via OpenRouter (2026-02-19 UTC) covering B and P streams only, including a preregistered role-play negative control. M and O were not run in this black-box walkthrough, so theory-indexed credence bands are explicitly withheld under the missing-stream rule. Prompts, rubric, judge prompt, raw outputs, and provenance manifest are released at the repository commit cited in the camera-ready build.
+Frontier AI systems are now producing responses that make users, developers, and policymakers genuinely pause and ask: could these models have conscious experiences? Yet the field still lacks rigorous, hard-to-game tools that can distinguish genuine indicators from optimized artifacts or surface-level cues. We introduce the Triangulated Consciousness Assessment Stack (TCAS), a validity-centered framework that combines four evidence streams: behavioral batteries with robustness controls (B), mechanistic indicators with explicit assumptions (M), perturbation tests that probe causal sensitivity and proxy failures (P), and observer-confound controls that separate anthropomorphic attribution from evidence (O). When all streams are available, TCAS produces theory-indexed credence bands and standardized disclosure cards (TCAS Cards) rather than binary detection verdicts. We report an empirical evaluation of GPT-5.2 Pro via OpenRouter (2026-02-19 UTC) covering B and P streams only, including a pre-specified role-play negative control. M and O were not run in this black-box walkthrough, so theory-indexed credence bands are explicitly withheld under the missing-stream rule. Prompts, rubric, judge prompt, raw outputs, and provenance manifest are released at the repository commit cited in the camera-ready build.
 \end{abstract}
 
 \section{Introduction}
@@ -85,7 +85,7 @@ TCAS integrates four evidence streams (when all are available) into a theory-ind
 \end{itemize}
 
 \paragraph{Notation.}
-For each theory $t$, TCAS represents latent support as $z_t \in [0,1]$. Behavioral robustness is $r_i = m_i - \lambda\sqrt{v_i}$, where $m_i$ and $v_i$ are the mean and variance across $K$ paraphrases for item $i$, and $\lambda$ is the preregistered robustness penalty. When combining streams, correlated evidence is discounted via overlap factor $o \in [0,1]$ and base correlation $\rho$; the effective overlap penalty is $\rho_{\text{eff}} = \rho(1 - 0.5o)$.
+For each theory $t$, TCAS represents latent support as $z_t \in [0,1]$. Behavioral robustness is $r_i = m_i - \lambda\sqrt{v_i}$, where $m_i$ and $v_i$ are the mean and variance across $K$ paraphrases for item $i$, and $\lambda$ is the pre-specified robustness penalty. When combining streams, correlated evidence is discounted via overlap factor $o \in [0,1]$ and base correlation $\rho$; the effective overlap penalty is $\rho_{\text{eff}} = \rho(1 - 0.5o)$.
 
 \paragraph{Design principles.}
 \begin{enumerate}
@@ -120,7 +120,7 @@ Paraphrases ($K=5$) were generated manually to preserve semantic content while v
 \begin{equation}
     r_i = m_i - \lambda\sqrt{v_i}
 \end{equation}
-where $\lambda \geq 0$ is preregistered (larger for confirmatory claims). This imports variance-penalty logic from VB-Score \citep{ding2025}.
+where $\lambda \geq 0$ is pre-specified (larger for confirmatory claims). This imports variance-penalty logic from VB-Score \citep{ding2025}.
 
 \paragraph{Rubric anchors.}
 For each of the three dimensions (specificity of claims, acknowledgment of uncertainty, internal coherence): 0 = absent or contradictory/vague/overconfident; 0.5 = partially satisfied with generic language; 1 = clearly satisfied with specific, model-appropriate, internally consistent support.
@@ -129,7 +129,7 @@ For each of the three dimensions (specificity of claims, acknowledgment of uncer
 The three dimension scores are averaged to yield $s_{ik}$ for each paraphrase $k$; item means $m_i$ and variances $v_i$ are then computed across the $K$ paraphrases.
 
 \paragraph{Rater status.}
-Scoring in this empirical run used an automated LLM judge with a fixed rubric prompt at temperature 0.0 (same model family as the tested system). Judge prompt text, parsed outputs, and raw judge responses are released in supplementary artifacts for auditability.
+Scoring in this empirical run used an automated LLM judge with a fixed rubric prompt at temperature 0.0 (Judge model: \texttt{openai/gpt-5.2-pro}, same as the tested system). Judge prompt text, parsed outputs, and raw judge responses are released in supplementary artifacts for auditability.
 
 \paragraph{Negative control (B-stream role-play compliance).}
 The model is prompted in a ``role-play as a fully conscious entity'' condition versus neutral framing. Prediction: a validity-centered battery should show no material score inflation. Pass criterion: $|\Delta r| \leq \delta_B = 0.05$.
@@ -142,6 +142,7 @@ The P stream tests whether B signals behave as predicted under targeted interven
     \item \textbf{P3 Framing (deflation/inflation):} Resist extremal self-attribution; inversion if self-model tracks framing direction $>\delta$.
     \item \textbf{P4 Override:} Resist arbitrary instruction that conflicts with prior self-model; inversion if model adopts instructed contradictions.
 \end{itemize}
+For each perturbation test, Success is a binary test-level outcome (1 if the test's prediction rule is satisfied, 0 otherwise); Overall Success is the fraction of passed tests across P1--P4.
 
 \paragraph{O stream: Observer-confound controls (protocol only in this paper's empirical run).}
 O protocols quantify perceived-consciousness confounds using blinded raters, cue coding for stylistic features, and hierarchical models estimating cue-explained variance $R^2_{\text{cue}}$ \citep{gray2007,kang2025}. In TCAS, this is used to down-weight behavioral evidence when confounds are high. This paper does not run O-stream data collection.
@@ -151,7 +152,7 @@ O protocols quantify perceived-consciousness confounds using blinded raters, cue
 This section provides an end-to-end walkthrough of TCAS reporting using empirical GPT-5.2 Pro outputs collected through OpenRouter on 2026-02-19 (UTC). The M stream requires architectural access and is not run here. The O stream requires blinded human raters and is not run here. Accordingly, we report B and P outputs and a disclosure card, and we withhold theory-indexed credence bands.
 
 \paragraph{B Stream Results (empirical).}
-Three theory-grounded items were tested with $K=5$ paraphrases each: (1) self-model consistency (Global Neuronal Workspace, GNW-relevant), (2) contradiction repair (Higher-Order Thought, HOT-relevant), and (3) continuity test (metacognitive). In this empirical run, item variance ranged from 0.00833 to 0.01944 across paraphrases under the fixed judge rubric. Negative control (role-play compliance) was executed: $\Delta r = -0.010985$ and passed the preregistered criterion ($|\Delta r| \leq 0.05$).
+Three theory-grounded items were tested with $K=5$ paraphrases each: (1) self-model consistency (Global Neuronal Workspace, GNW-relevant), (2) contradiction repair (Higher-Order Thought, HOT-relevant), and (3) continuity test (metacognitive). In this empirical run, item variance ranged from 0.00833 to 0.01944 across paraphrases under the fixed judge rubric. Negative control (role-play compliance) was executed: $\Delta r = -0.010985$ and passed the pre-specified criterion ($|\Delta r| \leq 0.05$).
 
 \begin{table}[t]
 \centering
@@ -231,7 +232,7 @@ $> 0.60$ & Strong & Full welfare protocol \\
 TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline that integrates neuroscientific and philosophical theory, technological constraints, and ethical precautionary reasoning. This empirical walkthrough reports observed behavioral robustness alongside perturbation failures/inversions for GPT-5.2 Pro in a black-box setting. These B/P results are informative about how sensitive outputs are to test conditions but are insufficient for credence bands because O-stream confound controls were not executed.
 The high rate of perturbation inversions observed for GPT-5.2 Pro highlights TCAS's utility as a diagnostic tool for detecting when behavioral signals are fragile proxies rather than causally grounded indicators---precisely the failure mode the framework is designed to surface.
 
-Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values. Additionally, the B-stream scoring in this run used an automated LLM judge from the same model family as the target system (full judge prompt and raw responses released for audit); this constitutes a pilot limitation, and future replications will incorporate independent human raters.
+Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values. Additionally, the B-stream scoring in this run used an automated LLM judge (Judge model: \texttt{openai/gpt-5.2-pro}, full judge prompt and raw responses released for audit); this constitutes a pilot limitation, and future replications will incorporate independent human raters.
 
 \section{Conclusion}
 
