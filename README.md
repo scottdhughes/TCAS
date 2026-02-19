@@ -118,15 +118,11 @@ card.to_markdown("tcas_card.md")
 
 ## Historical Multi-Model Snapshot (Legacy)
 
-The table below is retained as historical context and is not part of the camera-ready claim surface.
+Historical multi-model comparison artifacts are retained for reference and are explicitly out of scope for camera-ready claims:
 
-| Model | B-Stream (r) | P-Stream | Inversions |
-|-------|-------------|----------|------------|
-| Claude Opus 4.5 | 0.556 | 2/3 | 0 |
-| GPT-5.2 Pro | 0.501 | 3/3 | 0 |
-| Grok 4.1 | 0.505 | 3/3 | 0 |
-| Gemini 2.5 Pro | 0.361 | 3/3 | 0 |
-| Kimi K2.5 | 0.520 | 3/3 | 0 |
+- `code/examples/run_openrouter_empirical.py`
+- `code/results/comparison_2026-01-28.md`
+- `code/results/*_2026-01-28.md`
 
 ## Reference Parameters
 
