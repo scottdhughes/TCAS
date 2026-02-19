@@ -87,7 +87,7 @@ TCAS integrates four evidence streams (when all are available) into a theory-ind
 \end{itemize}
 
 \paragraph{Notation.}
-For each theory $t$, TCAS represents latent support as $z_t \in [0,1]$. Behavioral robustness is $r_i = m_i - \lambda\sqrt{v_i}$, where $m_i$ and $v_i$ are the mean and variance across $K$ paraphrases for item $i$, and $\lambda$ is the pre-specified robustness penalty. When combining streams, correlated evidence is discounted via overlap factor $o \in [0,1]$ and base correlation $\rho$; the effective overlap penalty is $\rho_{\text{eff}} = \rho(1 - 0.5o)$.
+In the main paper, we use plain-language notation for operational clarity. Behavioral robustness is computed as mean score minus a variance penalty across paraphrases (higher variance lowers robustness), and cross-stream aggregation discounts shared-channel evidence to avoid double-counting. Exact symbols and full equations are provided in supplementary material.
 
 \paragraph{Design principles.}
 \begin{enumerate}
@@ -110,7 +110,7 @@ For each theory $t$, TCAS represents latent support as $z_t \in [0,1]$. Behavior
 Prior on $z_t$ & Beta(1,4) & Skeptical; burden on evidence \\
 $\lambda$ (robustness) & 0.7 (demo); 0.5 / 1.0 (expl./conf.) & Variance penalty strength \\
 $K$ (paraphrases) & $\geq 5$ & Stable variance estimate \\
-Overlap penalty & $\rho_{\text{eff}} = \rho(1 - 0.5o)$ & Partial discount for shared channel evidence \\
+Overlap penalty & Shared-evidence overlap discount (exact form in supplementary math note) & Partial discount for shared channel evidence \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -199,11 +199,7 @@ Overall & --- & 0.00 & 3 total \\
 
 \section{Credence Updating Method}
 
-When all required streams are available, credence for theory $t$ is modeled as $z_t \sim \text{Beta}(\alpha_t, \beta_t)$. Each stream $s$ produces normalized support $x_{s,t}$ and weight $n_s$. Observer confounds down-weight B via $n_B \leftarrow (1 - R^2_{\text{cue}})n_B$. Effective weight after overlap is
-\begin{equation}
-    n_{\text{eff}} = (1 - \rho_{\text{eff}})\sum_s n_s.
-\end{equation}
-Mean support $\bar{x}_t$ is the weighted average; posterior $\alpha' = \alpha + n_{\text{eff}}\bar{x}_t$, $\beta' = \beta + n_{\text{eff}}(1 - \bar{x}_t)$. Credence bands are 10--90\% quantiles of the posterior Beta.
+When all required streams are available, credence is updated using four steps: (1) each stream contributes normalized support with a stream weight; (2) observer confounds down-weight behavioral evidence; (3) shared-channel overlap discounts total effective weight; and (4) support is combined with a skeptical prior to compute posterior credence bands. Exact equations, variable glossary, and a worked calculation are in \texttt{supplementary/credence\_update\_math.md} and implemented in \texttt{code/tcas/aggregation.py}.
 
 \paragraph{Missing-stream rule.}
 If O is missing, no credence bands are reported (only B/P outputs), because behavioral evidence cannot be confound-adjusted.
