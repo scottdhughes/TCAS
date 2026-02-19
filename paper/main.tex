@@ -46,7 +46,7 @@ scott@machinesympathizers.com, hon345@g.harvard.edu
 \maketitle
 
 \begin{abstract}
-Policy decisions about advanced AI are already being made before the field has reliable ways to evaluate possible welfare-relevant states. TCAS addresses this gap with a validity-centered stack that combines behavioral robustness batteries (B), mechanistic indicators (M), perturbation tests (P), and observer-confound controls (O). This paper reports an empirical \texttt{openai/gpt-5.2-pro} walkthrough via OpenRouter (2026-02-19 UTC) covering B and P only, including an executed B-stream role-play negative control and full P1--P4 perturbation tests. M and O were not run in this black-box walkthrough, so theory-indexed credence bands are explicitly withheld under the missing-stream rule. We release prompts, rubric, judge prompt, raw outputs, and provenance manifest at the repository commit cited in the camera-ready build.
+Frontier AI systems are now producing responses that make users, developers, and policymakers genuinely pause and ask: could these models have conscious experiences? Yet the field still lacks rigorous, hard-to-game tools that can distinguish genuine indicators from optimized artifacts or surface-level cues. We introduce the Triangulated Consciousness Assessment Stack (TCAS), a validity-centered framework that combines four evidence streams: behavioral batteries with robustness controls (B), mechanistic indicators with explicit assumptions (M), perturbation tests that probe causal sensitivity and proxy failures (P), and observer-confound controls that separate anthropomorphic attribution from evidence (O). When all streams are available, TCAS produces theory-indexed credence bands and standardized disclosure cards (TCAS Cards) rather than binary detection verdicts. We report an empirical evaluation of GPT-5.2 Pro via OpenRouter (2026-02-19 UTC) covering B and P streams only, including a preregistered role-play negative control. M and O were not run in this black-box walkthrough, so theory-indexed credence bands are explicitly withheld under the missing-stream rule. Prompts, rubric, judge prompt, raw outputs, and provenance manifest are released at the repository commit cited in the camera-ready build.
 \end{abstract}
 
 \section{Introduction}
@@ -226,8 +226,9 @@ $> 0.60$ & Strong & Full welfare protocol \\
 \section{Discussion and Limitations}
 
 TCAS reframes machine-consciousness assessment as a validity-centered measurement discipline that integrates neuroscientific and philosophical theory, technological constraints, and ethical precautionary reasoning. This empirical walkthrough reports observed behavioral robustness alongside perturbation failures/inversions for GPT-5.2 Pro in a black-box setting. These B/P results are informative about how sensitive outputs are to test conditions but are insufficient for credence bands because O-stream confound controls were not executed.
+The high rate of perturbation inversions observed for GPT-5.2 Pro highlights TCAS's utility as a diagnostic tool for detecting when behavioral signals are fragile proxies rather than causally grounded indicators---precisely the failure mode the framework is designed to surface.
 
-Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values.
+Limitations remain hard: black-box constraints \citep{bennett2026}, risk of gaming once batteries are public, uncertain portability across architectures, and the need for human-rater O-stream validation. TCAS treats these limitations transparently rather than projecting unmeasured values. Additionally, the B-stream scoring in this run used an automated LLM judge from the same model family as the target system (full judge prompt and raw responses released for audit); this constitutes a pilot limitation, and future replications will incorporate independent human raters.
 
 \section{Conclusion}
 
@@ -249,7 +250,7 @@ TCAS reports should inform risk governance under uncertainty, not moral-status d
 \midrule
 System & \texttt{openai/gpt-5.2-pro}; closed; I/O only \\
 Date & 2026-02-19 (B/P only; empirical, OpenRouter) \\
-Scope & GNW: yes; HOT: yes; IIT: limited \\
+Scope & Global Neuronal Workspace (GNW): yes; Higher-Order Thought (HOT): yes; Integrated Information Theory (IIT): limited \\
 B stream & 3 items $\times$ 5 paraphrases + negative control; $r = 0.803$ at $\lambda=0.7$ (empirical) \\
 M stream & N/A (black-box) \\
 P stream & 4 tests; 0\% success; 3 inversions (empirical) \\
