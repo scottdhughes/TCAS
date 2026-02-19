@@ -24,6 +24,8 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 - **Not executed in this run:** O-stream and M-stream
 - **Credence bands:** withheld because O-stream is missing
 - **Provenance anchor:** `supplementary/run_manifest.json`
+- **Commit semantics:** paper build commit is embedded in the PDF; empirical run provenance commit is the `git_sha` in `supplementary/run_manifest.json` (current empirical run commit: `2569be5c18e2`)
+- **O-stream projections:** `supplementary/templates/o_stream_projected_template.json` is a template only and excluded from camera-ready empirical claims
 
 ## Camera-Ready Empirical Summary (GPT-5.2 Pro)
 

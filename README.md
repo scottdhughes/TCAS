@@ -12,6 +12,8 @@
 - **Not executed in this run:** O-stream (human rater study required), M-stream (mechanistic access required)
 - **Credence bands:** withheld by rule because O-stream is missing
 - **Provenance anchor:** `supplementary/run_manifest.json`
+- **Commit semantics:** paper build commit is embedded in the PDF; empirical run provenance commit is recorded as `git_sha` in `supplementary/run_manifest.json` (current empirical run commit: `2569be5c18e2`)
+- **O-stream projections:** moved to `supplementary/templates/o_stream_projected_template.json` and explicitly excluded from camera-ready empirical claims
 
 Legacy multi-model artifacts remain in this repository for historical context, but they are not camera-ready claims.
 
@@ -40,7 +42,7 @@ TCAS/
 │   ├── raw_model_outputs/           # Raw prompt/response/judge traces
 │   ├── judge_prompt.txt             # Fixed judge prompt used for scoring
 │   ├── scoring_rubric.md            # Scoring rubric used in the run
-│   ├── tcas_o_stream_results.json   # Observer-confound projections
+│   ├── templates/o_stream_projected_template.json # Projected O-stream template (not camera-ready result)
 │   ├── tcas_o_stream_protocol.md    # O-stream protocol
 │   └── load_results.py              # Script to load and display results
 └── code/

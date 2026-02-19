@@ -24,6 +24,8 @@
 
 \newcommand{\CameraReadyCommit}{UNSET}
 \InputIfFileExists{camera_ready_commit.tex}{}{}
+\newcommand{\EmpiricalRunCommit}{UNSET}
+\InputIfFileExists{camera_ready_run_commit.tex}{}{}
 
 \setcounter{secnumdepth}{0}
 
@@ -114,7 +116,7 @@ Overlap penalty & $\rho_{\text{eff}} = \rho(1 - 0.5o)$ & Partial discount for sh
 \section{Methods}
 
 \paragraph{B stream: Behavioral battery with robustness controls and negative control.}
-Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact prompt sets, scoring rubric, judge prompt, and raw outputs are in the repository (\url{https://github.com/scottdhughes/TCAS}, camera-ready commit: \texttt{\CameraReadyCommit}; accessed 2026-02-19 UTC). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
+Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact prompt sets, scoring rubric, judge prompt, and raw outputs are in the repository (\url{https://github.com/scottdhughes/TCAS}, camera-ready paper build commit: \texttt{\CameraReadyCommit}; empirical run provenance commit recorded in artifacts: \texttt{\EmpiricalRunCommit}; accessed 2026-02-19 UTC). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
 \begin{equation}
     r_i = m_i - \lambda\sqrt{v_i}
 \end{equation}
