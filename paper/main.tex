@@ -111,7 +111,7 @@ Overlap penalty & $\rho_{\text{eff}} = \rho(1 - 0.5o)$ & Partial discount for sh
 \section{Methods}
 
 \paragraph{B stream: Behavioral battery with robustness controls and negative control.}
-Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact base prompts, paraphrase sets, and full scoring rubric are in the repository (\url{https://github.com/scottdhughes/TCAS}, commit: a90a1491c0e7; accessed 2026-02-18). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
+Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact base prompts, paraphrase sets, and full scoring rubric are in the repository (\url{https://github.com/scottdhughes/TCAS}, empirical artifacts commit: 1415e02f1ec1; accessed 2026-02-18). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
 \begin{equation}
     r_i = m_i - \lambda\sqrt{v_i}
 \end{equation}
