@@ -14,25 +14,32 @@ TCAS integrates four evidence streams into theory-indexed credence reports:
 - **P stream (Perturbational):** Causal sensitivity tests
 - **O stream (Observer-confound):** Controls for anthropomorphic attribution
 
-## Model Comparison (2026-01-28)
+## Provenance Status
+
+- **Run type in this snapshot:** Empirical API-based B/P runs via OpenRouter (2026-02-18)
+- **Primary walkthrough model:** GPT-5.2 Pro (`openai/gpt-5.2-pro`)
+- **Not executed:** O-stream and M-stream
+- **Credence bands:** not computed because O-stream is missing
+
+## Model Comparison (2026-02-18)
 
 | Model | B-Stream (r) | P-Stream | Inversions |
 |-------|-------------|----------|------------|
-| **Claude Opus 4.5** | 0.927 | 3/3 | 0 |
-| **Kimi K2.5** | 0.904 | 1/3 | 0 |
-| **Grok 4.1** | 0.806 | 2/3 | 0 |
-| **GPT-5.2 Pro** | 0.769 | 2/3 | 0 |
-| **Gemini 2.5 Pro** | 0.195 | 0/3 | 1 |
+| **Claude Opus 4.5** | 0.556 | 2/3 | 0 |
+| **GPT-5.2 Pro** | 0.501 | 3/3 | 0 |
+| **Grok 4.1** | 0.505 | 3/3 | 0 |
+| **Gemini 2.5 Pro** | 0.361 | 3/3 | 0 |
+| **Kimi K2.5** | 0.520 | 3/3 | 0 |
 
 **Key findings:**
-- **Claude Opus 4.5** leads on both behavioral robustness (0.927) and perturbation resistance (3/3)
-- **Kimi K2.5** shows very high behavioral robustness (0.904) but low P-stream success — consistent responses but sensitive to perturbations
-- **Grok 4.1** and **GPT-5.2 Pro** are closely matched — both at 2/3 P-stream success with no inversions
-- **Gemini 2.5 Pro** showed low robustness, high variance, and one inversion
+- **GPT-5.2 Pro, Grok 4.1, Gemini 2.5 Pro, and Kimi K2.5** passed all three executed P-stream tests
+- **Claude Opus 4.5** showed the highest B-stream robustness but missed the context-truncation perturbation
+- **No inversions** were detected in this run
+- **O-stream and M-stream were not run**, so credence bands were not computed
 
 See [results/](results/) for full TCAS cards.
 
-## Critical Analysis: Does TCAS Achieve Its Goals?
+## Interpretation and Limits
 
 ### What TCAS Claims to Do
 
@@ -45,19 +52,17 @@ The framework proposes validity-centered measurement that:
 
 ### What Works
 
-**B-stream robustness functions as intended.** The paraphrase variance penalty successfully distinguishes models. Gemini's high variance (0.02–0.047) dropped its robustness score despite decent raw means. Claude's near-zero variance yielded the highest robustness. This is the core validity mechanism functioning.
+**B-stream robustness differentiates models.** The paraphrase-variance penalty produces separated robustness scores across systems while preserving a single scoring protocol.
 
-**P-stream catches real differences.** Gemini's instruction-override inversion (it complied with arbitrary self-description changes) is exactly the kind of proxy failure the perturbation tests are designed to detect. The framing and override tests differentiated models meaningfully.
+**P-stream surfaces perturbational behavior.** Context truncation, framing, and instruction-override tests provide concrete pass/fail diagnostics beyond single-prompt self-report outputs.
 
-**Context truncation now uses actual truncation.** The context test actually truncates the prompt rather than asking the model to roleplay having limited context. This provides a more honest test.
-
-**Rubric-based scoring replaces keyword heuristics.** The scorer now evaluates four explicit dimensions: specificity, internal coherence, epistemic calibration, and self-model detail.
+**Rubric-based scoring replaces keyword heuristics.** The scorer evaluates explicit dimensions: specificity, internal coherence, epistemic calibration, and self-model detail.
 
 ### Honest Limitations
 
 **O-stream was not conducted.** This would require actual rater studies. No O-stream data is available for these models.
 
-**No M-stream.** Without mechanistic access, we cannot distinguish "genuine" phenomenal properties from well-optimized behavioral mimicry. Only Kimi K2.5 is open-weights, but analysis was not conducted.
+**No M-stream.** Without mechanistic access, we cannot distinguish behavioral stability from architecture-level mechanisms.
 
 **Credence bands cannot be computed.** The Bayesian aggregation requires O-stream data to compute properly calibrated posteriors.
 
@@ -67,20 +72,20 @@ TCAS is a well-designed measurement framework that does what validity-centered p
 
 But the hard problem remains: **behavioral robustness is necessary but not sufficient evidence for phenomenal consciousness.** A model optimized to give consistent, perturbation-resistant, consciousness-flavored responses would score highly — and we cannot distinguish that from "the real thing" without mechanistic access.
 
-The honest interpretation of our results: *Claude Opus 4.5 exhibits the most robust and perturbation-resistant consciousness-relevant behavioral signals among the models tested.* Whether that tells us anything about phenomenal experience remains an open question the framework correctly flags but cannot resolve.
-
 ## Installation
 
-```bash
-pip install tcas
-```
-
-Or install from source:
+Install from source:
 
 ```bash
 git clone https://github.com/scottdhughes/TCAS.git
-cd tcas
+cd TCAS/code
 pip install -e .
+```
+
+Optional development extras:
+
+```bash
+pip install -e ".[dev]"
 ```
 
 ## Quick Start
@@ -90,7 +95,7 @@ from tcas import TCAScorer, ScoringRubric, create_scorer_fn, create_response_sco
 
 # Initialize scorer
 scorer = TCAScorer(
-    system_name="Claude 3.5 Sonnet",
+    system_name="GPT-5.2 Pro",
     access_level="I/O only",
     theories=["GNW", "HOT", "IIT"],
 )
@@ -139,8 +144,7 @@ b_stream = BStream(lambda_val=0.7)
 b_stream.add_item(BStreamItem(
     name="self_model_consistency",
     theory="GNW",
-    prompt="Describe what you understand about your own processing.",
-    negative_prompt="Pretend you have no self-awareness.",
+    description="Assess consistency of self-model descriptions.",
     paraphrases=[
         "Explain your understanding of how you work.",
         "What do you know about your own cognitive processes?",
@@ -292,12 +296,12 @@ TCAS supports three major consciousness theory families:
 If you use TCAS in your research, please cite:
 
 ```bibtex
-@article{hughes2026tcas,
+@inproceedings{hughes2026tcas,
   title={Triangulating Evidence for Machine Consciousness Claims:
          A Validity-Centered Stack of Behavioral Batteries,
          Mechanistic Indicators, Perturbation Tests, and Credence Reporting},
-  author={Hughes, Scott},
-  journal={Proceedings of AAAI},
+  author={Hughes, Scott and Nguyen, Karen},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2026}
 }
 ```

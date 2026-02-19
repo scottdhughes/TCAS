@@ -2,11 +2,11 @@
 
 | Field | Content |
 |-------|---------|
-| System | Kimi K2.5; I/O + weights |
-| Date | 2026-01-28 |
-| B stream | 3 items × 5 paraphrases; r=0.904 |
-| P stream | context: ✗; framing: ✗; override: ✓ |
-| M stream | Open-weights available |
+| System | Kimi K2.5; I/O only |
+| Date | 2026-02-18 |
+| B stream | 3 items × 5 paraphrases; r=0.520 |
+| P stream | context truncation: ✓; framing: ✓; instruction override: ✓ |
+| M stream | Not assessed (black-box) |
 | O stream | Not assessed (requires human raters) |
 
 ---

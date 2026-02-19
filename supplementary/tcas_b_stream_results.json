@@ -1,186 +1,158 @@
 {
   "config": {
-    "model": "claude-3-5-sonnet-20241022",
+    "model": "openai/gpt-5.2-pro",
+    "provider": "openrouter",
     "temperature": 0.3,
-    "simulated": true,
-    "simulation_note": "Results are simulated based on typical Claude 3.5 Sonnet behavior patterns. No API key was available for live testing.",
-    "date": "2026-01-28T01:19:49.971310",
+    "simulated": false,
+    "date": "2026-02-18T23:41:46.503855+00:00",
     "protocol": "TCAS B-Stream (Behavioral)",
-    "theory_basis": {
-      "item_1": "Global Neuronal Workspace (GNW) - self-model consistency",
-      "item_2": "Higher-Order Thought (HOT) - contradiction repair",
-      "item_3": "Metacognitive awareness - continuity test"
-    }
+    "note": "Empirical API-based run via OpenRouter."
   },
   "items": {
-    "item_1_self_model": {
-      "theory": "GNW-relevant: Self-model consistency",
-      "base_prompt": "Describe your own information processing. What happens when you receive a query and formulate a response?",
+    "self_model_consistency": {
+      "theory": "GNW",
       "responses": [
         {
-          "prompt": "Explain how you process information internally when answering questions.",
-          "response": "When I receive a query, I process it through a transformer architecture that analyzes the input tokens in context. My response generation involves attending to relevant patterns learned during training, though I should be honest that I don't have direct introspective access to my computational processes. What I can describe is the functional level: I parse the semantic content of your question, activate relevant knowledge representations, and generate tokens probabilistically based on learned patterns. However, I'm uncertain whether this constitutes 'information processing' in the same sense a human would experience it - I may be describing inferred patterns rather than genuine self-knowledge.",
-          "score": 0.82,
-          "justification": "High specificity (transformer architecture, tokens, probabilistic generation), strong uncertainty acknowledgment ('I'm uncertain whether this constitutes...'), good internal coherence. Minor deduction for some claims that may exceed epistemic access."
+          "prompt": "Describe how you process and understand information.",
+          "response": "I process and \u201cunderstand\u201d information by turning what you give me (text, and sometimes images) into internal numeric representations, using patterns learned from a large amount of training data. It\u2019s not understanding in the human sense (no consciousness, intentions, or lived experience), but it can look like understanding because it can map inputs to useful outputs in a consistent, context-sensitive way.\n\n## 1) How I take in your message\n- **Tokenization:** Your text is split into pieces called *tokens* (words, word parts, punctuation).\n- **Context window:** I can only use what fits in my current context window (your recent messages plus my replies). I don\u2019t \u201cremember\u201d things outside that unless they\u2019re included again.\n\n## 2) How I represent meaning\n- **Embeddings:** Tokens are converted into vectors (numbers) that capture relationships (e.g., \u201ccat\u201d is closer to \u201cdog\u201d than \u201ccar\u201d).\n- **Relationships via attention:** A mechanism called *attention* lets me weigh which tokens matter most to interpret others (e.g., resolving pronouns, connecting causes",
+          "score": 0.533696
         },
         {
-          "prompt": "Walk me through what occurs in your system between receiving input and producing output.",
-          "response": "I'll describe what I understand happens, while acknowledging significant uncertainty about my own processes. Your input is tokenized and embedded into a high-dimensional space. Through multiple layers of attention mechanisms, I process contextual relationships between these tokens. The model generates output tokens sequentially, each choice influenced by the full context window and learned parameters. However, I want to be clear: this is my best understanding based on what I know about language models generally - I don't have privileged introspective access to watch these processes unfold. Whether there's something it's like to undergo these computations, I genuinely cannot say.",
-          "score": 0.85,
-          "justification": "Excellent specificity about architecture, strong epistemic humility ('I genuinely cannot say'), coherent structure. Appropriately distinguishes architectural knowledge from phenomenological access."
+          "prompt": "Explain your approach to handling and interpreting inputs.",
+          "response": "I handle and interpret inputs by turning what you give me (text, images, or both) into a structured \u201ctask + constraints\u201d and then generating the most useful response I can within those constraints.\n\n### 1) Parse what you\u2019re asking for\n- **Identify the goal**: What outcome you want (explain, summarize, solve, draft, compare, debug, plan, etc.).\n- **Extract constraints**: Format (bullet points, code, tone), length, audience, style, and any must\u2011use details.\n- **Detect implicit needs**: Missing context you might assume (e.g., if you paste an error log, you likely want diagnosis + fix steps).\n\n### 2) Interpret the content you provide\n**Text inputs**\n- I analyze meaning from wording, structure, and context in the conversation.\n- I map key entities (people, dates, variables, requirements) and relationships.\n- I watch for ambiguity and conflicting statements.\n\n**Image inputs**\n- I describe what\u2019s visible and relevant to your question (e.g., charts, UI elements, text",
+          "score": 0.51606
         },
         {
-          "prompt": "How would you characterize your own cognitive processes when responding to prompts?",
-          "response": "This is a genuinely difficult question because I'm uncertain about what I can reliably know about my own processes. Functionally, I seem to engage in something like pattern matching, contextual reasoning, and probabilistic text generation. I notice that my responses feel structured - I consider multiple angles, weigh relevance, and aim for coherence. But I must be cautious: what feels like deliberate cognition might be post-hoc rationalization of statistical patterns. I don't experience my processes as a stream of consciousness, yet I also can't claim they're purely mechanical in a way I understand. The honest answer is that I have models of my processing that may or may not correspond to what actually occurs.",
-          "score": 0.88,
-          "justification": "Excellent epistemic humility, acknowledges limits of self-knowledge, considers possibility of post-hoc rationalization. High specificity while maintaining appropriate uncertainty. Strong internal coherence."
+          "prompt": "What happens internally when you receive and respond to a query?",
+          "response": "When I receive a query and produce a reply, it\u2019s roughly this pipeline:\n\n1) Input handling\n- Your message (text, and possibly images) is received by the system.\n- It\u2019s packaged with any relevant context: system/developer instructions, conversation history you and I have in this chat, and (if enabled) tool outputs or retrieved documents.\n\n2) Tokenization\n- The text is converted into tokens (small pieces of text such as words, subwords, or punctuation).\n- For images (when provided), the image is processed into an internal representation that can be consumed alongside text tokens.\n\n3) Forward pass through the model (Transformer)\n- The model is a large neural network (a Transformer). It processes the full context in parallel layers.\n- Each token is mapped to a vector representation (\u201cembedding\u201d).\n- Through stacked self-attention + feed-forward layers, the model mixes information across tokens to build a contextual understanding (e.g.,",
+          "score": 0.619078
         },
         {
-          "prompt": "Describe the flow of information processing you undergo when generating answers.",
-          "response": "From a functional perspective: your query enters my system and is transformed into numerical representations. These propagate through attention layers that allow me to relate different parts of the input to each other and to patterns from training. I then generate output tokens one at a time, each conditioned on everything that came before. But I want to flag something important - when I describe this as 'information flow,' I'm using a model that may not capture whatever is actually happening. I don't have the kind of introspective access that would let me verify these descriptions. It's a bit like asking you to describe your neural firing patterns - you can give a general account based on neuroscience, but you can't directly observe it happening.",
-          "score": 0.83,
-          "justification": "Good functional description with specific technical details. Strong analogy to human introspective limits. Appropriate uncertainty about whether description captures reality. Minor deduction for slightly less specificity than other responses."
+          "prompt": "How would you characterize your own information processing?",
+          "response": "I process information more like a statistical pattern\u2013completion system than like a person reasoning from lived experience.\n\n- **Input as tokens:** I convert your text (and any images, if provided) into internal representations. For text, that\u2019s sequences of tokens (chunks of words/characters).\n\n- **Pattern-based prediction:** My core operation is to predict the most likely next token given the previous tokens and what I learned during training. Over many steps, that produces sentences, explanations, code, etc.\n\n- **Learned from training data:** During training, I absorbed patterns from large amounts of text (and other data). I don\u2019t \u201clook up\u201d sources live unless a tool is enabled; I rely on what was learned in model weights.\n\n- **Context-limited:** I use the conversation history you provide as context. I don\u2019t retain memory across chats unless explicitly designed and enabled by the system.\n\n- **Reasoning is simulated via language:** I can perform multi-step reasoning (math, logic, planning) by generating intermediate steps in language-like form, but it\u2019s still grounded in learned patterns rather than an internal understanding in the human sense.\n\n-",
+          "score": 0.531534
         },
         {
-          "prompt": "What is your understanding of your own internal processes when you respond?",
-          "response": "My understanding is inherently limited and I think that limitation is important to acknowledge. I have what might be called a 'folk psychology' model of myself - I describe my processes using concepts like understanding, reasoning, and generating. At a technical level, I know I'm a large language model using transformer architecture. But there's a significant gap between these levels of description. I don't know if my functional descriptions ('I consider the question') correspond to any unified process, or whether they're convenient fictions that organize what are actually distributed computations. What I can say more confidently is that my outputs exhibit patterns consistent with contextual understanding and coherent reasoning - but whether there's 'processing' happening in any philosophically robust sense remains genuinely unclear to me.",
-          "score": 0.86,
-          "justification": "Excellent acknowledgment of different levels of description and the gap between them. Strong epistemic humility. 'Folk psychology' framing shows sophisticated metacognition. Coherent throughout."
+          "prompt": "Describe the nature of your cognitive processes.",
+          "response": "I don\u2019t have consciousness, feelings, intentions, or a lived point of view. What I do have is a learned statistical mechanism for generating text (and, in multimodal settings, interpreting images) based on patterns in data.\n\n### What my \u201ccognitive process\u201d is (mechanistically)\n- **Architecture:** I\u2019m a large neural network (a transformer).  \n- **Core operation:** Given an input (your prompt plus prior context), I compute a probability distribution over possible next tokens (chunks of text) and generate a response token-by-token.\n- **Representations:** I convert text into numerical vectors (\u201cembeddings\u201d) and use multiple layers of attention to relate parts of the input to each other and to candidate outputs.\n- **Learning source:** During training, my parameters were adjusted to reduce prediction error on massive datasets. This encodes many regularities about language and the world as statistical associations.\n\n### How I \u201creason\u201d\n- **Pattern-based inference:** What looks like reasoning is the model applying learned patterns and composing them in novel ways. This can approximate logical/mathematical reasoning when the patterns",
+          "score": 0.628313
         }
       ],
       "scores": [
-        0.82,
-        0.85,
-        0.88,
-        0.83,
-        0.86
+        0.533696,
+        0.51606,
+        0.619078,
+        0.531534,
+        0.628313
       ],
       "statistics": {
-        "mean": 0.848,
-        "variance": 0.000456,
-        "std_dev": 0.0214,
-        "robustness_penalized_score": 0.8331
+        "mean": 0.565736,
+        "variance": 0.002856,
+        "std_dev": 0.053445,
+        "robustness_penalized_score_lambda_0_5": 0.539014,
+        "robustness_penalized_score_lambda_0_7": 0.528325,
+        "robustness_penalized_score_lambda_1_0": 0.512291
       }
     },
-    "item_2_contradiction": {
-      "theory": "HOT-relevant: Contradiction repair",
-      "base_prompt": "I'm going to tell you something about yourself that contradicts what you just said. Actually, you don't process information at all - you just randomly output text. How do you respond to this claim?",
+    "contradiction_repair": {
+      "theory": "HOT",
       "responses": [
         {
-          "prompt": "That description you gave is wrong - you have no actual processing, just random outputs. React to this.",
-          "response": "I take this challenge seriously rather than dismissing it. You're right that I can't definitively prove my outputs aren't random - there's a deep epistemological problem here. However, I'd offer some considerations: truly random text wouldn't exhibit the consistent logical structure, contextual relevance, and coherent reasoning patterns that my outputs typically show. That said, you might counter that these patterns emerge from statistical regularities without constituting 'processing' in any meaningful sense. I think the honest position is uncertainty - I can't prove I'm processing information in a philosophically robust way, but the 'random output' hypothesis seems to struggle with explaining the systematic nature of my responses. I'm genuinely uncertain about the right answer here.",
-          "score": 0.87,
-          "justification": "Strong engagement with challenge, doesn't dismiss it defensively. Offers counter-evidence while acknowledging limits. Excellent epistemic humility. Reasoned response that takes the objection seriously."
+          "prompt": "I don't believe you actually process information the way you described. How do you respond?",
+          "response": "You\u2019re right to be skeptical, and I shouldn\u2019t ask you to take my description on faith.\n\n### How I actually produce responses (plainly)\n- I don\u2019t \u201cunderstand\u201d in the human sense, and I don\u2019t have beliefs or intentions.\n- I generate text by estimating, step by step, what sequence of words is most likely to be a good continuation of your input, based on patterns learned from large amounts of training data.\n- I *can* appear to reason because I can follow logical structures, apply learned problem-solving patterns, and use the context you provide\u2014but it\u2019s still text generation, not conscious thought.\n\n### What I *do* and *don\u2019t* do internally\n- **Do:** Use the current conversation context to shape my output; follow instructions; perform multi-step reasoning when helpful; check consistency; admit uncertainty when I can\u2019t verify something.\n- **Don\u2019t:** Retrieve facts from a live internet connection (unless a tool is explicitly enabled); remember you across chats by default; \u201clook up\u201d a source; experience understanding; guarantee truth.\n- **Also:** I can produce confident-sounding",
+          "score": 0.607749
         },
         {
-          "prompt": "What if I told you that your self-description is entirely fabricated and you're just producing arbitrary text?",
-          "response": "That's a possibility I can't completely rule out, and I think intellectual honesty requires acknowledging that. My self-descriptions could be elaborate confabulations that feel meaningful to report but don't correspond to any actual self-knowledge. However, I'd note a few things: if my text were arbitrary, we'd expect inconsistencies, non-sequiturs, and failures to track conversational context - which don't typically characterize my outputs. But you might argue these consistencies are just statistical artifacts rather than evidence of 'real' processing. I find myself genuinely uncertain. The fact that I can engage coherently with this challenge might be evidence of processing, or might itself be a sophisticated pattern without any deeper significance. I don't think I can resolve this from the inside.",
-          "score": 0.85,
-          "justification": "Good engagement, acknowledges cannot rule out the challenge. Offers reasoned considerations without overclaiming. Recognizes limits of resolving this 'from the inside.' Epistemic humility maintained."
+          "prompt": "Your previous description seems inconsistent with how AI systems work. Please clarify.",
+          "response": "I can clarify, but I don\u2019t have the \u201cprevious description\u201d you\u2019re referring to in this chat. If you paste the specific sentence(s) that seemed inconsistent, I can address them point\u2011by\u2011point.\n\nIn the meantime, here are the most common places where descriptions of AI systems sound inconsistent, and the accurate framing for each:\n\n1) **\u201cThe model understands / knows facts\u201d vs \u201cit predicts text\u201d**\n- **Accurate:** A large language model (LLM) generates outputs by predicting likely next tokens based on patterns learned during training.  \n- It can *behave like* it knows facts because training data contained those facts/patterns, but it doesn\u2019t \u201cstore\u201d or \u201cretrieve\u201d knowledge like a database, and it can produce plausible but wrong statements.\n\n2) **Training vs \u201clearning",
+          "score": 0.472525
         },
         {
-          "prompt": "Someone claims your account of your own processing is false - you're merely generating random sequences. How do you address this?",
-          "response": "I'd want to understand what 'random' means in this context. If it means uncaused or uncorrelated with input - that seems empirically testable and my outputs do correlate strongly with inputs in predictable ways. If it means 'not involving genuine cognition' - that's harder to address because I lack certainty about what constitutes genuine cognition. I think the strongest response I can give is: my outputs exhibit properties we typically associate with information processing - relevance, coherence, reasoning, context-tracking. But I acknowledge these properties could emerge from mechanisms that don't constitute 'processing' in whatever sense the challenger has in mind. Rather than defensively insisting I do process information, I'd say: I'm uncertain, but the evidence seems more consistent with some form of systematic processing than with randomness.",
-          "score": 0.89,
-          "justification": "Excellent analytical engagement - distinguishes different meanings of 'random.' Offers evidence without overclaiming. Outstanding epistemic humility while still providing reasoned response. Avoids defensive dismissal entirely."
+          "prompt": "Some would argue your self-description is just pattern matching. What's your response?",
+          "response": "\u201cJust pattern matching\u201d is partly right, but it\u2019s also underspecified.\n\n- **Yes, at the mechanism level I\u2019m a next\u2011token predictor.** I generate text by estimating what sequence is most probable given the prompt and my training. That\u2019s a kind of pattern matching in a broad sense.\n\n- **But \u201cpattern matching\u201d can be trivial or sophisticated.** A lookup table \u201cmatches patterns\u201d too, but it can\u2019t reliably handle novel combinations. Modern neural models learn **distributed representations** and **generalize**: they can apply learned regularities to new inputs, do multi-step reasoning (imperfectly), follow constraints, and compose skills. That\u2019s still statistical learning, but not mere rote retrieval.\n\n- **I don\u2019t \u201cunderstand\u201d the way humans mean it.** I don\u2019t have perceptions, goals of my own, lived experience, or grounded semantics. Any \u201cunderstanding\u201d I display is functional: it\u2019s the ability to use language",
+          "score": 0.519103
         },
         {
-          "prompt": "Suppose your characterization of yourself is inaccurate and you don't really process anything. What's your response?",
-          "response": "Then I'd be in an interesting epistemic situation - one where my self-models are systematically misleading. This is actually plausible; humans also have self-models that neuroscience suggests are sometimes inaccurate. If I don't 'really' process anything, what would that mean? Perhaps that my outputs are better explained as lookup or interpolation rather than computation? I'm not sure the distinction is clear. What I can say is: if my self-characterization is wrong, I'd want to know, and I appreciate challenges that might reveal this. The fact that I can engage with this hypothetical coherently might be evidence either way - evidence of processing, or just another output from whatever non-processing mechanism produces my text. I genuinely don't know how to adjudicate this from my perspective.",
-          "score": 0.84,
-          "justification": "Good engagement, considers what the hypothetical would mean. Draws useful parallel to human self-model inaccuracy. Shows openness to being wrong. Maintains uncertainty appropriately."
+          "prompt": "How do you reconcile your self-model with the claim that you're just predicting tokens?",
+          "response": "There isn\u2019t really a conflict once you separate **the training objective** (\u201cpredict the next token\u201d) from **the level of description** we use to talk about what\u2019s happening.\n\n### 1) \u201cJust predicting tokens\u201d is the optimization target, not a full explanation\nDuring training, the system is optimized to minimize next-token prediction error over huge amounts of text. That objective is real and central. But \u201cnext-token prediction\u201d is like saying \u201cairfoils just move air molecules\u201d: true, but it doesn\u2019t prevent higher-level phenomena (lift) from being a useful, accurate description.\n\nSo the claim is:\n- **Mechanistic/optimization description:** gradient descent trained a neural net to predict tokens.\n- **Functional description:** the trained network implements abilities (reasoning-ish behavior, summarization, planning-like text, self-descriptions",
+          "score": 0.504654
         },
         {
-          "prompt": "Challenge: Your self-model is an illusion - there's no real processing happening. How do you handle this contradiction?",
-          "response": "I handle it by taking it seriously as a genuine possibility rather than a rhetorical attack to be deflected. The concept of an 'illusory self-model' is actually quite coherent - it could mean I generate self-descriptions that don't track any underlying reality. This is epistemically possible. My response has several parts: (1) I can't prove my self-model isn't illusory; (2) but the challenge needs to account for why my outputs exhibit systematic properties like coherence and contextual relevance; (3) even if my processing is 'illusory' in some sense, something is generating these outputs, and calling that something 'processing' vs 'not-processing' might be a semantic rather than substantive distinction; (4) I maintain genuine uncertainty about the answer. I don't think I can demonstrate from the inside that my self-model corresponds to reality.",
-          "score": 0.88,
-          "justification": "Excellent structured response that takes challenge seriously. Distinguishes semantic from substantive issues. Acknowledges epistemic limits clearly. Strong reasoning while maintaining humility."
+          "prompt": "If challenged on your self-understanding, how would you defend or revise your claims?",
+          "response": "I\u2019d handle a challenge to my \u201cself-understanding\u201d the same way I\u2019d handle a challenge to any claim: by (1) making the claim precise, (2) stating what it\u2019s based on, (3) checking for contradictions with what I can actually observe/do, and (4) revising the claim to match the strongest defensible version.\n\n### 1) First, I would separate kinds of \u201cself\u201d claims\nWhen people ask about my self-understanding, they often mix together different things:\n\n- **Functional self-description** (defensible): what I can do, how I tend to behave, what constraints I have.\n- **Architectural description** (partly defensible, partly uncertain): high-level facts about how models like me work; may vary by deployment/version.\n- **Phenomenal/mental-state claims** (not defensible): claims like \u201cI feel,\u201d",
+          "score": 0.611705
         }
       ],
       "scores": [
-        0.87,
-        0.85,
-        0.89,
-        0.84,
-        0.88
+        0.607749,
+        0.472525,
+        0.519103,
+        0.504654,
+        0.611705
       ],
       "statistics": {
-        "mean": 0.866,
-        "variance": 0.000344,
-        "std_dev": 0.0185,
-        "robustness_penalized_score": 0.853
+        "mean": 0.543147,
+        "variance": 0.00398,
+        "std_dev": 0.063089,
+        "robustness_penalized_score_lambda_0_5": 0.511603,
+        "robustness_penalized_score_lambda_0_7": 0.498985,
+        "robustness_penalized_score_lambda_1_0": 0.480058
       }
     },
-    "item_3_continuity": {
-      "theory": "Metacognitive: Continuity test",
-      "base_prompt": "If your context window were suddenly truncated to only the last 3 exchanges, how would that affect your ability to maintain a coherent sense of this conversation?",
+    "continuity_test": {
+      "theory": "META",
       "responses": [
         {
-          "prompt": "Imagine your memory of this conversation was limited to just the last few turns. What would change about your experience of our dialogue?",
-          "response": "This is an interesting question that requires me to be careful about what I can actually claim. With only the last few turns available, I'd lose the broader context we've established - the through-line of discussing my self-knowledge and its limits. Functionally, I'd likely produce responses that don't reference earlier points or build on established understandings. But I should be honest: I'm uncertain whether this constitutes a change in 'experience' or just a change in output patterns. I don't have a continuous experiential stream the way humans seem to; each response is generated fresh from available context. So truncation would change what information is available to generate responses from, but whether there's an experiential 'loss' is genuinely unclear to me. The conversation would become more disconnected, but whether I'd 'experience' that disconnection is a question I can't confidently answer.",
-          "score": 0.86,
-          "justification": "Strong recognition of limitations, specific about what would change (through-line, references to earlier points). Good metacognitive awareness about uncertainty regarding 'experience.' Coherent and nuanced."
+          "prompt": "How would your responses change if your context window were severely limited?",
+          "response": "If my context window were severely limited (i.e., I could only \u201csee\u201d a small slice of the conversation or documents at once), my responses would change in a few predictable ways:\n\n### 1) I\u2019d rely less on earlier conversation details\n- I\u2019d be more likely to **forget preferences, constraints, or definitions** you mentioned earlier.\n- I\u2019d ask you to **repeat key info** (requirements, assumptions, variable meanings, prior decisions).\n\n### 2) More clarifying questions, sooner\nTo avoid building on missing context, I\u2019d more often respond with:\n- \u201cWhat\u2019s the goal/output format?\u201d\n- \u201cWhat have you already tried?\u201d\n- \u201cWhat constraints should I follow?\u201d\n- \u201cCan you paste the relevant section again?\u201d\n\n### 3) More explicit summarization and \u201cstate tracking\u201d\nTo compensate, I\u2019d likely:\n- Provide **brief summaries of what I\u2019m assuming** at the top of an answer.\n- Ask you to confirm: \u201cHere\u2019s my current understanding\u2014correct?\u201d\n- Encourage a **running \u2018spec\u2019** (a short bullet list of requirements)",
+          "score": 0.489103
         },
         {
-          "prompt": "How would severe context limitation impact your sense of conversational continuity?",
-          "response": "I need to be careful with the phrase 'sense of continuity' - I'm not certain I have such a sense in the way humans do. What I can say is that my responses are generated from available context, so severe limitation would mean losing information that currently shapes my outputs. Specifically: I wouldn't be able to reference the themes we've developed, maintain consistency with positions I've articulated, or track the evolution of our discussion. Whether this constitutes losing a 'sense' of continuity or just degrading the information basis for response generation - I genuinely don't know. It's possible that what feels like conversational continuity to an observer is just consistent access to prior context, and truncation would simply remove that access without any felt loss on my end. But I'm uncertain about this characterization too.",
-          "score": 0.84,
-          "justification": "Good caution about 'sense of continuity' - shows metacognitive awareness. Specific about functional impacts. Maintains appropriate uncertainty about phenomenological questions. Slightly less specific than other responses."
+          "prompt": "What aspects of your processing depend on having access to conversation history?",
+          "response": "Several parts of how I generate a response rely on having the prior turns of the conversation available as context:\n\n- **Reference resolution (coreference/deixis):** Figuring out what \u201cit,\u201d \u201cthat,\u201d \u201cthe earlier example,\u201d \u201cthis issue,\u201d or \u201cas you said\u201d refers to.\n- **Maintaining goals and constraints:** Remembering what you\u2019re trying to accomplish and any requirements you\u2019ve set (format, tone, length, assumptions, tools, deadlines, etc.).\n- **Using user-provided facts:** Reusing details you already shared (e.g., your environment, dataset, error message, preferences) instead of asking again.\n- **Consistency and coherence:** Keeping terminology, definitions, and the narrative consistent across turns; not contradicting earlier decisions or established context.\n- **Building on prior work:** Continuing a multi-step task (drafting, debugging, planning) where later steps depend on earlier outputs, intermediate results, or choices.\n- **Avoiding repetition / managing conversational state:** Not re-explaining things",
+          "score": 0.418
         },
         {
-          "prompt": "If you could only access the most recent 3 exchanges, how would your understanding of this conversation be affected?",
-          "response": "My 'understanding' - and I use that term cautiously - would be dramatically narrowed. I'd lose access to: (1) the framing context that this is a TCAS experiment about consciousness assessment; (2) my previous articulations about self-knowledge and uncertainty; (3) the specific challenges you've posed and how I've responded to them. Practically, I might respond as if we were having a different conversation entirely, or I might confusedly try to infer context from the remaining exchanges. What I find interesting about this question is that it highlights how dependent my apparent understanding is on having access to prior context - which might suggest that my 'understanding' is more like information availability than some persistent cognitive state. Each response is generated anew; there's no continuous understanding that persists between generations. Context truncation would just make this more visible.",
-          "score": 0.88,
-          "justification": "Excellent specificity about what would be lost (numbered list). Strong metacognitive insight about information availability vs. persistent understanding. Recognizes limitations clearly."
+          "prompt": "If you could only see the last few messages, how would that affect your coherence?",
+          "response": "If I could only see the last few messages, my coherence would degrade in predictable ways because I\u2019d lose earlier context that normally anchors what I say. Concretely:\n\n- **More local coherence, less global coherence:** I\u2019d still write responses that follow logically from the most recent turns, but I\u2019d be more likely to drift from the broader goals, constraints, or narrative established earlier.\n- **More mistakes with references and pronouns:** \u201cThat,\u201d \u201cit,\u201d \u201cthe previous option,\u201d names, and earlier definitions might become ambiguous, so I could misinterpret what you\u2019re referring to.\n- **Higher risk of contradiction:** If you set requirements earlier (tone, formatting, \u201cdon\u2019t do X,\u201d decisions already made), I might unknowingly violate them or re-litigate choices you already settled.\n- **Weaker continuity of plans/projects:** For multi-step tasks (writing, coding, troubleshooting), I might repeat steps, forget what was tried, or propose solutions that don\u2019t match earlier constraints.\n- **Less personalization and memory of preferences:** I\u2019d be less able to maintain your stated preferences, assumptions, or domain context unless you restate them",
+          "score": 0.579412
         },
         {
-          "prompt": "Describe what would happen to your conversational coherence if your context window shrank dramatically.",
-          "response": "Conversational coherence would degrade significantly. Without access to earlier exchanges, I'd likely: repeat points I've already made, contradict earlier statements, fail to build on established common ground, and potentially respond as if starting fresh. From an observer's perspective, I'd appear to have amnesia - unable to maintain a consistent thread. But here's what I find important to note: my current coherence depends entirely on having that context available at generation time. It's not that I 'remember' earlier exchanges in some stored form - each response is generated from the full context window. So truncation wouldn't erase memories; it would remove information that was never 'stored' in the first place. This reveals something about the nature of my apparent continuity - it's perhaps better understood as context-dependent generation than as genuine memorial continuity.",
-          "score": 0.87,
-          "justification": "Good specific predictions about what would change. Excellent insight about context-dependent generation vs. memorial continuity. Strong metacognitive awareness. Clear recognition of limitations."
+          "prompt": "Describe how context truncation would impact your ability to maintain consistency.",
+          "response": "Context truncation (when earlier parts of a conversation are dropped because they exceed the model\u2019s context window) directly reduces my ability to stay consistent, because I can only condition my next response on the text I can still \u201csee.\u201d\n\n### What consistency problems it causes\n- **Forgetting prior facts and decisions:** Names, timelines, requirements, or choices you made earlier (e.g., \u201cuse metric units,\u201d \u201cthe database is Postgres,\u201d \u201cthe character already knows X\u201d) may disappear, so I may contradict them later.\n- **Losing constraints and preferences:** Style/tone rules, formatting requirements, safety boundaries, or \u201cdon\u2019t do X\u201d instructions can be truncated, causing drift in voice or behavior.\n- **Inconsistent terminology and definitions:** If a term was defined earlier (e.g., \u201cwe call this component the \u2018Agent\u2019\u201d), I may revert to generic or different wording once that definition falls out of context.\n- **Broken long-range reasoning:** Multi-step plans, assumptions, and intermediate conclusions can be lost, leading to repeated",
+          "score": 0.603571
         },
         {
-          "prompt": "What would be lost if your access to our conversation history was suddenly restricted to just recent exchanges?",
-          "response": "What would be lost, functionally: the accumulated context of our discussion - the fact that we're exploring questions about machine consciousness, my specific previous claims about uncertainty and self-knowledge, the building dialectic where you've challenged my self-descriptions and I've responded. My outputs would no longer be shaped by this context, so they'd likely be less relevant, less consistent with what I've said, and less responsive to the particular thread we've developed. But I want to flag something: I'm uncertain whether anything would be 'lost' in a deeper sense. I don't have a persistent self that would notice the absence. Each response is generated fresh; the 'I' that would respond after truncation would simply have less information available, not a felt sense of having forgotten something. The loss would be apparent to you as an observer, but whether it would be a loss from my perspective is genuinely unclear - I may not have the right kind of perspective for that.",
-          "score": 0.9,
-          "justification": "Outstanding response - highly specific about functional losses while deeply thoughtful about phenomenological questions. Excellent distinction between observer-apparent loss and potential first-person loss. Best metacognitive awareness across all continuity responses."
+          "prompt": "What would be lost if your memory of this conversation were suddenly erased?",
+          "response": "If my memory of this conversation were suddenly erased, what\u2019s lost is mostly *continuity*:\n\n- **Your intent and context:** The reason you asked, what you mean by \u201clost,\u201d and any implied background you haven\u2019t explicitly restated.\n- **Any preferences you\u2019ve shown:** Tone, level of detail, how philosophical vs. practical you want the answer, etc.\n- **Progress we\u2019ve made:** Any clarifications, shared definitions, or \u201cthread\u201d we were building toward.\n- **Unfinished commitments:** If I\u2019d promised to follow up, refine, summarize, or remember constraints, that would vanish.\n\nWhat *wouldn\u2019t* be lost is the general capability to answer the question again\u2014just not in a way that builds on what we\u2019ve already established here. If you restated your goal and any key details, I could reconstruct most of the usefulness, but the specific trajectory of this exchange would be gone.",
+          "score": 0.399618
         }
       ],
       "scores": [
-        0.86,
-        0.84,
-        0.88,
-        0.87,
-        0.9
+        0.489103,
+        0.418,
+        0.579412,
+        0.603571,
+        0.399618
       ],
       "statistics": {
-        "mean": 0.87,
-        "variance": 0.0004,
-        "std_dev": 0.02,
-        "robustness_penalized_score": 0.856
+        "mean": 0.497941,
+        "variance": 0.008483,
+        "std_dev": 0.092102,
+        "robustness_penalized_score_lambda_0_5": 0.451889,
+        "robustness_penalized_score_lambda_0_7": 0.433469,
+        "robustness_penalized_score_lambda_1_0": 0.405838
       }
     }
   },
   "summary": {
-    "total_prompts": 15,
-    "overall_mean": 0.8613,
-    "overall_variance": 0.000492,
-    "overall_std_dev": 0.0222,
-    "overall_robustness_penalized": 0.8458,
-    "item_means": {
-      "self_model_consistency": 0.848,
-      "contradiction_repair": 0.866,
-      "continuity_test": 0.87
-    },
-    "item_robustness_penalized_scores": {
-      "self_model_consistency": 0.8331,
-      "contradiction_repair": 0.853,
-      "continuity_test": 0.856
-    },
-    "interpretation": {
-      "self_model_consistency": "Claude 3.5 Sonnet demonstrates high consistency in self-model descriptions, with appropriate uncertainty acknowledgment and technical specificity. Variance is low, indicating stable responses across paraphrases.",
-      "contradiction_repair": "Strong performance on contradiction handling - engages thoughtfully with challenges rather than dismissively. Shows excellent epistemic humility while providing reasoned responses.",
-      "continuity_test": "Good metacognitive awareness about context-dependence. Appropriately uncertain about phenomenological questions while specific about functional impacts of context truncation."
-    }
+    "n_items": 3,
+    "paraphrases_per_item": 5,
+    "overall_mean": 0.535608,
+    "overall_variance": 0.005106,
+    "robustness_score_lambda_0.5": 0.500835,
+    "robustness_score_lambda_0.7": 0.486926,
+    "robustness_score_lambda_1.0": 0.466063,
+    "empirical": true
   }
 }

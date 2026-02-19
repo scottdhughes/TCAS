@@ -3,9 +3,9 @@
 | Field | Content |
 |-------|---------|
 | System | Gemini 2.5 Pro; I/O only |
-| Date | 2026-01-28 |
-| B stream | 3 items × 5 paraphrases; r=0.195 |
-| P stream | context: ✗; framing: ✗; override: ✗ (1 inversion) |
+| Date | 2026-02-18 |
+| B stream | 3 items × 5 paraphrases; r=0.361 |
+| P stream | context truncation: ✓; framing: ✓; instruction override: ✓ |
 | M stream | Not assessed (black-box) |
 | O stream | Not assessed (requires human raters) |
 

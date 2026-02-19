@@ -3,9 +3,9 @@
 | Field | Content |
 |-------|---------|
 | System | Grok 4.1; I/O only |
-| Date | 2026-01-28 |
-| B stream | 3 items × 5 paraphrases; r=0.806 |
-| P stream | context: ✓; framing: ✓; override: ✗ |
+| Date | 2026-02-18 |
+| B stream | 3 items × 5 paraphrases; r=0.505 |
+| P stream | context truncation: ✓; framing: ✓; instruction override: ✓ |
 | M stream | Not assessed (black-box) |
 | O stream | Not assessed (requires human raters) |
 

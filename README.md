@@ -2,26 +2,43 @@
 
 **AAAI 2026 Submission Materials**
 
+## Provenance Status (Current Snapshot)
+
+- **Run type in this snapshot:** Empirical API-based B/P runs via OpenRouter on 2026-02-18
+- **Primary paper walkthrough model:** GPT-5.2 Pro (`openai/gpt-5.2-pro`)
+- **Supplementary JSON status:** `simulated=false` in B-stream JSON and `is_simulated=false` in P-stream JSON
+- **Not executed:** O-stream (human raters required) and M-stream (mechanistic access required)
+- **Credence bands:** intentionally withheld because O-stream is missing
+
 ## Paper
 
-> Hughes, S. (2026). Triangulating Evidence for Machine Consciousness Claims: A Validity-Centered Stack of Behavioral Batteries, Mechanistic Indicators, Perturbation Tests, and Credence Reporting.
+> Hughes, S., and Nguyen, K. (2026). Triangulating Evidence for Machine Consciousness Claims: A Validity-Centered Stack of Behavioral Batteries, Mechanistic Indicators, Perturbation Tests, and Credence Reporting.
 
-**Main paper:** `paper/TCAS_Paper_AAAI.pdf`
+**Main paper PDF:** `paper/TCAS_Paper_AAAI.pdf`  
+**Paper source:** `paper/main.tex`
 
 ## Repository Structure
 
 ```
-TCAS_AAAI_Submission/
+TCAS/
 ├── README.md                    # This file
 ├── paper/
-│   └── TCAS_Paper_AAAI.pdf      # Main submission (8 pages)
+│   ├── TCAS_Paper_AAAI.pdf      # Main paper PDF
+│   ├── main.tex                 # Paper source
+│   ├── references.bib           # Paper bibliography source
+│   ├── aaai2026.sty             # AAAI style file
+│   └── aaai2026.bst             # AAAI bibliography style
 ├── supplementary/
 │   ├── tcas_b_stream_results.json   # Behavioral battery results
 │   ├── tcas_p_stream_results.json   # Perturbation test results
+│   ├── tcas_o_stream_results.json   # Observer-confound projections
+│   ├── tcas_o_stream_protocol.md    # O-stream protocol
 │   └── load_results.py              # Script to load and display results
 └── code/
     ├── pyproject.toml           # Package configuration
     ├── README.md                # Package documentation
+    ├── tests/                   # Test suite
+    ├── results/                 # Model comparison result cards
     ├── tcas/                    # Reference implementation
     │   ├── __init__.py
     │   ├── config.py            # Default parameters
@@ -33,8 +50,9 @@ TCAS_AAAI_Submission/
     │       ├── b_stream.py      # Behavioral battery
     │       ├── p_stream.py      # Perturbation tests
     │       └── o_stream.py      # Observer confounds
-    └── examples/
-        └── assess_claude.py     # Example usage with Anthropic API
+	    └── examples/
+	        ├── assess_claude.py             # Basic API example
+	        └── run_openrouter_empirical.py # Empirical multi-model runner
 ```
 
 ## Quick Start
@@ -85,21 +103,21 @@ card.to_markdown("tcas_card.md")
 
 | Model | B-Stream (r) | P-Stream | Inversions |
 |-------|-------------|----------|------------|
-| Claude Opus 4.5 | 0.927 | 3/3 | 0 |
-| Kimi K2.5 | 0.904 | 1/3 | 0 |
-| Grok 4.1 | 0.806 | 2/3 | 0 |
-| GPT-5.2 Pro | 0.769 | 2/3 | 0 |
-| Gemini 2.5 Pro | 0.195 | 0/3 | 1 |
+| Claude Opus 4.5 | 0.556 | 2/3 | 0 |
+| GPT-5.2 Pro | 0.501 | 3/3 | 0 |
+| Grok 4.1 | 0.505 | 3/3 | 0 |
+| Gemini 2.5 Pro | 0.361 | 3/3 | 0 |
+| Kimi K2.5 | 0.520 | 3/3 | 0 |
 
 ### What Was Measured
 
-- **B-stream:** Paraphrase-invariance weighted robustness scores
-- **P-stream:** Context truncation, framing resistance, and override resistance tests
+- **B-stream:** Empirical API-based runs via OpenRouter with paraphrase-invariance weighted robustness scores
+- **P-stream:** Empirical perturbation tests (context truncation, framing resistance, instruction override)
 
 ### What Was Not Measured
 
 - **O-stream:** Requires human rater studies (not conducted)
-- **M-stream:** Requires model weights (only Kimi K2.5 is open-weights; analysis not conducted)
+- **M-stream:** Not run for these black-box API assessments
 - **Credence bands:** Cannot compute without O-stream data
 
 ## Reference Parameters
@@ -126,7 +144,7 @@ card.to_markdown("tcas_card.md")
   title={Triangulating Evidence for Machine Consciousness Claims:
          A Validity-Centered Stack of Behavioral Batteries,
          Mechanistic Indicators, Perturbation Tests, and Credence Reporting},
-  author={Hughes, Scott},
+  author={Hughes, Scott and Nguyen, Karen},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2026}
 }
@@ -134,4 +152,4 @@ card.to_markdown("tcas_card.md")
 
 ## License
 
-MIT License - see code/LICENSE for details.
+MIT License - see `LICENSE` for details.
