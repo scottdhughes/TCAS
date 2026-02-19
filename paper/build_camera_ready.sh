@@ -11,7 +11,7 @@ printf '\\renewcommand{\\CameraReadyCommit}{%s}\n' "${SHA}" > camera_ready_commi
 RUN_SHA="$(python3 - <<'PY'
 import json
 from pathlib import Path
-path = Path('supplementary/run_manifest.json')
+path = Path('../supplementary/run_manifest.json')
 if path.exists():
     data = json.loads(path.read_text())
     print(str(data.get('git_sha', 'UNSET'))[:12] or 'UNSET')
