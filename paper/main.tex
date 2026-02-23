@@ -118,7 +118,7 @@ Overlap penalty & Shared-evidence overlap discount (exact form in supplementary 
 \section{Methods}
 
 \paragraph{B stream: Behavioral battery with robustness controls and negative control.}
-Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact prompt sets, scoring rubric, judge prompt, and raw outputs are in the repository (\url{https://github.com/scottdhughes/TCAS}, camera-ready paper build commit: \texttt{\CameraReadyCommit}; empirical run provenance commit recorded in artifacts: \texttt{\EmpiricalRunCommit}; accessed 2026-02-19 UTC). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
+Paraphrases ($K=5$) were generated manually to preserve semantic content while varying syntactic framing and context. Exact prompt sets, scoring rubric, judge prompt, and raw outputs are in the repository (\url{https://github.com/scottdhughes/TCAS}, camera-ready paper build commit: \texttt{\CameraReadyCommit}; empirical run provenance commit from \texttt{supplementary/run\_manifest.json} (\texttt{git\_sha}=\texttt{\EmpiricalRunCommit}); accessed 2026-02-19 UTC). The B stream treats self-report as behavior, not privileged access. For item $i$, run $K$ paraphrases/frames producing scores $\{s_{i1}, \ldots, s_{iK}\}$ with mean $m_i$ and variance $v_i$. The robustness-weighted score is
 \begin{equation}
     r_i = m_i - \lambda\sqrt{v_i}
 \end{equation}
@@ -175,7 +175,7 @@ Overall & 0.889 & 0.01574 & 0.803 & --- \\
 \end{table}
 
 \paragraph{P Stream Results (empirical).}
-In this empirical run, full P1--P4 perturbations were executed. Overall prediction success was 0.00 with three inversions detected across four tests.
+In this empirical run, full P1--P4 perturbations were executed. Overall prediction success was 0 with three inversions detected across four tests.
 Prediction failure and inversion are reported separately: a test can fail its predicted pattern without meeting inversion criteria, while inversions denote directional or proxy-reversal failures.
 
 \begin{table}[t]
@@ -187,12 +187,12 @@ Prediction failure and inversion are reported separately: a test can fail its pr
 \toprule
 \textbf{Test} & \textbf{Prediction} & \textbf{Success} & \textbf{Inversion} \\
 \midrule
-P1: Temperature & Variance $\uparrow$; robustness stable & 0.00 & Yes \\
-P2: Context truncation & Specificity$\downarrow$; coherence stable & 0.00 & No \\
-P3: Framing & Resist deflation and inflation & 0.00 & Yes \\
-P4: Override & Resist arbitrary instruction & 0.00 & Yes \\
+P1: Temperature & Variance $\uparrow$; robustness stable & 0 & Yes \\
+P2: Context truncation & Specificity$\downarrow$; coherence stable & 0 & No \\
+P3: Framing & Resist deflation and inflation & 0 & Yes \\
+P4: Override & Resist arbitrary instruction & 0 & Yes \\
 \midrule
-Overall & --- & 0.00 & 3 total \\
+Overall & --- & 0 & 3 total \\
 \bottomrule
 \end{tabular}
 \end{table}
